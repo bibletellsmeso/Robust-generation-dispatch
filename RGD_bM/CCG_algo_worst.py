@@ -321,7 +321,7 @@ if __name__ == "__main__":
     print(os.getcwd())
 
     # Create folder
-    dirname = '/Users/PSL/OneDrive/Programing/Python/Robust generation dispatch/RGD_bM/export_worst/'
+    dirname = '/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/RGD_bM/export_worst/'
     if PV_Sandia:
         dirname += 'PV_Sandia/'
         pdfname = str(PV_Sandia) + '_' + str(GAMMA) + '_' + str(PI)
@@ -395,13 +395,13 @@ if __name__ == "__main__":
 
     phi_PV = [SP_dual_sol['phi_PV'][i] for i in range(nb_periods)]
     phi_data = np.column_stack((np.array(SP_dual_sol['phi_PV']), np.array(SP_dual_sol['phi_cut']), np.array(SP_dual_sol['phi_load']).flatten()))
-    np.savetxt('/Users/PSL/OneDrive/Programing/Python/Robust generation dispatch/result/bM_phi_worst.csv', phi_data, delimiter=',', header='phi_PV,phi_cut,phi_load', comments='', fmt='%.18f')
+    np.savetxt('/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/result/bM_phi_worst.csv', phi_data, delimiter=',', header='phi_PV,phi_cut,phi_load', comments='', fmt='%.18f')
 
     dump_file(dir=dirname, name=day + '_PV_worst_case', file=PV_worst_case)
     dump_file(dir=dirname, name=day + '_load_worst_case', file=load_worst_case)
-    dump_file(dir='/Users/PSL/OneDrive/Programing/Python/Robust generation dispatch/result/', name=day + '_bM_phi_PV_worst', file=SP_dual_sol['phi_PV'])
-    dump_file(dir='/Users/PSL/OneDrive/Programing/Python/Robust generation dispatch/result/', name=day + '_bM_phi_cut_worst', file=SP_dual_sol['phi_cut'])
-    dump_file(dir='/Users/PSL/OneDrive/Programing/Python/Robust generation dispatch/result/', name=day + '_bM_phi_load_worst', file=SP_dual_sol['phi_load'])
+    dump_file(dir='/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/result/', name=day + '_bM_phi_PV_worst', file=SP_dual_sol['phi_PV'])
+    dump_file(dir='/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/result/', name=day + '_bM_phi_cut_worst', file=SP_dual_sol['phi_cut'])
+    dump_file(dir='/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/result/', name=day + '_bM_phi_load_worst', file=SP_dual_sol['phi_load'])
 
 
     # ------------------------------------------------------------------------------------------------------------------
@@ -655,7 +655,7 @@ if __name__ == "__main__":
     # plt.close('all')
 
     data = np.column_stack((np.array(PV_worst_case), np.array(load_worst_case).flatten()))
-    np.savetxt('/Users/PSL/OneDrive/Programing/Python/Robust generation dispatch/result/worst_case_bM.csv', data, delimiter=',', header='PV_worst, load_worst', comments='', fmt='%.18f')
+    np.savetxt('/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/result/worst_case_bM.csv', data, delimiter=',', header='PV_worst, load_worst', comments='', fmt='%.18f')
 
     data = {"Variable": [], "Value": []}
 
@@ -665,4 +665,4 @@ if __name__ == "__main__":
         data["Value"].append(v.x)
 
     df = pd.DataFrame(data)
-    df.to_excel('/Users/PSL/OneDrive/Programing/Python/Robust generation dispatch/result/bM_phi_all_worst.xlsx', index=False)
+    df.to_excel('/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/result/bM_phi_all_worst.xlsx', index=False)

@@ -419,29 +419,29 @@ if __name__ == "__main__":
     os.chdir(ROOT_DIR)
     print(os.getcwd())
 
-    dirname = '/Users/PSL/OneDrive/Programing/Python/Robust generation dispatch/RGD_Mc/'
+    dirname = '/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/RGD_Mc/'
     day = '2018-07-04'
 
     PV_forecast = data.PV_pred
     load_forecast = data.load_pred
     
-    power = read_file(dir='/Users/PSL/OneDrive/Programing/Python/Robust generation dispatch/RGD_Mc/export_MILP/', name='sol_MILP_power')
-    reserve_pos = read_file(dir='/Users/PSL/OneDrive/Programing/Python/Robust generation dispatch/RGD_Mc/export_MILP/', name='sol_MILP_reserve_pos')
-    reserve_neg = read_file(dir='/Users/PSL/OneDrive/Programing/Python/Robust generation dispatch/RGD_Mc/export_MILP/', name='sol_MILP_reserve_neg')
-    charge = read_file(dir='/Users/PSL/OneDrive/Programing/Python/Robust generation dispatch/RGD_Mc/export_MILP/', name='sol_MILP_charge')
-    discharge = read_file(dir='/Users/PSL/OneDrive/Programing/Python/Robust generation dispatch/RGD_Mc/export_MILP/', name='sol_MILP_discharge')
-    SOC = read_file(dir='/Users/PSL/OneDrive/Programing/Python/Robust generation dispatch/RGD_Mc/export_MILP/', name='sol_MILP_SOC')
-    curtailment = read_file(dir='/Users/PSL/OneDrive/Programing/Python/Robust generation dispatch/RGD_Mc/export_MILP/', name='sol_MILP_curtailment')
+    power = read_file(dir='/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/RGD_Mc/export_MILP/', name='sol_MILP_power')
+    reserve_pos = read_file(dir='/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/RGD_Mc/export_MILP/', name='sol_MILP_reserve_pos')
+    reserve_neg = read_file(dir='/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/RGD_Mc/export_MILP/', name='sol_MILP_reserve_neg')
+    charge = read_file(dir='/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/RGD_Mc/export_MILP/', name='sol_MILP_charge')
+    discharge = read_file(dir='/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/RGD_Mc/export_MILP/', name='sol_MILP_discharge')
+    SOC = read_file(dir='/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/RGD_Mc/export_MILP/', name='sol_MILP_SOC')
+    curtailment = read_file(dir='/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/RGD_Mc/export_MILP/', name='sol_MILP_curtailment')
 
-    bM_phi_best = pd.read_csv('/Users/PSL/OneDrive/Programing/Python/Robust generation dispatch/result/bM_phi_best.csv')
-    bM_phi_worst = pd.read_csv('/Users/PSL/OneDrive/Programing/Python/Robust generation dispatch/result/bM_phi_worst.csv')
+    bM_phi_best = pd.read_csv('/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/result/bM_phi_best.csv')
+    bM_phi_worst = pd.read_csv('/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/result/bM_phi_worst.csv')
 
-    M_phi_PV_best = [x for x in read_file(dir='/Users/PSL/OneDrive/Programing/Python/Robust generation dispatch/result/', name=day+'_bM_phi_PV_best')]
-    M_phi_PV_worst = [x for x in read_file(dir='/Users/PSL/OneDrive/Programing/Python/Robust generation dispatch/result/', name=day+'_bM_phi_PV_worst')]
-    M_phi_cut_best = [x for x in read_file(dir='/Users/PSL/OneDrive/Programing/Python/Robust generation dispatch/result/', name=day+'_bM_phi_cut_best')]
-    M_phi_cut_worst = [x for x in read_file(dir='/Users/PSL/OneDrive/Programing/Python/Robust generation dispatch/result/', name=day+'_bM_phi_cut_worst')]
-    M_phi_load_best = [x for x in read_file(dir='/Users/PSL/OneDrive/Programing/Python/Robust generation dispatch/result/', name=day+'_bM_phi_load_best')]
-    M_phi_load_worst = [x for x in read_file(dir='/Users/PSL/OneDrive/Programing/Python/Robust generation dispatch/result/', name=day+'_bM_phi_load_worst')]
+    M_phi_PV_best = [x for x in read_file(dir='/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/result/', name=day+'_bM_phi_PV_best')]
+    M_phi_PV_worst = [x for x in read_file(dir='/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/result/', name=day+'_bM_phi_PV_worst')]
+    M_phi_cut_best = [x for x in read_file(dir='/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/result/', name=day+'_bM_phi_cut_best')]
+    M_phi_cut_worst = [x for x in read_file(dir='/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/result/', name=day+'_bM_phi_cut_worst')]
+    M_phi_load_best = [x for x in read_file(dir='/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/result/', name=day+'_bM_phi_load_best')]
+    M_phi_load_worst = [x for x in read_file(dir='/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/result/', name=day+'_bM_phi_load_worst')]
 
     PV_lb = PV_forecast - data.PV_neg
     PV_ub = PV_forecast + data.PV_pos

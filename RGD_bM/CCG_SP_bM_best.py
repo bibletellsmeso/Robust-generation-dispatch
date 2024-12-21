@@ -379,19 +379,19 @@ if __name__ == "__main__":
     os.chdir(ROOT_DIR)
     print(os.getcwd())
 
-    dirname = '/Users/PSL/OneDrive/Programing/Python/Robust generation dispatch/RGD_bM/RGD_bM_best'
+    dirname = '/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/RGD_bM_best'
     day = '2018-07-04'
 
     PV_forecast = data.PV_pred
     load_forecast = data.load_pred
     
-    power = read_file(dir='/Users/PSL/OneDrive/Programing/Python/Robust generation dispatch/RGD_bM/export_MILP/', name='sol_MILP_power')
-    reserve_pos = read_file(dir='/Users/PSL/OneDrive/Programing/Python/Robust generation dispatch/RGD_bM/export_MILP/', name='sol_MILP_reserve_pos')
-    reserve_neg = read_file(dir='/Users/PSL/OneDrive/Programing/Python/Robust generation dispatch/RGD_bM/export_MILP/', name='sol_MILP_reserve_neg')
-    charge = read_file(dir='/Users/PSL/OneDrive/Programing/Python/Robust generation dispatch/RGD_bM/export_MILP/', name='sol_MILP_charge')
-    discharge = read_file(dir='/Users/PSL/OneDrive/Programing/Python/Robust generation dispatch/RGD_bM/export_MILP/', name='sol_MILP_discharge')
-    SOC = read_file(dir='/Users/PSL/OneDrive/Programing/Python/Robust generation dispatch/RGD_bM/export_MILP/', name='sol_MILP_SOC')
-    curtailment = read_file(dir='/Users/PSL/OneDrive/Programing/Python/Robust generation dispatch/RGD_bM/export_MILP/', name='sol_MILP_curtailment')
+    power = read_file(dir='/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/export_MILP/', name='sol_MILP_power')
+    reserve_pos = read_file(dir='/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/export_MILP/', name='sol_MILP_reserve_pos')
+    reserve_neg = read_file(dir='/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/export_MILP/', name='sol_MILP_reserve_neg')
+    charge = read_file(dir='/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/export_MILP/', name='sol_MILP_charge')
+    discharge = read_file(dir='/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/export_MILP/', name='sol_MILP_discharge')
+    SOC = read_file(dir='/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/export_MILP/', name='sol_MILP_SOC')
+    curtailment = read_file(dir='/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/export_MILP/', name='sol_MILP_curtailment')
 
     PV_lb = PV_forecast - data.PV_neg
     PV_ub = PV_forecast + data.PV_pos

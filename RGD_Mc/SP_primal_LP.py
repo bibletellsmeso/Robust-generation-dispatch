@@ -245,7 +245,7 @@ if __name__ == "__main__":
     os.chdir(ROOT_DIR)
     print(os.getcwd())
 
-    dirname = '/Users/PSL/OneDrive/Programing/Python/Robust generation dispatch/RGD_Mc/export_MILP/'
+    dirname = '/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/RGD_Mc/export_MILP/'
 
     PV_trajectory = np.array(pd.read_csv('worst.csv'), dtype=np.float32)[:,0]
     load_trajectory = np.array(pd.read_csv('worst.csv'), dtype=np.float32)[:,1]

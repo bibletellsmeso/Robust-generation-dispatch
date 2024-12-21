@@ -331,13 +331,13 @@ if __name__ == "__main__":
     os.chdir(ROOT_DIR)
     print(os.getcwd())
 
-    dirname = '/Users/PSL/OneDrive/Programing/Python/Robust generation dispatch/RGD_bM/export_MILP/'
+    dirname = '/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/RGD_bM/export_MILP/'
 
     
     PV_forecast = data.PV_pred
     load_forecast = data.load_pred
-    PV_trajectory = read_file(dir='/Users/PSL/OneDrive/Programing/Python/Robust generation dispatch/RGD_bM/export_worst/PV_Sandia/', name='2018-07-04_PV_worst_case')
-    load_trajectory = read_file(dir='/Users/PSL/OneDrive/Programing/Python/Robust generation dispatch/RGD_bM/export_worst/PV_Sandia/', name='2018-07-04_load_worst_case')
+    PV_trajectory = read_file(dir='/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/RGD_bM/export_worst/PV_Sandia/', name='2018-07-04_PV_worst_case')
+    load_trajectory = read_file(dir='/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/RGD_bM/export_worst/PV_Sandia/', name='2018-07-04_load_worst_case')
     PV_lb = data.PV_lb
     PV_ub = data.PV_ub
     load_lb = data.load_lb

@@ -243,11 +243,11 @@ if __name__ == "__main__":
     print(os.getcwd())
     os.chdir(ROOT_DIR)
     print(os.getcwd())
-    
-    dirname = '/Users/PSL/OneDrive/Programing/Python/Robust generation dispatch/RGD_bM/export_MILP/'
 
-    PV_trajectory = np.array(pd.read_csv('/Users/PSL/OneDrive/Programing/Python/Robust generation dispatch/data/worst.csv'), dtype=np.float32)[:,0]
-    load_trajectory = np.array(pd.read_csv('/Users/PSL/OneDrive/Programing/Python/Robust generation dispatch/data/worst.csv'), dtype=np.float32)[:,1]
+    dirname = '/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/RGD_bM/export_MILP/'
+
+    PV_trajectory = np.array(pd.read_csv('/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/data/worst.csv'), dtype=np.float32)[:,0]
+    load_trajectory = np.array(pd.read_csv('/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/data/worst.csv'), dtype=np.float32)[:,1]
 
     power = read_file(dir=dirname, name='sol_MILP_power')
     reserve_pos = read_file(dir=dirname, name='sol_MILP_reserve_pos')

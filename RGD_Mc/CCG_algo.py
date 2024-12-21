@@ -297,7 +297,7 @@ if __name__ == "__main__":
     print(os.getcwd())
 
     # Create folder
-    dirname = '/Users/PSL/OneDrive/Programing/Python/Robust generation dispatch/RGD_Mc/export_CCG/'
+    dirname = '/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/RGD_Mc/export_CCG/'
     if PV_Sandia:
         dirname += 'PV_Sandia/'
         pdfname = str(PV_Sandia) + '_' + str(GAMMA) + '_' + str(PI)
@@ -318,12 +318,12 @@ if __name__ == "__main__":
     load_pos = data.load_pos # (kw) The maximal deviation between the min and forecast load uncertainty set bounds
     load_neg = data.load_neg # (kW) The maximal deviation between the max and forecast load uncertainty set bounds
 
-    M_PV_best = [x for x in read_file(dir='/Users/PSL/OneDrive/Programing/Python/Robust generation dispatch/result/', name=day+'_bM_phi_PV_best')]
-    M_PV_worst = [x for x in read_file(dir='/Users/PSL/OneDrive/Programing/Python/Robust generation dispatch/result/', name=day+'_bM_phi_PV_worst')]
-    M_cut_best = [x for x in read_file(dir='/Users/PSL/OneDrive/Programing/Python/Robust generation dispatch/result/', name=day+'_bM_phi_cut_best')]
-    M_cut_worst = [x for x in read_file(dir='/Users/PSL/OneDrive/Programing/Python/Robust generation dispatch/result/', name=day+'_bM_phi_cut_worst')]
-    M_load_best = [x for x in read_file(dir='/Users/PSL/OneDrive/Programing/Python/Robust generation dispatch/result/', name=day+'_bM_phi_load_best')]
-    M_load_worst = [x for x in read_file(dir='/Users/PSL/OneDrive/Programing/Python/Robust generation dispatch/result/', name=day+'_bM_phi_load_worst')]
+    M_PV_best = [x for x in read_file(dir='/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/result/', name=day+'_bM_phi_PV_best')]
+    M_PV_worst = [x for x in read_file(dir='/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/result/', name=day+'_bM_phi_PV_worst')]
+    M_cut_best = [x for x in read_file(dir='/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/result/', name=day+'_bM_phi_cut_best')]
+    M_cut_worst = [x for x in read_file(dir='/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/result/', name=day+'_bM_phi_cut_worst')]
+    M_load_best = [x for x in read_file(dir='/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/result/', name=day+'_bM_phi_load_best')]
+    M_load_worst = [x for x in read_file(dir='/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/result/', name=day+'_bM_phi_load_worst')]
 
     nb_periods = PV_pos.shape[0]
 
@@ -533,7 +533,7 @@ if __name__ == "__main__":
     plt.title('Load uncertainty variables')
 
     plt.tight_layout()
-    plt.savefig('/Users/PSL/OneDrive/Programing/Python/Robust generation dispatch/RGD_Mc/export_CCG/PV_Sandia' + day + '_uncertainty_variables.png', dpi=300)
+    plt.savefig('/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/RGD_Mc/export_CCG/PV_Sandia' + day + '_uncertainty_variables.png', dpi=300)
     # plt.close('all')
 
     plt.figure(figsize=(16,9))
@@ -666,7 +666,7 @@ if __name__ == "__main__":
     # np.savetxt('Mc_phi.csv', phi_data, delimiter=',', header='phi_PV,phi_cut,phi_load', comments='', fmt='%.2f')
 
     # Load data from CSV files
-    # phi_worst_from_bM = pd.read_csv('/Users/PSL/OneDrive/Programing/Python/Robust generation dispatch/result/bM_phi_worst.csv', header=0)  # Assuming header is in the first row
+    # phi_worst_from_bM = pd.read_csv('/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/result/bM_phi_worst.csv', header=0)  # Assuming header is in the first row
 
     # Define LaTeX-style labels
     # labels = {
@@ -694,7 +694,7 @@ if __name__ == "__main__":
     # plt.close('all')
 
     data = np.column_stack((np.array(PV_worst_case), np.array(load_worst_case).flatten()))
-    np.savetxt('/Users/PSL/OneDrive/Programing/Python/Robust generation dispatch/result/worst_case_Mc.csv', data, delimiter=',', header='PV_worst, load_worst', comments='', fmt='%.18f')
+    np.savetxt('/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/result/worst_case_Mc.csv', data, delimiter=',', header='PV_worst, load_worst', comments='', fmt='%.18f')
 
     data = {"Variable": [], "Value": []}
 
@@ -704,4 +704,4 @@ if __name__ == "__main__":
         data["Value"].append(v.x)
 
     df = pd.DataFrame(data)
-    df.to_excel('/Users/PSL/OneDrive/Programing/Python/Robust generation dispatch/result/Mc_phi_all_Mc.xlsx', index=False)
+    df.to_excel('/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/result/Mc_phi_all_Mc.xlsx', index=False)

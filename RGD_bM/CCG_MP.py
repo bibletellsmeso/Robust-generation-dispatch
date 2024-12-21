@@ -366,7 +366,7 @@ if __name__ == "__main__":
 
 
     # day = '2018-07-04'
-    # dirname = '/Users/PSL/OneDrive/Programing/Python/Robust generation dispatch/RGD_bM/export_MP/'
+    # dirname = '/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/RGD_bM/export_MP/'
 
     # PV_forecast = data.PV_pred
     # load_forecast = data.load_pred
