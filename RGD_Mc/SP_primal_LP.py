@@ -127,7 +127,7 @@ class SP_primal_LP():
         y_neg = model.addVars(self.nb_periods, lb=0, ub=GRB.INFINITY, obj=0, vtype=GRB.CONTINUOUS, name="y_neg")
         y_chg = model.addVars(self.nb_periods, lb=0, ub=GRB.INFINITY, obj=0, vtype=GRB.CONTINUOUS, name="y_chg")
         y_dis = model.addVars(self.nb_periods, lb=0, ub=GRB.INFINITY, obj=0, vtype=GRB.CONTINUOUS, name="y_dis")
-        y_S = model.addVars(self.nb_periods, lb=0, ub=GRB.INFINITY, obj=0, vtype=GRB.CONTINUOUS, name="y=S")
+        y_S = model.addVars(self.nb_periods, lb=0, ub=GRB.INFINITY, obj=0, vtype=GRB.CONTINUOUS, name="y_S")
         y_PV = model.addVars(self.nb_periods, lb=0, ub=GRB.INFINITY, obj=0, vtype=GRB.CONTINUOUS, name="y_PV")
         y_cut = model.addVars(self.nb_periods, lb=0, ub=GRB.INFINITY, obj=0, vtype=GRB.CONTINUOUS, name="y_cut")
         y_add = model.addVars(self.nb_periods, lb=0, ub=GRB.INFINITY, obj=0, vtype=GRB.CONTINUOUS, name="y_add")
@@ -267,17 +267,17 @@ if __name__ == "__main__":
 
     print('objective SP primal %.2f' %(solution['obj']))
     
-    # plt.style.use(['science'])
-    # plt.figure()
+    plt.style.use(['science'])
+    plt.figure()
     # plt.plot(solution['y_chg'], label='y chg')
     # plt.plot(solution['y_dis'], label='y dis')
-    # plt.plot(solution['y_S'], label='y S')
-    # plt.legend()
-    # plt.show()
+    plt.plot(solution['y_S'], label='y SOC')
+    plt.legend()
+    plt.show()
 
-    # print(solution['all_var'])
+    print(solution['all_var'])
 
 
-    # Get dual values
+    # # Get dual values
     # for c in SP_primal.model.getConstrs():
     #     print('The dual value of %s : %g' % (c.constrName, c.pi))

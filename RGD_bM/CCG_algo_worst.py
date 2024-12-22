@@ -655,7 +655,7 @@ if __name__ == "__main__":
     # plt.close('all')
 
     data = np.column_stack((np.array(PV_worst_case), np.array(load_worst_case).flatten()))
-    np.savetxt('/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/result/worst_case_bM.csv', data, delimiter=',', header='PV_worst, load_worst', comments='', fmt='%.18f')
+    np.savetxt('/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/result/worst_case_bM.csv', data, delimiter=',', header='PV_worst,load_worst', comments='', fmt='%.18f')
 
     data = {"Variable": [], "Value": []}
 
