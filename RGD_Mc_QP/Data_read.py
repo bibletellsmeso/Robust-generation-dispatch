@@ -24,10 +24,10 @@ class data_read:
 		self.N_PWL = 10
 		self.RTE = 0.93
 
-		self.kpx_PV_data = pd.read_csv('/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/data/KPX_PV.csv', sep=',', names=['Source', 'Location', 'Date', 'Hour', 'Power'], dtype={'Date': str, 'Hour': str, 'Power': str}, encoding='CP949')[1:] # dtype = DataFrame
+		self.kpx_PV_data = pd.read_csv('/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/data/KPX_PV.csv', sep=',', names=['Source', 'Location', 'Date', 'Hour', 'Power'], dtype={'Date': str, 'Hour': str, 'Power': str}, encoding='CP949')[1:] # dtype = DataFrame
 		self.kpx_PV_data = pd.DataFrame(self.kpx_PV_data, columns=['Hour', 'Power']).to_numpy(dtype=np.float32)
 
-		self.kpx_load = pd.read_csv('/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/data/KPX_Load.csv', sep=',', names=['Date', 'Load_1', 'Load_2', 'Load_3', 'Load_4', 'Load_5', 'Load_6', 'Load_7', 'Load_8', 'Load_9', 'Load_10', 'Load_11',
+		self.kpx_load = pd.read_csv('/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/data/KPX_Load.csv', sep=',', names=['Date', 'Load_1', 'Load_2', 'Load_3', 'Load_4', 'Load_5', 'Load_6', 'Load_7', 'Load_8', 'Load_9', 'Load_10', 'Load_11',
 							      'Load_12', 'Load_13', 'Load_14', 'Load_15', 'Load_16', 'Load_17', 'Load_18', 'Load_19', 'Load_20', 'Load_21', 'Load_22', 'Load_23', 'Load_0'], encoding='CP949')[1:]
 		self.kpx_load = self.kpx_load.drop(['Date'], axis=1).to_numpy(dtype=np.float32) / 1000
 
@@ -43,10 +43,10 @@ class data_read:
 			self.PV_var = np.append(self.PV_var, np.nanvar(self.kpx_PV[i] / np.max(self.kpx_PV)))
 			self.load_var = np.append(self.load_var, np.nanvar(self.kpx_load[:, i - 1] / np.max(self.kpx_load)))
 
-		self.PV_pred = np.array(pd.read_csv('/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/data/PV_for_scheduling.txt', names=['PV']), dtype=np.float32)[:,0]
+		self.PV_pred = np.array(pd.read_csv('/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/data/PV_for_scheduling.txt', names=['PV']), dtype=np.float32)[:,0]
 		self.PV_pred[self.PV_pred < 0] = 0
 
-		self.load_pred = np.array(pd.read_csv('/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/data/Load_for_scheduling.txt', names=['Load']), dtype=np.float32)[:,0]
+		self.load_pred = np.array(pd.read_csv('/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/data/Load_for_scheduling.txt', names=['Load']), dtype=np.float32)[:,0]
 		self.load_pred = self.load_pred
 
 		self.PV_pos = self.PV_pred * 1.96 * np.sqrt(np.repeat(self.PV_var, repeats=4, axis=0))/np.sqrt(1)
@@ -59,5 +59,12 @@ class data_read:
 		self.PV_ub = self.PV_pred + self.PV_pos
 		self.load_lb = self.load_pred - self.load_neg
 		self.load_ub = self.load_pred + self.load_pos
-
+		
+		self.PV_ramp_a = [1] * 96
+		self.PV_ramp_pos = [100] * 96
+		self.PV_ramp_neg = [100] * 96
+		self.load_ramp_a = [1] * 96
+		self.load_ramp_pos = [60] * 96
+		self.load_ramp_neg = [60] * 96
+		
 data = data_read()

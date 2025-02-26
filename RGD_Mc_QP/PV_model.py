@@ -25,8 +25,8 @@ r2d = 180 / math.pi
 class Photovoltaic:
     def __init__(self):
         self.Sim_time = 96 # 15min
-        self.Weather_Forecast = np.genfromtxt('/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/data/Hawaii weather.csv', delimiter=',', skip_header=1, dtype=np.float32)
-        self.real_PV = np.loadtxt("/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/data/PV_for_scheduling.txt")
+        self.Weather_Forecast = np.genfromtxt('/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/data/Hawaii weather.csv', delimiter=',', skip_header=1, dtype=np.float32)
+        self.real_PV = np.loadtxt("/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/data/PV_for_scheduling.txt")
         self.GHI = self.Weather_Forecast[:,2]
         self.Tem = self.Weather_Forecast[:,3]
         self.WS = self.Weather_Forecast[:,4]

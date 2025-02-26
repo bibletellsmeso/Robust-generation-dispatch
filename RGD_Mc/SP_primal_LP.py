@@ -23,7 +23,6 @@ class SP_primal_LP():
     :ivar load_trajectory: load trajectory (kW)
     :ivar x: diesel on/off variable (on = 1, off = 0)
           shape = (nb_market periods,)
-
     :ivar model: a Gurobi model (-)
     """
 
@@ -37,6 +36,7 @@ class SP_primal_LP():
         self.nb_periods = int(24 / self.period_hours)
         self.t_set = range(self.nb_periods)
         self.PV_forecast = data.PV_pred
+        self.load_forecast = data.load_pred
         self.PV_trajectory = PV_trajectory # (kW)
         self.load_trajectory = load_trajectory # (kW)
         self.PV_lb = data.PV_lb
@@ -50,7 +50,7 @@ class SP_primal_LP():
         self.x_chg = charge # (kW) The power of ESS charge
         self.x_dis = discharge
         self.x_S = SOC
-        self.x_cut = curtailment # (kW) The curtailment of PV
+        self.x_PV_cut = curtailment # (kW) The curtailment of PV
     
         # Parameters required for the MP in the CCG algorithm
         self.u_DG = PARAMETERS['u_DG'] # on/off
@@ -78,8 +78,6 @@ class SP_primal_LP():
         # RE parameters
         self.PV_min = PARAMETERS['RE']['PV_min']
         self.PV_max = PARAMETERS['RE']['PV_max']
-        self.PV_ramp_up = PARAMETERS['RE']['PV_ramp_up']
-        self.PV_ramp_down = PARAMETERS['RE']['PV_ramp_down']
 
         # load parameters
         self.load_ramp_up = PARAMETERS['load']['ramp_up']
@@ -155,12 +153,11 @@ class SP_primal_LP():
         model.addConstrs((x_cost_fuel_PWL[i] == PWL_val(self.seg_num, self.DG_min, self.DG_max, FC, self.x[i]) for i in self.t_set), name='c_cost_fuel_PWL')
         model.addConstrs((x_cost_res[i] == self.cost_DG_pos * self.x_pos[i] + self.cost_DG_neg * self.x_neg[i] for i in self.t_set), name='c_cost_fuel_res')
         model.addConstrs((x_cost_ESS[i] == self.cost_ESS_OM_pre * (self.x_chg[i] + self.x_dis[i]) for i in self.t_set), name='c_cost_ESS_OM_pre')
-        model.addConstrs((x_cost_cut_PWL[i] == PWL_val(self.seg_num, self.PV_min, self.PV_lb[i], PC_PV, self.x_cut[i]) for i in self.t_set), name='c_cost_PV_cut_PWL')
+        model.addConstrs((x_cost_cut_PWL[i] == PWL_val(self.seg_num, self.PV_min, self.PV_lb[i], PC_PV, self.x_PV_cut[i]) for i in self.t_set), name='c_cost_PV_cut_PWL')
         model.addConstrs((y_cost_fuel[i] == self.cost_DG_pos_re * y_pos[i] + self.cost_DG_neg_re * y_neg[i] for i in self.t_set), name='c_cost_fuel_res_re')
         model.addConstrs((y_cost_ESS[i] == self.cost_ESS_OM_re * (y_dis[i] + y_chg[i]) for i in self.t_set), name='c_cost_ESS_OM_re')
         model.addConstrs((y_cost_cut[i] == self.cost_PV_cut_re * y_cut[i] for i in self.t_set), name='c_cost_PV_cut_re')
         model.addConstrs((y_cost_add[i] == self.cost_PV_add_re * y_add[i] for i in self.t_set), name='c_cost_PV_add_re')
-
             
         model.addConstrs((y_pos[i] <= self.x_pos[i] for i in self.t_set), name='c_reserve_pos')
         model.addConstrs((y_neg[i] <= self.x_neg[i] for i in self.t_set), name='c_reserve_neg')
@@ -173,9 +170,9 @@ class SP_primal_LP():
         model.addConstr((y_S[self.nb_periods - 1] == self.soc_end), name='c_ESS_last_period')
         model.addConstrs((y_PV[i] == self.PV_trajectory[i] for i in self.t_set), name='c_y_PV')
         model.addConstrs((y_load[i] == self.load_trajectory[i] for i in self.t_set), name='c_y_load')
-        model.addConstrs((y_cut[i] <= self.PV_trajectory[i] - self.x_cut[i] for i in self.t_set), name='c_y_cut')
-        model.addConstrs((y_add[i] <= self.x_cut[i] for i in self.t_set), name='c_y_add')
-        model.addConstrs((self.x[i] + y_pos[i] - y_neg[i] - self.x_chg[i] + self.x_dis[i] - y_chg[i] + y_dis[i] + y_PV[i] - self.x_cut[i] - y_cut[i] + y_add[i] - y_load[i] == 0 for i in self.t_set), name='c_power_balance_eq')
+        model.addConstrs((y_cut[i] <= self.PV_trajectory[i] - self.x_PV_cut[i] for i in self.t_set), name='c_y_cut')
+        model.addConstrs((y_add[i] <= self.x_PV_cut[i] for i in self.t_set), name='c_y_add')
+        model.addConstrs((self.x[i] + y_pos[i] - y_neg[i] - self.x_chg[i] + self.x_dis[i] - y_chg[i] + y_dis[i] + y_PV[i] - self.x_PV_cut[i] - y_cut[i] + y_add[i] - y_load[i] == 0 for i in self.t_set), name='c_power_balance_eq')
 
         self.time_building_model = time.time() - t_build
         # print("Time spent building the mathematical program: %gs" % self.time_building_model)
@@ -245,7 +242,7 @@ if __name__ == "__main__":
     os.chdir(ROOT_DIR)
     print(os.getcwd())
 
-    dirname = '/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/RGD_Mc/export_MILP/'
+    dirname = '/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/RGD_Mc/export_MILP/'
 
     PV_trajectory = np.array(pd.read_csv('worst.csv'), dtype=np.float32)[:,0]
     load_trajectory = np.array(pd.read_csv('worst.csv'), dtype=np.float32)[:,1]
@@ -275,7 +272,7 @@ if __name__ == "__main__":
     plt.legend()
     plt.show()
 
-    print(solution['all_var'])
+    # print(solution['all_var'])
 
 
     # # Get dual values

@@ -27,6 +27,36 @@ def check_ESS(SP_primal_sol: dict):
             nb_count += 1
     return nb_count
 
+def check_PV(SP_primal_sol: dict):
+    """
+    Check if there is any simultanenaous charge and discharge of the ESS.
+    :param SP_primal_sol: solution of the SP primal, dict with at least the keys arguments y_chg and y_dis.
+    :return: number of simultanenaous charge and discharge.
+    """
+    df_check = pd.DataFrame(SP_primal_sol['y_cut'], columns=['y_cut'])
+    df_check['y_add'] = SP_primal_sol['y_add']
+
+    nb_count = 0
+    for i in df_check.index:
+        if (df_check.loc[i]['y_cut'] > 0) and (df_check.loc[i]['y_add'] > 0):
+            nb_count += 1
+    return nb_count
+
+def check_DG(SP_primal_sol: dict):
+    """
+    Check if there is any simultanenaous charge and discharge of the PV.
+    :param SP_primal_sol: solution of the SP primal, dict with at least the keys arguments y_pos and y_neg.
+    :return: number of simultanenaous charge and discharge.
+    """
+    df_check = pd.DataFrame(SP_primal_sol['y_pos'], columns=['y_pos'])
+    df_check['y_neg'] = SP_primal_sol['y_neg']
+
+    nb_count = 0
+    for i in df_check.index:
+        if (df_check.loc[i]['y_pos'] > 0) and (df_check.loc[i]['y_neg'] > 0):
+            nb_count += 1
+    return nb_count
+
 def dump_file(dir: str, name: str, file):
     """
     Dump a file into a picke.
@@ -50,6 +80,7 @@ cost_b = PARAMETERS['cost']['DG_b']
 cost_c = PARAMETERS['cost']['DG_c']
 cost_PV_cut_pre = PARAMETERS['cost']['C_PV_cut_pre']
 cost_PV_cut_re = PARAMETERS['cost']['C_PV_cut_re']
+cost_PV_add_re = PARAMETERS['cost']['C_PV_add_re']
 
 def FC(p):
     return(cost_a * p * p + cost_b * p + cost_c)
@@ -59,6 +90,9 @@ def PC_PV(g):
 
 def RC_PV(g):
     return cost_PV_cut_re * g * g
+
+def RA_PV(g):
+    return cost_PV_add_re * g * g
 
 def PWL(PWL_num, lb, ub, quadratic_func):
     x = []

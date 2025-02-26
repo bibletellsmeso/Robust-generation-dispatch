@@ -27,6 +27,37 @@ def check_ESS(SP_primal_sol: dict):
             nb_count += 1
     return nb_count
 
+
+def check_PV(SP_primal_sol: dict):
+    """
+    Check if there is any simultanenaous charge and discharge of the PV.
+    :param SP_primal_sol: solution of the SP primal, dict with at least the keys arguments y_cut and y_add.
+    :return: number of simultanenaous charge and discharge.
+    """
+    df_check = pd.DataFrame(SP_primal_sol['y_cut'], columns=['y_cut'])
+    df_check['y_add'] = SP_primal_sol['y_add']
+
+    nb_count = 0
+    for i in df_check.index:
+        if (df_check.loc[i]['y_cut'] > 0) and (df_check.loc[i]['y_add'] > 0):
+            nb_count += 1
+    return nb_count
+
+def check_DG(SP_primal_sol: dict):
+    """
+    Check if there is any simultanenaous charge and discharge of the PV.
+    :param SP_primal_sol: solution of the SP primal, dict with at least the keys arguments y_pos and y_neg.
+    :return: number of simultanenaous charge and discharge.
+    """
+    df_check = pd.DataFrame(SP_primal_sol['y_pos'], columns=['y_pos'])
+    df_check['y_neg'] = SP_primal_sol['y_neg']
+
+    nb_count = 0
+    for i in df_check.index:
+        if (df_check.loc[i]['y_pos'] > 0) and (df_check.loc[i]['y_neg'] > 0):
+            nb_count += 1
+    return nb_count
+
 def dump_file(dir: str, name: str, file):
     """
     Dump a file into a picke.

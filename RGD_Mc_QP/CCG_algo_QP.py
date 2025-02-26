@@ -18,7 +18,7 @@ from planner_MIQP import Planner_MIQP
 from Data_read import *
 from root_project import ROOT_DIR
 from Params import PARAMETERS
-from utils import read_file, dump_file, check_ESS
+from utils import *
 
 def ccg_algo(dir:str, tol:float, power:np.array, reserve_pos:np.array, reserve_neg:np.array, charge:np.array, discharge:np.array, SOC:np.array, curtailment:np.array,
              GAMMA:int, PI:int, solver_param:dict, day:str, log:bool=False, printconsole:bool=False):
@@ -73,6 +73,8 @@ def ccg_algo(dir:str, tol:float, power:np.array, reserve_pos:np.array, reserve_n
     ESS_charge_discharge_list = []
     PV_count_list = []
     PV_cut_add_list = []
+    DG_count_list = []
+    DG_pos_neg_list = []
     max_iteration = 5
 
     while all(i < tol for i in tolerance_list) is not True and iteration < max_iteration:
@@ -129,7 +131,7 @@ def ccg_algo(dir:str, tol:float, power:np.array, reserve_pos:np.array, reserve_n
             if printconsole:
                 print('     i = %s : %s simultaneous charge and discharge' % (iteration, ESS_nb_count))
 
-            PV_nb_count = check_ESS(SP_primal_sol=SP_primal_sol)
+            PV_nb_count = check_PV(SP_primal_sol=SP_primal_sol)
             if PV_nb_count > 0:
                 PV_cut_add_list.append([iteration, SP_primal_sol['y_cut'], SP_primal_sol['y_add']])
             else:
@@ -137,6 +139,15 @@ def ccg_algo(dir:str, tol:float, power:np.array, reserve_pos:np.array, reserve_n
             PV_count_list.append(PV_nb_count)
             if printconsole:
                 print('     i = %s : %s simultaneous curtailment and addition' % (iteration, PV_nb_count))
+
+            DG_nb_count = check_DG(SP_primal_sol=SP_primal_sol)
+            if DG_nb_count > 0:
+                DG_pos_neg_list.append([iteration, SP_primal_sol['y_pos'], SP_primal_sol['y_neg']])
+            else:
+                DG_nb_count = float('nan')
+            DG_count_list.append(DG_nb_count)
+            if printconsole:
+                print('     i = %s : %s simultaneous reserve pos and neg power' % (iteration, DG_nb_count))
 
         # ------------------------------------------------------------------------------------------------------------------
         # 2. MP part
@@ -257,6 +268,8 @@ def ccg_algo(dir:str, tol:float, power:np.array, reserve_pos:np.array, reserve_n
     conv_inf['ESS_charge_discharge'] = ESS_charge_discharge_list
     conv_inf['PV_count'] = PV_count_list
     conv_inf['PV_cut_add'] = PV_cut_add_list
+    conv_inf['DG_count'] = DG_count_list
+    conv_inf['DG_pos_neg'] = DG_pos_neg_list
 
     return power, reserve_pos, reserve_neg, charge, discharge, SOC, curtailment, df_objectives, conv_inf, \
         x_cost_fuel, x_cost_res, x_cost_ESS, x_cost_cut
@@ -297,7 +310,7 @@ if __name__ == "__main__":
     print(os.getcwd())
 
     # Create folder
-    dirname = '/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/RGD_Mc_QP/export_CCG/'
+    dirname = '/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/RGD_Mc_QP/export_CCG/'
     if PV_Sandia:
         dirname += 'PV_Sandia/'
         pdfname = str(PV_Sandia) + '_' + str(GAMMA) + '_' + str(PI)
@@ -318,12 +331,12 @@ if __name__ == "__main__":
     load_pos = data.load_pos # (kw) The maximal deviation between the min and forecast load uncertainty set bounds
     load_neg = data.load_neg # (kW) The maximal deviation between the max and forecast load uncertainty set bounds
 
-    M_PV_best = [x for x in read_file(dir='/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/result/', name=day+'_bM_phi_PV_best')]
-    M_PV_worst = [x for x in read_file(dir='/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/result/', name=day+'_bM_phi_PV_worst')]
-    M_cut_best = [x for x in read_file(dir='/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/result/', name=day+'_bM_phi_cut_best')]
-    M_cut_worst = [x for x in read_file(dir='/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/result/', name=day+'_bM_phi_cut_worst')]
-    M_load_best = [x for x in read_file(dir='/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/result/', name=day+'_bM_phi_load_best')]
-    M_load_worst = [x for x in read_file(dir='/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/result/', name=day+'_bM_phi_load_worst')]
+    M_PV_best = [x for x in read_file(dir='/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/result/', name=day+'_bM_phi_PV_best')]
+    M_PV_worst = [x for x in read_file(dir='/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/result/', name=day+'_bM_phi_PV_worst')]
+    M_cut_best = [x for x in read_file(dir='/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/result/', name=day+'_bM_phi_cut_best')]
+    M_cut_worst = [x for x in read_file(dir='/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/result/', name=day+'_bM_phi_cut_worst')]
+    M_load_best = [x for x in read_file(dir='/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/result/', name=day+'_bM_phi_load_best')]
+    M_load_worst = [x for x in read_file(dir='/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/result/', name=day+'_bM_phi_load_worst')]
 
     nb_periods = PV_pos.shape[0]
 
@@ -395,20 +408,24 @@ if __name__ == "__main__":
 
     # 1. Check if there is any simultaneous charge and discharge at the last CCG iteration
     ESS_nb_count = check_ESS(SP_primal_sol=SP_primal_sol)
-    PV_nb_count = check_ESS(SP_primal_sol=SP_primal_sol)
-    print('CCG last iteration %d simultaneous charge and discharge / %d curtailment and re-generation' % (ESS_nb_count, PV_nb_count))
+    PV_nb_count = check_PV(SP_primal_sol=SP_primal_sol)
+    DG_nb_count = check_DG(SP_primal_sol=SP_primal_sol)
+    print('CCG last iteration %d simultaneous charge and discharge / %d curtailment and re-generation / %d reserve pos and neg' % (ESS_nb_count, PV_nb_count, DG_nb_count))
     
     # 2. Check if there is any simultaneous charge and discharge over all CCG iteration
     # check if there is nan value (meaning during an iteration the SP primal has not been solved because infeasible, etc)
     ESS_count = conv_inf['ESS_count']
     PV_count = conv_inf['PV_count']
-    if sum(np.isnan(ESS_count)) > 0 or sum(np.isnan(PV_count)) > 0:
-        print('WARNING %s ESS nan values and %s PV nan values' %(sum(np.isnan(conv_inf['ESS_count'])), sum(np.isnan(conv_inf['PV_count']))))
+    DG_count = conv_inf['DG_count']
+    
+    if sum(np.isnan(ESS_count)) > 0 or sum(np.isnan(PV_count)) > 0 or sum(np.isnan(DG_count)) > 0:
+        print('WARNING %s ESS nan values, %s PV nan values %s DG nan values' %(sum(np.isnan(conv_inf['ESS_count'])), sum(np.isnan(conv_inf['PV_count'])), sum(np.isnan(conv_inf['DG_count']))))
     # “python list replace nan with 0” Code
     ESS_count = [0 if x != x else x for x in ESS_count]
     PV_count = [0 if x != x else x for x in PV_count]
+    DG_count = [0 if x != x else x for x in DG_count]
+    print('%d, %d and %d total simultaneous ESS, PV and DG operation over all CCG iterations' % (sum(ESS_count), sum(PV_count), sum(DG_count)))
 
-    print('%d and %d total simultaneous ESS and PV operation over all CCG iterations' % (sum(ESS_count), sum(PV_count)))
     if sum(conv_inf['ESS_count']) > 0:
         plt.figure(figsize=(16,9))
         plt.plot(conv_inf['ESS_count'], 'k', linewidth=2, label='ESS_count')
@@ -437,7 +454,7 @@ if __name__ == "__main__":
 
     if sum(conv_inf['PV_count']) > 0:
         plt.figure(figsize=(16,9))
-        plt.plot(conv_inf['PV_count'], 'k', linewidth=2, label='ESS_count')
+        plt.plot(conv_inf['PV_count'], 'k', linewidth=2, label='PV_count')
         plt.ylim(0, max(conv_inf['PV_count']))
         plt.xlabel('iteration $j$', fontsize=FONTSIZE)
         plt.xticks(fontsize=FONTSIZE)
@@ -447,7 +464,6 @@ if __name__ == "__main__":
         plt.savefig(dirname + day + '_PV_count_' + pdfname + '.pdf')
         # plt.close('all')
 
-        # Plot at each iteration where there has been a simultaneous charge and discharge
         for l in conv_inf['PV_cut_add']:
             plt.figure(figsize = (8,6))
             plt.plot(l[1], linewidth=2, label='curtailment')
@@ -459,6 +475,31 @@ if __name__ == "__main__":
             plt.title('simultaneous curtailment and addition at iteration %s' %(l[0]))
             # plt.tight_layout()
             plt.close('all')
+
+    if sum(conv_inf['DG_count']) > 0:
+        plt.figure(figsize=(16,9))
+        plt.plot(conv_inf['DG_count'], 'k', linewidth=2, label='DG_count')
+        plt.ylim(0, max(conv_inf['DG_count']))
+        plt.xlabel('iteration $j$', fontsize=FONTSIZE)
+        plt.xticks(fontsize=FONTSIZE)
+        plt.yticks(fontsize=FONTSIZE)
+        # plt.tight_layout()
+        plt.legend()
+        plt.savefig(dirname + day + '_DG_count_' + pdfname + '.pdf')
+        # plt.close('all')
+
+        for l in conv_inf['DG_pos_neg']:
+            plt.figure(figsize = (8,6))
+            plt.plot(l[1], linewidth=2, label='pos')
+            plt.plot(l[2], linewidth=2, label='neg')
+            plt.ylim(0, PARAMETERS['DG']['capacity'])
+            plt.ylabel('kW', fontsize=FONTSIZE)
+            plt.xticks(fontsize=FONTSIZE)
+            plt.yticks(fontsize=FONTSIZE)
+            plt.legend(fontsize=FONTSIZE)
+            plt.title('simultaneous pos neg at iteration %s' %(l[0]))
+            # plt.tight_layout()
+            # plt.close('all')
 
     # ------------------------------------------------------------------------------------------------------------------
     # Check CCG convergence by computing the planning for the PV worst trajectory from CCG last iteration
@@ -634,8 +675,7 @@ if __name__ == "__main__":
     plt.figure(figsize=(16,9))
     plt.plot()
     plt.plot(SP_primal_sol['y_cut'], linewidth=2, label='Real-time curtailment')
-    plt.plot(SP_primal_sol['y_add'], linewidth=2, label='Real=time addition')
-    # plt.ylim(0, PARAMETERS['ES']['capacity'])
+    plt.plot(SP_primal_sol['y_add'], linewidth=2, label='Real-time addition')
     plt.ylabel('kW', fontsize=FONTSIZE, rotation='horizontal')
     plt.xticks(fontsize=FONTSIZE)
     plt.yticks(fontsize=FONTSIZE)
@@ -643,6 +683,19 @@ if __name__ == "__main__":
     # plt.tight_layout()
     # plt.savefig(dirname + day + 'realtime_charge_discharge_' + pdfname + '.pdf')
     plt.savefig(dirname + day + '_Curtailment_simultaenous.png', dpi=300)
+    # plt.close('all')
+
+    plt.figure(figsize=(16,9))
+    plt.plot()
+    plt.plot(SP_primal_sol['y_pos'], linewidth=2, label='Real-time reserve pos')
+    plt.plot(SP_primal_sol['y_neg'], linewidth=2, label='Real-time reserve neg')
+    plt.ylabel('kW', fontsize=FONTSIZE, rotation='horizontal')
+    plt.xticks(fontsize=FONTSIZE)
+    plt.yticks(fontsize=FONTSIZE)
+    plt.legend(fontsize=FONTSIZE)
+    # plt.tight_layout()
+    # plt.savefig(dirname + day + 'realtime_charge_discharge_' + pdfname + '.pdf')
+    plt.savefig(dirname + day + '_Reserve_simultaenous.png', dpi=300)
     # plt.close('all')
 
     plt.figure(figsize=(16,9))
@@ -660,11 +713,11 @@ if __name__ == "__main__":
     # data = np.column_stack(np.array(PV_worst_case, np.array(load_worst_case).flatten()))
     # np.savetxt('worst.csv', data, delimiter=',', header='PV_worst, load_worst', comments='', fmt='%.2f')
 
-    phi_Mc = np.column_stack((np.array(SP_dual_sol['phi_PV']), np.array(SP_dual_sol['phi_cut']), np.array(SP_dual_sol['phi_load']).flatten()))
-    np.savetxt('/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/result/Mc_phi_QP.csv', phi_Mc, delimiter=',', header='phi_PV,phi_cut,phi_load', comments='', fmt='%.2f')
+    phi_Mc_QP = np.column_stack((np.array(SP_dual_sol['phi_PV']), np.array(SP_dual_sol['phi_cut']), np.array(SP_dual_sol['phi_load']).flatten()))
+    np.savetxt('/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/result/Mc_phi_QP.csv', phi_Mc_QP, delimiter=',', header='phi_PV,phi_cut,phi_load', comments='', fmt='%.2f')
 
     # Load data from CSV files
-    phi_bM = pd.read_csv('/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/result/bM_phi_worst_QP.csv', header=0)  # Assuming header is in the first row
+    phi_bM = pd.read_csv('/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/result/bM_phi_worst.csv', header=0)  # Assuming header is in the first row
 
     # Define LaTeX-style labels
     labels = {
@@ -673,31 +726,42 @@ if __name__ == "__main__":
         'phi_load': r'$\phi^{\mathrm{load}}_t$'
     }
 
-    phi_Mc_df = pd.DataFrame(phi_Mc, columns=labels.keys())
+    phi_Mc_QP_df = pd.DataFrame(phi_Mc_QP, columns=labels.keys())
 
     # Plot the data
-    fig, axs = plt.subplots(len(labels), 1, figsize=(16, len(labels) * 3), sharex=True)
+    fig, axs = plt.subplots(len(labels), 1, figsize=(16, len(labels) * 4), sharex=True)
 
+    # Plotting each series
     for i, (col, label) in enumerate(labels.items()):
-        axs[i].plot(phi_bM[col], label=f'{label} (big-M)', marker='^', markersize=8, linestyle='-', linewidth=3)
-        axs[i].plot(phi_Mc_df[col], label=f'{label} (McCormick)', marker='v', markersize=8, linestyle='--', linewidth=3)
-        axs[i].set_ylabel(f'{label} values', fontsize=FONTSIZE)
-        axs[i].legend(ncol=1, loc='upper left', frameon=True, fancybox=False, edgecolor='black', framealpha=0.8, fontsize=FONTSIZE)
-        axs[i].tick_params(axis='y', labelsize=FONTSIZE)  # Set y-axis tick font size
+        axs[i].plot(phi_bM[col], label=f'{label} (big-M)', color='#1f77b4', marker='o', markersize=6, zorder=2, linestyle='-', linewidth=2)
+        axs[i].plot(phi_Mc_QP_df[col], label=f'{label} (McCormick)', color='#ff7f0e', marker='s', markersize=6, zorder=1, linestyle='--', linewidth=2)
+        axs[i].set_ylabel(f'{label}', fontsize=18, fontname='Times New Roman', labelpad=12)
+        axs[i].tick_params(axis='y', labelsize=16)
 
-    plt.xlabel('Time (h)', fontsize=FONTSIZE)
-    plt.xticks([0, 16, 32, 48, 64, 80, 96],['0','4','8','12','16','20','24'], fontsize=FONTSIZE)
-    plt.tight_layout()
-    # plt.savefig(dirname + day + '_Phi_' + pdfname + '.pdf', dpi=300)
-    plt.savefig(dirname + day + '_Phi_compare.png', dpi=300)
+    # Add a common X-axis label
+    plt.xlabel('Time (h)', fontsize=18, fontname='Times New Roman', labelpad=15)
+    plt.xticks([0, 16, 32, 48, 64, 80, 96], ['0', '4', '8', '12', '16', '20', '24'], fontsize=16, fontname='Times New Roman')
+
+    # Adjust layout and create a single legend above the plots
+    lines_labels = [axs[0].get_legend_handles_labels()]
+    handles, labels = [sum(lol, []) for lol in zip(*lines_labels)]
+    fig.legend(handles, labels, loc='upper center', ncol=2, fontsize=16, frameon=True, fancybox=False, edgecolor='black', framealpha=0.8, borderpad=0.8)
+
+    # Adjust layout to make room for the legend
+    plt.tight_layout(rect=[0, 0, 1, 0.9])
+
+    # Save the figure
+    plt.savefig(dirname + day + '_Phi_compare.png', dpi=600, bbox_inches='tight')
     # plt.close('all')
 
-    PV_worst_bigM = pd.read_csv('/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/result/worst_case_bM.csv', header=0)  # Assuming header is in the first row
+    PV_worst_bigM = pd.read_csv('/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/result/worst_case_bM.csv', header=0)  # Assuming header is in the first row
+    PV_worst_McCormick = pd.read_csv('/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/result/worst_case_Mc.csv', header=0)
 
     plt.figure(figsize=(16,9))
     plt.plot()
     plt.plot(PV_worst_case, linewidth=3, marker='v', markersize=8, label='McCormick')
     plt.plot(PV_worst_bigM['PV_worst'], linewidth=3, marker='^', markersize=8, label='big-M')
+    # plt.plot(PV_worst_McCormick['PV_worst'], lindewidt=3, marker= )
     plt.xlabel('Time (h)', fontsize=FONTSIZE)
     plt.ylabel('Power (kW)', fontsize=FONTSIZE)
     plt.xticks([0, 16, 32, 48, 64, 80, 96],['0','4','8','12','16','20','24'], fontsize=FONTSIZE)
@@ -723,7 +787,7 @@ if __name__ == "__main__":
     # plt.close('all')
 
     data = np.column_stack((np.array(PV_worst_case), np.array(load_worst_case).flatten()))
-    np.savetxt('/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/result/worst_case_Mc_QP.csv', data, delimiter=',', header='PV_worst, load_worst', comments='', fmt='%.18f')
+    np.savetxt('/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/result/worst_case_Mc_QP.csv', data, delimiter=',', header='PV_worst, load_worst', comments='', fmt='%.18f')
 
     data = {"Variable": [], "Value": []}
 
@@ -733,4 +797,4 @@ if __name__ == "__main__":
         data["Value"].append(v.x)
 
     df = pd.DataFrame(data)
-    df.to_excel('/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/result/Mc_phi_all_Mc_QP.xlsx', index=False)
+    df.to_excel('/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/result/Mc_phi_all_Mc_QP.xlsx', index=False)

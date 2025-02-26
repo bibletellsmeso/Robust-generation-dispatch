@@ -14,7 +14,7 @@ from Data_read import *
 
 class SP_primal_QP():
     """
-    SP primal of the benders decomposition using gurobi.
+    SP primal of the Column and Constraints generation using gurobi.
     :ivar nb_periods: number of market periods (-)
     :ivar period_hours: period duration (hours)
     :ivar soc_ini: initial state of charge (kWh)
@@ -78,12 +78,6 @@ class SP_primal_QP():
         # RE parameters
         self.PV_min = PARAMETERS['RE']['PV_min']
         self.PV_max = PARAMETERS['RE']['PV_max']
-        self.PV_ramp_up = PARAMETERS['RE']['PV_ramp_up']
-        self.PV_ramp_down = PARAMETERS['RE']['PV_ramp_down']
-
-        # load parameters
-        self.load_ramp_up = PARAMETERS['load']['ramp_up']
-        self.load_ramp_down = PARAMETERS['load']['ramp_down']
 
         # Cost parameters
         self.cost_DG_a = PARAMETERS['cost']['DG_a']
@@ -103,14 +97,10 @@ class SP_primal_QP():
         self.seg_num = PARAMETERS['PWL']
 
         # Discretize variables for Convex combination approach
-        self.y_cut_n = [[n * self.PV_ub[i] / self.seg_num for n in range(self.seg_num)] for i in self.t_set]
-        self.y_add_n = [[n * self.PV_lb[i] / self.seg_num for n in range(self.seg_num)] for i in self.t_set]
-        self.g_cut_n = [[self.cost_PV_cut_re * (self.y_cut_n[i][n] ** 2) for n in range(self.seg_num)] for i in self.t_set]
-        self.g_add_n = [[self.cost_PV_add_re * (self.y_add_n[i][n] ** 2) for n in range(self.seg_num)] for i in self.t_set]
-        self.y_cut_n_sum = [gp.quicksum(self.y_cut_n[i][n] for n in range(self.seg_num)) for i in self.t_set]
-        self.y_add_n_sum = [gp.quicksum(self.y_add_n[i][n] for n in range(self.seg_num)) for i in self.t_set]
-        self.g_cut_n_sum = [gp.quicksum(self.g_cut_n[i][n] for n in range(self.seg_num)) for i in self.t_set]
-        self.g_add_n_sum = [gp.quicksum(self.g_add_n[i][n] for n in range(self.seg_num)) for i in self.t_set]
+        self.y_cut_n = [[n * (self.PV_trajectory[i] - self.x_PV_cut[i]) / self.seg_num for n in range(self.seg_num + 1)] for i in self.t_set]
+        self.y_add_n = [[n * self.x_PV_cut[i] / self.seg_num for n in range(self.seg_num + 1)] for i in self.t_set]
+        self.g_cut_n = [[self.cost_PV_cut_re * (self.y_cut_n[i][n] ** 2) for n in range(self.seg_num + 1)] for i in self.t_set]
+        self.g_add_n = [[self.cost_PV_add_re * (self.y_add_n[i][n] ** 2) for n in range(self.seg_num + 1)] for i in self.t_set]
 
         self.time_building_model = None
         self.time_solving_model = None
@@ -139,8 +129,6 @@ class SP_primal_QP():
         y_dis = model.addVars(self.nb_periods, lb=0, ub=GRB.INFINITY, obj=0, vtype=GRB.CONTINUOUS, name="y_dis")
         y_S = model.addVars(self.nb_periods, lb=0, ub=GRB.INFINITY, obj=0, vtype=GRB.CONTINUOUS, name="y_S")
         y_PV = model.addVars(self.nb_periods, lb=0, ub=GRB.INFINITY, obj=0, vtype=GRB.CONTINUOUS, name="y_PV")
-        y_cut = model.addVars(self.nb_periods, lb=0, ub=GRB.INFINITY, obj=0, vtype=GRB.CONTINUOUS, name="y_cut")
-        y_add = model.addVars(self.nb_periods, lb=0, ub=GRB.INFINITY, obj=0, vtype=GRB.CONTINUOUS, name="y_add")
         y_load = model.addVars(self.nb_periods, lb=0, ub=GRB.INFINITY, obj=0, vtype=GRB.CONTINUOUS, name="y_load")
 
         # -------------------------------------------------------------------------------------------------------------
@@ -151,17 +139,16 @@ class SP_primal_QP():
         x_cost_cut_PWL = model.addVars(self.nb_periods, vtype=GRB.CONTINUOUS, obj=0, name='x_cost_cut_PWL')
         y_cost_fuel = model.addVars(self.nb_periods, lb=0, ub=GRB.INFINITY, obj=0, vtype=GRB.CONTINUOUS, name='y_cost_fuel')
         y_cost_ESS = model.addVars(self.nb_periods, lb=0, ub=GRB.INFINITY, obj=0, vtype=GRB.CONTINUOUS, name="y_cost_ESS")
-        # y_cost_cut = model.addVars(self.nb_periods, lb=0, ub=GRB.INFINITY, obj=0, vtype=GRB.CONTINUOUS, name="y_cost_cut")
-        # y_cost_add = model.addVars(self.nb_periods, lb=0, ub=GRB.INFINITY, obj=0, vtype=GRB.CONTINUOUS, name="y_cost_add")
 
         # -------------------------------------------------------------------------------------------------------------
-        sigma_cut_n = model.addMVar((self.nb_periods, self.seg_num), lb=0, ub=1, obj=0, vtype=GRB.CONTINUOUS, name="simga_cut_n")
-        sigma_add_n = model.addMVar((self.nb_periods, self.seg_num), lb=0, ub=1, obj=0, vtype=GRB.CONTINUOUS, name="simga_add_n")
+        sigma_cut_n = model.addVars(self.nb_periods, self.seg_num, lb=0, ub=GRB.INFINITY, obj=0, vtype=GRB.CONTINUOUS, name="simga_cut_n")
+        sigma_add_n = model.addVars(self.nb_periods, self.seg_num, lb=0, ub=GRB.INFINITY, obj=0, vtype=GRB.CONTINUOUS, name="simga_add_n")
 
         # -------------------------------------------------------------------------------------------------------------
         # 3. Create objective function
-        objective = gp.quicksum(x_cost_fuel_PWL[i] + x_cost_res[i] + x_cost_cut_PWL[i] + x_cost_ESS[i] + y_cost_fuel[i] + y_cost_ESS[i] for i in self.t_set
-                                ) + gp.quicksum(sigma_cut_n[i][n] * self.g_cut_n[i][n] + sigma_add_n[i][n] * self.g_add_n[i][n] for i in self.t_set for n in range(self.seg_num))
+        objective = 0
+        objective += gp.quicksum(x_cost_fuel_PWL[i] + x_cost_res[i] + x_cost_cut_PWL[i] + x_cost_ESS[i] + y_cost_fuel[i] + y_cost_ESS[i] for i in self.t_set)
+        objective += gp.quicksum(sigma_cut_n[i, n] * self.g_cut_n[i][n] + sigma_add_n[i, n] * self.g_add_n[i][n] for i in self.t_set for n in range(self.seg_num))
         model.setObjective(objective, GRB.MINIMIZE)
 
         # -------------------------------------------------------------------------------------------------------------
@@ -172,8 +159,6 @@ class SP_primal_QP():
         model.addConstrs((x_cost_cut_PWL[i] == PWL_val(self.seg_num, self.PV_min, self.PV_lb[i], PC_PV, self.x_PV_cut[i]) for i in self.t_set), name='c_cost_PV_cut_PWL')
         model.addConstrs((y_cost_fuel[i] == self.cost_DG_pos_re * y_pos[i] + self.cost_DG_neg_re * y_neg[i] for i in self.t_set), name='c_cost_fuel_res_re')
         model.addConstrs((y_cost_ESS[i] == self.cost_ESS_OM_re * (y_dis[i] + y_chg[i]) for i in self.t_set), name='c_cost_ESS_OM_re')
-        # model.addConstrs((y_cost_cut[i] == self.cost_PV_cut_re * y_cut[i] for i in self.t_set), name='c_cost_PV_cut_re')
-        # model.addConstrs((y_cost_add[i] == self.cost_PV_add_re * y_add[i] for i in self.t_set), name='c_cost_PV_add_re')
 
         model.addConstrs((y_pos[i] <= self.x_pos[i] for i in self.t_set), name='c_reserve_pos')
         model.addConstrs((y_neg[i] <= self.x_neg[i] for i in self.t_set), name='c_reserve_neg')
@@ -186,13 +171,13 @@ class SP_primal_QP():
         model.addConstr((y_S[self.nb_periods - 1] == self.soc_end), name='c_ESS_last_period')
         model.addConstrs((y_PV[i] == self.PV_trajectory[i] for i in self.t_set), name='c_y_PV')
         model.addConstrs((y_load[i] == self.load_trajectory[i] for i in self.t_set), name='c_y_load')
-        model.addConstrs((gp.quicksum(sigma_cut_n[i][n] * self.y_cut_n[i][n] for n in range(self.seg_num)) <= self.PV_trajectory[i] - self.x_PV_cut[i] for i in self.t_set), name='c_y_cut')
-        model.addConstrs((gp.quicksum(sigma_add_n[i][n] * self.y_add_n[i][n] for n in range(self.seg_num)) <= self.x_PV_cut[i] for i in self.t_set), name='c_y_add')
-        model.addConstrs((self.x[i] + y_pos[i] - y_neg[i] - self.x_chg[i] + self.x_dis[i] - y_chg[i] + y_dis[i] + y_PV[i] - self.x_PV_cut[i] - gp.quicksum(sigma_cut_n[i][n] * self.y_cut_n[i][n] for n in range(self.seg_num)) + gp.quicksum(sigma_add_n[i][n] * self.y_add_n[i][n] for n in range(self.seg_num)) - y_load[i] == 0 for i in self.t_set), name='c_power_balance_eq')
+        model.addConstrs((gp.quicksum(sigma_cut_n[i, n] * self.y_cut_n[i][n] for n in range(self.seg_num)) <= self.PV_trajectory[i] - self.x_PV_cut[i] for i in self.t_set), name='c_y_cut')
+        model.addConstrs((gp.quicksum(sigma_add_n[i, n] * self.y_add_n[i][n] for n in range(self.seg_num)) <= self.x_PV_cut[i] for i in self.t_set), name='c_y_add')
+        model.addConstrs((self.x[i] + y_pos[i] - y_neg[i] - self.x_chg[i] + self.x_dis[i] - y_chg[i] + y_dis[i] + y_PV[i] - self.x_PV_cut[i] - gp.quicksum(sigma_cut_n[i, n] * self.y_cut_n[i][n] for n in range(self.seg_num)) + gp.quicksum(sigma_add_n[i, n] * self.y_add_n[i][n] for n in range(self.seg_num)) - y_load[i] == 0 for i in self.t_set), name='c_power_balance_eq')
 
         # Convex combination constraints
-        model.addConstrs((gp.quicksum(sigma_cut_n[i][n] for n in range(self.seg_num)) == 1 for i in self.t_set), name='c_y_cut_conv_combin')
-        model.addConstrs((gp.quicksum(sigma_add_n[i][n] for n in range(self.seg_num)) == 1 for i in self.t_set), name='c_y_add_conv_combin')
+        model.addConstrs((gp.quicksum(sigma_cut_n[i, n] for n in range(self.seg_num)) == 1 for i in self.t_set), name='c_y_cut_conv_combin')
+        model.addConstrs((gp.quicksum(sigma_add_n[i, n] for n in range(self.seg_num)) == 1 for i in self.t_set), name='c_y_add_conv_combin')
 
         self.time_building_model = time.time() - t_build
         # print("Time spent building the mathematical program: %gs" % self.time_building_model)
@@ -219,9 +204,9 @@ class SP_primal_QP():
 
             solution['obj'] = m.objVal
 
-            varname = ['y_pos', 'y_neg', 'y_chg', 'y_dis', 'y_S', 'y_PV', 'y_cut', 'y_add', 'y_load',
+            varname = ['y_pos', 'y_neg', 'y_chg', 'y_dis', 'y_S', 'y_PV', 'y_load',
                        'x_cost_fuel_PWL', 'x_cost_res', 'x_cost_ESS', 'x_cost_cut_PWL',
-                       'y_cost_fuel', 'y_cost_ESS', 'sigma_cut_n', 'sigma_add_n']
+                       'y_cost_fuel', 'y_cost_ESS', 'sigma_cut_n', 'sigma_add_n', 'y_cut', 'y_add']
             for key in varname:
                 solution[key] = []
 
@@ -230,7 +215,23 @@ class SP_primal_QP():
             for v in sol:
                 for key in varname:
                     if v.VarName.split('[')[0] == key:
-                        solution[key].append(v.x)
+                        if key in ['sigma_cut_n', 'sigma_add_n']:
+                            indices = v.VarName.split('[')[1].strip(']').split(',')
+                            t = int(indices[0])
+                            n = int(indices[1])
+                            solution[key].append((t, n, v.X))
+                        else:
+                            solution[key].append(v.x)
+
+            for i in self.t_set:
+                sigma_cut_for_t = {n: sigma_cut_value for t, n, sigma_cut_value in solution['sigma_cut_n'] if t == i}
+                y_cut_i = sum(sigma_cut_for_t.get(n, 0) * self.y_cut_n[i][n] for n in range(self.seg_num))
+                sigma_add_for_t = {n: sigma_add_value for t, n, sigma_add_value in solution['sigma_add_n'] if t == i}
+                y_add_i = sum(sigma_add_for_t.get(n, 0) * self.y_add_n[i][n] for n in range(self.seg_num))
+                solution['y_cut'].append(y_cut_i)
+                solution['y_add'].append(y_add_i)
+
+
         else:
             print('WARNING planner SP primal status %s -> problem not solved, objective is set to nan' %(solution['status']))
             self.model.computeIIS()
@@ -292,7 +293,7 @@ if __name__ == "__main__":
     plt.legend()
     plt.show()
 
-    print(solution['all_var'])
+    # print(solution['all_var'])
 
 
     # # Get dual values

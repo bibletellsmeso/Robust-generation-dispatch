@@ -16,7 +16,7 @@ np.set_printoptions(precision=6, suppress=True)
 
 Local = {'local_latitude' : 19.728144, 'local_longitude' : 156.058936, 'standard_longitude' : 150, 'year' : 2018, 'month' : 7, 'day' : 4}
 Angle = {'sun_k': 1367, 'panel_azimuth': 180, 'panel_tilted_angle': 25, 'rho': 0.2}
-PV = {'a': -3.47, 'b': -0.0594, 'alpha': -0.0035, 'gamma': 0.02, 'EFF_STC': 1, 'Power_Capacity': 450}
+PV = {'a': -3.47, 'b': -0.0594, 'alpha': -0.0035, 'gamma': 0.02, 'EFF_STC': 1, 'Power_Capacity': 600}
 
 # 각도 단위 변경
 d2r = math.pi / 180
@@ -25,8 +25,8 @@ r2d = 180 / math.pi
 class Photovoltaic:
     def __init__(self):
         self.Sim_time = 96 # 15min
-        self.Weather_Forecast = np.genfromtxt('/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/data/Hawaii weather.csv', delimiter=',', skip_header=1, dtype=np.float32)
-        self.real_PV = np.loadtxt("/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/data/PV_for_scheduling.txt")
+        self.Weather_Forecast = np.genfromtxt('/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/data/20250115_Hawaii_weather.csv', delimiter=',', skip_header=1, dtype=np.float32)
+        self.real_PV = np.loadtxt("/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/data/PV_for_scheduling.txt")
         self.GHI = self.Weather_Forecast[:,2]
         self.Tem = self.Weather_Forecast[:,3]
         self.WS = self.Weather_Forecast[:,4]

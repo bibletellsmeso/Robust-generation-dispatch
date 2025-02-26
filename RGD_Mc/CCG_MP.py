@@ -15,9 +15,7 @@ class CCG_MP():
     CCG = Column-and-Constraint Generation.
     MP = Master Problem of the CCG algorithm.
     The MP is a Linear Programming.
-
     :ivar nb_periods: number of market periods (-)
-    
     :ivar model: a Gurobi model (-)
     """
 
@@ -31,7 +29,6 @@ class CCG_MP():
         self.t_set = range(self.nb_periods)
         self.PV_forecast = PV_forecast # (kW)
         self.load_forecast = load_forecast # (kW)
-        # Compute the PV, load min and max 
         self.PV_lb = data.PV_lb
         self.PV_ub = data.PV_ub
         self.load_lb = data.load_lb
@@ -53,6 +50,8 @@ class CCG_MP():
         self.soc_end = PARAMETERS['ESS']['soc_end']  # (kWh)
         self.soc_min = PARAMETERS['ESS']['soc_min']  # (kWh)
         self.soc_max = PARAMETERS['ESS']['soc_max']  # (kWh)
+        self.soc_min_re = PARAMETERS['ESS']['soc_min_re']  # (kWh)
+        self.soc_max_re = PARAMETERS['ESS']['soc_max_re']  # (kWh)
         self.charge_eff = PARAMETERS['ESS']['charge_eff']  # (/)
         self.discharge_eff = PARAMETERS['ESS']['discharge_eff']  # (/)
         self.charge_power = PARAMETERS['ESS']['charge_power']  # (kW)
@@ -61,8 +60,6 @@ class CCG_MP():
         # RE parameters
         self.PV_min = PARAMETERS['RE']['PV_min']
         self.PV_max = PARAMETERS['RE']['PV_max']
-        self.PV_ramp_up = PARAMETERS['RE']['PV_ramp_up']
-        self.PV_ramp_down = PARAMETERS['RE']['PV_ramp_down']
 
         # load parameters
         self.load_ramp_up = PARAMETERS['load']['ramp_up']
@@ -135,8 +132,8 @@ class CCG_MP():
         model.addConstrs((- x[i] <= - self.u_DG[i] * self.DG_min for i in self.t_set), name='c_x_min')
         model.addConstrs((x[i] <= self.u_DG[i] * self.DG_max for i in self.t_set), name='c_x_max')
         model.addConstrs(((x[i] + x_pos[i]) - (x[i-1] - x_neg[i-1]) <= self.u_DG[i-1] * self.DG_ramp_up + (1 - self.u_DG[i-1]) * self.DG_max for i in range(1, self.nb_periods)), name='c_DG_RAMP1')
-        model.addConstrs((-(x[i] + x_pos[i]) + (x[i-1] - x_neg[i-1]) <= self.u_DG[i] * self.DG_ramp_down + (1 - self.u_DG[i]) * self.DG_max for i in range(1, self.nb_periods)), name='c_DG_RAMP2')
-        model.addConstrs(((x[i] - x_neg[i]) - (x[i-1] + x_pos[i-1]) <= self.u_DG[i-1] * self.DG_ramp_up + (1 - self.u_DG[i-1]) * self.DG_max for i in range(1, self.nb_periods)), name='c_DG_RAMP3')
+        # model.addConstrs((-(x[i] + x_pos[i]) + (x[i-1] - x_neg[i-1]) <= self.u_DG[i] * self.DG_ramp_down + (1 - self.u_DG[i]) * self.DG_max for i in range(1, self.nb_periods)), name='c_DG_RAMP2')
+        # model.addConstrs(((x[i] - x_neg[i]) - (x[i-1] + x_pos[i-1]) <= self.u_DG[i-1] * self.DG_ramp_up + (1 - self.u_DG[i-1]) * self.DG_max for i in range(1, self.nb_periods)), name='c_DG_RAMP3')
         model.addConstrs((-(x[i] - x_neg[i]) + (x[i-1] + x_pos[i-1]) <= self.u_DG[i] * self.DG_ramp_down + (1 - self.u_DG[i]) * self.DG_max for i in range(1, self.nb_periods)), name='c_DG_RAMP4')
         model.addConstrs((- x[i] + x_neg[i] <= - self.u_DG[i] * self.DG_min for i in self.t_set), name='c_x_res_min')
         model.addConstrs((x[i] + x_pos[i] <= self.u_DG[i] * self.DG_max for i in self.t_set), name='c_x_res_max')
@@ -246,11 +243,11 @@ class CCG_MP():
         self.model.addConstrs((y_chg[i] <= y_b[i] * self.charge_power for i in self.t_set), name='c_ESS_chg_re_' + str(iteration))
         self.model.addConstrs((y_dis[i] <= (1 - y_b[i]) * self.discharge_power for i in self.t_set), name='c_ESS_dis_re_' + str(iteration))
         self.model.addConstr((y_S[0] - (y_chg[0] * self.charge_eff - y_dis[0] / self.discharge_eff) * self.period_hours == self.soc_ini), name='c_y_SOC_first_period_' + str(iteration))
-        self.model.addConstrs((y_S[i] - y_S[i - 1] - (self.charge_eff * self.model.getVars()[i+288] - self.model.getVars()[i+384] / self.discharge_eff) * self.period_hours
+        self.model.addConstrs((y_S[i] - y_S[i - 1] - (self.charge_eff * self.model.getVars()[i+384] - self.model.getVars()[i+480] / self.discharge_eff) * self.period_hours
                                - (self.charge_eff * y_chg[i] - y_dis[i] / self.discharge_eff) * self.period_hours == 0 for i in range(1, self.nb_periods)), name='c_y_S_Incremental_' + str(iteration))
         self.model.addConstr((y_S[self.nb_periods - 1] == self.soc_end), name='c_y_SOC_last_period_' + str(iteration))
-        self.model.addConstrs((- y_S[i] <= - self.soc_min for i in self.t_set), name='c_y_SOC_min_' + str(iteration))
-        self.model.addConstrs((y_S[i] <= self.soc_max for i in self.t_set), name='c_y_SOC_max_' + str(iteration))
+        self.model.addConstrs((- y_S[i] <= - self.soc_min_re for i in self.t_set), name='c_y_SOC_min_' + str(iteration))
+        self.model.addConstrs((y_S[i] <= self.soc_max_re for i in self.t_set), name='c_y_SOC_max_' + str(iteration))
         # 4.3.6 RG generation cst
         self.model.addConstrs((y_PV[i] == PV_trajectory[i] for i in self.t_set), name='c_y_PV_generation_' + str(iteration))
         # 4.3.7 load cst
@@ -259,7 +256,7 @@ class CCG_MP():
         self.model.addConstrs((y_cut[i] <= PV_trajectory[i] - self.model.getVars()[i+672] for i in self.t_set), name='c_y_PV_curtailment_' + str(iteration))
         self.model.addConstrs((y_add[i] <= self.model.getVars()[i+672] for i in self.t_set), name='c_y_add' + str(iteration))
         # 4.3.4 power balance equation
-        self.model.addConstrs((self.model.getVars()[i] + y_pos[i] - y_neg[i] - self.model.getVars()[i+288] + self.model.getVars()[i+384] - y_chg[i] + y_dis[i] + y_PV[i] - self.model.getVars()[i+672] - y_cut[i] + y_add[i] - y_load[i] == 0 for i in self.t_set), name='c_real-time_power_balance_' + str(iteration))
+        self.model.addConstrs((self.model.getVars()[i] + y_pos[i] - y_neg[i] - self.model.getVars()[i+384] + self.model.getVars()[i+480] - y_chg[i] + y_dis[i] + y_PV[i] - self.model.getVars()[i+672] - y_cut[i] + y_add[i] - y_load[i] == 0 for i in self.t_set), name='c_real-time_power_balance_' + str(iteration))
         
         # -------------------------------------------------------------------------------------------------------------
         # 5. Store the added variables to the MP in a new dict
@@ -267,6 +264,7 @@ class CCG_MP():
         self.allvar['var_' + str(iteration)]['y_cost_fuel'] = y_cost_fuel
         self.allvar['var_' + str(iteration)]['y_cost_ESS'] = y_cost_ESS
         self.allvar['var_' + str(iteration)]['y_cost_cut'] = y_cost_cut
+        self.allvar['var_' + str(iteration)]['y_cost_add'] = y_cost_add
         self.allvar['var_' + str(iteration)]['y_pos'] = y_pos
         self.allvar['var_' + str(iteration)]['y_neg'] = y_neg
         self.allvar['var_' + str(iteration)]['y_b'] = y_b
@@ -341,8 +339,8 @@ class CCG_MP():
         if MP_status == 2 or MP_status == 9:
             MP_sol['var_' + str(i)] = dict()
             # add the solution of the 1 dimensional variables at iteration
-            for var in ['y_cost_fuel', 'y_cost_ESS', 'y_cost_cut', 'y_pos', 'y_neg',
-                        'y_b', 'y_chg', 'y_dis', 'y_S', 'y_PV', 'y_cut', 'y_add', 'y_load',]:
+            for var in ['y_pos', 'y_neg', 'y_b', 'y_chg', 'y_dis', 'y_S', 'y_PV', 'y_cut', 'y_add', 'y_load',
+                        'y_cost_fuel', 'y_cost_ESS', 'y_cost_cut', 'y_cost_add']:
                 MP_sol['var_' + str(i)][var] = [self.allvar['var_' + str(i)][var][t].X for t in self.t_set]
         else:
             self.model.computeIIS()
@@ -366,7 +364,7 @@ if __name__ == "__main__":
 
 
     # day = '2018-07-04'
-    # dirname = '/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/RGD_Mc/export_MP/'
+    # dirname = '/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/RGD_Mc/export_MP/'
 
     # PV_forecast = data.PV_pred
     # load_forecast = data.load_pred

@@ -65,6 +65,12 @@ class CCG_SP_QP():
         self.M_cut_worst = M_cut_worst
         self.M_load_best = M_load_best
         self.M_load_worst = M_load_worst
+        self.PV_ramp_a = data.PV_ramp_a
+        self.PV_ramp_pos = data.PV_ramp_pos
+        self.PV_ramp_neg = data.PV_ramp_neg
+        self.load_ramp_a = data.load_ramp_a
+        self.load_ramp_pos = data.load_ramp_pos
+        self.load_ramp_neg = data.load_ramp_neg
 
         # Parameters required for the MP in the CCG algorithm
         self.u_DG = PARAMETERS['u_DG'] # on/off
@@ -92,12 +98,6 @@ class CCG_SP_QP():
         # RE parameters
         self.PV_min = PARAMETERS['RE']['PV_min']
         self.PV_max = PARAMETERS['RE']['PV_max']
-        self.PV_ramp_up = PARAMETERS['RE']['PV_ramp_up']
-        self.PV_ramp_down = PARAMETERS['RE']['PV_ramp_down']
-
-        # load parameters
-        self.load_ramp_up = PARAMETERS['load']['ramp_up']
-        self.load_ramp_down = PARAMETERS['load']['ramp_down']
 
         # Cost parameters
         self.cost_DG_a = PARAMETERS['cost']['DG_a']
@@ -117,14 +117,10 @@ class CCG_SP_QP():
         self.seg_num = PARAMETERS['PWL']
 
         # Discretize variables for Convex combination approach
-        self.y_cut_n = [[n * (self.PV_ub[i] - self.x_PV_cut[i]) / self.seg_num for n in range(self.seg_num)] for i in self.t_set]
-        self.y_add_n = [[n * self.x_PV_cut[i] / self.seg_num for n in range(self.seg_num)] for i in self.t_set]
+        self.y_cut_n = [[n * self.PV_ub[i] / self.seg_num for n in range(self.seg_num)] for i in self.t_set]
+        self.y_add_n = [[n * self.PV_lb[i] / self.seg_num for n in range(self.seg_num)] for i in self.t_set]
         self.g_cut_n = [[self.cost_PV_cut_re * (self.y_cut_n[i][n] ** 2) for n in range(self.seg_num)] for i in self.t_set]
         self.g_add_n = [[self.cost_PV_add_re * (self.y_add_n[i][n] ** 2) for n in range(self.seg_num)] for i in self.t_set]
-        self.y_cut_n_sum = [gp.quicksum(self.y_cut_n[i][n] for n in range(self.seg_num)) for i in self.t_set]
-        self.y_add_n_sum = [gp.quicksum(self.y_add_n[i][n] for n in range(self.seg_num)) for i in self.t_set]
-        self.g_cut_n_sum = [gp.quicksum(self.g_cut_n[i][n] for n in range(self.seg_num)) for i in self.t_set]
-        self.g_add_n_sum = [gp.quicksum(self.g_add_n[i][n] for n in range(self.seg_num)) for i in self.t_set]
 
         self.time_building_model = None
         self.time_solving_model = None
@@ -201,7 +197,7 @@ class CCG_SP_QP():
             obj_exp += phi_cut[i] * self.PV_forecast[i] + beta_pos[i] * self.PV_pos[i] - beta_neg[i] * self.PV_neg[i] - phi_cut[i] * self.x_PV_cut[i] + phi_add[i] * self.x_PV_cut[i]
             obj_exp += phi_load[i] * self.load_forecast[i] + gamma_pos[i] * self.load_pos[i] - gamma_neg[i] * self.load_neg[i]
             obj_exp += - phi[i] * (self.x[i] - self.x_chg[i] + self.x_dis[i] - self.x_PV_cut[i])
-            obj_exp += mu_cut[i] + mu_add[i]
+            # obj_exp += mu_cut[i] + mu_add[i]
 
         # a constant
             obj_exp += PWL_val(self.seg_num, self.DG_min, self.DG_max, FC, self.x[i])
@@ -233,22 +229,23 @@ class CCG_SP_QP():
         # model.addConstrs((phi_add[i] + phi[i] <= self.cost_PV_add_re for i in self.t_set), name='c_PV_add')
         # -------------------------------------------------------------------------------------------------------------
         # Constraints related to PV curtailment using Convex combination approach
-        model.addConstrs((phi_cut[i] * self.y_cut_n_sum[i] + phi[i] * self.y_cut_n_sum[i] + mu_cut[i] <= self.g_cut_n_sum[i] for i in self.t_set), name='c_PV_cut')
-        model.addConstrs((phi_add[i] * self.y_add_n_sum[i] - phi[i] * self.y_add_n_sum[i] + mu_add[i] <= self.g_add_n_sum[i] for i in self.t_set), name='c_PV_add')
+        model.addConstrs((phi_cut[i] * self.y_cut_n[i][n] + phi[i] * self.y_cut_n[i][n] + mu_cut[i] <= self.g_cut_n[i][n] for i in self.t_set for n in range(self.seg_num)), name='c_PV_cut')
+        model.addConstrs((phi_add[i] * self.y_add_n[i][n] - phi[i] * self.y_add_n[i][n] + mu_add[i] <= self.g_add_n[i][n] for i in self.t_set for n in range(self.seg_num)), name='c_PV_add')
         # -------------------------------------------------------------------------------------------------------------
         # Constraints related to the uncertainty budget
         model.addConstr(gp.quicksum(epsilon_pos[i] + epsilon_neg[i] for i in self.t_set) <= self.GAMMA, name='c_GAMMA') # PV uncertainty budget
         model.addConstr(gp.quicksum(delta_pos[i] + delta_neg[i] for i in self.t_set) <= self.PI, name='c_PI') # load uncertainty budget
 
-        model.addConstrs(((self.PV_forecast[i] + self.PV_pos[i] * epsilon_pos[i]) - (self.PV_forecast[i-1] - self.PV_neg[i-1] * epsilon_neg[i-1]) <= self.PV_ramp_up * self.period_hours for i in range(1, self.nb_periods)), name='c_PV_ramp_1')
-        model.addConstrs((- (self.PV_forecast[i] + self.PV_pos[i] * epsilon_pos[i]) + (self.PV_forecast[i-1] - self.PV_neg[i-1] * epsilon_neg[i-1]) <= self.PV_ramp_down * self.period_hours for i in range(1, self.nb_periods)), name='c_PV_ramp_2')
-        model.addConstrs(((self.PV_forecast[i] - self.PV_neg[i] * epsilon_neg[i]) - (self.PV_forecast[i-1] + self.PV_pos[i-1] * epsilon_pos[i-1]) <= self.PV_ramp_up * self.period_hours for i in range(1, self.nb_periods)), name='c_PV_ramp_3')
-        model.addConstrs((- (self.PV_forecast[i] - self.PV_neg[i] * epsilon_neg[i]) + (self.PV_forecast[i-1] + self.PV_pos[i-1] * epsilon_pos[i-1]) <= self.PV_ramp_down * self.period_hours for i in range(1, self.nb_periods)), name='c_PV_ramp_4')
+        # Constratins related to the uncertainty ramping rate
+        model.addConstrs(((self.PV_forecast[i] + self.PV_pos[i] * epsilon_pos[i] - self.PV_neg[i] * epsilon_neg[i])
+                          <= self.PV_ramp_a[i] * (self.PV_forecast[i-1] + self.PV_pos[i-1] * epsilon_pos[i-1] - self.PV_neg[i-1] * epsilon_neg[i-1]) + self.PV_ramp_pos[i] for i in range(1, self.nb_periods)), name='c_PV_ramp_up')
+        model.addConstrs(((self.PV_forecast[i] + self.PV_pos[i] * epsilon_pos[i] - self.PV_neg[i] * epsilon_neg[i])
+                          >= self.PV_ramp_a[i] * (self.PV_forecast[i-1] + self.PV_pos[i-1] * epsilon_pos[i-1] - self.PV_neg[i-1] * epsilon_neg[i-1]) - self.PV_ramp_neg[i] for i in range(1, self.nb_periods)), name='c_PV_ramp_up')
 
-        model.addConstrs(((self.load_forecast[i] + self.load_pos[i] * delta_pos[i]) - (self.load_forecast[i-1] - self.load_neg[i-1] * delta_neg[i-1]) <= self.load_ramp_up * self.period_hours for i in range(1, self.nb_periods)), name='c_load_ramp_1')
-        model.addConstrs((- (self.load_forecast[i] + self.load_pos[i] * delta_pos[i]) + (self.load_forecast[i-1] - self.load_neg[i-1] * delta_neg[i-1]) <= self.load_ramp_down * self.period_hours for i in range(1, self.nb_periods)), name='c_load_ramp_2')
-        model.addConstrs(((self.load_forecast[i] - self.load_neg[i] * delta_neg[i]) - (self.load_forecast[i-1] + self.load_pos[i-1] * delta_pos[i-1]) <= self.load_ramp_up * self.period_hours for i in range(1, self.nb_periods)), name='c_load_ramp_3')
-        model.addConstrs((- (self.load_forecast[i] - self.load_neg[i] * delta_neg[i]) + (self.load_forecast[i-1] + self.load_pos[i-1] * delta_pos[i-1]) <= self.load_ramp_down * self.period_hours for i in range(1, self.nb_periods)), name='c_load_ramp_4')
+        model.addConstrs(((self.load_forecast[i] + self.load_pos[i] * delta_pos[i] - self.load_neg[i] * delta_neg[i])
+                          <= self.load_ramp_a[i] * (self.load_forecast[i-1] + self.load_pos[i-1] * delta_pos[i-1] - self.load_neg[i-1] * delta_neg[i-1]) + self.load_ramp_pos[i] for i in range(1, self.nb_periods)), name='c_load_ramp_up')
+        model.addConstrs(((self.load_forecast[i] + self.load_pos[i] * delta_pos[i] - self.load_neg[i] * delta_neg[i])
+                          >= self.load_ramp_a[i] * (self.load_forecast[i-1] + self.load_pos[i-1] * delta_pos[i-1] - self.load_neg[i-1] * delta_neg[i-1]) - self.load_ramp_neg[i] for i in range(1, self.nb_periods)), name='c_load_ramp_up')
 
         # Constraints related to the McCormick method----------------------------------------------------------------------------------------------------------------------------------
         # -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------

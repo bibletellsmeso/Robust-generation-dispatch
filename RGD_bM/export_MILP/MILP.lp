@@ -481,196 +481,6 @@ Subject To
  c_DG_RAMP1[93]: - x[92] + x[93] + x_pos[93] + x_neg[92] <= 100
  c_DG_RAMP1[94]: - x[93] + x[94] + x_pos[94] + x_neg[93] <= 100
  c_DG_RAMP1[95]: - x[94] + x[95] + x_pos[95] + x_neg[94] <= 100
- c_DG_RAMP2[1]: x[0] - x[1] - x_pos[1] - x_neg[0] <= 100
- c_DG_RAMP2[2]: x[1] - x[2] - x_pos[2] - x_neg[1] <= 100
- c_DG_RAMP2[3]: x[2] - x[3] - x_pos[3] - x_neg[2] <= 100
- c_DG_RAMP2[4]: x[3] - x[4] - x_pos[4] - x_neg[3] <= 100
- c_DG_RAMP2[5]: x[4] - x[5] - x_pos[5] - x_neg[4] <= 100
- c_DG_RAMP2[6]: x[5] - x[6] - x_pos[6] - x_neg[5] <= 100
- c_DG_RAMP2[7]: x[6] - x[7] - x_pos[7] - x_neg[6] <= 100
- c_DG_RAMP2[8]: x[7] - x[8] - x_pos[8] - x_neg[7] <= 100
- c_DG_RAMP2[9]: x[8] - x[9] - x_pos[9] - x_neg[8] <= 100
- c_DG_RAMP2[10]: x[9] - x[10] - x_pos[10] - x_neg[9] <= 100
- c_DG_RAMP2[11]: x[10] - x[11] - x_pos[11] - x_neg[10] <= 100
- c_DG_RAMP2[12]: x[11] - x[12] - x_pos[12] - x_neg[11] <= 100
- c_DG_RAMP2[13]: x[12] - x[13] - x_pos[13] - x_neg[12] <= 100
- c_DG_RAMP2[14]: x[13] - x[14] - x_pos[14] - x_neg[13] <= 100
- c_DG_RAMP2[15]: x[14] - x[15] - x_pos[15] - x_neg[14] <= 100
- c_DG_RAMP2[16]: x[15] - x[16] - x_pos[16] - x_neg[15] <= 100
- c_DG_RAMP2[17]: x[16] - x[17] - x_pos[17] - x_neg[16] <= 100
- c_DG_RAMP2[18]: x[17] - x[18] - x_pos[18] - x_neg[17] <= 100
- c_DG_RAMP2[19]: x[18] - x[19] - x_pos[19] - x_neg[18] <= 100
- c_DG_RAMP2[20]: x[19] - x[20] - x_pos[20] - x_neg[19] <= 100
- c_DG_RAMP2[21]: x[20] - x[21] - x_pos[21] - x_neg[20] <= 100
- c_DG_RAMP2[22]: x[21] - x[22] - x_pos[22] - x_neg[21] <= 100
- c_DG_RAMP2[23]: x[22] - x[23] - x_pos[23] - x_neg[22] <= 100
- c_DG_RAMP2[24]: x[23] - x[24] - x_pos[24] - x_neg[23] <= 100
- c_DG_RAMP2[25]: x[24] - x[25] - x_pos[25] - x_neg[24] <= 100
- c_DG_RAMP2[26]: x[25] - x[26] - x_pos[26] - x_neg[25] <= 100
- c_DG_RAMP2[27]: x[26] - x[27] - x_pos[27] - x_neg[26] <= 100
- c_DG_RAMP2[28]: x[27] - x[28] - x_pos[28] - x_neg[27] <= 100
- c_DG_RAMP2[29]: x[28] - x[29] - x_pos[29] - x_neg[28] <= 100
- c_DG_RAMP2[30]: x[29] - x[30] - x_pos[30] - x_neg[29] <= 100
- c_DG_RAMP2[31]: x[30] - x[31] - x_pos[31] - x_neg[30] <= 100
- c_DG_RAMP2[32]: x[31] - x[32] - x_pos[32] - x_neg[31] <= 100
- c_DG_RAMP2[33]: x[32] - x[33] - x_pos[33] - x_neg[32] <= 100
- c_DG_RAMP2[34]: x[33] - x[34] - x_pos[34] - x_neg[33] <= 100
- c_DG_RAMP2[35]: x[34] - x[35] - x_pos[35] - x_neg[34] <= 100
- c_DG_RAMP2[36]: x[35] - x[36] - x_pos[36] - x_neg[35] <= 100
- c_DG_RAMP2[37]: x[36] - x[37] - x_pos[37] - x_neg[36] <= 100
- c_DG_RAMP2[38]: x[37] - x[38] - x_pos[38] - x_neg[37] <= 100
- c_DG_RAMP2[39]: x[38] - x[39] - x_pos[39] - x_neg[38] <= 100
- c_DG_RAMP2[40]: x[39] - x[40] - x_pos[40] - x_neg[39] <= 100
- c_DG_RAMP2[41]: x[40] - x[41] - x_pos[41] - x_neg[40] <= 100
- c_DG_RAMP2[42]: x[41] - x[42] - x_pos[42] - x_neg[41] <= 100
- c_DG_RAMP2[43]: x[42] - x[43] - x_pos[43] - x_neg[42] <= 100
- c_DG_RAMP2[44]: x[43] - x[44] - x_pos[44] - x_neg[43] <= 100
- c_DG_RAMP2[45]: x[44] - x[45] - x_pos[45] - x_neg[44] <= 100
- c_DG_RAMP2[46]: x[45] - x[46] - x_pos[46] - x_neg[45] <= 100
- c_DG_RAMP2[47]: x[46] - x[47] - x_pos[47] - x_neg[46] <= 100
- c_DG_RAMP2[48]: x[47] - x[48] - x_pos[48] - x_neg[47] <= 100
- c_DG_RAMP2[49]: x[48] - x[49] - x_pos[49] - x_neg[48] <= 100
- c_DG_RAMP2[50]: x[49] - x[50] - x_pos[50] - x_neg[49] <= 100
- c_DG_RAMP2[51]: x[50] - x[51] - x_pos[51] - x_neg[50] <= 100
- c_DG_RAMP2[52]: x[51] - x[52] - x_pos[52] - x_neg[51] <= 100
- c_DG_RAMP2[53]: x[52] - x[53] - x_pos[53] - x_neg[52] <= 100
- c_DG_RAMP2[54]: x[53] - x[54] - x_pos[54] - x_neg[53] <= 100
- c_DG_RAMP2[55]: x[54] - x[55] - x_pos[55] - x_neg[54] <= 100
- c_DG_RAMP2[56]: x[55] - x[56] - x_pos[56] - x_neg[55] <= 100
- c_DG_RAMP2[57]: x[56] - x[57] - x_pos[57] - x_neg[56] <= 100
- c_DG_RAMP2[58]: x[57] - x[58] - x_pos[58] - x_neg[57] <= 100
- c_DG_RAMP2[59]: x[58] - x[59] - x_pos[59] - x_neg[58] <= 100
- c_DG_RAMP2[60]: x[59] - x[60] - x_pos[60] - x_neg[59] <= 100
- c_DG_RAMP2[61]: x[60] - x[61] - x_pos[61] - x_neg[60] <= 100
- c_DG_RAMP2[62]: x[61] - x[62] - x_pos[62] - x_neg[61] <= 100
- c_DG_RAMP2[63]: x[62] - x[63] - x_pos[63] - x_neg[62] <= 100
- c_DG_RAMP2[64]: x[63] - x[64] - x_pos[64] - x_neg[63] <= 100
- c_DG_RAMP2[65]: x[64] - x[65] - x_pos[65] - x_neg[64] <= 100
- c_DG_RAMP2[66]: x[65] - x[66] - x_pos[66] - x_neg[65] <= 100
- c_DG_RAMP2[67]: x[66] - x[67] - x_pos[67] - x_neg[66] <= 100
- c_DG_RAMP2[68]: x[67] - x[68] - x_pos[68] - x_neg[67] <= 100
- c_DG_RAMP2[69]: x[68] - x[69] - x_pos[69] - x_neg[68] <= 100
- c_DG_RAMP2[70]: x[69] - x[70] - x_pos[70] - x_neg[69] <= 100
- c_DG_RAMP2[71]: x[70] - x[71] - x_pos[71] - x_neg[70] <= 100
- c_DG_RAMP2[72]: x[71] - x[72] - x_pos[72] - x_neg[71] <= 100
- c_DG_RAMP2[73]: x[72] - x[73] - x_pos[73] - x_neg[72] <= 100
- c_DG_RAMP2[74]: x[73] - x[74] - x_pos[74] - x_neg[73] <= 100
- c_DG_RAMP2[75]: x[74] - x[75] - x_pos[75] - x_neg[74] <= 100
- c_DG_RAMP2[76]: x[75] - x[76] - x_pos[76] - x_neg[75] <= 100
- c_DG_RAMP2[77]: x[76] - x[77] - x_pos[77] - x_neg[76] <= 100
- c_DG_RAMP2[78]: x[77] - x[78] - x_pos[78] - x_neg[77] <= 100
- c_DG_RAMP2[79]: x[78] - x[79] - x_pos[79] - x_neg[78] <= 100
- c_DG_RAMP2[80]: x[79] - x[80] - x_pos[80] - x_neg[79] <= 100
- c_DG_RAMP2[81]: x[80] - x[81] - x_pos[81] - x_neg[80] <= 100
- c_DG_RAMP2[82]: x[81] - x[82] - x_pos[82] - x_neg[81] <= 100
- c_DG_RAMP2[83]: x[82] - x[83] - x_pos[83] - x_neg[82] <= 100
- c_DG_RAMP2[84]: x[83] - x[84] - x_pos[84] - x_neg[83] <= 100
- c_DG_RAMP2[85]: x[84] - x[85] - x_pos[85] - x_neg[84] <= 100
- c_DG_RAMP2[86]: x[85] - x[86] - x_pos[86] - x_neg[85] <= 100
- c_DG_RAMP2[87]: x[86] - x[87] - x_pos[87] - x_neg[86] <= 100
- c_DG_RAMP2[88]: x[87] - x[88] - x_pos[88] - x_neg[87] <= 100
- c_DG_RAMP2[89]: x[88] - x[89] - x_pos[89] - x_neg[88] <= 100
- c_DG_RAMP2[90]: x[89] - x[90] - x_pos[90] - x_neg[89] <= 100
- c_DG_RAMP2[91]: x[90] - x[91] - x_pos[91] - x_neg[90] <= 100
- c_DG_RAMP2[92]: x[91] - x[92] - x_pos[92] - x_neg[91] <= 100
- c_DG_RAMP2[93]: x[92] - x[93] - x_pos[93] - x_neg[92] <= 100
- c_DG_RAMP2[94]: x[93] - x[94] - x_pos[94] - x_neg[93] <= 100
- c_DG_RAMP2[95]: x[94] - x[95] - x_pos[95] - x_neg[94] <= 100
- c_DG_RAMP3[1]: - x[0] + x[1] - x_pos[0] - x_neg[1] <= 100
- c_DG_RAMP3[2]: - x[1] + x[2] - x_pos[1] - x_neg[2] <= 100
- c_DG_RAMP3[3]: - x[2] + x[3] - x_pos[2] - x_neg[3] <= 100
- c_DG_RAMP3[4]: - x[3] + x[4] - x_pos[3] - x_neg[4] <= 100
- c_DG_RAMP3[5]: - x[4] + x[5] - x_pos[4] - x_neg[5] <= 100
- c_DG_RAMP3[6]: - x[5] + x[6] - x_pos[5] - x_neg[6] <= 100
- c_DG_RAMP3[7]: - x[6] + x[7] - x_pos[6] - x_neg[7] <= 100
- c_DG_RAMP3[8]: - x[7] + x[8] - x_pos[7] - x_neg[8] <= 100
- c_DG_RAMP3[9]: - x[8] + x[9] - x_pos[8] - x_neg[9] <= 100
- c_DG_RAMP3[10]: - x[9] + x[10] - x_pos[9] - x_neg[10] <= 100
- c_DG_RAMP3[11]: - x[10] + x[11] - x_pos[10] - x_neg[11] <= 100
- c_DG_RAMP3[12]: - x[11] + x[12] - x_pos[11] - x_neg[12] <= 100
- c_DG_RAMP3[13]: - x[12] + x[13] - x_pos[12] - x_neg[13] <= 100
- c_DG_RAMP3[14]: - x[13] + x[14] - x_pos[13] - x_neg[14] <= 100
- c_DG_RAMP3[15]: - x[14] + x[15] - x_pos[14] - x_neg[15] <= 100
- c_DG_RAMP3[16]: - x[15] + x[16] - x_pos[15] - x_neg[16] <= 100
- c_DG_RAMP3[17]: - x[16] + x[17] - x_pos[16] - x_neg[17] <= 100
- c_DG_RAMP3[18]: - x[17] + x[18] - x_pos[17] - x_neg[18] <= 100
- c_DG_RAMP3[19]: - x[18] + x[19] - x_pos[18] - x_neg[19] <= 100
- c_DG_RAMP3[20]: - x[19] + x[20] - x_pos[19] - x_neg[20] <= 100
- c_DG_RAMP3[21]: - x[20] + x[21] - x_pos[20] - x_neg[21] <= 100
- c_DG_RAMP3[22]: - x[21] + x[22] - x_pos[21] - x_neg[22] <= 100
- c_DG_RAMP3[23]: - x[22] + x[23] - x_pos[22] - x_neg[23] <= 100
- c_DG_RAMP3[24]: - x[23] + x[24] - x_pos[23] - x_neg[24] <= 100
- c_DG_RAMP3[25]: - x[24] + x[25] - x_pos[24] - x_neg[25] <= 100
- c_DG_RAMP3[26]: - x[25] + x[26] - x_pos[25] - x_neg[26] <= 100
- c_DG_RAMP3[27]: - x[26] + x[27] - x_pos[26] - x_neg[27] <= 100
- c_DG_RAMP3[28]: - x[27] + x[28] - x_pos[27] - x_neg[28] <= 100
- c_DG_RAMP3[29]: - x[28] + x[29] - x_pos[28] - x_neg[29] <= 100
- c_DG_RAMP3[30]: - x[29] + x[30] - x_pos[29] - x_neg[30] <= 100
- c_DG_RAMP3[31]: - x[30] + x[31] - x_pos[30] - x_neg[31] <= 100
- c_DG_RAMP3[32]: - x[31] + x[32] - x_pos[31] - x_neg[32] <= 100
- c_DG_RAMP3[33]: - x[32] + x[33] - x_pos[32] - x_neg[33] <= 100
- c_DG_RAMP3[34]: - x[33] + x[34] - x_pos[33] - x_neg[34] <= 100
- c_DG_RAMP3[35]: - x[34] + x[35] - x_pos[34] - x_neg[35] <= 100
- c_DG_RAMP3[36]: - x[35] + x[36] - x_pos[35] - x_neg[36] <= 100
- c_DG_RAMP3[37]: - x[36] + x[37] - x_pos[36] - x_neg[37] <= 100
- c_DG_RAMP3[38]: - x[37] + x[38] - x_pos[37] - x_neg[38] <= 100
- c_DG_RAMP3[39]: - x[38] + x[39] - x_pos[38] - x_neg[39] <= 100
- c_DG_RAMP3[40]: - x[39] + x[40] - x_pos[39] - x_neg[40] <= 100
- c_DG_RAMP3[41]: - x[40] + x[41] - x_pos[40] - x_neg[41] <= 100
- c_DG_RAMP3[42]: - x[41] + x[42] - x_pos[41] - x_neg[42] <= 100
- c_DG_RAMP3[43]: - x[42] + x[43] - x_pos[42] - x_neg[43] <= 100
- c_DG_RAMP3[44]: - x[43] + x[44] - x_pos[43] - x_neg[44] <= 100
- c_DG_RAMP3[45]: - x[44] + x[45] - x_pos[44] - x_neg[45] <= 100
- c_DG_RAMP3[46]: - x[45] + x[46] - x_pos[45] - x_neg[46] <= 100
- c_DG_RAMP3[47]: - x[46] + x[47] - x_pos[46] - x_neg[47] <= 100
- c_DG_RAMP3[48]: - x[47] + x[48] - x_pos[47] - x_neg[48] <= 100
- c_DG_RAMP3[49]: - x[48] + x[49] - x_pos[48] - x_neg[49] <= 100
- c_DG_RAMP3[50]: - x[49] + x[50] - x_pos[49] - x_neg[50] <= 100
- c_DG_RAMP3[51]: - x[50] + x[51] - x_pos[50] - x_neg[51] <= 100
- c_DG_RAMP3[52]: - x[51] + x[52] - x_pos[51] - x_neg[52] <= 100
- c_DG_RAMP3[53]: - x[52] + x[53] - x_pos[52] - x_neg[53] <= 100
- c_DG_RAMP3[54]: - x[53] + x[54] - x_pos[53] - x_neg[54] <= 100
- c_DG_RAMP3[55]: - x[54] + x[55] - x_pos[54] - x_neg[55] <= 100
- c_DG_RAMP3[56]: - x[55] + x[56] - x_pos[55] - x_neg[56] <= 100
- c_DG_RAMP3[57]: - x[56] + x[57] - x_pos[56] - x_neg[57] <= 100
- c_DG_RAMP3[58]: - x[57] + x[58] - x_pos[57] - x_neg[58] <= 100
- c_DG_RAMP3[59]: - x[58] + x[59] - x_pos[58] - x_neg[59] <= 100
- c_DG_RAMP3[60]: - x[59] + x[60] - x_pos[59] - x_neg[60] <= 100
- c_DG_RAMP3[61]: - x[60] + x[61] - x_pos[60] - x_neg[61] <= 100
- c_DG_RAMP3[62]: - x[61] + x[62] - x_pos[61] - x_neg[62] <= 100
- c_DG_RAMP3[63]: - x[62] + x[63] - x_pos[62] - x_neg[63] <= 100
- c_DG_RAMP3[64]: - x[63] + x[64] - x_pos[63] - x_neg[64] <= 100
- c_DG_RAMP3[65]: - x[64] + x[65] - x_pos[64] - x_neg[65] <= 100
- c_DG_RAMP3[66]: - x[65] + x[66] - x_pos[65] - x_neg[66] <= 100
- c_DG_RAMP3[67]: - x[66] + x[67] - x_pos[66] - x_neg[67] <= 100
- c_DG_RAMP3[68]: - x[67] + x[68] - x_pos[67] - x_neg[68] <= 100
- c_DG_RAMP3[69]: - x[68] + x[69] - x_pos[68] - x_neg[69] <= 100
- c_DG_RAMP3[70]: - x[69] + x[70] - x_pos[69] - x_neg[70] <= 100
- c_DG_RAMP3[71]: - x[70] + x[71] - x_pos[70] - x_neg[71] <= 100
- c_DG_RAMP3[72]: - x[71] + x[72] - x_pos[71] - x_neg[72] <= 100
- c_DG_RAMP3[73]: - x[72] + x[73] - x_pos[72] - x_neg[73] <= 100
- c_DG_RAMP3[74]: - x[73] + x[74] - x_pos[73] - x_neg[74] <= 100
- c_DG_RAMP3[75]: - x[74] + x[75] - x_pos[74] - x_neg[75] <= 100
- c_DG_RAMP3[76]: - x[75] + x[76] - x_pos[75] - x_neg[76] <= 100
- c_DG_RAMP3[77]: - x[76] + x[77] - x_pos[76] - x_neg[77] <= 100
- c_DG_RAMP3[78]: - x[77] + x[78] - x_pos[77] - x_neg[78] <= 100
- c_DG_RAMP3[79]: - x[78] + x[79] - x_pos[78] - x_neg[79] <= 100
- c_DG_RAMP3[80]: - x[79] + x[80] - x_pos[79] - x_neg[80] <= 100
- c_DG_RAMP3[81]: - x[80] + x[81] - x_pos[80] - x_neg[81] <= 100
- c_DG_RAMP3[82]: - x[81] + x[82] - x_pos[81] - x_neg[82] <= 100
- c_DG_RAMP3[83]: - x[82] + x[83] - x_pos[82] - x_neg[83] <= 100
- c_DG_RAMP3[84]: - x[83] + x[84] - x_pos[83] - x_neg[84] <= 100
- c_DG_RAMP3[85]: - x[84] + x[85] - x_pos[84] - x_neg[85] <= 100
- c_DG_RAMP3[86]: - x[85] + x[86] - x_pos[85] - x_neg[86] <= 100
- c_DG_RAMP3[87]: - x[86] + x[87] - x_pos[86] - x_neg[87] <= 100
- c_DG_RAMP3[88]: - x[87] + x[88] - x_pos[87] - x_neg[88] <= 100
- c_DG_RAMP3[89]: - x[88] + x[89] - x_pos[88] - x_neg[89] <= 100
- c_DG_RAMP3[90]: - x[89] + x[90] - x_pos[89] - x_neg[90] <= 100
- c_DG_RAMP3[91]: - x[90] + x[91] - x_pos[90] - x_neg[91] <= 100
- c_DG_RAMP3[92]: - x[91] + x[92] - x_pos[91] - x_neg[92] <= 100
- c_DG_RAMP3[93]: - x[92] + x[93] - x_pos[92] - x_neg[93] <= 100
- c_DG_RAMP3[94]: - x[93] + x[94] - x_pos[93] - x_neg[94] <= 100
- c_DG_RAMP3[95]: - x[94] + x[95] - x_pos[94] - x_neg[95] <= 100
  c_DG_RAMP4[1]: x[0] - x[1] + x_pos[0] + x_neg[1] <= 100
  c_DG_RAMP4[2]: x[1] - x[2] + x_pos[1] + x_neg[2] <= 100
  c_DG_RAMP4[3]: x[2] - x[3] + x_pos[2] + x_neg[3] <= 100
@@ -2111,198 +1921,198 @@ Subject To
    - x_load[94] = 0
  c_power_balance[95]: x[95] - x_chg[95] + x_dis[95] + x_PV[95] - x_cut[95]
    - x_load[95] = 0
- c_PV_output[0]: x_PV[0] = 1.694915294647217
- c_PV_output[1]: x_PV[1] = 1.694915294647217
- c_PV_output[2]: x_PV[2] = 1.694915294647217
- c_PV_output[3]: x_PV[3] = 1.694915294647217
- c_PV_output[4]: x_PV[4] = 1.694915294647217
- c_PV_output[5]: x_PV[5] = 2.03389835357666
- c_PV_output[6]: x_PV[6] = 2.03389835357666
- c_PV_output[7]: x_PV[7] = 2.03389835357666
- c_PV_output[8]: x_PV[8] = 2.03389835357666
- c_PV_output[9]: x_PV[9] = 2.03389835357666
- c_PV_output[10]: x_PV[10] = 2.372881412506104
- c_PV_output[11]: x_PV[11] = 2.372881412506104
- c_PV_output[12]: x_PV[12] = 2.372881412506104
- c_PV_output[13]: x_PV[13] = 2.372881412506104
- c_PV_output[14]: x_PV[14] = 2.372881412506104
- c_PV_output[15]: x_PV[15] = 2.711864471435547
- c_PV_output[16]: x_PV[16] = 2.711864471435547
- c_PV_output[17]: x_PV[17] = 2.711864471435547
- c_PV_output[18]: x_PV[18] = 2.711864471435547
- c_PV_output[19]: x_PV[19] = 2.711864471435547
- c_PV_output[20]: x_PV[20] = 3.05084753036499
- c_PV_output[21]: x_PV[21] = 3.05084753036499
- c_PV_output[22]: x_PV[22] = 3.05084753036499
- c_PV_output[23]: x_PV[23] = 3.05084753036499
- c_PV_output[24]: x_PV[24] = 3.05084753036499
- c_PV_output[25]: x_PV[25] = 3.389830589294434
- c_PV_output[26]: x_PV[26] = 3.05084753036499
- c_PV_output[27]: x_PV[27] = 11.18644046783447
- c_PV_output[28]: x_PV[28] = 20
- c_PV_output[29]: x_PV[29] = 31.86440658569336
- c_PV_output[30]: x_PV[30] = 23.72881317138672
- c_PV_output[31]: x_PV[31] = 60.33898162841797
- c_PV_output[32]: x_PV[32] = 95.93220520019531
- c_PV_output[33]: x_PV[33] = 128.8135528564453
- c_PV_output[34]: x_PV[34] = 147.7966156005859
- c_PV_output[35]: x_PV[35] = 167.4576263427734
- c_PV_output[36]: x_PV[36] = 199.6610107421875
- c_PV_output[37]: x_PV[37] = 231.1864471435547
- c_PV_output[38]: x_PV[38] = 253.559326171875
- c_PV_output[39]: x_PV[39] = 265.7627258300781
- c_PV_output[40]: x_PV[40] = 293.8983154296875
- c_PV_output[41]: x_PV[41] = 312.2033996582031
- c_PV_output[42]: x_PV[42] = 256.6101684570313
- c_PV_output[43]: x_PV[43] = 351.8644104003906
- c_PV_output[44]: x_PV[44] = 357.6271057128906
- c_PV_output[45]: x_PV[45] = 368.8135681152344
- c_PV_output[46]: x_PV[46] = 379.6610107421875
- c_PV_output[47]: x_PV[47] = 385.4237365722656
- c_PV_output[48]: x_PV[48] = 388.8135681152344
- c_PV_output[49]: x_PV[49] = 411.8644104003906
- c_PV_output[50]: x_PV[50] = 390.5084838867188
- c_PV_output[51]: x_PV[51] = 396.2711791992188
- c_PV_output[52]: x_PV[52] = 392.2033996582031
- c_PV_output[53]: x_PV[53] = 388.4745788574219
- c_PV_output[54]: x_PV[54] = 395.9321899414063
- c_PV_output[55]: x_PV[55] = 384.7457580566406
- c_PV_output[56]: x_PV[56] = 353.559326171875
- c_PV_output[57]: x_PV[57] = 363.3898315429688
- c_PV_output[58]: x_PV[58] = 357.2881469726563
- c_PV_output[59]: x_PV[59] = 383.7288208007813
- c_PV_output[60]: x_PV[60] = 353.559326171875
- c_PV_output[61]: x_PV[61] = 329.1525573730469
- c_PV_output[62]: x_PV[62] = 297.2881469726563
- c_PV_output[63]: x_PV[63] = 334.5762634277344
- c_PV_output[64]: x_PV[64] = 258.3050842285156
- c_PV_output[65]: x_PV[65] = 250.5084686279297
- c_PV_output[66]: x_PV[66] = 122.3728790283203
- c_PV_output[67]: x_PV[67] = 208.4745788574219
- c_PV_output[68]: x_PV[68] = 95.93220520019531
- c_PV_output[69]: x_PV[69] = 107.1186447143555
- c_PV_output[70]: x_PV[70] = 49.15254211425781
- c_PV_output[71]: x_PV[71] = 54.57627105712891
- c_PV_output[72]: x_PV[72] = 59.3220329284668
- c_PV_output[73]: x_PV[73] = 56.27118682861328
- c_PV_output[74]: x_PV[74] = 28.81355857849121
- c_PV_output[75]: x_PV[75] = 11.18644046783447
- c_PV_output[76]: x_PV[76] = 4.406779766082764
- c_PV_output[77]: x_PV[77] = 0.3389830589294434
- c_PV_output[78]: x_PV[78] = 0.3389830589294434
- c_PV_output[79]: x_PV[79] = 0.3389830589294434
- c_PV_output[80]: x_PV[80] = 0.6779661178588867
- c_PV_output[81]: x_PV[81] = 0.6779661178588867
- c_PV_output[82]: x_PV[82] = 0.6779661178588867
- c_PV_output[83]: x_PV[83] = 0.6779661178588867
- c_PV_output[84]: x_PV[84] = 1.01694917678833
- c_PV_output[85]: x_PV[85] = 1.01694917678833
- c_PV_output[86]: x_PV[86] = 1.01694917678833
- c_PV_output[87]: x_PV[87] = 1.01694917678833
- c_PV_output[88]: x_PV[88] = 1.355932235717773
- c_PV_output[89]: x_PV[89] = 1.355932235717773
- c_PV_output[90]: x_PV[90] = 1.355932235717773
- c_PV_output[91]: x_PV[91] = 1.355932235717773
- c_PV_output[92]: x_PV[92] = 1.694915294647217
- c_PV_output[93]: x_PV[93] = 1.694915294647217
- c_PV_output[94]: x_PV[94] = 1.694915294647217
- c_PV_output[95]: x_PV[95] = 1.694915294647217
- c_x_cut[0]: x_cut[0] <= 1.688257630929962
- c_x_cut[1]: x_cut[1] <= 1.688257630929962
- c_x_cut[2]: x_cut[2] <= 1.688257630929962
- c_x_cut[3]: x_cut[3] <= 1.688257630929962
- c_x_cut[4]: x_cut[4] <= 1.691636786804867
- c_x_cut[5]: x_cut[5] <= 2.029964144212899
- c_x_cut[6]: x_cut[6] <= 2.029964144212899
- c_x_cut[7]: x_cut[7] <= 2.029964144212899
- c_x_cut[8]: x_cut[8] <= 2.03193036095842
- c_x_cut[9]: x_cut[9] <= 2.03193036095842
- c_x_cut[10]: x_cut[10] <= 2.370585421255473
- c_x_cut[11]: x_cut[11] <= 2.370585421255473
- c_x_cut[12]: x_cut[12] <= 2.371470060290423
- c_x_cut[13]: x_cut[13] <= 2.371470060290423
- c_x_cut[14]: x_cut[14] <= 2.371470060290423
- c_x_cut[15]: x_cut[15] <= 2.710251497330067
- c_x_cut[16]: x_cut[16] <= 2.71103118528473
- c_x_cut[17]: x_cut[17] <= 2.71103118528473
- c_x_cut[18]: x_cut[18] <= 2.71103118528473
- c_x_cut[19]: x_cut[19] <= 2.71103118528473
- c_x_cut[20]: x_cut[20] <= 3.050281973631449
- c_x_cut[21]: x_cut[21] <= 3.050281973631449
- c_x_cut[22]: x_cut[22] <= 3.050281973631449
- c_x_cut[23]: x_cut[23] <= 3.050281973631449
- c_x_cut[24]: x_cut[24] <= 3.048299485071396
- c_x_cut[25]: x_cut[25] <= 3.386999427879683
- c_x_cut[26]: x_cut[26] <= 3.048299485071396
- c_x_cut[27]: x_cut[27] <= 11.17709763542994
- c_x_cut[28]: x_cut[28] <= 19.75026374057731
- c_x_cut[29]: x_cut[29] <= 31.46652169532811
- c_x_cut[30]: x_cut[30] <= 23.43251590950161
- c_x_cut[31]: x_cut[31] <= 59.585540062675
- c_x_cut[32]: x_cut[32] <= 91.43868172352465
- c_x_cut[33]: x_cut[33] <= 122.7798470926726
- c_x_cut[34]: x_cut[34] <= 140.8737315580175
- c_x_cut[35]: x_cut[35] <= 159.6138084487444
- c_x_cut[36]: x_cut[36] <= 179.393131994283
- c_x_cut[37]: x_cut[37] <= 207.7183757665972
- c_x_cut[38]: x_cut[38] <= 227.8201521839735
- c_x_cut[39]: x_cut[39] <= 238.7847667319176
- c_x_cut[40]: x_cut[40] <= 247.2840247628037
- c_x_cut[41]: x_cut[41] <= 262.6857949411971
- c_x_cut[42]: x_cut[42] <= 215.9100345769659
- c_x_cut[43]: x_cut[43] <= 296.0563009630975
- c_x_cut[44]: x_cut[44] <= 298.5805355476418
- c_x_cut[45]: x_cut[45] <= 307.9200392266976
- c_x_cut[46]: x_cut[46] <= 316.9764984318306
- c_x_cut[47]: x_cut[47] <= 321.7877623910115
- c_x_cut[48]: x_cut[48] <= 316.2229156573108
- c_x_cut[49]: x_cut[49] <= 334.9702119927773
- c_x_cut[50]: x_cut[50] <= 317.6013897807323
- c_x_cut[51]: x_cut[51] <= 322.2882044196526
- c_x_cut[52]: x_cut[52] <= 315.3162051928028
- c_x_cut[53]: x_cut[53] <= 312.3183772654194
- c_x_cut[54]: x_cut[54] <= 318.3140087073406
- c_x_cut[55]: x_cut[55] <= 309.3205554427684
- c_x_cut[56]: x_cut[56] <= 283.9278641127199
- c_x_cut[57]: x_cut[57] <= 291.822311425927
- c_x_cut[58]: x_cut[58] <= 286.9223170065582
- c_x_cut[59]: x_cut[59] <= 308.1556525371178
- c_x_cut[60]: x_cut[60] <= 286.1629642271457
- c_x_cut[61]: x_cut[61] <= 266.4086757084418
- c_x_cut[62]: x_cut[62] <= 240.6183423911568
- c_x_cut[63]: x_cut[63] <= 270.7985045116168
- c_x_cut[64]: x_cut[64] <= 216.6701397295666
- c_x_cut[65]: x_cut[65] <= 210.1302232100081
- c_x_cut[66]: x_cut[66] <= 102.6481883702014
- c_x_cut[67]: x_cut[67] <= 174.8715737846007
- c_x_cut[68]: x_cut[68] <= 84.8882644347661
- c_x_cut[69]: x_cut[69] <= 94.78689519076796
- c_x_cut[70]: x_cut[70] <= 43.49398632080582
- c_x_cut[71]: x_cut[71] <= 48.29332289408057
- c_x_cut[72]: x_cut[72] <= 54.19038344912236
- c_x_cut[73]: x_cut[73] <= 51.40345070680846
- c_x_cut[74]: x_cut[74] <= 26.32104317962992
- c_x_cut[75]: x_cut[75] <= 10.21875796043316
- c_x_cut[76]: x_cut[76] <= 4.100334662328383
- c_x_cut[77]: x_cut[77] <= 0.3154103565259126
- c_x_cut[78]: x_cut[78] <= 0.3154103565259126
- c_x_cut[79]: x_cut[79] <= 0.3154103565259126
- c_x_cut[80]: x_cut[80] <= 0.6342745153899789
- c_x_cut[81]: x_cut[81] <= 0.6342745153899789
- c_x_cut[82]: x_cut[82] <= 0.6342745153899789
- c_x_cut[83]: x_cut[83] <= 0.6342745153899789
- c_x_cut[84]: x_cut[84] <= 0.9670009305090363
- c_x_cut[85]: x_cut[85] <= 0.9670009305090363
- c_x_cut[86]: x_cut[86] <= 0.9670009305090363
- c_x_cut[87]: x_cut[87] <= 0.9670009305090363
- c_x_cut[88]: x_cut[88] <= 1.315768449962975
- c_x_cut[89]: x_cut[89] <= 1.315768449962975
- c_x_cut[90]: x_cut[90] <= 1.315768449962975
- c_x_cut[91]: x_cut[91] <= 1.315768449962975
- c_x_cut[92]: x_cut[92] <= 1.674795753533
- c_x_cut[93]: x_cut[93] <= 1.674795753533
- c_x_cut[94]: x_cut[94] <= 1.674795753533
- c_x_cut[95]: x_cut[95] <= 1.674795753533
+ c_PV_output[0]: x_PV[0] = 0
+ c_PV_output[1]: x_PV[1] = 0
+ c_PV_output[2]: x_PV[2] = 0
+ c_PV_output[3]: x_PV[3] = 0
+ c_PV_output[4]: x_PV[4] = 0
+ c_PV_output[5]: x_PV[5] = 0
+ c_PV_output[6]: x_PV[6] = 0
+ c_PV_output[7]: x_PV[7] = 0
+ c_PV_output[8]: x_PV[8] = 0
+ c_PV_output[9]: x_PV[9] = 0
+ c_PV_output[10]: x_PV[10] = 0
+ c_PV_output[11]: x_PV[11] = 0
+ c_PV_output[12]: x_PV[12] = 0
+ c_PV_output[13]: x_PV[13] = 0
+ c_PV_output[14]: x_PV[14] = 0
+ c_PV_output[15]: x_PV[15] = 0
+ c_PV_output[16]: x_PV[16] = 0
+ c_PV_output[17]: x_PV[17] = 0
+ c_PV_output[18]: x_PV[18] = 0
+ c_PV_output[19]: x_PV[19] = 0
+ c_PV_output[20]: x_PV[20] = 0
+ c_PV_output[21]: x_PV[21] = 0
+ c_PV_output[22]: x_PV[22] = 0
+ c_PV_output[23]: x_PV[23] = 0
+ c_PV_output[24]: x_PV[24] = 0
+ c_PV_output[25]: x_PV[25] = 0
+ c_PV_output[26]: x_PV[26] = 0
+ c_PV_output[27]: x_PV[27] = 0
+ c_PV_output[28]: x_PV[28] = 0
+ c_PV_output[29]: x_PV[29] = 0.6135794198043734
+ c_PV_output[30]: x_PV[30] = 3.535136436352694
+ c_PV_output[31]: x_PV[31] = 10.81677121360784
+ c_PV_output[32]: x_PV[32] = 27.46181874349008
+ c_PV_output[33]: x_PV[33] = 31.57649968612948
+ c_PV_output[34]: x_PV[34] = 49.65599262363856
+ c_PV_output[35]: x_PV[35] = 126.1517650515456
+ c_PV_output[36]: x_PV[36] = 160.4552796619217
+ c_PV_output[37]: x_PV[37] = 187.1482266071103
+ c_PV_output[38]: x_PV[38] = 209.5631941158719
+ c_PV_output[39]: x_PV[39] = 237.0392014941713
+ c_PV_output[40]: x_PV[40] = 258.3886908983128
+ c_PV_output[41]: x_PV[41] = 278.8940114516453
+ c_PV_output[42]: x_PV[42] = 299.949995927883
+ c_PV_output[43]: x_PV[43] = 317.1508035479623
+ c_PV_output[44]: x_PV[44] = 338.1443244991979
+ c_PV_output[45]: x_PV[45] = 355.4887939175811
+ c_PV_output[46]: x_PV[46] = 368.8125778631971
+ c_PV_output[47]: x_PV[47] = 385.2916340126049
+ c_PV_output[48]: x_PV[48] = 396.5818467944564
+ c_PV_output[49]: x_PV[49] = 400.8407958217305
+ c_PV_output[50]: x_PV[50] = 410.0008250449701
+ c_PV_output[51]: x_PV[51] = 414.4605512978457
+ c_PV_output[52]: x_PV[52] = 417.600757858302
+ c_PV_output[53]: x_PV[53] = 422.3151686545898
+ c_PV_output[54]: x_PV[54] = 429.0192473394007
+ c_PV_output[55]: x_PV[55] = 426.3400713567043
+ c_PV_output[56]: x_PV[56] = 410.2616450948628
+ c_PV_output[57]: x_PV[57] = 392.9788513461494
+ c_PV_output[58]: x_PV[58] = 373.0215796731513
+ c_PV_output[59]: x_PV[59] = 354.3616213343885
+ c_PV_output[60]: x_PV[60] = 261.1555758526449
+ c_PV_output[61]: x_PV[61] = 315.5547969250193
+ c_PV_output[62]: x_PV[62] = 290.6120456455461
+ c_PV_output[63]: x_PV[63] = 263.7558562571149
+ c_PV_output[64]: x_PV[64] = 236.5049881792493
+ c_PV_output[65]: x_PV[65] = 208.2466548464958
+ c_PV_output[66]: x_PV[66] = 179.9906169122218
+ c_PV_output[67]: x_PV[67] = 149.2124082367612
+ c_PV_output[68]: x_PV[68] = 119.3307059869179
+ c_PV_output[69]: x_PV[69] = 88.34273412685872
+ c_PV_output[70]: x_PV[70] = 36.55499336336563
+ c_PV_output[71]: x_PV[71] = 27.03686442231479
+ c_PV_output[72]: x_PV[72] = 14.58432966194386
+ c_PV_output[73]: x_PV[73] = 2.363525206278162
+ c_PV_output[74]: x_PV[74] = 0
+ c_PV_output[75]: x_PV[75] = 0
+ c_PV_output[76]: x_PV[76] = 0
+ c_PV_output[77]: x_PV[77] = 0
+ c_PV_output[78]: x_PV[78] = 0
+ c_PV_output[79]: x_PV[79] = 0
+ c_PV_output[80]: x_PV[80] = 0
+ c_PV_output[81]: x_PV[81] = 0
+ c_PV_output[82]: x_PV[82] = 0
+ c_PV_output[83]: x_PV[83] = 0
+ c_PV_output[84]: x_PV[84] = 0
+ c_PV_output[85]: x_PV[85] = 0
+ c_PV_output[86]: x_PV[86] = 0
+ c_PV_output[87]: x_PV[87] = 0
+ c_PV_output[88]: x_PV[88] = 0
+ c_PV_output[89]: x_PV[89] = 0
+ c_PV_output[90]: x_PV[90] = 0
+ c_PV_output[91]: x_PV[91] = 0
+ c_PV_output[92]: x_PV[92] = 0
+ c_PV_output[93]: x_PV[93] = 0
+ c_PV_output[94]: x_PV[94] = 0
+ c_PV_output[95]: x_PV[95] = 0
+ c_x_cut[0]: x_cut[0] <= 1e-05
+ c_x_cut[1]: x_cut[1] <= 1e-05
+ c_x_cut[2]: x_cut[2] <= 1e-05
+ c_x_cut[3]: x_cut[3] <= 1e-05
+ c_x_cut[4]: x_cut[4] <= 1e-05
+ c_x_cut[5]: x_cut[5] <= 1e-05
+ c_x_cut[6]: x_cut[6] <= 1e-05
+ c_x_cut[7]: x_cut[7] <= 1e-05
+ c_x_cut[8]: x_cut[8] <= 1e-05
+ c_x_cut[9]: x_cut[9] <= 1e-05
+ c_x_cut[10]: x_cut[10] <= 1e-05
+ c_x_cut[11]: x_cut[11] <= 1e-05
+ c_x_cut[12]: x_cut[12] <= 1e-05
+ c_x_cut[13]: x_cut[13] <= 1e-05
+ c_x_cut[14]: x_cut[14] <= 1e-05
+ c_x_cut[15]: x_cut[15] <= 1e-05
+ c_x_cut[16]: x_cut[16] <= 1e-05
+ c_x_cut[17]: x_cut[17] <= 1e-05
+ c_x_cut[18]: x_cut[18] <= 1e-05
+ c_x_cut[19]: x_cut[19] <= 1e-05
+ c_x_cut[20]: x_cut[20] <= 1e-05
+ c_x_cut[21]: x_cut[21] <= 1e-05
+ c_x_cut[22]: x_cut[22] <= 1e-05
+ c_x_cut[23]: x_cut[23] <= 1e-05
+ c_x_cut[24]: x_cut[24] <= 1e-05
+ c_x_cut[25]: x_cut[25] <= 1e-05
+ c_x_cut[26]: x_cut[26] <= 1e-05
+ c_x_cut[27]: x_cut[27] <= 1e-05
+ c_x_cut[28]: x_cut[28] <= 1e-05
+ c_x_cut[29]: x_cut[29] <= 0.6059177684954555
+ c_x_cut[30]: x_cut[30] <= 3.490993849703651
+ c_x_cut[31]: x_cut[31] <= 10.68170421714074
+ c_x_cut[32]: x_cut[32] <= 26.17549032259065
+ c_x_cut[33]: x_cut[33] <= 30.09743708804795
+ c_x_cut[34]: x_cut[34] <= 47.33007549570251
+ c_x_cut[35]: x_cut[35] <= 120.242739059926
+ c_x_cut[36]: x_cut[36] <= 144.1672323956743
+ c_x_cut[37]: x_cut[37] <= 168.1505397301581
+ c_x_cut[38]: x_cut[38] <= 188.290131501684
+ c_x_cut[39]: x_cut[39] <= 212.977009673338
+ c_x_cut[40]: x_cut[40] <= 217.406471351666
+ c_x_cut[41]: x_cut[41] <= 234.6595073492407
+ c_x_cut[42]: x_cut[42] <= 252.3758681926641
+ c_x_cut[43]: x_cut[43] <= 266.8485096851355
+ c_x_cut[44]: x_cut[44] <= 282.3144911496236
+ c_x_cut[45]: x_cut[45] <= 296.7952755465318
+ c_x_cut[46]: x_cut[46] <= 307.9192158651074
+ c_x_cut[47]: x_cut[47] <= 321.6774723679669
+ c_x_cut[48]: x_cut[48] <= 322.5408726738237
+ c_x_cut[49]: x_cut[49] <= 326.0046851176703
+ c_x_cut[50]: x_cut[50] <= 333.4545566719594
+ c_x_cut[51]: x_cut[51] <= 337.0816616670964
+ c_x_cut[52]: x_cut[52] <= 335.7346913336156
+ c_x_cut[53]: x_cut[53] <= 339.5248933955779
+ c_x_cut[54]: x_cut[54] <= 344.9147106925211
+ c_x_cut[55]: x_cut[55] <= 342.7607578927414
+ c_x_cut[56]: x_cut[56] <= 329.4629942043542
+ c_x_cut[57]: x_cut[57] <= 315.5839464192492
+ c_x_cut[58]: x_cut[58] <= 299.5571436212072
+ c_x_cut[59]: x_cut[59] <= 284.5721558225164
+ c_x_cut[60]: x_cut[60] <= 211.3734504241599
+ c_x_cut[61]: x_cut[61] <= 255.4029566712041
+ c_x_cut[62]: x_cut[62] <= 235.2148546795059
+ c_x_cut[63]: x_cut[63] <= 213.4780589103799
+ c_x_cut[64]: x_cut[64] <= 198.3838969661062
+ c_x_cut[65]: x_cut[65] <= 174.6803872368736
+ c_x_cut[66]: x_cut[66] <= 150.97880292198
+ c_x_cut[67]: x_cut[67] <= 125.161584326801
+ c_x_cut[68]: x_cut[68] <= 105.5930754377942
+ c_x_cut[69]: x_cut[69] <= 78.17251152491338
+ c_x_cut[70]: x_cut[70] <= 32.34669685327343
+ c_x_cut[71]: x_cut[71] <= 23.92431722359775
+ c_x_cut[72]: x_cut[72] <= 13.32271298179269
+ c_x_cut[73]: x_cut[73] <= 2.159068581029276
+ c_x_cut[74]: x_cut[74] <= 1e-05
+ c_x_cut[75]: x_cut[75] <= 1e-05
+ c_x_cut[76]: x_cut[76] <= 1e-05
+ c_x_cut[77]: x_cut[77] <= 1e-05
+ c_x_cut[78]: x_cut[78] <= 1e-05
+ c_x_cut[79]: x_cut[79] <= 1e-05
+ c_x_cut[80]: x_cut[80] <= 1e-05
+ c_x_cut[81]: x_cut[81] <= 1e-05
+ c_x_cut[82]: x_cut[82] <= 1e-05
+ c_x_cut[83]: x_cut[83] <= 1e-05
+ c_x_cut[84]: x_cut[84] <= 1e-05
+ c_x_cut[85]: x_cut[85] <= 1e-05
+ c_x_cut[86]: x_cut[86] <= 1e-05
+ c_x_cut[87]: x_cut[87] <= 1e-05
+ c_x_cut[88]: x_cut[88] <= 1e-05
+ c_x_cut[89]: x_cut[89] <= 1e-05
+ c_x_cut[90]: x_cut[90] <= 1e-05
+ c_x_cut[91]: x_cut[91] <= 1e-05
+ c_x_cut[92]: x_cut[92] <= 1e-05
+ c_x_cut[93]: x_cut[93] <= 1e-05
+ c_x_cut[94]: x_cut[94] <= 1e-05
+ c_x_cut[95]: x_cut[95] <= 1e-05
  c_x_load_demand[0]: x_load[0] = 308.1600036621094
  c_x_load_demand[1]: x_load[1] = 306.4299926757813
  c_x_load_demand[2]: x_load[2] = 309.0700073242188
@@ -2399,284 +2209,284 @@ Subject To
  c_x_load_demand[93]: x_load[93] = 304.6600036621094
  c_x_load_demand[94]: x_load[94] = 305.8999938964844
  c_x_load_demand[95]: x_load[95] = 306
- c_cost_fuel_res[0]: x_cost_res[0] = 0
- c_cost_fuel_res[1]: x_cost_res[1] = 0
- c_cost_fuel_res[2]: x_cost_res[2] = 0
- c_cost_fuel_res[3]: x_cost_res[3] = 0
- c_cost_fuel_res[4]: x_cost_res[4] = 0
- c_cost_fuel_res[5]: x_cost_res[5] = 0
- c_cost_fuel_res[6]: x_cost_res[6] = 0
- c_cost_fuel_res[7]: x_cost_res[7] = 0
- c_cost_fuel_res[8]: x_cost_res[8] = 0
- c_cost_fuel_res[9]: x_cost_res[9] = 0
- c_cost_fuel_res[10]: x_cost_res[10] = 0
- c_cost_fuel_res[11]: x_cost_res[11] = 0
- c_cost_fuel_res[12]: x_cost_res[12] = 0
- c_cost_fuel_res[13]: x_cost_res[13] = 0
- c_cost_fuel_res[14]: x_cost_res[14] = 0
- c_cost_fuel_res[15]: x_cost_res[15] = 0
- c_cost_fuel_res[16]: x_cost_res[16] = 0
- c_cost_fuel_res[17]: x_cost_res[17] = 0
- c_cost_fuel_res[18]: x_cost_res[18] = 0
- c_cost_fuel_res[19]: x_cost_res[19] = 0
- c_cost_fuel_res[20]: x_cost_res[20] = 0
- c_cost_fuel_res[21]: x_cost_res[21] = 0
- c_cost_fuel_res[22]: x_cost_res[22] = 0
- c_cost_fuel_res[23]: x_cost_res[23] = 0
- c_cost_fuel_res[24]: x_cost_res[24] = 0
- c_cost_fuel_res[25]: x_cost_res[25] = 0
- c_cost_fuel_res[26]: x_cost_res[26] = 0
- c_cost_fuel_res[27]: x_cost_res[27] = 0
- c_cost_fuel_res[28]: x_cost_res[28] = 0
- c_cost_fuel_res[29]: x_cost_res[29] = 0
- c_cost_fuel_res[30]: x_cost_res[30] = 0
- c_cost_fuel_res[31]: x_cost_res[31] = 0
- c_cost_fuel_res[32]: x_cost_res[32] = 0
- c_cost_fuel_res[33]: x_cost_res[33] = 0
- c_cost_fuel_res[34]: x_cost_res[34] = 0
- c_cost_fuel_res[35]: x_cost_res[35] = 0
- c_cost_fuel_res[36]: x_cost_res[36] = 0
- c_cost_fuel_res[37]: x_cost_res[37] = 0
- c_cost_fuel_res[38]: x_cost_res[38] = 0
- c_cost_fuel_res[39]: x_cost_res[39] = 0
- c_cost_fuel_res[40]: x_cost_res[40] = 0
- c_cost_fuel_res[41]: x_cost_res[41] = 0
- c_cost_fuel_res[42]: x_cost_res[42] = 0
- c_cost_fuel_res[43]: x_cost_res[43] = 0
- c_cost_fuel_res[44]: x_cost_res[44] = 0
- c_cost_fuel_res[45]: x_cost_res[45] = 0
- c_cost_fuel_res[46]: x_cost_res[46] = 0
- c_cost_fuel_res[47]: x_cost_res[47] = 0
- c_cost_fuel_res[48]: x_cost_res[48] = 0
- c_cost_fuel_res[49]: x_cost_res[49] = 0
- c_cost_fuel_res[50]: x_cost_res[50] = 0
- c_cost_fuel_res[51]: x_cost_res[51] = 0
- c_cost_fuel_res[52]: x_cost_res[52] = 0
- c_cost_fuel_res[53]: x_cost_res[53] = 0
- c_cost_fuel_res[54]: x_cost_res[54] = 0
- c_cost_fuel_res[55]: x_cost_res[55] = 0
- c_cost_fuel_res[56]: x_cost_res[56] = 0
- c_cost_fuel_res[57]: x_cost_res[57] = 0
- c_cost_fuel_res[58]: x_cost_res[58] = 0
- c_cost_fuel_res[59]: x_cost_res[59] = 0
- c_cost_fuel_res[60]: x_cost_res[60] = 0
- c_cost_fuel_res[61]: x_cost_res[61] = 0
- c_cost_fuel_res[62]: x_cost_res[62] = 0
- c_cost_fuel_res[63]: x_cost_res[63] = 0
- c_cost_fuel_res[64]: x_cost_res[64] = 0
- c_cost_fuel_res[65]: x_cost_res[65] = 0
- c_cost_fuel_res[66]: x_cost_res[66] = 0
- c_cost_fuel_res[67]: x_cost_res[67] = 0
- c_cost_fuel_res[68]: x_cost_res[68] = 0
- c_cost_fuel_res[69]: x_cost_res[69] = 0
- c_cost_fuel_res[70]: x_cost_res[70] = 0
- c_cost_fuel_res[71]: x_cost_res[71] = 0
- c_cost_fuel_res[72]: x_cost_res[72] = 0
- c_cost_fuel_res[73]: x_cost_res[73] = 0
- c_cost_fuel_res[74]: x_cost_res[74] = 0
- c_cost_fuel_res[75]: x_cost_res[75] = 0
- c_cost_fuel_res[76]: x_cost_res[76] = 0
- c_cost_fuel_res[77]: x_cost_res[77] = 0
- c_cost_fuel_res[78]: x_cost_res[78] = 0
- c_cost_fuel_res[79]: x_cost_res[79] = 0
- c_cost_fuel_res[80]: x_cost_res[80] = 0
- c_cost_fuel_res[81]: x_cost_res[81] = 0
- c_cost_fuel_res[82]: x_cost_res[82] = 0
- c_cost_fuel_res[83]: x_cost_res[83] = 0
- c_cost_fuel_res[84]: x_cost_res[84] = 0
- c_cost_fuel_res[85]: x_cost_res[85] = 0
- c_cost_fuel_res[86]: x_cost_res[86] = 0
- c_cost_fuel_res[87]: x_cost_res[87] = 0
- c_cost_fuel_res[88]: x_cost_res[88] = 0
- c_cost_fuel_res[89]: x_cost_res[89] = 0
- c_cost_fuel_res[90]: x_cost_res[90] = 0
- c_cost_fuel_res[91]: x_cost_res[91] = 0
- c_cost_fuel_res[92]: x_cost_res[92] = 0
- c_cost_fuel_res[93]: x_cost_res[93] = 0
- c_cost_fuel_res[94]: x_cost_res[94] = 0
- c_cost_fuel_res[95]: x_cost_res[95] = 0
- c_cost_OM_ESS[0]: - 0.001 x_chg[0] - 0.001 x_dis[0] + x_cost_ESS[0] = 0
- c_cost_OM_ESS[1]: - 0.001 x_chg[1] - 0.001 x_dis[1] + x_cost_ESS[1] = 0
- c_cost_OM_ESS[2]: - 0.001 x_chg[2] - 0.001 x_dis[2] + x_cost_ESS[2] = 0
- c_cost_OM_ESS[3]: - 0.001 x_chg[3] - 0.001 x_dis[3] + x_cost_ESS[3] = 0
- c_cost_OM_ESS[4]: - 0.001 x_chg[4] - 0.001 x_dis[4] + x_cost_ESS[4] = 0
- c_cost_OM_ESS[5]: - 0.001 x_chg[5] - 0.001 x_dis[5] + x_cost_ESS[5] = 0
- c_cost_OM_ESS[6]: - 0.001 x_chg[6] - 0.001 x_dis[6] + x_cost_ESS[6] = 0
- c_cost_OM_ESS[7]: - 0.001 x_chg[7] - 0.001 x_dis[7] + x_cost_ESS[7] = 0
- c_cost_OM_ESS[8]: - 0.001 x_chg[8] - 0.001 x_dis[8] + x_cost_ESS[8] = 0
- c_cost_OM_ESS[9]: - 0.001 x_chg[9] - 0.001 x_dis[9] + x_cost_ESS[9] = 0
- c_cost_OM_ESS[10]: - 0.001 x_chg[10] - 0.001 x_dis[10] + x_cost_ESS[10]
+ c_cost_fuel_res[0]: - 0.2 x_pos[0] - 0.15 x_neg[0] + x_cost_res[0] = 0
+ c_cost_fuel_res[1]: - 0.2 x_pos[1] - 0.15 x_neg[1] + x_cost_res[1] = 0
+ c_cost_fuel_res[2]: - 0.2 x_pos[2] - 0.15 x_neg[2] + x_cost_res[2] = 0
+ c_cost_fuel_res[3]: - 0.2 x_pos[3] - 0.15 x_neg[3] + x_cost_res[3] = 0
+ c_cost_fuel_res[4]: - 0.2 x_pos[4] - 0.15 x_neg[4] + x_cost_res[4] = 0
+ c_cost_fuel_res[5]: - 0.2 x_pos[5] - 0.15 x_neg[5] + x_cost_res[5] = 0
+ c_cost_fuel_res[6]: - 0.2 x_pos[6] - 0.15 x_neg[6] + x_cost_res[6] = 0
+ c_cost_fuel_res[7]: - 0.2 x_pos[7] - 0.15 x_neg[7] + x_cost_res[7] = 0
+ c_cost_fuel_res[8]: - 0.2 x_pos[8] - 0.15 x_neg[8] + x_cost_res[8] = 0
+ c_cost_fuel_res[9]: - 0.2 x_pos[9] - 0.15 x_neg[9] + x_cost_res[9] = 0
+ c_cost_fuel_res[10]: - 0.2 x_pos[10] - 0.15 x_neg[10] + x_cost_res[10]
    = 0
- c_cost_OM_ESS[11]: - 0.001 x_chg[11] - 0.001 x_dis[11] + x_cost_ESS[11]
+ c_cost_fuel_res[11]: - 0.2 x_pos[11] - 0.15 x_neg[11] + x_cost_res[11]
    = 0
- c_cost_OM_ESS[12]: - 0.001 x_chg[12] - 0.001 x_dis[12] + x_cost_ESS[12]
+ c_cost_fuel_res[12]: - 0.2 x_pos[12] - 0.15 x_neg[12] + x_cost_res[12]
    = 0
- c_cost_OM_ESS[13]: - 0.001 x_chg[13] - 0.001 x_dis[13] + x_cost_ESS[13]
+ c_cost_fuel_res[13]: - 0.2 x_pos[13] - 0.15 x_neg[13] + x_cost_res[13]
    = 0
- c_cost_OM_ESS[14]: - 0.001 x_chg[14] - 0.001 x_dis[14] + x_cost_ESS[14]
+ c_cost_fuel_res[14]: - 0.2 x_pos[14] - 0.15 x_neg[14] + x_cost_res[14]
    = 0
- c_cost_OM_ESS[15]: - 0.001 x_chg[15] - 0.001 x_dis[15] + x_cost_ESS[15]
+ c_cost_fuel_res[15]: - 0.2 x_pos[15] - 0.15 x_neg[15] + x_cost_res[15]
    = 0
- c_cost_OM_ESS[16]: - 0.001 x_chg[16] - 0.001 x_dis[16] + x_cost_ESS[16]
+ c_cost_fuel_res[16]: - 0.2 x_pos[16] - 0.15 x_neg[16] + x_cost_res[16]
    = 0
- c_cost_OM_ESS[17]: - 0.001 x_chg[17] - 0.001 x_dis[17] + x_cost_ESS[17]
+ c_cost_fuel_res[17]: - 0.2 x_pos[17] - 0.15 x_neg[17] + x_cost_res[17]
    = 0
- c_cost_OM_ESS[18]: - 0.001 x_chg[18] - 0.001 x_dis[18] + x_cost_ESS[18]
+ c_cost_fuel_res[18]: - 0.2 x_pos[18] - 0.15 x_neg[18] + x_cost_res[18]
    = 0
- c_cost_OM_ESS[19]: - 0.001 x_chg[19] - 0.001 x_dis[19] + x_cost_ESS[19]
+ c_cost_fuel_res[19]: - 0.2 x_pos[19] - 0.15 x_neg[19] + x_cost_res[19]
    = 0
- c_cost_OM_ESS[20]: - 0.001 x_chg[20] - 0.001 x_dis[20] + x_cost_ESS[20]
+ c_cost_fuel_res[20]: - 0.2 x_pos[20] - 0.15 x_neg[20] + x_cost_res[20]
    = 0
- c_cost_OM_ESS[21]: - 0.001 x_chg[21] - 0.001 x_dis[21] + x_cost_ESS[21]
+ c_cost_fuel_res[21]: - 0.2 x_pos[21] - 0.15 x_neg[21] + x_cost_res[21]
    = 0
- c_cost_OM_ESS[22]: - 0.001 x_chg[22] - 0.001 x_dis[22] + x_cost_ESS[22]
+ c_cost_fuel_res[22]: - 0.2 x_pos[22] - 0.15 x_neg[22] + x_cost_res[22]
    = 0
- c_cost_OM_ESS[23]: - 0.001 x_chg[23] - 0.001 x_dis[23] + x_cost_ESS[23]
+ c_cost_fuel_res[23]: - 0.2 x_pos[23] - 0.15 x_neg[23] + x_cost_res[23]
    = 0
- c_cost_OM_ESS[24]: - 0.001 x_chg[24] - 0.001 x_dis[24] + x_cost_ESS[24]
+ c_cost_fuel_res[24]: - 0.2 x_pos[24] - 0.15 x_neg[24] + x_cost_res[24]
    = 0
- c_cost_OM_ESS[25]: - 0.001 x_chg[25] - 0.001 x_dis[25] + x_cost_ESS[25]
+ c_cost_fuel_res[25]: - 0.2 x_pos[25] - 0.15 x_neg[25] + x_cost_res[25]
    = 0
- c_cost_OM_ESS[26]: - 0.001 x_chg[26] - 0.001 x_dis[26] + x_cost_ESS[26]
+ c_cost_fuel_res[26]: - 0.2 x_pos[26] - 0.15 x_neg[26] + x_cost_res[26]
    = 0
- c_cost_OM_ESS[27]: - 0.001 x_chg[27] - 0.001 x_dis[27] + x_cost_ESS[27]
+ c_cost_fuel_res[27]: - 0.2 x_pos[27] - 0.15 x_neg[27] + x_cost_res[27]
    = 0
- c_cost_OM_ESS[28]: - 0.001 x_chg[28] - 0.001 x_dis[28] + x_cost_ESS[28]
+ c_cost_fuel_res[28]: - 0.2 x_pos[28] - 0.15 x_neg[28] + x_cost_res[28]
    = 0
- c_cost_OM_ESS[29]: - 0.001 x_chg[29] - 0.001 x_dis[29] + x_cost_ESS[29]
+ c_cost_fuel_res[29]: - 0.2 x_pos[29] - 0.15 x_neg[29] + x_cost_res[29]
    = 0
- c_cost_OM_ESS[30]: - 0.001 x_chg[30] - 0.001 x_dis[30] + x_cost_ESS[30]
+ c_cost_fuel_res[30]: - 0.2 x_pos[30] - 0.15 x_neg[30] + x_cost_res[30]
    = 0
- c_cost_OM_ESS[31]: - 0.001 x_chg[31] - 0.001 x_dis[31] + x_cost_ESS[31]
+ c_cost_fuel_res[31]: - 0.2 x_pos[31] - 0.15 x_neg[31] + x_cost_res[31]
    = 0
- c_cost_OM_ESS[32]: - 0.001 x_chg[32] - 0.001 x_dis[32] + x_cost_ESS[32]
+ c_cost_fuel_res[32]: - 0.2 x_pos[32] - 0.15 x_neg[32] + x_cost_res[32]
    = 0
- c_cost_OM_ESS[33]: - 0.001 x_chg[33] - 0.001 x_dis[33] + x_cost_ESS[33]
+ c_cost_fuel_res[33]: - 0.2 x_pos[33] - 0.15 x_neg[33] + x_cost_res[33]
    = 0
- c_cost_OM_ESS[34]: - 0.001 x_chg[34] - 0.001 x_dis[34] + x_cost_ESS[34]
+ c_cost_fuel_res[34]: - 0.2 x_pos[34] - 0.15 x_neg[34] + x_cost_res[34]
    = 0
- c_cost_OM_ESS[35]: - 0.001 x_chg[35] - 0.001 x_dis[35] + x_cost_ESS[35]
+ c_cost_fuel_res[35]: - 0.2 x_pos[35] - 0.15 x_neg[35] + x_cost_res[35]
    = 0
- c_cost_OM_ESS[36]: - 0.001 x_chg[36] - 0.001 x_dis[36] + x_cost_ESS[36]
+ c_cost_fuel_res[36]: - 0.2 x_pos[36] - 0.15 x_neg[36] + x_cost_res[36]
    = 0
- c_cost_OM_ESS[37]: - 0.001 x_chg[37] - 0.001 x_dis[37] + x_cost_ESS[37]
+ c_cost_fuel_res[37]: - 0.2 x_pos[37] - 0.15 x_neg[37] + x_cost_res[37]
    = 0
- c_cost_OM_ESS[38]: - 0.001 x_chg[38] - 0.001 x_dis[38] + x_cost_ESS[38]
+ c_cost_fuel_res[38]: - 0.2 x_pos[38] - 0.15 x_neg[38] + x_cost_res[38]
    = 0
- c_cost_OM_ESS[39]: - 0.001 x_chg[39] - 0.001 x_dis[39] + x_cost_ESS[39]
+ c_cost_fuel_res[39]: - 0.2 x_pos[39] - 0.15 x_neg[39] + x_cost_res[39]
    = 0
- c_cost_OM_ESS[40]: - 0.001 x_chg[40] - 0.001 x_dis[40] + x_cost_ESS[40]
+ c_cost_fuel_res[40]: - 0.2 x_pos[40] - 0.15 x_neg[40] + x_cost_res[40]
    = 0
- c_cost_OM_ESS[41]: - 0.001 x_chg[41] - 0.001 x_dis[41] + x_cost_ESS[41]
+ c_cost_fuel_res[41]: - 0.2 x_pos[41] - 0.15 x_neg[41] + x_cost_res[41]
    = 0
- c_cost_OM_ESS[42]: - 0.001 x_chg[42] - 0.001 x_dis[42] + x_cost_ESS[42]
+ c_cost_fuel_res[42]: - 0.2 x_pos[42] - 0.15 x_neg[42] + x_cost_res[42]
    = 0
- c_cost_OM_ESS[43]: - 0.001 x_chg[43] - 0.001 x_dis[43] + x_cost_ESS[43]
+ c_cost_fuel_res[43]: - 0.2 x_pos[43] - 0.15 x_neg[43] + x_cost_res[43]
    = 0
- c_cost_OM_ESS[44]: - 0.001 x_chg[44] - 0.001 x_dis[44] + x_cost_ESS[44]
+ c_cost_fuel_res[44]: - 0.2 x_pos[44] - 0.15 x_neg[44] + x_cost_res[44]
    = 0
- c_cost_OM_ESS[45]: - 0.001 x_chg[45] - 0.001 x_dis[45] + x_cost_ESS[45]
+ c_cost_fuel_res[45]: - 0.2 x_pos[45] - 0.15 x_neg[45] + x_cost_res[45]
    = 0
- c_cost_OM_ESS[46]: - 0.001 x_chg[46] - 0.001 x_dis[46] + x_cost_ESS[46]
+ c_cost_fuel_res[46]: - 0.2 x_pos[46] - 0.15 x_neg[46] + x_cost_res[46]
    = 0
- c_cost_OM_ESS[47]: - 0.001 x_chg[47] - 0.001 x_dis[47] + x_cost_ESS[47]
+ c_cost_fuel_res[47]: - 0.2 x_pos[47] - 0.15 x_neg[47] + x_cost_res[47]
    = 0
- c_cost_OM_ESS[48]: - 0.001 x_chg[48] - 0.001 x_dis[48] + x_cost_ESS[48]
+ c_cost_fuel_res[48]: - 0.2 x_pos[48] - 0.15 x_neg[48] + x_cost_res[48]
    = 0
- c_cost_OM_ESS[49]: - 0.001 x_chg[49] - 0.001 x_dis[49] + x_cost_ESS[49]
+ c_cost_fuel_res[49]: - 0.2 x_pos[49] - 0.15 x_neg[49] + x_cost_res[49]
    = 0
- c_cost_OM_ESS[50]: - 0.001 x_chg[50] - 0.001 x_dis[50] + x_cost_ESS[50]
+ c_cost_fuel_res[50]: - 0.2 x_pos[50] - 0.15 x_neg[50] + x_cost_res[50]
    = 0
- c_cost_OM_ESS[51]: - 0.001 x_chg[51] - 0.001 x_dis[51] + x_cost_ESS[51]
+ c_cost_fuel_res[51]: - 0.2 x_pos[51] - 0.15 x_neg[51] + x_cost_res[51]
    = 0
- c_cost_OM_ESS[52]: - 0.001 x_chg[52] - 0.001 x_dis[52] + x_cost_ESS[52]
+ c_cost_fuel_res[52]: - 0.2 x_pos[52] - 0.15 x_neg[52] + x_cost_res[52]
    = 0
- c_cost_OM_ESS[53]: - 0.001 x_chg[53] - 0.001 x_dis[53] + x_cost_ESS[53]
+ c_cost_fuel_res[53]: - 0.2 x_pos[53] - 0.15 x_neg[53] + x_cost_res[53]
    = 0
- c_cost_OM_ESS[54]: - 0.001 x_chg[54] - 0.001 x_dis[54] + x_cost_ESS[54]
+ c_cost_fuel_res[54]: - 0.2 x_pos[54] - 0.15 x_neg[54] + x_cost_res[54]
    = 0
- c_cost_OM_ESS[55]: - 0.001 x_chg[55] - 0.001 x_dis[55] + x_cost_ESS[55]
+ c_cost_fuel_res[55]: - 0.2 x_pos[55] - 0.15 x_neg[55] + x_cost_res[55]
    = 0
- c_cost_OM_ESS[56]: - 0.001 x_chg[56] - 0.001 x_dis[56] + x_cost_ESS[56]
+ c_cost_fuel_res[56]: - 0.2 x_pos[56] - 0.15 x_neg[56] + x_cost_res[56]
    = 0
- c_cost_OM_ESS[57]: - 0.001 x_chg[57] - 0.001 x_dis[57] + x_cost_ESS[57]
+ c_cost_fuel_res[57]: - 0.2 x_pos[57] - 0.15 x_neg[57] + x_cost_res[57]
    = 0
- c_cost_OM_ESS[58]: - 0.001 x_chg[58] - 0.001 x_dis[58] + x_cost_ESS[58]
+ c_cost_fuel_res[58]: - 0.2 x_pos[58] - 0.15 x_neg[58] + x_cost_res[58]
    = 0
- c_cost_OM_ESS[59]: - 0.001 x_chg[59] - 0.001 x_dis[59] + x_cost_ESS[59]
+ c_cost_fuel_res[59]: - 0.2 x_pos[59] - 0.15 x_neg[59] + x_cost_res[59]
    = 0
- c_cost_OM_ESS[60]: - 0.001 x_chg[60] - 0.001 x_dis[60] + x_cost_ESS[60]
+ c_cost_fuel_res[60]: - 0.2 x_pos[60] - 0.15 x_neg[60] + x_cost_res[60]
    = 0
- c_cost_OM_ESS[61]: - 0.001 x_chg[61] - 0.001 x_dis[61] + x_cost_ESS[61]
+ c_cost_fuel_res[61]: - 0.2 x_pos[61] - 0.15 x_neg[61] + x_cost_res[61]
    = 0
- c_cost_OM_ESS[62]: - 0.001 x_chg[62] - 0.001 x_dis[62] + x_cost_ESS[62]
+ c_cost_fuel_res[62]: - 0.2 x_pos[62] - 0.15 x_neg[62] + x_cost_res[62]
    = 0
- c_cost_OM_ESS[63]: - 0.001 x_chg[63] - 0.001 x_dis[63] + x_cost_ESS[63]
+ c_cost_fuel_res[63]: - 0.2 x_pos[63] - 0.15 x_neg[63] + x_cost_res[63]
    = 0
- c_cost_OM_ESS[64]: - 0.001 x_chg[64] - 0.001 x_dis[64] + x_cost_ESS[64]
+ c_cost_fuel_res[64]: - 0.2 x_pos[64] - 0.15 x_neg[64] + x_cost_res[64]
    = 0
- c_cost_OM_ESS[65]: - 0.001 x_chg[65] - 0.001 x_dis[65] + x_cost_ESS[65]
+ c_cost_fuel_res[65]: - 0.2 x_pos[65] - 0.15 x_neg[65] + x_cost_res[65]
    = 0
- c_cost_OM_ESS[66]: - 0.001 x_chg[66] - 0.001 x_dis[66] + x_cost_ESS[66]
+ c_cost_fuel_res[66]: - 0.2 x_pos[66] - 0.15 x_neg[66] + x_cost_res[66]
    = 0
- c_cost_OM_ESS[67]: - 0.001 x_chg[67] - 0.001 x_dis[67] + x_cost_ESS[67]
+ c_cost_fuel_res[67]: - 0.2 x_pos[67] - 0.15 x_neg[67] + x_cost_res[67]
    = 0
- c_cost_OM_ESS[68]: - 0.001 x_chg[68] - 0.001 x_dis[68] + x_cost_ESS[68]
+ c_cost_fuel_res[68]: - 0.2 x_pos[68] - 0.15 x_neg[68] + x_cost_res[68]
    = 0
- c_cost_OM_ESS[69]: - 0.001 x_chg[69] - 0.001 x_dis[69] + x_cost_ESS[69]
+ c_cost_fuel_res[69]: - 0.2 x_pos[69] - 0.15 x_neg[69] + x_cost_res[69]
    = 0
- c_cost_OM_ESS[70]: - 0.001 x_chg[70] - 0.001 x_dis[70] + x_cost_ESS[70]
+ c_cost_fuel_res[70]: - 0.2 x_pos[70] - 0.15 x_neg[70] + x_cost_res[70]
    = 0
- c_cost_OM_ESS[71]: - 0.001 x_chg[71] - 0.001 x_dis[71] + x_cost_ESS[71]
+ c_cost_fuel_res[71]: - 0.2 x_pos[71] - 0.15 x_neg[71] + x_cost_res[71]
    = 0
- c_cost_OM_ESS[72]: - 0.001 x_chg[72] - 0.001 x_dis[72] + x_cost_ESS[72]
+ c_cost_fuel_res[72]: - 0.2 x_pos[72] - 0.15 x_neg[72] + x_cost_res[72]
    = 0
- c_cost_OM_ESS[73]: - 0.001 x_chg[73] - 0.001 x_dis[73] + x_cost_ESS[73]
+ c_cost_fuel_res[73]: - 0.2 x_pos[73] - 0.15 x_neg[73] + x_cost_res[73]
    = 0
- c_cost_OM_ESS[74]: - 0.001 x_chg[74] - 0.001 x_dis[74] + x_cost_ESS[74]
+ c_cost_fuel_res[74]: - 0.2 x_pos[74] - 0.15 x_neg[74] + x_cost_res[74]
    = 0
- c_cost_OM_ESS[75]: - 0.001 x_chg[75] - 0.001 x_dis[75] + x_cost_ESS[75]
+ c_cost_fuel_res[75]: - 0.2 x_pos[75] - 0.15 x_neg[75] + x_cost_res[75]
    = 0
- c_cost_OM_ESS[76]: - 0.001 x_chg[76] - 0.001 x_dis[76] + x_cost_ESS[76]
+ c_cost_fuel_res[76]: - 0.2 x_pos[76] - 0.15 x_neg[76] + x_cost_res[76]
    = 0
- c_cost_OM_ESS[77]: - 0.001 x_chg[77] - 0.001 x_dis[77] + x_cost_ESS[77]
+ c_cost_fuel_res[77]: - 0.2 x_pos[77] - 0.15 x_neg[77] + x_cost_res[77]
    = 0
- c_cost_OM_ESS[78]: - 0.001 x_chg[78] - 0.001 x_dis[78] + x_cost_ESS[78]
+ c_cost_fuel_res[78]: - 0.2 x_pos[78] - 0.15 x_neg[78] + x_cost_res[78]
    = 0
- c_cost_OM_ESS[79]: - 0.001 x_chg[79] - 0.001 x_dis[79] + x_cost_ESS[79]
+ c_cost_fuel_res[79]: - 0.2 x_pos[79] - 0.15 x_neg[79] + x_cost_res[79]
    = 0
- c_cost_OM_ESS[80]: - 0.001 x_chg[80] - 0.001 x_dis[80] + x_cost_ESS[80]
+ c_cost_fuel_res[80]: - 0.2 x_pos[80] - 0.15 x_neg[80] + x_cost_res[80]
    = 0
- c_cost_OM_ESS[81]: - 0.001 x_chg[81] - 0.001 x_dis[81] + x_cost_ESS[81]
+ c_cost_fuel_res[81]: - 0.2 x_pos[81] - 0.15 x_neg[81] + x_cost_res[81]
    = 0
- c_cost_OM_ESS[82]: - 0.001 x_chg[82] - 0.001 x_dis[82] + x_cost_ESS[82]
+ c_cost_fuel_res[82]: - 0.2 x_pos[82] - 0.15 x_neg[82] + x_cost_res[82]
    = 0
- c_cost_OM_ESS[83]: - 0.001 x_chg[83] - 0.001 x_dis[83] + x_cost_ESS[83]
+ c_cost_fuel_res[83]: - 0.2 x_pos[83] - 0.15 x_neg[83] + x_cost_res[83]
    = 0
- c_cost_OM_ESS[84]: - 0.001 x_chg[84] - 0.001 x_dis[84] + x_cost_ESS[84]
+ c_cost_fuel_res[84]: - 0.2 x_pos[84] - 0.15 x_neg[84] + x_cost_res[84]
    = 0
- c_cost_OM_ESS[85]: - 0.001 x_chg[85] - 0.001 x_dis[85] + x_cost_ESS[85]
+ c_cost_fuel_res[85]: - 0.2 x_pos[85] - 0.15 x_neg[85] + x_cost_res[85]
    = 0
- c_cost_OM_ESS[86]: - 0.001 x_chg[86] - 0.001 x_dis[86] + x_cost_ESS[86]
+ c_cost_fuel_res[86]: - 0.2 x_pos[86] - 0.15 x_neg[86] + x_cost_res[86]
    = 0
- c_cost_OM_ESS[87]: - 0.001 x_chg[87] - 0.001 x_dis[87] + x_cost_ESS[87]
-   = 0
- c_cost_OM_ESS[88]: - 0.001 x_chg[88] - 0.001 x_dis[88] + x_cost_ESS[88]
-   = 0
- c_cost_OM_ESS[89]: - 0.001 x_chg[89] - 0.001 x_dis[89] + x_cost_ESS[89]
-   = 0
- c_cost_OM_ESS[90]: - 0.001 x_chg[90] - 0.001 x_dis[90] + x_cost_ESS[90]
-   = 0
- c_cost_OM_ESS[91]: - 0.001 x_chg[91] - 0.001 x_dis[91] + x_cost_ESS[91]
-   = 0
- c_cost_OM_ESS[92]: - 0.001 x_chg[92] - 0.001 x_dis[92] + x_cost_ESS[92]
-   = 0
- c_cost_OM_ESS[93]: - 0.001 x_chg[93] - 0.001 x_dis[93] + x_cost_ESS[93]
-   = 0
- c_cost_OM_ESS[94]: - 0.001 x_chg[94] - 0.001 x_dis[94] + x_cost_ESS[94]
-   = 0
- c_cost_OM_ESS[95]: - 0.001 x_chg[95] - 0.001 x_dis[95] + x_cost_ESS[95]
-   = 0
+ c_cost_fuel_res[87]: - 0.2 x_pos[87] - 0.15 x_neg[87] + x_cost_res[87]
+   = 0
+ c_cost_fuel_res[88]: - 0.2 x_pos[88] - 0.15 x_neg[88] + x_cost_res[88]
+   = 0
+ c_cost_fuel_res[89]: - 0.2 x_pos[89] - 0.15 x_neg[89] + x_cost_res[89]
+   = 0
+ c_cost_fuel_res[90]: - 0.2 x_pos[90] - 0.15 x_neg[90] + x_cost_res[90]
+   = 0
+ c_cost_fuel_res[91]: - 0.2 x_pos[91] - 0.15 x_neg[91] + x_cost_res[91]
+   = 0
+ c_cost_fuel_res[92]: - 0.2 x_pos[92] - 0.15 x_neg[92] + x_cost_res[92]
+   = 0
+ c_cost_fuel_res[93]: - 0.2 x_pos[93] - 0.15 x_neg[93] + x_cost_res[93]
+   = 0
+ c_cost_fuel_res[94]: - 0.2 x_pos[94] - 0.15 x_neg[94] + x_cost_res[94]
+   = 0
+ c_cost_fuel_res[95]: - 0.2 x_pos[95] - 0.15 x_neg[95] + x_cost_res[95]
+   = 0
+ c_cost_OM_ESS[0]: - 0.3 x_chg[0] - 0.3 x_dis[0] + x_cost_ESS[0] = 0
+ c_cost_OM_ESS[1]: - 0.3 x_chg[1] - 0.3 x_dis[1] + x_cost_ESS[1] = 0
+ c_cost_OM_ESS[2]: - 0.3 x_chg[2] - 0.3 x_dis[2] + x_cost_ESS[2] = 0
+ c_cost_OM_ESS[3]: - 0.3 x_chg[3] - 0.3 x_dis[3] + x_cost_ESS[3] = 0
+ c_cost_OM_ESS[4]: - 0.3 x_chg[4] - 0.3 x_dis[4] + x_cost_ESS[4] = 0
+ c_cost_OM_ESS[5]: - 0.3 x_chg[5] - 0.3 x_dis[5] + x_cost_ESS[5] = 0
+ c_cost_OM_ESS[6]: - 0.3 x_chg[6] - 0.3 x_dis[6] + x_cost_ESS[6] = 0
+ c_cost_OM_ESS[7]: - 0.3 x_chg[7] - 0.3 x_dis[7] + x_cost_ESS[7] = 0
+ c_cost_OM_ESS[8]: - 0.3 x_chg[8] - 0.3 x_dis[8] + x_cost_ESS[8] = 0
+ c_cost_OM_ESS[9]: - 0.3 x_chg[9] - 0.3 x_dis[9] + x_cost_ESS[9] = 0
+ c_cost_OM_ESS[10]: - 0.3 x_chg[10] - 0.3 x_dis[10] + x_cost_ESS[10] = 0
+ c_cost_OM_ESS[11]: - 0.3 x_chg[11] - 0.3 x_dis[11] + x_cost_ESS[11] = 0
+ c_cost_OM_ESS[12]: - 0.3 x_chg[12] - 0.3 x_dis[12] + x_cost_ESS[12] = 0
+ c_cost_OM_ESS[13]: - 0.3 x_chg[13] - 0.3 x_dis[13] + x_cost_ESS[13] = 0
+ c_cost_OM_ESS[14]: - 0.3 x_chg[14] - 0.3 x_dis[14] + x_cost_ESS[14] = 0
+ c_cost_OM_ESS[15]: - 0.3 x_chg[15] - 0.3 x_dis[15] + x_cost_ESS[15] = 0
+ c_cost_OM_ESS[16]: - 0.3 x_chg[16] - 0.3 x_dis[16] + x_cost_ESS[16] = 0
+ c_cost_OM_ESS[17]: - 0.3 x_chg[17] - 0.3 x_dis[17] + x_cost_ESS[17] = 0
+ c_cost_OM_ESS[18]: - 0.3 x_chg[18] - 0.3 x_dis[18] + x_cost_ESS[18] = 0
+ c_cost_OM_ESS[19]: - 0.3 x_chg[19] - 0.3 x_dis[19] + x_cost_ESS[19] = 0
+ c_cost_OM_ESS[20]: - 0.3 x_chg[20] - 0.3 x_dis[20] + x_cost_ESS[20] = 0
+ c_cost_OM_ESS[21]: - 0.3 x_chg[21] - 0.3 x_dis[21] + x_cost_ESS[21] = 0
+ c_cost_OM_ESS[22]: - 0.3 x_chg[22] - 0.3 x_dis[22] + x_cost_ESS[22] = 0
+ c_cost_OM_ESS[23]: - 0.3 x_chg[23] - 0.3 x_dis[23] + x_cost_ESS[23] = 0
+ c_cost_OM_ESS[24]: - 0.3 x_chg[24] - 0.3 x_dis[24] + x_cost_ESS[24] = 0
+ c_cost_OM_ESS[25]: - 0.3 x_chg[25] - 0.3 x_dis[25] + x_cost_ESS[25] = 0
+ c_cost_OM_ESS[26]: - 0.3 x_chg[26] - 0.3 x_dis[26] + x_cost_ESS[26] = 0
+ c_cost_OM_ESS[27]: - 0.3 x_chg[27] - 0.3 x_dis[27] + x_cost_ESS[27] = 0
+ c_cost_OM_ESS[28]: - 0.3 x_chg[28] - 0.3 x_dis[28] + x_cost_ESS[28] = 0
+ c_cost_OM_ESS[29]: - 0.3 x_chg[29] - 0.3 x_dis[29] + x_cost_ESS[29] = 0
+ c_cost_OM_ESS[30]: - 0.3 x_chg[30] - 0.3 x_dis[30] + x_cost_ESS[30] = 0
+ c_cost_OM_ESS[31]: - 0.3 x_chg[31] - 0.3 x_dis[31] + x_cost_ESS[31] = 0
+ c_cost_OM_ESS[32]: - 0.3 x_chg[32] - 0.3 x_dis[32] + x_cost_ESS[32] = 0
+ c_cost_OM_ESS[33]: - 0.3 x_chg[33] - 0.3 x_dis[33] + x_cost_ESS[33] = 0
+ c_cost_OM_ESS[34]: - 0.3 x_chg[34] - 0.3 x_dis[34] + x_cost_ESS[34] = 0
+ c_cost_OM_ESS[35]: - 0.3 x_chg[35] - 0.3 x_dis[35] + x_cost_ESS[35] = 0
+ c_cost_OM_ESS[36]: - 0.3 x_chg[36] - 0.3 x_dis[36] + x_cost_ESS[36] = 0
+ c_cost_OM_ESS[37]: - 0.3 x_chg[37] - 0.3 x_dis[37] + x_cost_ESS[37] = 0
+ c_cost_OM_ESS[38]: - 0.3 x_chg[38] - 0.3 x_dis[38] + x_cost_ESS[38] = 0
+ c_cost_OM_ESS[39]: - 0.3 x_chg[39] - 0.3 x_dis[39] + x_cost_ESS[39] = 0
+ c_cost_OM_ESS[40]: - 0.3 x_chg[40] - 0.3 x_dis[40] + x_cost_ESS[40] = 0
+ c_cost_OM_ESS[41]: - 0.3 x_chg[41] - 0.3 x_dis[41] + x_cost_ESS[41] = 0
+ c_cost_OM_ESS[42]: - 0.3 x_chg[42] - 0.3 x_dis[42] + x_cost_ESS[42] = 0
+ c_cost_OM_ESS[43]: - 0.3 x_chg[43] - 0.3 x_dis[43] + x_cost_ESS[43] = 0
+ c_cost_OM_ESS[44]: - 0.3 x_chg[44] - 0.3 x_dis[44] + x_cost_ESS[44] = 0
+ c_cost_OM_ESS[45]: - 0.3 x_chg[45] - 0.3 x_dis[45] + x_cost_ESS[45] = 0
+ c_cost_OM_ESS[46]: - 0.3 x_chg[46] - 0.3 x_dis[46] + x_cost_ESS[46] = 0
+ c_cost_OM_ESS[47]: - 0.3 x_chg[47] - 0.3 x_dis[47] + x_cost_ESS[47] = 0
+ c_cost_OM_ESS[48]: - 0.3 x_chg[48] - 0.3 x_dis[48] + x_cost_ESS[48] = 0
+ c_cost_OM_ESS[49]: - 0.3 x_chg[49] - 0.3 x_dis[49] + x_cost_ESS[49] = 0
+ c_cost_OM_ESS[50]: - 0.3 x_chg[50] - 0.3 x_dis[50] + x_cost_ESS[50] = 0
+ c_cost_OM_ESS[51]: - 0.3 x_chg[51] - 0.3 x_dis[51] + x_cost_ESS[51] = 0
+ c_cost_OM_ESS[52]: - 0.3 x_chg[52] - 0.3 x_dis[52] + x_cost_ESS[52] = 0
+ c_cost_OM_ESS[53]: - 0.3 x_chg[53] - 0.3 x_dis[53] + x_cost_ESS[53] = 0
+ c_cost_OM_ESS[54]: - 0.3 x_chg[54] - 0.3 x_dis[54] + x_cost_ESS[54] = 0
+ c_cost_OM_ESS[55]: - 0.3 x_chg[55] - 0.3 x_dis[55] + x_cost_ESS[55] = 0
+ c_cost_OM_ESS[56]: - 0.3 x_chg[56] - 0.3 x_dis[56] + x_cost_ESS[56] = 0
+ c_cost_OM_ESS[57]: - 0.3 x_chg[57] - 0.3 x_dis[57] + x_cost_ESS[57] = 0
+ c_cost_OM_ESS[58]: - 0.3 x_chg[58] - 0.3 x_dis[58] + x_cost_ESS[58] = 0
+ c_cost_OM_ESS[59]: - 0.3 x_chg[59] - 0.3 x_dis[59] + x_cost_ESS[59] = 0
+ c_cost_OM_ESS[60]: - 0.3 x_chg[60] - 0.3 x_dis[60] + x_cost_ESS[60] = 0
+ c_cost_OM_ESS[61]: - 0.3 x_chg[61] - 0.3 x_dis[61] + x_cost_ESS[61] = 0
+ c_cost_OM_ESS[62]: - 0.3 x_chg[62] - 0.3 x_dis[62] + x_cost_ESS[62] = 0
+ c_cost_OM_ESS[63]: - 0.3 x_chg[63] - 0.3 x_dis[63] + x_cost_ESS[63] = 0
+ c_cost_OM_ESS[64]: - 0.3 x_chg[64] - 0.3 x_dis[64] + x_cost_ESS[64] = 0
+ c_cost_OM_ESS[65]: - 0.3 x_chg[65] - 0.3 x_dis[65] + x_cost_ESS[65] = 0
+ c_cost_OM_ESS[66]: - 0.3 x_chg[66] - 0.3 x_dis[66] + x_cost_ESS[66] = 0
+ c_cost_OM_ESS[67]: - 0.3 x_chg[67] - 0.3 x_dis[67] + x_cost_ESS[67] = 0
+ c_cost_OM_ESS[68]: - 0.3 x_chg[68] - 0.3 x_dis[68] + x_cost_ESS[68] = 0
+ c_cost_OM_ESS[69]: - 0.3 x_chg[69] - 0.3 x_dis[69] + x_cost_ESS[69] = 0
+ c_cost_OM_ESS[70]: - 0.3 x_chg[70] - 0.3 x_dis[70] + x_cost_ESS[70] = 0
+ c_cost_OM_ESS[71]: - 0.3 x_chg[71] - 0.3 x_dis[71] + x_cost_ESS[71] = 0
+ c_cost_OM_ESS[72]: - 0.3 x_chg[72] - 0.3 x_dis[72] + x_cost_ESS[72] = 0
+ c_cost_OM_ESS[73]: - 0.3 x_chg[73] - 0.3 x_dis[73] + x_cost_ESS[73] = 0
+ c_cost_OM_ESS[74]: - 0.3 x_chg[74] - 0.3 x_dis[74] + x_cost_ESS[74] = 0
+ c_cost_OM_ESS[75]: - 0.3 x_chg[75] - 0.3 x_dis[75] + x_cost_ESS[75] = 0
+ c_cost_OM_ESS[76]: - 0.3 x_chg[76] - 0.3 x_dis[76] + x_cost_ESS[76] = 0
+ c_cost_OM_ESS[77]: - 0.3 x_chg[77] - 0.3 x_dis[77] + x_cost_ESS[77] = 0
+ c_cost_OM_ESS[78]: - 0.3 x_chg[78] - 0.3 x_dis[78] + x_cost_ESS[78] = 0
+ c_cost_OM_ESS[79]: - 0.3 x_chg[79] - 0.3 x_dis[79] + x_cost_ESS[79] = 0
+ c_cost_OM_ESS[80]: - 0.3 x_chg[80] - 0.3 x_dis[80] + x_cost_ESS[80] = 0
+ c_cost_OM_ESS[81]: - 0.3 x_chg[81] - 0.3 x_dis[81] + x_cost_ESS[81] = 0
+ c_cost_OM_ESS[82]: - 0.3 x_chg[82] - 0.3 x_dis[82] + x_cost_ESS[82] = 0
+ c_cost_OM_ESS[83]: - 0.3 x_chg[83] - 0.3 x_dis[83] + x_cost_ESS[83] = 0
+ c_cost_OM_ESS[84]: - 0.3 x_chg[84] - 0.3 x_dis[84] + x_cost_ESS[84] = 0
+ c_cost_OM_ESS[85]: - 0.3 x_chg[85] - 0.3 x_dis[85] + x_cost_ESS[85] = 0
+ c_cost_OM_ESS[86]: - 0.3 x_chg[86] - 0.3 x_dis[86] + x_cost_ESS[86] = 0
+ c_cost_OM_ESS[87]: - 0.3 x_chg[87] - 0.3 x_dis[87] + x_cost_ESS[87] = 0
+ c_cost_OM_ESS[88]: - 0.3 x_chg[88] - 0.3 x_dis[88] + x_cost_ESS[88] = 0
+ c_cost_OM_ESS[89]: - 0.3 x_chg[89] - 0.3 x_dis[89] + x_cost_ESS[89] = 0
+ c_cost_OM_ESS[90]: - 0.3 x_chg[90] - 0.3 x_dis[90] + x_cost_ESS[90] = 0
+ c_cost_OM_ESS[91]: - 0.3 x_chg[91] - 0.3 x_dis[91] + x_cost_ESS[91] = 0
+ c_cost_OM_ESS[92]: - 0.3 x_chg[92] - 0.3 x_dis[92] + x_cost_ESS[92] = 0
+ c_cost_OM_ESS[93]: - 0.3 x_chg[93] - 0.3 x_dis[93] + x_cost_ESS[93] = 0
+ c_cost_OM_ESS[94]: - 0.3 x_chg[94] - 0.3 x_dis[94] + x_cost_ESS[94] = 0
+ c_cost_OM_ESS[95]: - 0.3 x_chg[95] - 0.3 x_dis[95] + x_cost_ESS[95] = 0
  c_reserve_pos_DG[0]: - x_pos[0] + y_pos[0] <= 0
  c_reserve_pos_DG[1]: - x_pos[1] + y_pos[1] <= 0
  c_reserve_pos_DG[2]: - x_pos[2] + y_pos[2] <= 0
@@ -3532,48 +3342,48 @@ Subject To
    - 0.2325 y_chg[95] + 0.2688172043010753 y_dis[95] - y_S[94] + y_S[95]
    = 0
  c_ESS_last_period: y_S[95] = 187.5
- c_PV_re-dispatch[0]: y_PV[0] = 1.688257630929962
- c_PV_re-dispatch[1]: y_PV[1] = 1.701572958364472
- c_PV_re-dispatch[2]: y_PV[2] = 1.701572958364472
- c_PV_re-dispatch[3]: y_PV[3] = 1.688257630929962
- c_PV_re-dispatch[4]: y_PV[4] = 1.691636786804867
+ c_PV_re-dispatch[0]: y_PV[0] = 1.694915294647217
+ c_PV_re-dispatch[1]: y_PV[1] = 1.694915294647217
+ c_PV_re-dispatch[2]: y_PV[2] = 1.694915294647217
+ c_PV_re-dispatch[3]: y_PV[3] = 1.694915294647217
+ c_PV_re-dispatch[4]: y_PV[4] = 1.694915294647217
  c_PV_re-dispatch[5]: y_PV[5] = 2.03389835357666
- c_PV_re-dispatch[6]: y_PV[6] = 2.037832562940421
- c_PV_re-dispatch[7]: y_PV[7] = 2.029964144212899
+ c_PV_re-dispatch[6]: y_PV[6] = 2.03389835357666
+ c_PV_re-dispatch[7]: y_PV[7] = 2.03389835357666
  c_PV_re-dispatch[8]: y_PV[8] = 2.03389835357666
- c_PV_re-dispatch[9]: y_PV[9] = 2.03193036095842
- c_PV_re-dispatch[10]: y_PV[10] = 2.370585421255473
+ c_PV_re-dispatch[9]: y_PV[9] = 2.03389835357666
+ c_PV_re-dispatch[10]: y_PV[10] = 2.372881412506104
  c_PV_re-dispatch[11]: y_PV[11] = 2.372881412506104
- c_PV_re-dispatch[12]: y_PV[12] = 2.371470060290423
- c_PV_re-dispatch[13]: y_PV[13] = 2.371470060290423
- c_PV_re-dispatch[14]: y_PV[14] = 2.371470060290423
- c_PV_re-dispatch[15]: y_PV[15] = 2.710251497330067
- c_PV_re-dispatch[16]: y_PV[16] = 2.712697757586364
+ c_PV_re-dispatch[12]: y_PV[12] = 2.372881412506104
+ c_PV_re-dispatch[13]: y_PV[13] = 2.372881412506104
+ c_PV_re-dispatch[14]: y_PV[14] = 2.372881412506104
+ c_PV_re-dispatch[15]: y_PV[15] = 2.711864471435547
+ c_PV_re-dispatch[16]: y_PV[16] = 2.711864471435547
  c_PV_re-dispatch[17]: y_PV[17] = 2.711864471435547
  c_PV_re-dispatch[18]: y_PV[18] = 2.711864471435547
- c_PV_re-dispatch[19]: y_PV[19] = 2.71103118528473
- c_PV_re-dispatch[20]: y_PV[20] = 3.051413087098532
- c_PV_re-dispatch[21]: y_PV[21] = 3.051413087098532
- c_PV_re-dispatch[22]: y_PV[22] = 3.051413087098532
- c_PV_re-dispatch[23]: y_PV[23] = 3.050281973631449
- c_PV_re-dispatch[24]: y_PV[24] = 3.048299485071396
- c_PV_re-dispatch[25]: y_PV[25] = 3.386999427879683
- c_PV_re-dispatch[26]: y_PV[26] = 3.048299485071396
- c_PV_re-dispatch[27]: y_PV[27] = 11.17709763542994
- c_PV_re-dispatch[28]: y_PV[28] = 19.75026374057731
- c_PV_re-dispatch[29]: y_PV[29] = 32.26229147605861
+ c_PV_re-dispatch[19]: y_PV[19] = 2.711864471435547
+ c_PV_re-dispatch[20]: y_PV[20] = 3.05084753036499
+ c_PV_re-dispatch[21]: y_PV[21] = 3.05084753036499
+ c_PV_re-dispatch[22]: y_PV[22] = 3.05084753036499
+ c_PV_re-dispatch[23]: y_PV[23] = 3.05084753036499
+ c_PV_re-dispatch[24]: y_PV[24] = 3.05084753036499
+ c_PV_re-dispatch[25]: y_PV[25] = 3.389830589294434
+ c_PV_re-dispatch[26]: y_PV[26] = 3.05084753036499
+ c_PV_re-dispatch[27]: y_PV[27] = 11.18644046783447
+ c_PV_re-dispatch[28]: y_PV[28] = 20
+ c_PV_re-dispatch[29]: y_PV[29] = 31.86440658569336
  c_PV_re-dispatch[30]: y_PV[30] = 23.72881317138672
- c_PV_re-dispatch[31]: y_PV[31] = 61.09242319416094
- c_PV_re-dispatch[32]: y_PV[32] = 100.425728676866
- c_PV_re-dispatch[33]: y_PV[33] = 134.847258620218
- c_PV_re-dispatch[34]: y_PV[34] = 154.7194996431544
- c_PV_re-dispatch[35]: y_PV[35] = 175.3014442368025
- c_PV_re-dispatch[36]: y_PV[36] = 219.928889490092
+ c_PV_re-dispatch[31]: y_PV[31] = 60.33898162841797
+ c_PV_re-dispatch[32]: y_PV[32] = 91.43868172352465
+ c_PV_re-dispatch[33]: y_PV[33] = 122.7798470926726
+ c_PV_re-dispatch[34]: y_PV[34] = 140.8737315580175
+ c_PV_re-dispatch[35]: y_PV[35] = 159.6138084487444
+ c_PV_re-dispatch[36]: y_PV[36] = 179.393131994283
  c_PV_re-dispatch[37]: y_PV[37] = 254.6545185205121
- c_PV_re-dispatch[38]: y_PV[38] = 279.2985001597765
+ c_PV_re-dispatch[38]: y_PV[38] = 253.559326171875
  c_PV_re-dispatch[39]: y_PV[39] = 292.7406849282387
  c_PV_re-dispatch[40]: y_PV[40] = 340.5126060965713
- c_PV_re-dispatch[41]: y_PV[41] = 262.6857949411971
+ c_PV_re-dispatch[41]: y_PV[41] = 361.7210043752092
  c_PV_re-dispatch[42]: y_PV[42] = 297.3103023370966
  c_PV_re-dispatch[43]: y_PV[43] = 407.6725198376838
  c_PV_re-dispatch[44]: y_PV[44] = 416.6736758781394
@@ -3581,14 +3391,14 @@ Subject To
  c_PV_re-dispatch[46]: y_PV[46] = 442.3455230525444
  c_PV_re-dispatch[47]: y_PV[47] = 449.0597107535198
  c_PV_re-dispatch[48]: y_PV[48] = 461.404220573158
- c_PV_re-dispatch[49]: y_PV[49] = 488.7586088080039
+ c_PV_re-dispatch[49]: y_PV[49] = 334.9702119927773
  c_PV_re-dispatch[50]: y_PV[50] = 463.4155779927052
  c_PV_re-dispatch[51]: y_PV[51] = 470.2541539787849
  c_PV_re-dispatch[52]: y_PV[52] = 469.0905941236034
  c_PV_re-dispatch[53]: y_PV[53] = 464.6307804494244
  c_PV_re-dispatch[54]: y_PV[54] = 473.5503711754719
- c_PV_re-dispatch[55]: y_PV[55] = 460.1709606705128
- c_PV_re-dispatch[56]: y_PV[56] = 423.1907882310301
+ c_PV_re-dispatch[55]: y_PV[55] = 384.7457580566406
+ c_PV_re-dispatch[56]: y_PV[56] = 353.559326171875
  c_PV_re-dispatch[57]: y_PV[57] = 434.9573516600105
  c_PV_re-dispatch[58]: y_PV[58] = 427.6539769387543
  c_PV_re-dispatch[59]: y_PV[59] = 459.3019890644447
@@ -3598,56 +3408,56 @@ Subject To
  c_PV_re-dispatch[63]: y_PV[63] = 398.354022343852
  c_PV_re-dispatch[64]: y_PV[64] = 299.9400287274646
  c_PV_re-dispatch[65]: y_PV[65] = 290.8867140458513
- c_PV_re-dispatch[66]: y_PV[66] = 142.0975696864392
+ c_PV_re-dispatch[66]: y_PV[66] = 122.3728790283203
  c_PV_re-dispatch[67]: y_PV[67] = 242.0775839302431
- c_PV_re-dispatch[68]: y_PV[68] = 106.9761459656245
- c_PV_re-dispatch[69]: y_PV[69] = 119.450394237943
- c_PV_re-dispatch[70]: y_PV[70] = 54.8110979077098
- c_PV_re-dispatch[71]: y_PV[71] = 60.85921922017724
- c_PV_re-dispatch[72]: y_PV[72] = 64.45368240781123
- c_PV_re-dispatch[73]: y_PV[73] = 61.13892295041811
- c_PV_re-dispatch[74]: y_PV[74] = 31.3060739773525
- c_PV_re-dispatch[75]: y_PV[75] = 12.15412297523578
- c_PV_re-dispatch[76]: y_PV[76] = 4.713224869837145
- c_PV_re-dispatch[77]: y_PV[77] = 0.3625557613329741
- c_PV_re-dispatch[78]: y_PV[78] = 0.3625557613329741
- c_PV_re-dispatch[79]: y_PV[79] = 0.3625557613329741
- c_PV_re-dispatch[80]: y_PV[80] = 0.7216577203277945
- c_PV_re-dispatch[81]: y_PV[81] = 0.7216577203277945
+ c_PV_re-dispatch[68]: y_PV[68] = 95.93220520019531
+ c_PV_re-dispatch[69]: y_PV[69] = 107.1186447143555
+ c_PV_re-dispatch[70]: y_PV[70] = 49.15254211425781
+ c_PV_re-dispatch[71]: y_PV[71] = 54.57627105712891
+ c_PV_re-dispatch[72]: y_PV[72] = 59.3220329284668
+ c_PV_re-dispatch[73]: y_PV[73] = 56.27118682861328
+ c_PV_re-dispatch[74]: y_PV[74] = 28.81355857849121
+ c_PV_re-dispatch[75]: y_PV[75] = 11.18644046783447
+ c_PV_re-dispatch[76]: y_PV[76] = 4.406779766082764
+ c_PV_re-dispatch[77]: y_PV[77] = 0.3389830589294434
+ c_PV_re-dispatch[78]: y_PV[78] = 0.3389830589294434
+ c_PV_re-dispatch[79]: y_PV[79] = 0.3389830589294434
+ c_PV_re-dispatch[80]: y_PV[80] = 0.6779661178588867
+ c_PV_re-dispatch[81]: y_PV[81] = 0.6779661178588867
  c_PV_re-dispatch[82]: y_PV[82] = 0.6779661178588867
- c_PV_re-dispatch[83]: y_PV[83] = 0.6342745153899789
- c_PV_re-dispatch[84]: y_PV[84] = 0.9670009305090363
- c_PV_re-dispatch[85]: y_PV[85] = 0.9670009305090363
- c_PV_re-dispatch[86]: y_PV[86] = 1.066897423067624
+ c_PV_re-dispatch[83]: y_PV[83] = 0.6779661178588867
+ c_PV_re-dispatch[84]: y_PV[84] = 1.01694917678833
+ c_PV_re-dispatch[85]: y_PV[85] = 1.01694917678833
+ c_PV_re-dispatch[86]: y_PV[86] = 1.01694917678833
  c_PV_re-dispatch[87]: y_PV[87] = 1.01694917678833
- c_PV_re-dispatch[88]: y_PV[88] = 1.396096021472572
- c_PV_re-dispatch[89]: y_PV[89] = 1.396096021472572
- c_PV_re-dispatch[90]: y_PV[90] = 1.396096021472572
- c_PV_re-dispatch[91]: y_PV[91] = 1.315768449962975
- c_PV_re-dispatch[92]: y_PV[92] = 1.715034835761434
- c_PV_re-dispatch[93]: y_PV[93] = 1.715034835761434
- c_PV_re-dispatch[94]: y_PV[94] = 1.715034835761434
- c_PV_re-dispatch[95]: y_PV[95] = 1.715034835761434
- c_load_re-dispatch[0]: y_load[0] = 342.083318282331
+ c_PV_re-dispatch[88]: y_PV[88] = 1.355932235717773
+ c_PV_re-dispatch[89]: y_PV[89] = 1.355932235717773
+ c_PV_re-dispatch[90]: y_PV[90] = 1.355932235717773
+ c_PV_re-dispatch[91]: y_PV[91] = 1.355932235717773
+ c_PV_re-dispatch[92]: y_PV[92] = 1.694915294647217
+ c_PV_re-dispatch[93]: y_PV[93] = 1.694915294647217
+ c_PV_re-dispatch[94]: y_PV[94] = 1.694915294647217
+ c_PV_re-dispatch[95]: y_PV[95] = 1.694915294647217
+ c_load_re-dispatch[0]: y_load[0] = 308.1600036621094
  c_load_re-dispatch[1]: y_load[1] = 340.1628624769951
- c_load_re-dispatch[2]: y_load[2] = 275.0465150611951
+ c_load_re-dispatch[2]: y_load[2] = 343.0934995872424
  c_load_re-dispatch[3]: y_load[3] = 341.7058945925562
  c_load_re-dispatch[4]: y_load[4] = 342.5410382328317
- c_load_re-dispatch[5]: y_load[5] = 345.0531949463958
+ c_load_re-dispatch[5]: y_load[5] = 310.4200134277344
  c_load_re-dispatch[6]: y_load[6] = 340.5624487605388
- c_load_re-dispatch[7]: y_load[7] = 344.5196311794196
+ c_load_re-dispatch[7]: y_load[7] = 309.9400024414063
  c_load_re-dispatch[8]: y_load[8] = 343.156983362562
  c_load_re-dispatch[9]: y_load[9] = 344.3809609090003
  c_load_re-dispatch[10]: y_load[10] = 345.6716989222679
  c_load_re-dispatch[11]: y_load[11] = 344.7592745443043
  c_load_re-dispatch[12]: y_load[12] = 343.5616099042297
  c_load_re-dispatch[13]: y_load[13] = 346.4967205249401
- c_load_re-dispatch[14]: y_load[14] = 342.5498865790269
+ c_load_re-dispatch[14]: y_load[14] = 308.1099853515625
  c_load_re-dispatch[15]: y_load[15] = 346.8191458382427
  c_load_re-dispatch[16]: y_load[16] = 340.7444014355661
  c_load_re-dispatch[17]: y_load[17] = 342.9308674396522
- c_load_re-dispatch[18]: y_load[18] = 308.1600036621094
- c_load_re-dispatch[19]: y_load[19] = 341.4325229767863
+ c_load_re-dispatch[18]: y_load[18] = 342.0207559906694
+ c_load_re-dispatch[19]: y_load[19] = 307.6300048828125
  c_load_re-dispatch[20]: y_load[20] = 342.1882353484843
  c_load_re-dispatch[21]: y_load[21] = 340.7032584359893
  c_load_re-dispatch[22]: y_load[22] = 341.3459965873957
@@ -3658,114 +3468,114 @@ Subject To
  c_load_re-dispatch[27]: y_load[27] = 338.7913803002955
  c_load_re-dispatch[28]: y_load[28] = 345.5872025625569
  c_load_re-dispatch[29]: y_load[29] = 341.710003280571
- c_load_re-dispatch[30]: y_load[30] = 269.4011845808498
+ c_load_re-dispatch[30]: y_load[30] = 343.2788080949314
  c_load_re-dispatch[31]: y_load[31] = 340.4773576134044
- c_load_re-dispatch[32]: y_load[32] = 254.9482372692126
- c_load_re-dispatch[33]: y_load[33] = 257.6966931173999
- c_load_re-dispatch[34]: y_load[34] = 256.2044457084319
- c_load_re-dispatch[35]: y_load[35] = 257.2920069403843
- c_load_re-dispatch[36]: y_load[36] = 239.6039027254593
- c_load_re-dispatch[37]: y_load[37] = 240.7998519329665
- c_load_re-dispatch[38]: y_load[38] = 240.276149991162
- c_load_re-dispatch[39]: y_load[39] = 239.5648341625707
- c_load_re-dispatch[40]: y_load[40] = 232.7919041092626
- c_load_re-dispatch[41]: y_load[41] = 382.5404792260242
- c_load_re-dispatch[42]: y_load[42] = 231.2235410142051
- c_load_re-dispatch[43]: y_load[43] = 233.4056103653213
- c_load_re-dispatch[44]: y_load[44] = 233.1381837317909
- c_load_re-dispatch[45]: y_load[45] = 232.1901299419492
- c_load_re-dispatch[46]: y_load[46] = 233.3960533483116
- c_load_re-dispatch[47]: y_load[47] = 231.8639799758656
- c_load_re-dispatch[48]: y_load[48] = 233.2984346836186
- c_load_re-dispatch[49]: y_load[49] = 233.6257014316563
- c_load_re-dispatch[50]: y_load[50] = 232.4231850304404
- c_load_re-dispatch[51]: y_load[51] = 234.2498093403663
- c_load_re-dispatch[52]: y_load[52] = 238.5095477515347
- c_load_re-dispatch[53]: y_load[53] = 239.0002967451107
- c_load_re-dispatch[54]: y_load[54] = 239.1483042193758
- c_load_re-dispatch[55]: y_load[55] = 238.3226070519502
- c_load_re-dispatch[56]: y_load[56] = 234.5973686280281
- c_load_re-dispatch[57]: y_load[57] = 236.3658626706775
- c_load_re-dispatch[58]: y_load[58] = 234.8576651089885
- c_load_re-dispatch[59]: y_load[59] = 236.8022460819903
- c_load_re-dispatch[60]: y_load[60] = 233.0705188192933
- c_load_re-dispatch[61]: y_load[61] = 234.7185754587678
- c_load_re-dispatch[62]: y_load[62] = 233.1468184780147
- c_load_re-dispatch[63]: y_load[63] = 233.8792812032937
- c_load_re-dispatch[64]: y_load[64] = 235.8138317272606
- c_load_re-dispatch[65]: y_load[65] = 234.2201224114665
- c_load_re-dispatch[66]: y_load[66] = 233.2962316379894
- c_load_re-dispatch[67]: y_load[67] = 234.3356082940418
- c_load_re-dispatch[68]: y_load[68] = 235.2174325035252
- c_load_re-dispatch[69]: y_load[69] = 236.892522061711
- c_load_re-dispatch[70]: y_load[70] = 236.5202697651437
- c_load_re-dispatch[71]: y_load[71] = 236.3729261744524
- c_load_re-dispatch[72]: y_load[72] = 245.6458379730311
- c_load_re-dispatch[73]: y_load[73] = 246.9216461838093
- c_load_re-dispatch[74]: y_load[74] = 244.65084691656
- c_load_re-dispatch[75]: y_load[75] = 244.5706056393098
- c_load_re-dispatch[76]: y_load[76] = 253.0418282577425
- c_load_re-dispatch[77]: y_load[77] = 253.3167706079635
- c_load_re-dispatch[78]: y_load[78] = 252.6418825388104
- c_load_re-dispatch[79]: y_load[79] = 252.9585011196874
- c_load_re-dispatch[80]: y_load[80] = 259.8105712632139
- c_load_re-dispatch[81]: y_load[81] = 259.4332587612832
- c_load_re-dispatch[82]: y_load[82] = 260.3422263213062
- c_load_re-dispatch[83]: y_load[83] = 259.1931572100821
- c_load_re-dispatch[84]: y_load[84] = 265.0306981287023
- c_load_re-dispatch[85]: y_load[85] = 264.6461135825616
- c_load_re-dispatch[86]: y_load[86] = 264.5237588529208
- c_load_re-dispatch[87]: y_load[87] = 265.3191232405201
- c_load_re-dispatch[88]: y_load[88] = 270.3163558242194
- c_load_re-dispatch[89]: y_load[89] = 271.0929730736691
- c_load_re-dispatch[90]: y_load[90] = 271.3875294555419
- c_load_re-dispatch[91]: y_load[91] = 270.9144356342978
- c_load_re-dispatch[92]: y_load[92] = 275.3595093449506
- c_load_re-dispatch[93]: y_load[93] = 274.6293535882788
- c_load_re-dispatch[94]: y_load[94] = 275.7471147444741
- c_load_re-dispatch[95]: y_load[95] = 275.8372645554223
- c_y_cut[0]: x_cut[0] + y_cut[0] <= 1.688257630929962
- c_y_cut[1]: x_cut[1] + y_cut[1] <= 1.701572958364472
- c_y_cut[2]: x_cut[2] + y_cut[2] <= 1.701572958364472
- c_y_cut[3]: x_cut[3] + y_cut[3] <= 1.688257630929962
- c_y_cut[4]: x_cut[4] + y_cut[4] <= 1.691636786804867
+ c_load_re-dispatch[32]: y_load[32] = 349.8517505237562
+ c_load_re-dispatch[33]: y_load[33] = 353.6233142068188
+ c_load_re-dispatch[34]: y_load[34] = 351.5755835884431
+ c_load_re-dispatch[35]: y_load[35] = 353.0679784111782
+ c_load_re-dispatch[36]: y_load[36] = 373.4560948331344
+ c_load_re-dispatch[37]: y_load[37] = 308.0599975585938
+ c_load_re-dispatch[38]: y_load[38] = 307.3900146484375
+ c_load_re-dispatch[39]: y_load[39] = 306.4800109863281
+ c_load_re-dispatch[40]: y_load[40] = 307.25
+ c_load_re-dispatch[41]: y_load[41] = 307.9200134277344
+ c_load_re-dispatch[42]: y_load[42] = 305.1799926757813
+ c_load_re-dispatch[43]: y_load[43] = 308.0599975585938
+ c_load_re-dispatch[44]: y_load[44] = 307.3900146484375
+ c_load_re-dispatch[45]: y_load[45] = 306.1400146484375
+ c_load_re-dispatch[46]: y_load[46] = 307.7300109863281
+ c_load_re-dispatch[47]: y_load[47] = 305.7099914550781
+ c_load_re-dispatch[48]: y_load[48] = 306.5299987792969
+ c_load_re-dispatch[49]: y_load[49] = 306.9599914550781
+ c_load_re-dispatch[50]: y_load[50] = 305.3800048828125
+ c_load_re-dispatch[51]: y_load[51] = 307.7799987792969
+ c_load_re-dispatch[52]: y_load[52] = 306.1900024414063
+ c_load_re-dispatch[53]: y_load[53] = 306.8200073242188
+ c_load_re-dispatch[54]: y_load[54] = 307.010009765625
+ c_load_re-dispatch[55]: y_load[55] = 305.9500122070313
+ c_load_re-dispatch[56]: y_load[56] = 306.4299926757813
+ c_load_re-dispatch[57]: y_load[57] = 308.739990234375
+ c_load_re-dispatch[58]: y_load[58] = 306.7699890136719
+ c_load_re-dispatch[59]: y_load[59] = 309.3099975585938
+ c_load_re-dispatch[60]: y_load[60] = 305.4700012207031
+ c_load_re-dispatch[61]: y_load[61] = 307.6300048828125
+ c_load_re-dispatch[62]: y_load[62] = 305.5700073242188
+ c_load_re-dispatch[63]: y_load[63] = 306.5299987792969
+ c_load_re-dispatch[64]: y_load[64] = 306.2900085449219
+ c_load_re-dispatch[65]: y_load[65] = 304.2200012207031
+ c_load_re-dispatch[66]: y_load[66] = 303.0199890136719
+ c_load_re-dispatch[67]: y_load[67] = 304.3699951171875
+ c_load_re-dispatch[68]: y_load[68] = 303.3099975585938
+ c_load_re-dispatch[69]: y_load[69] = 305.4700012207031
+ c_load_re-dispatch[70]: y_load[70] = 304.989990234375
+ c_load_re-dispatch[71]: y_load[71] = 304.7999877929688
+ c_load_re-dispatch[72]: y_load[72] = 306.1400146484375
+ c_load_re-dispatch[73]: y_load[73] = 307.7300109863281
+ c_load_re-dispatch[74]: y_load[74] = 304.8999938964844
+ c_load_re-dispatch[75]: y_load[75] = 304.7999877929688
+ c_load_re-dispatch[76]: y_load[76] = 303.7000122070313
+ c_load_re-dispatch[77]: y_load[77] = 304.0299987792969
+ c_load_re-dispatch[78]: y_load[78] = 303.2200012207031
+ c_load_re-dispatch[79]: y_load[79] = 303.6000061035156
+ c_load_re-dispatch[80]: y_load[80] = 302.9800109863281
+ c_load_re-dispatch[81]: y_load[81] = 302.5400085449219
+ c_load_re-dispatch[82]: y_load[82] = 303.6000061035156
+ c_load_re-dispatch[83]: y_load[83] = 302.260009765625
+ c_load_re-dispatch[84]: y_load[84] = 303.2200012207031
+ c_load_re-dispatch[85]: y_load[85] = 302.7799987792969
+ c_load_re-dispatch[86]: y_load[86] = 302.6400146484375
+ c_load_re-dispatch[87]: y_load[87] = 303.5499877929688
+ c_load_re-dispatch[88]: y_load[88] = 302.8299865722656
+ c_load_re-dispatch[89]: y_load[89] = 303.7000122070313
+ c_load_re-dispatch[90]: y_load[90] = 304.0299987792969
+ c_load_re-dispatch[91]: y_load[91] = 303.5
+ c_load_re-dispatch[92]: y_load[92] = 305.4700012207031
+ c_load_re-dispatch[93]: y_load[93] = 304.6600036621094
+ c_load_re-dispatch[94]: y_load[94] = 305.8999938964844
+ c_load_re-dispatch[95]: y_load[95] = 306
+ c_y_cut[0]: x_cut[0] + y_cut[0] <= 1.694915294647217
+ c_y_cut[1]: x_cut[1] + y_cut[1] <= 1.694915294647217
+ c_y_cut[2]: x_cut[2] + y_cut[2] <= 1.694915294647217
+ c_y_cut[3]: x_cut[3] + y_cut[3] <= 1.694915294647217
+ c_y_cut[4]: x_cut[4] + y_cut[4] <= 1.694915294647217
  c_y_cut[5]: x_cut[5] + y_cut[5] <= 2.03389835357666
- c_y_cut[6]: x_cut[6] + y_cut[6] <= 2.037832562940421
- c_y_cut[7]: x_cut[7] + y_cut[7] <= 2.029964144212899
+ c_y_cut[6]: x_cut[6] + y_cut[6] <= 2.03389835357666
+ c_y_cut[7]: x_cut[7] + y_cut[7] <= 2.03389835357666
  c_y_cut[8]: x_cut[8] + y_cut[8] <= 2.03389835357666
- c_y_cut[9]: x_cut[9] + y_cut[9] <= 2.03193036095842
- c_y_cut[10]: x_cut[10] + y_cut[10] <= 2.370585421255473
+ c_y_cut[9]: x_cut[9] + y_cut[9] <= 2.03389835357666
+ c_y_cut[10]: x_cut[10] + y_cut[10] <= 2.372881412506104
  c_y_cut[11]: x_cut[11] + y_cut[11] <= 2.372881412506104
- c_y_cut[12]: x_cut[12] + y_cut[12] <= 2.371470060290423
- c_y_cut[13]: x_cut[13] + y_cut[13] <= 2.371470060290423
- c_y_cut[14]: x_cut[14] + y_cut[14] <= 2.371470060290423
- c_y_cut[15]: x_cut[15] + y_cut[15] <= 2.710251497330067
- c_y_cut[16]: x_cut[16] + y_cut[16] <= 2.712697757586364
+ c_y_cut[12]: x_cut[12] + y_cut[12] <= 2.372881412506104
+ c_y_cut[13]: x_cut[13] + y_cut[13] <= 2.372881412506104
+ c_y_cut[14]: x_cut[14] + y_cut[14] <= 2.372881412506104
+ c_y_cut[15]: x_cut[15] + y_cut[15] <= 2.711864471435547
+ c_y_cut[16]: x_cut[16] + y_cut[16] <= 2.711864471435547
  c_y_cut[17]: x_cut[17] + y_cut[17] <= 2.711864471435547
  c_y_cut[18]: x_cut[18] + y_cut[18] <= 2.711864471435547
- c_y_cut[19]: x_cut[19] + y_cut[19] <= 2.71103118528473
- c_y_cut[20]: x_cut[20] + y_cut[20] <= 3.051413087098532
- c_y_cut[21]: x_cut[21] + y_cut[21] <= 3.051413087098532
- c_y_cut[22]: x_cut[22] + y_cut[22] <= 3.051413087098532
- c_y_cut[23]: x_cut[23] + y_cut[23] <= 3.050281973631449
- c_y_cut[24]: x_cut[24] + y_cut[24] <= 3.048299485071396
- c_y_cut[25]: x_cut[25] + y_cut[25] <= 3.386999427879683
- c_y_cut[26]: x_cut[26] + y_cut[26] <= 3.048299485071396
- c_y_cut[27]: x_cut[27] + y_cut[27] <= 11.17709763542994
- c_y_cut[28]: x_cut[28] + y_cut[28] <= 19.75026374057731
- c_y_cut[29]: x_cut[29] + y_cut[29] <= 32.26229147605861
+ c_y_cut[19]: x_cut[19] + y_cut[19] <= 2.711864471435547
+ c_y_cut[20]: x_cut[20] + y_cut[20] <= 3.05084753036499
+ c_y_cut[21]: x_cut[21] + y_cut[21] <= 3.05084753036499
+ c_y_cut[22]: x_cut[22] + y_cut[22] <= 3.05084753036499
+ c_y_cut[23]: x_cut[23] + y_cut[23] <= 3.05084753036499
+ c_y_cut[24]: x_cut[24] + y_cut[24] <= 3.05084753036499
+ c_y_cut[25]: x_cut[25] + y_cut[25] <= 3.389830589294434
+ c_y_cut[26]: x_cut[26] + y_cut[26] <= 3.05084753036499
+ c_y_cut[27]: x_cut[27] + y_cut[27] <= 11.18644046783447
+ c_y_cut[28]: x_cut[28] + y_cut[28] <= 20
+ c_y_cut[29]: x_cut[29] + y_cut[29] <= 31.86440658569336
  c_y_cut[30]: x_cut[30] + y_cut[30] <= 23.72881317138672
- c_y_cut[31]: x_cut[31] + y_cut[31] <= 61.09242319416094
- c_y_cut[32]: x_cut[32] + y_cut[32] <= 100.425728676866
- c_y_cut[33]: x_cut[33] + y_cut[33] <= 134.847258620218
- c_y_cut[34]: x_cut[34] + y_cut[34] <= 154.7194996431544
- c_y_cut[35]: x_cut[35] + y_cut[35] <= 175.3014442368025
- c_y_cut[36]: x_cut[36] + y_cut[36] <= 219.928889490092
+ c_y_cut[31]: x_cut[31] + y_cut[31] <= 60.33898162841797
+ c_y_cut[32]: x_cut[32] + y_cut[32] <= 91.43868172352465
+ c_y_cut[33]: x_cut[33] + y_cut[33] <= 122.7798470926726
+ c_y_cut[34]: x_cut[34] + y_cut[34] <= 140.8737315580175
+ c_y_cut[35]: x_cut[35] + y_cut[35] <= 159.6138084487444
+ c_y_cut[36]: x_cut[36] + y_cut[36] <= 179.393131994283
  c_y_cut[37]: x_cut[37] + y_cut[37] <= 254.6545185205121
- c_y_cut[38]: x_cut[38] + y_cut[38] <= 279.2985001597765
+ c_y_cut[38]: x_cut[38] + y_cut[38] <= 253.559326171875
  c_y_cut[39]: x_cut[39] + y_cut[39] <= 292.7406849282387
  c_y_cut[40]: x_cut[40] + y_cut[40] <= 340.5126060965713
- c_y_cut[41]: x_cut[41] + y_cut[41] <= 262.6857949411971
+ c_y_cut[41]: x_cut[41] + y_cut[41] <= 361.7210043752092
  c_y_cut[42]: x_cut[42] + y_cut[42] <= 297.3103023370966
  c_y_cut[43]: x_cut[43] + y_cut[43] <= 407.6725198376838
  c_y_cut[44]: x_cut[44] + y_cut[44] <= 416.6736758781394
@@ -3773,14 +3583,14 @@ Subject To
  c_y_cut[46]: x_cut[46] + y_cut[46] <= 442.3455230525444
  c_y_cut[47]: x_cut[47] + y_cut[47] <= 449.0597107535198
  c_y_cut[48]: x_cut[48] + y_cut[48] <= 461.404220573158
- c_y_cut[49]: x_cut[49] + y_cut[49] <= 488.7586088080039
+ c_y_cut[49]: x_cut[49] + y_cut[49] <= 334.9702119927773
  c_y_cut[50]: x_cut[50] + y_cut[50] <= 463.4155779927052
  c_y_cut[51]: x_cut[51] + y_cut[51] <= 470.2541539787849
  c_y_cut[52]: x_cut[52] + y_cut[52] <= 469.0905941236034
  c_y_cut[53]: x_cut[53] + y_cut[53] <= 464.6307804494244
  c_y_cut[54]: x_cut[54] + y_cut[54] <= 473.5503711754719
- c_y_cut[55]: x_cut[55] + y_cut[55] <= 460.1709606705128
- c_y_cut[56]: x_cut[56] + y_cut[56] <= 423.1907882310301
+ c_y_cut[55]: x_cut[55] + y_cut[55] <= 384.7457580566406
+ c_y_cut[56]: x_cut[56] + y_cut[56] <= 353.559326171875
  c_y_cut[57]: x_cut[57] + y_cut[57] <= 434.9573516600105
  c_y_cut[58]: x_cut[58] + y_cut[58] <= 427.6539769387543
  c_y_cut[59]: x_cut[59] + y_cut[59] <= 459.3019890644447
@@ -3790,36 +3600,36 @@ Subject To
  c_y_cut[63]: x_cut[63] + y_cut[63] <= 398.354022343852
  c_y_cut[64]: x_cut[64] + y_cut[64] <= 299.9400287274646
  c_y_cut[65]: x_cut[65] + y_cut[65] <= 290.8867140458513
- c_y_cut[66]: x_cut[66] + y_cut[66] <= 142.0975696864392
+ c_y_cut[66]: x_cut[66] + y_cut[66] <= 122.3728790283203
  c_y_cut[67]: x_cut[67] + y_cut[67] <= 242.0775839302431
- c_y_cut[68]: x_cut[68] + y_cut[68] <= 106.9761459656245
- c_y_cut[69]: x_cut[69] + y_cut[69] <= 119.450394237943
- c_y_cut[70]: x_cut[70] + y_cut[70] <= 54.8110979077098
- c_y_cut[71]: x_cut[71] + y_cut[71] <= 60.85921922017724
- c_y_cut[72]: x_cut[72] + y_cut[72] <= 64.45368240781123
- c_y_cut[73]: x_cut[73] + y_cut[73] <= 61.13892295041811
- c_y_cut[74]: x_cut[74] + y_cut[74] <= 31.3060739773525
- c_y_cut[75]: x_cut[75] + y_cut[75] <= 12.15412297523578
- c_y_cut[76]: x_cut[76] + y_cut[76] <= 4.713224869837145
- c_y_cut[77]: x_cut[77] + y_cut[77] <= 0.3625557613329741
- c_y_cut[78]: x_cut[78] + y_cut[78] <= 0.3625557613329741
- c_y_cut[79]: x_cut[79] + y_cut[79] <= 0.3625557613329741
- c_y_cut[80]: x_cut[80] + y_cut[80] <= 0.7216577203277945
- c_y_cut[81]: x_cut[81] + y_cut[81] <= 0.7216577203277945
+ c_y_cut[68]: x_cut[68] + y_cut[68] <= 95.93220520019531
+ c_y_cut[69]: x_cut[69] + y_cut[69] <= 107.1186447143555
+ c_y_cut[70]: x_cut[70] + y_cut[70] <= 49.15254211425781
+ c_y_cut[71]: x_cut[71] + y_cut[71] <= 54.57627105712891
+ c_y_cut[72]: x_cut[72] + y_cut[72] <= 59.3220329284668
+ c_y_cut[73]: x_cut[73] + y_cut[73] <= 56.27118682861328
+ c_y_cut[74]: x_cut[74] + y_cut[74] <= 28.81355857849121
+ c_y_cut[75]: x_cut[75] + y_cut[75] <= 11.18644046783447
+ c_y_cut[76]: x_cut[76] + y_cut[76] <= 4.406779766082764
+ c_y_cut[77]: x_cut[77] + y_cut[77] <= 0.3389830589294434
+ c_y_cut[78]: x_cut[78] + y_cut[78] <= 0.3389830589294434
+ c_y_cut[79]: x_cut[79] + y_cut[79] <= 0.3389830589294434
+ c_y_cut[80]: x_cut[80] + y_cut[80] <= 0.6779661178588867
+ c_y_cut[81]: x_cut[81] + y_cut[81] <= 0.6779661178588867
  c_y_cut[82]: x_cut[82] + y_cut[82] <= 0.6779661178588867
- c_y_cut[83]: x_cut[83] + y_cut[83] <= 0.6342745153899789
- c_y_cut[84]: x_cut[84] + y_cut[84] <= 0.9670009305090363
- c_y_cut[85]: x_cut[85] + y_cut[85] <= 0.9670009305090363
- c_y_cut[86]: x_cut[86] + y_cut[86] <= 1.066897423067624
+ c_y_cut[83]: x_cut[83] + y_cut[83] <= 0.6779661178588867
+ c_y_cut[84]: x_cut[84] + y_cut[84] <= 1.01694917678833
+ c_y_cut[85]: x_cut[85] + y_cut[85] <= 1.01694917678833
+ c_y_cut[86]: x_cut[86] + y_cut[86] <= 1.01694917678833
  c_y_cut[87]: x_cut[87] + y_cut[87] <= 1.01694917678833
- c_y_cut[88]: x_cut[88] + y_cut[88] <= 1.396096021472572
- c_y_cut[89]: x_cut[89] + y_cut[89] <= 1.396096021472572
- c_y_cut[90]: x_cut[90] + y_cut[90] <= 1.396096021472572
- c_y_cut[91]: x_cut[91] + y_cut[91] <= 1.315768449962975
- c_y_cut[92]: x_cut[92] + y_cut[92] <= 1.715034835761434
- c_y_cut[93]: x_cut[93] + y_cut[93] <= 1.715034835761434
- c_y_cut[94]: x_cut[94] + y_cut[94] <= 1.715034835761434
- c_y_cut[95]: x_cut[95] + y_cut[95] <= 1.715034835761434
+ c_y_cut[88]: x_cut[88] + y_cut[88] <= 1.355932235717773
+ c_y_cut[89]: x_cut[89] + y_cut[89] <= 1.355932235717773
+ c_y_cut[90]: x_cut[90] + y_cut[90] <= 1.355932235717773
+ c_y_cut[91]: x_cut[91] + y_cut[91] <= 1.355932235717773
+ c_y_cut[92]: x_cut[92] + y_cut[92] <= 1.694915294647217
+ c_y_cut[93]: x_cut[93] + y_cut[93] <= 1.694915294647217
+ c_y_cut[94]: x_cut[94] + y_cut[94] <= 1.694915294647217
+ c_y_cut[95]: x_cut[95] + y_cut[95] <= 1.694915294647217
  c_y_add[0]: - x_cut[0] + y_add[0] <= 0
  c_y_add[1]: - x_cut[1] + y_add[1] <= 0
  c_y_add[2]: - x_cut[2] + y_add[2] <= 0
@@ -3916,838 +3726,666 @@ Subject To
  c_y_add[93]: - x_cut[93] + y_add[93] <= 0
  c_y_add[94]: - x_cut[94] + y_add[94] <= 0
  c_y_add[95]: - x_cut[95] + y_add[95] <= 0
- c_cost_reg_DG[0]: - 0.02 y_pos[0] - 0.01 y_neg[0] + y_cost_fuel[0] = 0
- c_cost_reg_DG[1]: - 0.02 y_pos[1] - 0.01 y_neg[1] + y_cost_fuel[1] = 0
- c_cost_reg_DG[2]: - 0.02 y_pos[2] - 0.01 y_neg[2] + y_cost_fuel[2] = 0
- c_cost_reg_DG[3]: - 0.02 y_pos[3] - 0.01 y_neg[3] + y_cost_fuel[3] = 0
- c_cost_reg_DG[4]: - 0.02 y_pos[4] - 0.01 y_neg[4] + y_cost_fuel[4] = 0
- c_cost_reg_DG[5]: - 0.02 y_pos[5] - 0.01 y_neg[5] + y_cost_fuel[5] = 0
- c_cost_reg_DG[6]: - 0.02 y_pos[6] - 0.01 y_neg[6] + y_cost_fuel[6] = 0
- c_cost_reg_DG[7]: - 0.02 y_pos[7] - 0.01 y_neg[7] + y_cost_fuel[7] = 0
- c_cost_reg_DG[8]: - 0.02 y_pos[8] - 0.01 y_neg[8] + y_cost_fuel[8] = 0
- c_cost_reg_DG[9]: - 0.02 y_pos[9] - 0.01 y_neg[9] + y_cost_fuel[9] = 0
- c_cost_reg_DG[10]: - 0.02 y_pos[10] - 0.01 y_neg[10] + y_cost_fuel[10]
-   = 0
- c_cost_reg_DG[11]: - 0.02 y_pos[11] - 0.01 y_neg[11] + y_cost_fuel[11]
-   = 0
- c_cost_reg_DG[12]: - 0.02 y_pos[12] - 0.01 y_neg[12] + y_cost_fuel[12]
-   = 0
- c_cost_reg_DG[13]: - 0.02 y_pos[13] - 0.01 y_neg[13] + y_cost_fuel[13]
-   = 0
- c_cost_reg_DG[14]: - 0.02 y_pos[14] - 0.01 y_neg[14] + y_cost_fuel[14]
-   = 0
- c_cost_reg_DG[15]: - 0.02 y_pos[15] - 0.01 y_neg[15] + y_cost_fuel[15]
-   = 0
- c_cost_reg_DG[16]: - 0.02 y_pos[16] - 0.01 y_neg[16] + y_cost_fuel[16]
-   = 0
- c_cost_reg_DG[17]: - 0.02 y_pos[17] - 0.01 y_neg[17] + y_cost_fuel[17]
-   = 0
- c_cost_reg_DG[18]: - 0.02 y_pos[18] - 0.01 y_neg[18] + y_cost_fuel[18]
-   = 0
- c_cost_reg_DG[19]: - 0.02 y_pos[19] - 0.01 y_neg[19] + y_cost_fuel[19]
-   = 0
- c_cost_reg_DG[20]: - 0.02 y_pos[20] - 0.01 y_neg[20] + y_cost_fuel[20]
-   = 0
- c_cost_reg_DG[21]: - 0.02 y_pos[21] - 0.01 y_neg[21] + y_cost_fuel[21]
-   = 0
- c_cost_reg_DG[22]: - 0.02 y_pos[22] - 0.01 y_neg[22] + y_cost_fuel[22]
-   = 0
- c_cost_reg_DG[23]: - 0.02 y_pos[23] - 0.01 y_neg[23] + y_cost_fuel[23]
-   = 0
- c_cost_reg_DG[24]: - 0.02 y_pos[24] - 0.01 y_neg[24] + y_cost_fuel[24]
-   = 0
- c_cost_reg_DG[25]: - 0.02 y_pos[25] - 0.01 y_neg[25] + y_cost_fuel[25]
-   = 0
- c_cost_reg_DG[26]: - 0.02 y_pos[26] - 0.01 y_neg[26] + y_cost_fuel[26]
-   = 0
- c_cost_reg_DG[27]: - 0.02 y_pos[27] - 0.01 y_neg[27] + y_cost_fuel[27]
-   = 0
- c_cost_reg_DG[28]: - 0.02 y_pos[28] - 0.01 y_neg[28] + y_cost_fuel[28]
-   = 0
- c_cost_reg_DG[29]: - 0.02 y_pos[29] - 0.01 y_neg[29] + y_cost_fuel[29]
-   = 0
- c_cost_reg_DG[30]: - 0.02 y_pos[30] - 0.01 y_neg[30] + y_cost_fuel[30]
-   = 0
- c_cost_reg_DG[31]: - 0.02 y_pos[31] - 0.01 y_neg[31] + y_cost_fuel[31]
-   = 0
- c_cost_reg_DG[32]: - 0.02 y_pos[32] - 0.01 y_neg[32] + y_cost_fuel[32]
-   = 0
- c_cost_reg_DG[33]: - 0.02 y_pos[33] - 0.01 y_neg[33] + y_cost_fuel[33]
-   = 0
- c_cost_reg_DG[34]: - 0.02 y_pos[34] - 0.01 y_neg[34] + y_cost_fuel[34]
-   = 0
- c_cost_reg_DG[35]: - 0.02 y_pos[35] - 0.01 y_neg[35] + y_cost_fuel[35]
-   = 0
- c_cost_reg_DG[36]: - 0.02 y_pos[36] - 0.01 y_neg[36] + y_cost_fuel[36]
-   = 0
- c_cost_reg_DG[37]: - 0.02 y_pos[37] - 0.01 y_neg[37] + y_cost_fuel[37]
-   = 0
- c_cost_reg_DG[38]: - 0.02 y_pos[38] - 0.01 y_neg[38] + y_cost_fuel[38]
-   = 0
- c_cost_reg_DG[39]: - 0.02 y_pos[39] - 0.01 y_neg[39] + y_cost_fuel[39]
-   = 0
- c_cost_reg_DG[40]: - 0.02 y_pos[40] - 0.01 y_neg[40] + y_cost_fuel[40]
-   = 0
- c_cost_reg_DG[41]: - 0.02 y_pos[41] - 0.01 y_neg[41] + y_cost_fuel[41]
-   = 0
- c_cost_reg_DG[42]: - 0.02 y_pos[42] - 0.01 y_neg[42] + y_cost_fuel[42]
-   = 0
- c_cost_reg_DG[43]: - 0.02 y_pos[43] - 0.01 y_neg[43] + y_cost_fuel[43]
-   = 0
- c_cost_reg_DG[44]: - 0.02 y_pos[44] - 0.01 y_neg[44] + y_cost_fuel[44]
-   = 0
- c_cost_reg_DG[45]: - 0.02 y_pos[45] - 0.01 y_neg[45] + y_cost_fuel[45]
-   = 0
- c_cost_reg_DG[46]: - 0.02 y_pos[46] - 0.01 y_neg[46] + y_cost_fuel[46]
-   = 0
- c_cost_reg_DG[47]: - 0.02 y_pos[47] - 0.01 y_neg[47] + y_cost_fuel[47]
-   = 0
- c_cost_reg_DG[48]: - 0.02 y_pos[48] - 0.01 y_neg[48] + y_cost_fuel[48]
-   = 0
- c_cost_reg_DG[49]: - 0.02 y_pos[49] - 0.01 y_neg[49] + y_cost_fuel[49]
-   = 0
- c_cost_reg_DG[50]: - 0.02 y_pos[50] - 0.01 y_neg[50] + y_cost_fuel[50]
-   = 0
- c_cost_reg_DG[51]: - 0.02 y_pos[51] - 0.01 y_neg[51] + y_cost_fuel[51]
-   = 0
- c_cost_reg_DG[52]: - 0.02 y_pos[52] - 0.01 y_neg[52] + y_cost_fuel[52]
-   = 0
- c_cost_reg_DG[53]: - 0.02 y_pos[53] - 0.01 y_neg[53] + y_cost_fuel[53]
-   = 0
- c_cost_reg_DG[54]: - 0.02 y_pos[54] - 0.01 y_neg[54] + y_cost_fuel[54]
-   = 0
- c_cost_reg_DG[55]: - 0.02 y_pos[55] - 0.01 y_neg[55] + y_cost_fuel[55]
-   = 0
- c_cost_reg_DG[56]: - 0.02 y_pos[56] - 0.01 y_neg[56] + y_cost_fuel[56]
-   = 0
- c_cost_reg_DG[57]: - 0.02 y_pos[57] - 0.01 y_neg[57] + y_cost_fuel[57]
-   = 0
- c_cost_reg_DG[58]: - 0.02 y_pos[58] - 0.01 y_neg[58] + y_cost_fuel[58]
-   = 0
- c_cost_reg_DG[59]: - 0.02 y_pos[59] - 0.01 y_neg[59] + y_cost_fuel[59]
-   = 0
- c_cost_reg_DG[60]: - 0.02 y_pos[60] - 0.01 y_neg[60] + y_cost_fuel[60]
-   = 0
- c_cost_reg_DG[61]: - 0.02 y_pos[61] - 0.01 y_neg[61] + y_cost_fuel[61]
-   = 0
- c_cost_reg_DG[62]: - 0.02 y_pos[62] - 0.01 y_neg[62] + y_cost_fuel[62]
-   = 0
- c_cost_reg_DG[63]: - 0.02 y_pos[63] - 0.01 y_neg[63] + y_cost_fuel[63]
-   = 0
- c_cost_reg_DG[64]: - 0.02 y_pos[64] - 0.01 y_neg[64] + y_cost_fuel[64]
-   = 0
- c_cost_reg_DG[65]: - 0.02 y_pos[65] - 0.01 y_neg[65] + y_cost_fuel[65]
-   = 0
- c_cost_reg_DG[66]: - 0.02 y_pos[66] - 0.01 y_neg[66] + y_cost_fuel[66]
-   = 0
- c_cost_reg_DG[67]: - 0.02 y_pos[67] - 0.01 y_neg[67] + y_cost_fuel[67]
-   = 0
- c_cost_reg_DG[68]: - 0.02 y_pos[68] - 0.01 y_neg[68] + y_cost_fuel[68]
-   = 0
- c_cost_reg_DG[69]: - 0.02 y_pos[69] - 0.01 y_neg[69] + y_cost_fuel[69]
-   = 0
- c_cost_reg_DG[70]: - 0.02 y_pos[70] - 0.01 y_neg[70] + y_cost_fuel[70]
-   = 0
- c_cost_reg_DG[71]: - 0.02 y_pos[71] - 0.01 y_neg[71] + y_cost_fuel[71]
-   = 0
- c_cost_reg_DG[72]: - 0.02 y_pos[72] - 0.01 y_neg[72] + y_cost_fuel[72]
-   = 0
- c_cost_reg_DG[73]: - 0.02 y_pos[73] - 0.01 y_neg[73] + y_cost_fuel[73]
-   = 0
- c_cost_reg_DG[74]: - 0.02 y_pos[74] - 0.01 y_neg[74] + y_cost_fuel[74]
-   = 0
- c_cost_reg_DG[75]: - 0.02 y_pos[75] - 0.01 y_neg[75] + y_cost_fuel[75]
-   = 0
- c_cost_reg_DG[76]: - 0.02 y_pos[76] - 0.01 y_neg[76] + y_cost_fuel[76]
-   = 0
- c_cost_reg_DG[77]: - 0.02 y_pos[77] - 0.01 y_neg[77] + y_cost_fuel[77]
-   = 0
- c_cost_reg_DG[78]: - 0.02 y_pos[78] - 0.01 y_neg[78] + y_cost_fuel[78]
-   = 0
- c_cost_reg_DG[79]: - 0.02 y_pos[79] - 0.01 y_neg[79] + y_cost_fuel[79]
-   = 0
- c_cost_reg_DG[80]: - 0.02 y_pos[80] - 0.01 y_neg[80] + y_cost_fuel[80]
-   = 0
- c_cost_reg_DG[81]: - 0.02 y_pos[81] - 0.01 y_neg[81] + y_cost_fuel[81]
-   = 0
- c_cost_reg_DG[82]: - 0.02 y_pos[82] - 0.01 y_neg[82] + y_cost_fuel[82]
-   = 0
- c_cost_reg_DG[83]: - 0.02 y_pos[83] - 0.01 y_neg[83] + y_cost_fuel[83]
-   = 0
- c_cost_reg_DG[84]: - 0.02 y_pos[84] - 0.01 y_neg[84] + y_cost_fuel[84]
-   = 0
- c_cost_reg_DG[85]: - 0.02 y_pos[85] - 0.01 y_neg[85] + y_cost_fuel[85]
-   = 0
- c_cost_reg_DG[86]: - 0.02 y_pos[86] - 0.01 y_neg[86] + y_cost_fuel[86]
-   = 0
- c_cost_reg_DG[87]: - 0.02 y_pos[87] - 0.01 y_neg[87] + y_cost_fuel[87]
-   = 0
- c_cost_reg_DG[88]: - 0.02 y_pos[88] - 0.01 y_neg[88] + y_cost_fuel[88]
-   = 0
- c_cost_reg_DG[89]: - 0.02 y_pos[89] - 0.01 y_neg[89] + y_cost_fuel[89]
-   = 0
- c_cost_reg_DG[90]: - 0.02 y_pos[90] - 0.01 y_neg[90] + y_cost_fuel[90]
-   = 0
- c_cost_reg_DG[91]: - 0.02 y_pos[91] - 0.01 y_neg[91] + y_cost_fuel[91]
-   = 0
- c_cost_reg_DG[92]: - 0.02 y_pos[92] - 0.01 y_neg[92] + y_cost_fuel[92]
-   = 0
- c_cost_reg_DG[93]: - 0.02 y_pos[93] - 0.01 y_neg[93] + y_cost_fuel[93]
-   = 0
- c_cost_reg_DG[94]: - 0.02 y_pos[94] - 0.01 y_neg[94] + y_cost_fuel[94]
-   = 0
- c_cost_reg_DG[95]: - 0.02 y_pos[95] - 0.01 y_neg[95] + y_cost_fuel[95]
-   = 0
- c_cost_reg_ES[0]: - 0.007 y_chg[0] - 0.007 y_dis[0] + y_cost_ESS[0] = 0
- c_cost_reg_ES[1]: - 0.007 y_chg[1] - 0.007 y_dis[1] + y_cost_ESS[1] = 0
- c_cost_reg_ES[2]: - 0.007 y_chg[2] - 0.007 y_dis[2] + y_cost_ESS[2] = 0
- c_cost_reg_ES[3]: - 0.007 y_chg[3] - 0.007 y_dis[3] + y_cost_ESS[3] = 0
- c_cost_reg_ES[4]: - 0.007 y_chg[4] - 0.007 y_dis[4] + y_cost_ESS[4] = 0
- c_cost_reg_ES[5]: - 0.007 y_chg[5] - 0.007 y_dis[5] + y_cost_ESS[5] = 0
- c_cost_reg_ES[6]: - 0.007 y_chg[6] - 0.007 y_dis[6] + y_cost_ESS[6] = 0
- c_cost_reg_ES[7]: - 0.007 y_chg[7] - 0.007 y_dis[7] + y_cost_ESS[7] = 0
- c_cost_reg_ES[8]: - 0.007 y_chg[8] - 0.007 y_dis[8] + y_cost_ESS[8] = 0
- c_cost_reg_ES[9]: - 0.007 y_chg[9] - 0.007 y_dis[9] + y_cost_ESS[9] = 0
- c_cost_reg_ES[10]: - 0.007 y_chg[10] - 0.007 y_dis[10] + y_cost_ESS[10]
-   = 0
- c_cost_reg_ES[11]: - 0.007 y_chg[11] - 0.007 y_dis[11] + y_cost_ESS[11]
-   = 0
- c_cost_reg_ES[12]: - 0.007 y_chg[12] - 0.007 y_dis[12] + y_cost_ESS[12]
-   = 0
- c_cost_reg_ES[13]: - 0.007 y_chg[13] - 0.007 y_dis[13] + y_cost_ESS[13]
-   = 0
- c_cost_reg_ES[14]: - 0.007 y_chg[14] - 0.007 y_dis[14] + y_cost_ESS[14]
-   = 0
- c_cost_reg_ES[15]: - 0.007 y_chg[15] - 0.007 y_dis[15] + y_cost_ESS[15]
-   = 0
- c_cost_reg_ES[16]: - 0.007 y_chg[16] - 0.007 y_dis[16] + y_cost_ESS[16]
-   = 0
- c_cost_reg_ES[17]: - 0.007 y_chg[17] - 0.007 y_dis[17] + y_cost_ESS[17]
-   = 0
- c_cost_reg_ES[18]: - 0.007 y_chg[18] - 0.007 y_dis[18] + y_cost_ESS[18]
-   = 0
- c_cost_reg_ES[19]: - 0.007 y_chg[19] - 0.007 y_dis[19] + y_cost_ESS[19]
-   = 0
- c_cost_reg_ES[20]: - 0.007 y_chg[20] - 0.007 y_dis[20] + y_cost_ESS[20]
-   = 0
- c_cost_reg_ES[21]: - 0.007 y_chg[21] - 0.007 y_dis[21] + y_cost_ESS[21]
-   = 0
- c_cost_reg_ES[22]: - 0.007 y_chg[22] - 0.007 y_dis[22] + y_cost_ESS[22]
-   = 0
- c_cost_reg_ES[23]: - 0.007 y_chg[23] - 0.007 y_dis[23] + y_cost_ESS[23]
-   = 0
- c_cost_reg_ES[24]: - 0.007 y_chg[24] - 0.007 y_dis[24] + y_cost_ESS[24]
-   = 0
- c_cost_reg_ES[25]: - 0.007 y_chg[25] - 0.007 y_dis[25] + y_cost_ESS[25]
-   = 0
- c_cost_reg_ES[26]: - 0.007 y_chg[26] - 0.007 y_dis[26] + y_cost_ESS[26]
-   = 0
- c_cost_reg_ES[27]: - 0.007 y_chg[27] - 0.007 y_dis[27] + y_cost_ESS[27]
-   = 0
- c_cost_reg_ES[28]: - 0.007 y_chg[28] - 0.007 y_dis[28] + y_cost_ESS[28]
-   = 0
- c_cost_reg_ES[29]: - 0.007 y_chg[29] - 0.007 y_dis[29] + y_cost_ESS[29]
-   = 0
- c_cost_reg_ES[30]: - 0.007 y_chg[30] - 0.007 y_dis[30] + y_cost_ESS[30]
-   = 0
- c_cost_reg_ES[31]: - 0.007 y_chg[31] - 0.007 y_dis[31] + y_cost_ESS[31]
-   = 0
- c_cost_reg_ES[32]: - 0.007 y_chg[32] - 0.007 y_dis[32] + y_cost_ESS[32]
-   = 0
- c_cost_reg_ES[33]: - 0.007 y_chg[33] - 0.007 y_dis[33] + y_cost_ESS[33]
-   = 0
- c_cost_reg_ES[34]: - 0.007 y_chg[34] - 0.007 y_dis[34] + y_cost_ESS[34]
-   = 0
- c_cost_reg_ES[35]: - 0.007 y_chg[35] - 0.007 y_dis[35] + y_cost_ESS[35]
-   = 0
- c_cost_reg_ES[36]: - 0.007 y_chg[36] - 0.007 y_dis[36] + y_cost_ESS[36]
-   = 0
- c_cost_reg_ES[37]: - 0.007 y_chg[37] - 0.007 y_dis[37] + y_cost_ESS[37]
-   = 0
- c_cost_reg_ES[38]: - 0.007 y_chg[38] - 0.007 y_dis[38] + y_cost_ESS[38]
-   = 0
- c_cost_reg_ES[39]: - 0.007 y_chg[39] - 0.007 y_dis[39] + y_cost_ESS[39]
-   = 0
- c_cost_reg_ES[40]: - 0.007 y_chg[40] - 0.007 y_dis[40] + y_cost_ESS[40]
-   = 0
- c_cost_reg_ES[41]: - 0.007 y_chg[41] - 0.007 y_dis[41] + y_cost_ESS[41]
-   = 0
- c_cost_reg_ES[42]: - 0.007 y_chg[42] - 0.007 y_dis[42] + y_cost_ESS[42]
-   = 0
- c_cost_reg_ES[43]: - 0.007 y_chg[43] - 0.007 y_dis[43] + y_cost_ESS[43]
-   = 0
- c_cost_reg_ES[44]: - 0.007 y_chg[44] - 0.007 y_dis[44] + y_cost_ESS[44]
-   = 0
- c_cost_reg_ES[45]: - 0.007 y_chg[45] - 0.007 y_dis[45] + y_cost_ESS[45]
-   = 0
- c_cost_reg_ES[46]: - 0.007 y_chg[46] - 0.007 y_dis[46] + y_cost_ESS[46]
-   = 0
- c_cost_reg_ES[47]: - 0.007 y_chg[47] - 0.007 y_dis[47] + y_cost_ESS[47]
-   = 0
- c_cost_reg_ES[48]: - 0.007 y_chg[48] - 0.007 y_dis[48] + y_cost_ESS[48]
-   = 0
- c_cost_reg_ES[49]: - 0.007 y_chg[49] - 0.007 y_dis[49] + y_cost_ESS[49]
-   = 0
- c_cost_reg_ES[50]: - 0.007 y_chg[50] - 0.007 y_dis[50] + y_cost_ESS[50]
-   = 0
- c_cost_reg_ES[51]: - 0.007 y_chg[51] - 0.007 y_dis[51] + y_cost_ESS[51]
-   = 0
- c_cost_reg_ES[52]: - 0.007 y_chg[52] - 0.007 y_dis[52] + y_cost_ESS[52]
-   = 0
- c_cost_reg_ES[53]: - 0.007 y_chg[53] - 0.007 y_dis[53] + y_cost_ESS[53]
-   = 0
- c_cost_reg_ES[54]: - 0.007 y_chg[54] - 0.007 y_dis[54] + y_cost_ESS[54]
-   = 0
- c_cost_reg_ES[55]: - 0.007 y_chg[55] - 0.007 y_dis[55] + y_cost_ESS[55]
-   = 0
- c_cost_reg_ES[56]: - 0.007 y_chg[56] - 0.007 y_dis[56] + y_cost_ESS[56]
-   = 0
- c_cost_reg_ES[57]: - 0.007 y_chg[57] - 0.007 y_dis[57] + y_cost_ESS[57]
-   = 0
- c_cost_reg_ES[58]: - 0.007 y_chg[58] - 0.007 y_dis[58] + y_cost_ESS[58]
-   = 0
- c_cost_reg_ES[59]: - 0.007 y_chg[59] - 0.007 y_dis[59] + y_cost_ESS[59]
-   = 0
- c_cost_reg_ES[60]: - 0.007 y_chg[60] - 0.007 y_dis[60] + y_cost_ESS[60]
-   = 0
- c_cost_reg_ES[61]: - 0.007 y_chg[61] - 0.007 y_dis[61] + y_cost_ESS[61]
-   = 0
- c_cost_reg_ES[62]: - 0.007 y_chg[62] - 0.007 y_dis[62] + y_cost_ESS[62]
-   = 0
- c_cost_reg_ES[63]: - 0.007 y_chg[63] - 0.007 y_dis[63] + y_cost_ESS[63]
-   = 0
- c_cost_reg_ES[64]: - 0.007 y_chg[64] - 0.007 y_dis[64] + y_cost_ESS[64]
-   = 0
- c_cost_reg_ES[65]: - 0.007 y_chg[65] - 0.007 y_dis[65] + y_cost_ESS[65]
-   = 0
- c_cost_reg_ES[66]: - 0.007 y_chg[66] - 0.007 y_dis[66] + y_cost_ESS[66]
-   = 0
- c_cost_reg_ES[67]: - 0.007 y_chg[67] - 0.007 y_dis[67] + y_cost_ESS[67]
-   = 0
- c_cost_reg_ES[68]: - 0.007 y_chg[68] - 0.007 y_dis[68] + y_cost_ESS[68]
-   = 0
- c_cost_reg_ES[69]: - 0.007 y_chg[69] - 0.007 y_dis[69] + y_cost_ESS[69]
-   = 0
- c_cost_reg_ES[70]: - 0.007 y_chg[70] - 0.007 y_dis[70] + y_cost_ESS[70]
-   = 0
- c_cost_reg_ES[71]: - 0.007 y_chg[71] - 0.007 y_dis[71] + y_cost_ESS[71]
-   = 0
- c_cost_reg_ES[72]: - 0.007 y_chg[72] - 0.007 y_dis[72] + y_cost_ESS[72]
-   = 0
- c_cost_reg_ES[73]: - 0.007 y_chg[73] - 0.007 y_dis[73] + y_cost_ESS[73]
-   = 0
- c_cost_reg_ES[74]: - 0.007 y_chg[74] - 0.007 y_dis[74] + y_cost_ESS[74]
-   = 0
- c_cost_reg_ES[75]: - 0.007 y_chg[75] - 0.007 y_dis[75] + y_cost_ESS[75]
-   = 0
- c_cost_reg_ES[76]: - 0.007 y_chg[76] - 0.007 y_dis[76] + y_cost_ESS[76]
-   = 0
- c_cost_reg_ES[77]: - 0.007 y_chg[77] - 0.007 y_dis[77] + y_cost_ESS[77]
-   = 0
- c_cost_reg_ES[78]: - 0.007 y_chg[78] - 0.007 y_dis[78] + y_cost_ESS[78]
-   = 0
- c_cost_reg_ES[79]: - 0.007 y_chg[79] - 0.007 y_dis[79] + y_cost_ESS[79]
-   = 0
- c_cost_reg_ES[80]: - 0.007 y_chg[80] - 0.007 y_dis[80] + y_cost_ESS[80]
-   = 0
- c_cost_reg_ES[81]: - 0.007 y_chg[81] - 0.007 y_dis[81] + y_cost_ESS[81]
-   = 0
- c_cost_reg_ES[82]: - 0.007 y_chg[82] - 0.007 y_dis[82] + y_cost_ESS[82]
-   = 0
- c_cost_reg_ES[83]: - 0.007 y_chg[83] - 0.007 y_dis[83] + y_cost_ESS[83]
-   = 0
- c_cost_reg_ES[84]: - 0.007 y_chg[84] - 0.007 y_dis[84] + y_cost_ESS[84]
-   = 0
- c_cost_reg_ES[85]: - 0.007 y_chg[85] - 0.007 y_dis[85] + y_cost_ESS[85]
-   = 0
- c_cost_reg_ES[86]: - 0.007 y_chg[86] - 0.007 y_dis[86] + y_cost_ESS[86]
-   = 0
- c_cost_reg_ES[87]: - 0.007 y_chg[87] - 0.007 y_dis[87] + y_cost_ESS[87]
-   = 0
- c_cost_reg_ES[88]: - 0.007 y_chg[88] - 0.007 y_dis[88] + y_cost_ESS[88]
-   = 0
- c_cost_reg_ES[89]: - 0.007 y_chg[89] - 0.007 y_dis[89] + y_cost_ESS[89]
-   = 0
- c_cost_reg_ES[90]: - 0.007 y_chg[90] - 0.007 y_dis[90] + y_cost_ESS[90]
-   = 0
- c_cost_reg_ES[91]: - 0.007 y_chg[91] - 0.007 y_dis[91] + y_cost_ESS[91]
-   = 0
- c_cost_reg_ES[92]: - 0.007 y_chg[92] - 0.007 y_dis[92] + y_cost_ESS[92]
-   = 0
- c_cost_reg_ES[93]: - 0.007 y_chg[93] - 0.007 y_dis[93] + y_cost_ESS[93]
-   = 0
- c_cost_reg_ES[94]: - 0.007 y_chg[94] - 0.007 y_dis[94] + y_cost_ESS[94]
-   = 0
- c_cost_reg_ES[95]: - 0.007 y_chg[95] - 0.007 y_dis[95] + y_cost_ESS[95]
-   = 0
- c_cost_PV_cut_re[0]: - 0.03 y_cut[0] + y_cost_cut[0] = 0
- c_cost_PV_cut_re[1]: - 0.03 y_cut[1] + y_cost_cut[1] = 0
- c_cost_PV_cut_re[2]: - 0.03 y_cut[2] + y_cost_cut[2] = 0
- c_cost_PV_cut_re[3]: - 0.03 y_cut[3] + y_cost_cut[3] = 0
- c_cost_PV_cut_re[4]: - 0.03 y_cut[4] + y_cost_cut[4] = 0
- c_cost_PV_cut_re[5]: - 0.03 y_cut[5] + y_cost_cut[5] = 0
- c_cost_PV_cut_re[6]: - 0.03 y_cut[6] + y_cost_cut[6] = 0
- c_cost_PV_cut_re[7]: - 0.03 y_cut[7] + y_cost_cut[7] = 0
- c_cost_PV_cut_re[8]: - 0.03 y_cut[8] + y_cost_cut[8] = 0
- c_cost_PV_cut_re[9]: - 0.03 y_cut[9] + y_cost_cut[9] = 0
- c_cost_PV_cut_re[10]: - 0.03 y_cut[10] + y_cost_cut[10] = 0
- c_cost_PV_cut_re[11]: - 0.03 y_cut[11] + y_cost_cut[11] = 0
- c_cost_PV_cut_re[12]: - 0.03 y_cut[12] + y_cost_cut[12] = 0
- c_cost_PV_cut_re[13]: - 0.03 y_cut[13] + y_cost_cut[13] = 0
- c_cost_PV_cut_re[14]: - 0.03 y_cut[14] + y_cost_cut[14] = 0
- c_cost_PV_cut_re[15]: - 0.03 y_cut[15] + y_cost_cut[15] = 0
- c_cost_PV_cut_re[16]: - 0.03 y_cut[16] + y_cost_cut[16] = 0
- c_cost_PV_cut_re[17]: - 0.03 y_cut[17] + y_cost_cut[17] = 0
- c_cost_PV_cut_re[18]: - 0.03 y_cut[18] + y_cost_cut[18] = 0
- c_cost_PV_cut_re[19]: - 0.03 y_cut[19] + y_cost_cut[19] = 0
- c_cost_PV_cut_re[20]: - 0.03 y_cut[20] + y_cost_cut[20] = 0
- c_cost_PV_cut_re[21]: - 0.03 y_cut[21] + y_cost_cut[21] = 0
- c_cost_PV_cut_re[22]: - 0.03 y_cut[22] + y_cost_cut[22] = 0
- c_cost_PV_cut_re[23]: - 0.03 y_cut[23] + y_cost_cut[23] = 0
- c_cost_PV_cut_re[24]: - 0.03 y_cut[24] + y_cost_cut[24] = 0
- c_cost_PV_cut_re[25]: - 0.03 y_cut[25] + y_cost_cut[25] = 0
- c_cost_PV_cut_re[26]: - 0.03 y_cut[26] + y_cost_cut[26] = 0
- c_cost_PV_cut_re[27]: - 0.03 y_cut[27] + y_cost_cut[27] = 0
- c_cost_PV_cut_re[28]: - 0.03 y_cut[28] + y_cost_cut[28] = 0
- c_cost_PV_cut_re[29]: - 0.03 y_cut[29] + y_cost_cut[29] = 0
- c_cost_PV_cut_re[30]: - 0.03 y_cut[30] + y_cost_cut[30] = 0
- c_cost_PV_cut_re[31]: - 0.03 y_cut[31] + y_cost_cut[31] = 0
- c_cost_PV_cut_re[32]: - 0.03 y_cut[32] + y_cost_cut[32] = 0
- c_cost_PV_cut_re[33]: - 0.03 y_cut[33] + y_cost_cut[33] = 0
- c_cost_PV_cut_re[34]: - 0.03 y_cut[34] + y_cost_cut[34] = 0
- c_cost_PV_cut_re[35]: - 0.03 y_cut[35] + y_cost_cut[35] = 0
- c_cost_PV_cut_re[36]: - 0.03 y_cut[36] + y_cost_cut[36] = 0
- c_cost_PV_cut_re[37]: - 0.03 y_cut[37] + y_cost_cut[37] = 0
- c_cost_PV_cut_re[38]: - 0.03 y_cut[38] + y_cost_cut[38] = 0
- c_cost_PV_cut_re[39]: - 0.03 y_cut[39] + y_cost_cut[39] = 0
- c_cost_PV_cut_re[40]: - 0.03 y_cut[40] + y_cost_cut[40] = 0
- c_cost_PV_cut_re[41]: - 0.03 y_cut[41] + y_cost_cut[41] = 0
- c_cost_PV_cut_re[42]: - 0.03 y_cut[42] + y_cost_cut[42] = 0
- c_cost_PV_cut_re[43]: - 0.03 y_cut[43] + y_cost_cut[43] = 0
- c_cost_PV_cut_re[44]: - 0.03 y_cut[44] + y_cost_cut[44] = 0
- c_cost_PV_cut_re[45]: - 0.03 y_cut[45] + y_cost_cut[45] = 0
- c_cost_PV_cut_re[46]: - 0.03 y_cut[46] + y_cost_cut[46] = 0
- c_cost_PV_cut_re[47]: - 0.03 y_cut[47] + y_cost_cut[47] = 0
- c_cost_PV_cut_re[48]: - 0.03 y_cut[48] + y_cost_cut[48] = 0
- c_cost_PV_cut_re[49]: - 0.03 y_cut[49] + y_cost_cut[49] = 0
- c_cost_PV_cut_re[50]: - 0.03 y_cut[50] + y_cost_cut[50] = 0
- c_cost_PV_cut_re[51]: - 0.03 y_cut[51] + y_cost_cut[51] = 0
- c_cost_PV_cut_re[52]: - 0.03 y_cut[52] + y_cost_cut[52] = 0
- c_cost_PV_cut_re[53]: - 0.03 y_cut[53] + y_cost_cut[53] = 0
- c_cost_PV_cut_re[54]: - 0.03 y_cut[54] + y_cost_cut[54] = 0
- c_cost_PV_cut_re[55]: - 0.03 y_cut[55] + y_cost_cut[55] = 0
- c_cost_PV_cut_re[56]: - 0.03 y_cut[56] + y_cost_cut[56] = 0
- c_cost_PV_cut_re[57]: - 0.03 y_cut[57] + y_cost_cut[57] = 0
- c_cost_PV_cut_re[58]: - 0.03 y_cut[58] + y_cost_cut[58] = 0
- c_cost_PV_cut_re[59]: - 0.03 y_cut[59] + y_cost_cut[59] = 0
- c_cost_PV_cut_re[60]: - 0.03 y_cut[60] + y_cost_cut[60] = 0
- c_cost_PV_cut_re[61]: - 0.03 y_cut[61] + y_cost_cut[61] = 0
- c_cost_PV_cut_re[62]: - 0.03 y_cut[62] + y_cost_cut[62] = 0
- c_cost_PV_cut_re[63]: - 0.03 y_cut[63] + y_cost_cut[63] = 0
- c_cost_PV_cut_re[64]: - 0.03 y_cut[64] + y_cost_cut[64] = 0
- c_cost_PV_cut_re[65]: - 0.03 y_cut[65] + y_cost_cut[65] = 0
- c_cost_PV_cut_re[66]: - 0.03 y_cut[66] + y_cost_cut[66] = 0
- c_cost_PV_cut_re[67]: - 0.03 y_cut[67] + y_cost_cut[67] = 0
- c_cost_PV_cut_re[68]: - 0.03 y_cut[68] + y_cost_cut[68] = 0
- c_cost_PV_cut_re[69]: - 0.03 y_cut[69] + y_cost_cut[69] = 0
- c_cost_PV_cut_re[70]: - 0.03 y_cut[70] + y_cost_cut[70] = 0
- c_cost_PV_cut_re[71]: - 0.03 y_cut[71] + y_cost_cut[71] = 0
- c_cost_PV_cut_re[72]: - 0.03 y_cut[72] + y_cost_cut[72] = 0
- c_cost_PV_cut_re[73]: - 0.03 y_cut[73] + y_cost_cut[73] = 0
- c_cost_PV_cut_re[74]: - 0.03 y_cut[74] + y_cost_cut[74] = 0
- c_cost_PV_cut_re[75]: - 0.03 y_cut[75] + y_cost_cut[75] = 0
- c_cost_PV_cut_re[76]: - 0.03 y_cut[76] + y_cost_cut[76] = 0
- c_cost_PV_cut_re[77]: - 0.03 y_cut[77] + y_cost_cut[77] = 0
- c_cost_PV_cut_re[78]: - 0.03 y_cut[78] + y_cost_cut[78] = 0
- c_cost_PV_cut_re[79]: - 0.03 y_cut[79] + y_cost_cut[79] = 0
- c_cost_PV_cut_re[80]: - 0.03 y_cut[80] + y_cost_cut[80] = 0
- c_cost_PV_cut_re[81]: - 0.03 y_cut[81] + y_cost_cut[81] = 0
- c_cost_PV_cut_re[82]: - 0.03 y_cut[82] + y_cost_cut[82] = 0
- c_cost_PV_cut_re[83]: - 0.03 y_cut[83] + y_cost_cut[83] = 0
- c_cost_PV_cut_re[84]: - 0.03 y_cut[84] + y_cost_cut[84] = 0
- c_cost_PV_cut_re[85]: - 0.03 y_cut[85] + y_cost_cut[85] = 0
- c_cost_PV_cut_re[86]: - 0.03 y_cut[86] + y_cost_cut[86] = 0
- c_cost_PV_cut_re[87]: - 0.03 y_cut[87] + y_cost_cut[87] = 0
- c_cost_PV_cut_re[88]: - 0.03 y_cut[88] + y_cost_cut[88] = 0
- c_cost_PV_cut_re[89]: - 0.03 y_cut[89] + y_cost_cut[89] = 0
- c_cost_PV_cut_re[90]: - 0.03 y_cut[90] + y_cost_cut[90] = 0
- c_cost_PV_cut_re[91]: - 0.03 y_cut[91] + y_cost_cut[91] = 0
- c_cost_PV_cut_re[92]: - 0.03 y_cut[92] + y_cost_cut[92] = 0
- c_cost_PV_cut_re[93]: - 0.03 y_cut[93] + y_cost_cut[93] = 0
- c_cost_PV_cut_re[94]: - 0.03 y_cut[94] + y_cost_cut[94] = 0
- c_cost_PV_cut_re[95]: - 0.03 y_cut[95] + y_cost_cut[95] = 0
- c_cost_PV_add_re[0]: - 0.005 y_add[0] + y_cost_add[0] = 0
- c_cost_PV_add_re[1]: - 0.005 y_add[1] + y_cost_add[1] = 0
- c_cost_PV_add_re[2]: - 0.005 y_add[2] + y_cost_add[2] = 0
- c_cost_PV_add_re[3]: - 0.005 y_add[3] + y_cost_add[3] = 0
- c_cost_PV_add_re[4]: - 0.005 y_add[4] + y_cost_add[4] = 0
- c_cost_PV_add_re[5]: - 0.005 y_add[5] + y_cost_add[5] = 0
- c_cost_PV_add_re[6]: - 0.005 y_add[6] + y_cost_add[6] = 0
- c_cost_PV_add_re[7]: - 0.005 y_add[7] + y_cost_add[7] = 0
- c_cost_PV_add_re[8]: - 0.005 y_add[8] + y_cost_add[8] = 0
- c_cost_PV_add_re[9]: - 0.005 y_add[9] + y_cost_add[9] = 0
- c_cost_PV_add_re[10]: - 0.005 y_add[10] + y_cost_add[10] = 0
- c_cost_PV_add_re[11]: - 0.005 y_add[11] + y_cost_add[11] = 0
- c_cost_PV_add_re[12]: - 0.005 y_add[12] + y_cost_add[12] = 0
- c_cost_PV_add_re[13]: - 0.005 y_add[13] + y_cost_add[13] = 0
- c_cost_PV_add_re[14]: - 0.005 y_add[14] + y_cost_add[14] = 0
- c_cost_PV_add_re[15]: - 0.005 y_add[15] + y_cost_add[15] = 0
- c_cost_PV_add_re[16]: - 0.005 y_add[16] + y_cost_add[16] = 0
- c_cost_PV_add_re[17]: - 0.005 y_add[17] + y_cost_add[17] = 0
- c_cost_PV_add_re[18]: - 0.005 y_add[18] + y_cost_add[18] = 0
- c_cost_PV_add_re[19]: - 0.005 y_add[19] + y_cost_add[19] = 0
- c_cost_PV_add_re[20]: - 0.005 y_add[20] + y_cost_add[20] = 0
- c_cost_PV_add_re[21]: - 0.005 y_add[21] + y_cost_add[21] = 0
- c_cost_PV_add_re[22]: - 0.005 y_add[22] + y_cost_add[22] = 0
- c_cost_PV_add_re[23]: - 0.005 y_add[23] + y_cost_add[23] = 0
- c_cost_PV_add_re[24]: - 0.005 y_add[24] + y_cost_add[24] = 0
- c_cost_PV_add_re[25]: - 0.005 y_add[25] + y_cost_add[25] = 0
- c_cost_PV_add_re[26]: - 0.005 y_add[26] + y_cost_add[26] = 0
- c_cost_PV_add_re[27]: - 0.005 y_add[27] + y_cost_add[27] = 0
- c_cost_PV_add_re[28]: - 0.005 y_add[28] + y_cost_add[28] = 0
- c_cost_PV_add_re[29]: - 0.005 y_add[29] + y_cost_add[29] = 0
- c_cost_PV_add_re[30]: - 0.005 y_add[30] + y_cost_add[30] = 0
- c_cost_PV_add_re[31]: - 0.005 y_add[31] + y_cost_add[31] = 0
- c_cost_PV_add_re[32]: - 0.005 y_add[32] + y_cost_add[32] = 0
- c_cost_PV_add_re[33]: - 0.005 y_add[33] + y_cost_add[33] = 0
- c_cost_PV_add_re[34]: - 0.005 y_add[34] + y_cost_add[34] = 0
- c_cost_PV_add_re[35]: - 0.005 y_add[35] + y_cost_add[35] = 0
- c_cost_PV_add_re[36]: - 0.005 y_add[36] + y_cost_add[36] = 0
- c_cost_PV_add_re[37]: - 0.005 y_add[37] + y_cost_add[37] = 0
- c_cost_PV_add_re[38]: - 0.005 y_add[38] + y_cost_add[38] = 0
- c_cost_PV_add_re[39]: - 0.005 y_add[39] + y_cost_add[39] = 0
- c_cost_PV_add_re[40]: - 0.005 y_add[40] + y_cost_add[40] = 0
- c_cost_PV_add_re[41]: - 0.005 y_add[41] + y_cost_add[41] = 0
- c_cost_PV_add_re[42]: - 0.005 y_add[42] + y_cost_add[42] = 0
- c_cost_PV_add_re[43]: - 0.005 y_add[43] + y_cost_add[43] = 0
- c_cost_PV_add_re[44]: - 0.005 y_add[44] + y_cost_add[44] = 0
- c_cost_PV_add_re[45]: - 0.005 y_add[45] + y_cost_add[45] = 0
- c_cost_PV_add_re[46]: - 0.005 y_add[46] + y_cost_add[46] = 0
- c_cost_PV_add_re[47]: - 0.005 y_add[47] + y_cost_add[47] = 0
- c_cost_PV_add_re[48]: - 0.005 y_add[48] + y_cost_add[48] = 0
- c_cost_PV_add_re[49]: - 0.005 y_add[49] + y_cost_add[49] = 0
- c_cost_PV_add_re[50]: - 0.005 y_add[50] + y_cost_add[50] = 0
- c_cost_PV_add_re[51]: - 0.005 y_add[51] + y_cost_add[51] = 0
- c_cost_PV_add_re[52]: - 0.005 y_add[52] + y_cost_add[52] = 0
- c_cost_PV_add_re[53]: - 0.005 y_add[53] + y_cost_add[53] = 0
- c_cost_PV_add_re[54]: - 0.005 y_add[54] + y_cost_add[54] = 0
- c_cost_PV_add_re[55]: - 0.005 y_add[55] + y_cost_add[55] = 0
- c_cost_PV_add_re[56]: - 0.005 y_add[56] + y_cost_add[56] = 0
- c_cost_PV_add_re[57]: - 0.005 y_add[57] + y_cost_add[57] = 0
- c_cost_PV_add_re[58]: - 0.005 y_add[58] + y_cost_add[58] = 0
- c_cost_PV_add_re[59]: - 0.005 y_add[59] + y_cost_add[59] = 0
- c_cost_PV_add_re[60]: - 0.005 y_add[60] + y_cost_add[60] = 0
- c_cost_PV_add_re[61]: - 0.005 y_add[61] + y_cost_add[61] = 0
- c_cost_PV_add_re[62]: - 0.005 y_add[62] + y_cost_add[62] = 0
- c_cost_PV_add_re[63]: - 0.005 y_add[63] + y_cost_add[63] = 0
- c_cost_PV_add_re[64]: - 0.005 y_add[64] + y_cost_add[64] = 0
- c_cost_PV_add_re[65]: - 0.005 y_add[65] + y_cost_add[65] = 0
- c_cost_PV_add_re[66]: - 0.005 y_add[66] + y_cost_add[66] = 0
- c_cost_PV_add_re[67]: - 0.005 y_add[67] + y_cost_add[67] = 0
- c_cost_PV_add_re[68]: - 0.005 y_add[68] + y_cost_add[68] = 0
- c_cost_PV_add_re[69]: - 0.005 y_add[69] + y_cost_add[69] = 0
- c_cost_PV_add_re[70]: - 0.005 y_add[70] + y_cost_add[70] = 0
- c_cost_PV_add_re[71]: - 0.005 y_add[71] + y_cost_add[71] = 0
- c_cost_PV_add_re[72]: - 0.005 y_add[72] + y_cost_add[72] = 0
- c_cost_PV_add_re[73]: - 0.005 y_add[73] + y_cost_add[73] = 0
- c_cost_PV_add_re[74]: - 0.005 y_add[74] + y_cost_add[74] = 0
- c_cost_PV_add_re[75]: - 0.005 y_add[75] + y_cost_add[75] = 0
- c_cost_PV_add_re[76]: - 0.005 y_add[76] + y_cost_add[76] = 0
- c_cost_PV_add_re[77]: - 0.005 y_add[77] + y_cost_add[77] = 0
- c_cost_PV_add_re[78]: - 0.005 y_add[78] + y_cost_add[78] = 0
- c_cost_PV_add_re[79]: - 0.005 y_add[79] + y_cost_add[79] = 0
- c_cost_PV_add_re[80]: - 0.005 y_add[80] + y_cost_add[80] = 0
- c_cost_PV_add_re[81]: - 0.005 y_add[81] + y_cost_add[81] = 0
- c_cost_PV_add_re[82]: - 0.005 y_add[82] + y_cost_add[82] = 0
- c_cost_PV_add_re[83]: - 0.005 y_add[83] + y_cost_add[83] = 0
- c_cost_PV_add_re[84]: - 0.005 y_add[84] + y_cost_add[84] = 0
- c_cost_PV_add_re[85]: - 0.005 y_add[85] + y_cost_add[85] = 0
- c_cost_PV_add_re[86]: - 0.005 y_add[86] + y_cost_add[86] = 0
- c_cost_PV_add_re[87]: - 0.005 y_add[87] + y_cost_add[87] = 0
- c_cost_PV_add_re[88]: - 0.005 y_add[88] + y_cost_add[88] = 0
- c_cost_PV_add_re[89]: - 0.005 y_add[89] + y_cost_add[89] = 0
- c_cost_PV_add_re[90]: - 0.005 y_add[90] + y_cost_add[90] = 0
- c_cost_PV_add_re[91]: - 0.005 y_add[91] + y_cost_add[91] = 0
- c_cost_PV_add_re[92]: - 0.005 y_add[92] + y_cost_add[92] = 0
- c_cost_PV_add_re[93]: - 0.005 y_add[93] + y_cost_add[93] = 0
- c_cost_PV_add_re[94]: - 0.005 y_add[94] + y_cost_add[94] = 0
- c_cost_PV_add_re[95]: - 0.005 y_add[95] + y_cost_add[95] = 0
- R3646: x[0] - x_chg[0] + x_dis[0] - x_cut[0] + y_pos[0] - y_neg[0]
+ c_cost_reg_DG[0]: - 0.2 y_pos[0] - 0.1 y_neg[0] + y_cost_fuel[0] = 0
+ c_cost_reg_DG[1]: - 0.2 y_pos[1] - 0.1 y_neg[1] + y_cost_fuel[1] = 0
+ c_cost_reg_DG[2]: - 0.2 y_pos[2] - 0.1 y_neg[2] + y_cost_fuel[2] = 0
+ c_cost_reg_DG[3]: - 0.2 y_pos[3] - 0.1 y_neg[3] + y_cost_fuel[3] = 0
+ c_cost_reg_DG[4]: - 0.2 y_pos[4] - 0.1 y_neg[4] + y_cost_fuel[4] = 0
+ c_cost_reg_DG[5]: - 0.2 y_pos[5] - 0.1 y_neg[5] + y_cost_fuel[5] = 0
+ c_cost_reg_DG[6]: - 0.2 y_pos[6] - 0.1 y_neg[6] + y_cost_fuel[6] = 0
+ c_cost_reg_DG[7]: - 0.2 y_pos[7] - 0.1 y_neg[7] + y_cost_fuel[7] = 0
+ c_cost_reg_DG[8]: - 0.2 y_pos[8] - 0.1 y_neg[8] + y_cost_fuel[8] = 0
+ c_cost_reg_DG[9]: - 0.2 y_pos[9] - 0.1 y_neg[9] + y_cost_fuel[9] = 0
+ c_cost_reg_DG[10]: - 0.2 y_pos[10] - 0.1 y_neg[10] + y_cost_fuel[10] = 0
+ c_cost_reg_DG[11]: - 0.2 y_pos[11] - 0.1 y_neg[11] + y_cost_fuel[11] = 0
+ c_cost_reg_DG[12]: - 0.2 y_pos[12] - 0.1 y_neg[12] + y_cost_fuel[12] = 0
+ c_cost_reg_DG[13]: - 0.2 y_pos[13] - 0.1 y_neg[13] + y_cost_fuel[13] = 0
+ c_cost_reg_DG[14]: - 0.2 y_pos[14] - 0.1 y_neg[14] + y_cost_fuel[14] = 0
+ c_cost_reg_DG[15]: - 0.2 y_pos[15] - 0.1 y_neg[15] + y_cost_fuel[15] = 0
+ c_cost_reg_DG[16]: - 0.2 y_pos[16] - 0.1 y_neg[16] + y_cost_fuel[16] = 0
+ c_cost_reg_DG[17]: - 0.2 y_pos[17] - 0.1 y_neg[17] + y_cost_fuel[17] = 0
+ c_cost_reg_DG[18]: - 0.2 y_pos[18] - 0.1 y_neg[18] + y_cost_fuel[18] = 0
+ c_cost_reg_DG[19]: - 0.2 y_pos[19] - 0.1 y_neg[19] + y_cost_fuel[19] = 0
+ c_cost_reg_DG[20]: - 0.2 y_pos[20] - 0.1 y_neg[20] + y_cost_fuel[20] = 0
+ c_cost_reg_DG[21]: - 0.2 y_pos[21] - 0.1 y_neg[21] + y_cost_fuel[21] = 0
+ c_cost_reg_DG[22]: - 0.2 y_pos[22] - 0.1 y_neg[22] + y_cost_fuel[22] = 0
+ c_cost_reg_DG[23]: - 0.2 y_pos[23] - 0.1 y_neg[23] + y_cost_fuel[23] = 0
+ c_cost_reg_DG[24]: - 0.2 y_pos[24] - 0.1 y_neg[24] + y_cost_fuel[24] = 0
+ c_cost_reg_DG[25]: - 0.2 y_pos[25] - 0.1 y_neg[25] + y_cost_fuel[25] = 0
+ c_cost_reg_DG[26]: - 0.2 y_pos[26] - 0.1 y_neg[26] + y_cost_fuel[26] = 0
+ c_cost_reg_DG[27]: - 0.2 y_pos[27] - 0.1 y_neg[27] + y_cost_fuel[27] = 0
+ c_cost_reg_DG[28]: - 0.2 y_pos[28] - 0.1 y_neg[28] + y_cost_fuel[28] = 0
+ c_cost_reg_DG[29]: - 0.2 y_pos[29] - 0.1 y_neg[29] + y_cost_fuel[29] = 0
+ c_cost_reg_DG[30]: - 0.2 y_pos[30] - 0.1 y_neg[30] + y_cost_fuel[30] = 0
+ c_cost_reg_DG[31]: - 0.2 y_pos[31] - 0.1 y_neg[31] + y_cost_fuel[31] = 0
+ c_cost_reg_DG[32]: - 0.2 y_pos[32] - 0.1 y_neg[32] + y_cost_fuel[32] = 0
+ c_cost_reg_DG[33]: - 0.2 y_pos[33] - 0.1 y_neg[33] + y_cost_fuel[33] = 0
+ c_cost_reg_DG[34]: - 0.2 y_pos[34] - 0.1 y_neg[34] + y_cost_fuel[34] = 0
+ c_cost_reg_DG[35]: - 0.2 y_pos[35] - 0.1 y_neg[35] + y_cost_fuel[35] = 0
+ c_cost_reg_DG[36]: - 0.2 y_pos[36] - 0.1 y_neg[36] + y_cost_fuel[36] = 0
+ c_cost_reg_DG[37]: - 0.2 y_pos[37] - 0.1 y_neg[37] + y_cost_fuel[37] = 0
+ c_cost_reg_DG[38]: - 0.2 y_pos[38] - 0.1 y_neg[38] + y_cost_fuel[38] = 0
+ c_cost_reg_DG[39]: - 0.2 y_pos[39] - 0.1 y_neg[39] + y_cost_fuel[39] = 0
+ c_cost_reg_DG[40]: - 0.2 y_pos[40] - 0.1 y_neg[40] + y_cost_fuel[40] = 0
+ c_cost_reg_DG[41]: - 0.2 y_pos[41] - 0.1 y_neg[41] + y_cost_fuel[41] = 0
+ c_cost_reg_DG[42]: - 0.2 y_pos[42] - 0.1 y_neg[42] + y_cost_fuel[42] = 0
+ c_cost_reg_DG[43]: - 0.2 y_pos[43] - 0.1 y_neg[43] + y_cost_fuel[43] = 0
+ c_cost_reg_DG[44]: - 0.2 y_pos[44] - 0.1 y_neg[44] + y_cost_fuel[44] = 0
+ c_cost_reg_DG[45]: - 0.2 y_pos[45] - 0.1 y_neg[45] + y_cost_fuel[45] = 0
+ c_cost_reg_DG[46]: - 0.2 y_pos[46] - 0.1 y_neg[46] + y_cost_fuel[46] = 0
+ c_cost_reg_DG[47]: - 0.2 y_pos[47] - 0.1 y_neg[47] + y_cost_fuel[47] = 0
+ c_cost_reg_DG[48]: - 0.2 y_pos[48] - 0.1 y_neg[48] + y_cost_fuel[48] = 0
+ c_cost_reg_DG[49]: - 0.2 y_pos[49] - 0.1 y_neg[49] + y_cost_fuel[49] = 0
+ c_cost_reg_DG[50]: - 0.2 y_pos[50] - 0.1 y_neg[50] + y_cost_fuel[50] = 0
+ c_cost_reg_DG[51]: - 0.2 y_pos[51] - 0.1 y_neg[51] + y_cost_fuel[51] = 0
+ c_cost_reg_DG[52]: - 0.2 y_pos[52] - 0.1 y_neg[52] + y_cost_fuel[52] = 0
+ c_cost_reg_DG[53]: - 0.2 y_pos[53] - 0.1 y_neg[53] + y_cost_fuel[53] = 0
+ c_cost_reg_DG[54]: - 0.2 y_pos[54] - 0.1 y_neg[54] + y_cost_fuel[54] = 0
+ c_cost_reg_DG[55]: - 0.2 y_pos[55] - 0.1 y_neg[55] + y_cost_fuel[55] = 0
+ c_cost_reg_DG[56]: - 0.2 y_pos[56] - 0.1 y_neg[56] + y_cost_fuel[56] = 0
+ c_cost_reg_DG[57]: - 0.2 y_pos[57] - 0.1 y_neg[57] + y_cost_fuel[57] = 0
+ c_cost_reg_DG[58]: - 0.2 y_pos[58] - 0.1 y_neg[58] + y_cost_fuel[58] = 0
+ c_cost_reg_DG[59]: - 0.2 y_pos[59] - 0.1 y_neg[59] + y_cost_fuel[59] = 0
+ c_cost_reg_DG[60]: - 0.2 y_pos[60] - 0.1 y_neg[60] + y_cost_fuel[60] = 0
+ c_cost_reg_DG[61]: - 0.2 y_pos[61] - 0.1 y_neg[61] + y_cost_fuel[61] = 0
+ c_cost_reg_DG[62]: - 0.2 y_pos[62] - 0.1 y_neg[62] + y_cost_fuel[62] = 0
+ c_cost_reg_DG[63]: - 0.2 y_pos[63] - 0.1 y_neg[63] + y_cost_fuel[63] = 0
+ c_cost_reg_DG[64]: - 0.2 y_pos[64] - 0.1 y_neg[64] + y_cost_fuel[64] = 0
+ c_cost_reg_DG[65]: - 0.2 y_pos[65] - 0.1 y_neg[65] + y_cost_fuel[65] = 0
+ c_cost_reg_DG[66]: - 0.2 y_pos[66] - 0.1 y_neg[66] + y_cost_fuel[66] = 0
+ c_cost_reg_DG[67]: - 0.2 y_pos[67] - 0.1 y_neg[67] + y_cost_fuel[67] = 0
+ c_cost_reg_DG[68]: - 0.2 y_pos[68] - 0.1 y_neg[68] + y_cost_fuel[68] = 0
+ c_cost_reg_DG[69]: - 0.2 y_pos[69] - 0.1 y_neg[69] + y_cost_fuel[69] = 0
+ c_cost_reg_DG[70]: - 0.2 y_pos[70] - 0.1 y_neg[70] + y_cost_fuel[70] = 0
+ c_cost_reg_DG[71]: - 0.2 y_pos[71] - 0.1 y_neg[71] + y_cost_fuel[71] = 0
+ c_cost_reg_DG[72]: - 0.2 y_pos[72] - 0.1 y_neg[72] + y_cost_fuel[72] = 0
+ c_cost_reg_DG[73]: - 0.2 y_pos[73] - 0.1 y_neg[73] + y_cost_fuel[73] = 0
+ c_cost_reg_DG[74]: - 0.2 y_pos[74] - 0.1 y_neg[74] + y_cost_fuel[74] = 0
+ c_cost_reg_DG[75]: - 0.2 y_pos[75] - 0.1 y_neg[75] + y_cost_fuel[75] = 0
+ c_cost_reg_DG[76]: - 0.2 y_pos[76] - 0.1 y_neg[76] + y_cost_fuel[76] = 0
+ c_cost_reg_DG[77]: - 0.2 y_pos[77] - 0.1 y_neg[77] + y_cost_fuel[77] = 0
+ c_cost_reg_DG[78]: - 0.2 y_pos[78] - 0.1 y_neg[78] + y_cost_fuel[78] = 0
+ c_cost_reg_DG[79]: - 0.2 y_pos[79] - 0.1 y_neg[79] + y_cost_fuel[79] = 0
+ c_cost_reg_DG[80]: - 0.2 y_pos[80] - 0.1 y_neg[80] + y_cost_fuel[80] = 0
+ c_cost_reg_DG[81]: - 0.2 y_pos[81] - 0.1 y_neg[81] + y_cost_fuel[81] = 0
+ c_cost_reg_DG[82]: - 0.2 y_pos[82] - 0.1 y_neg[82] + y_cost_fuel[82] = 0
+ c_cost_reg_DG[83]: - 0.2 y_pos[83] - 0.1 y_neg[83] + y_cost_fuel[83] = 0
+ c_cost_reg_DG[84]: - 0.2 y_pos[84] - 0.1 y_neg[84] + y_cost_fuel[84] = 0
+ c_cost_reg_DG[85]: - 0.2 y_pos[85] - 0.1 y_neg[85] + y_cost_fuel[85] = 0
+ c_cost_reg_DG[86]: - 0.2 y_pos[86] - 0.1 y_neg[86] + y_cost_fuel[86] = 0
+ c_cost_reg_DG[87]: - 0.2 y_pos[87] - 0.1 y_neg[87] + y_cost_fuel[87] = 0
+ c_cost_reg_DG[88]: - 0.2 y_pos[88] - 0.1 y_neg[88] + y_cost_fuel[88] = 0
+ c_cost_reg_DG[89]: - 0.2 y_pos[89] - 0.1 y_neg[89] + y_cost_fuel[89] = 0
+ c_cost_reg_DG[90]: - 0.2 y_pos[90] - 0.1 y_neg[90] + y_cost_fuel[90] = 0
+ c_cost_reg_DG[91]: - 0.2 y_pos[91] - 0.1 y_neg[91] + y_cost_fuel[91] = 0
+ c_cost_reg_DG[92]: - 0.2 y_pos[92] - 0.1 y_neg[92] + y_cost_fuel[92] = 0
+ c_cost_reg_DG[93]: - 0.2 y_pos[93] - 0.1 y_neg[93] + y_cost_fuel[93] = 0
+ c_cost_reg_DG[94]: - 0.2 y_pos[94] - 0.1 y_neg[94] + y_cost_fuel[94] = 0
+ c_cost_reg_DG[95]: - 0.2 y_pos[95] - 0.1 y_neg[95] + y_cost_fuel[95] = 0
+ c_cost_reg_ES[0]: - 0.03 y_chg[0] - 0.03 y_dis[0] + y_cost_ESS[0] = 0
+ c_cost_reg_ES[1]: - 0.03 y_chg[1] - 0.03 y_dis[1] + y_cost_ESS[1] = 0
+ c_cost_reg_ES[2]: - 0.03 y_chg[2] - 0.03 y_dis[2] + y_cost_ESS[2] = 0
+ c_cost_reg_ES[3]: - 0.03 y_chg[3] - 0.03 y_dis[3] + y_cost_ESS[3] = 0
+ c_cost_reg_ES[4]: - 0.03 y_chg[4] - 0.03 y_dis[4] + y_cost_ESS[4] = 0
+ c_cost_reg_ES[5]: - 0.03 y_chg[5] - 0.03 y_dis[5] + y_cost_ESS[5] = 0
+ c_cost_reg_ES[6]: - 0.03 y_chg[6] - 0.03 y_dis[6] + y_cost_ESS[6] = 0
+ c_cost_reg_ES[7]: - 0.03 y_chg[7] - 0.03 y_dis[7] + y_cost_ESS[7] = 0
+ c_cost_reg_ES[8]: - 0.03 y_chg[8] - 0.03 y_dis[8] + y_cost_ESS[8] = 0
+ c_cost_reg_ES[9]: - 0.03 y_chg[9] - 0.03 y_dis[9] + y_cost_ESS[9] = 0
+ c_cost_reg_ES[10]: - 0.03 y_chg[10] - 0.03 y_dis[10] + y_cost_ESS[10] = 0
+ c_cost_reg_ES[11]: - 0.03 y_chg[11] - 0.03 y_dis[11] + y_cost_ESS[11] = 0
+ c_cost_reg_ES[12]: - 0.03 y_chg[12] - 0.03 y_dis[12] + y_cost_ESS[12] = 0
+ c_cost_reg_ES[13]: - 0.03 y_chg[13] - 0.03 y_dis[13] + y_cost_ESS[13] = 0
+ c_cost_reg_ES[14]: - 0.03 y_chg[14] - 0.03 y_dis[14] + y_cost_ESS[14] = 0
+ c_cost_reg_ES[15]: - 0.03 y_chg[15] - 0.03 y_dis[15] + y_cost_ESS[15] = 0
+ c_cost_reg_ES[16]: - 0.03 y_chg[16] - 0.03 y_dis[16] + y_cost_ESS[16] = 0
+ c_cost_reg_ES[17]: - 0.03 y_chg[17] - 0.03 y_dis[17] + y_cost_ESS[17] = 0
+ c_cost_reg_ES[18]: - 0.03 y_chg[18] - 0.03 y_dis[18] + y_cost_ESS[18] = 0
+ c_cost_reg_ES[19]: - 0.03 y_chg[19] - 0.03 y_dis[19] + y_cost_ESS[19] = 0
+ c_cost_reg_ES[20]: - 0.03 y_chg[20] - 0.03 y_dis[20] + y_cost_ESS[20] = 0
+ c_cost_reg_ES[21]: - 0.03 y_chg[21] - 0.03 y_dis[21] + y_cost_ESS[21] = 0
+ c_cost_reg_ES[22]: - 0.03 y_chg[22] - 0.03 y_dis[22] + y_cost_ESS[22] = 0
+ c_cost_reg_ES[23]: - 0.03 y_chg[23] - 0.03 y_dis[23] + y_cost_ESS[23] = 0
+ c_cost_reg_ES[24]: - 0.03 y_chg[24] - 0.03 y_dis[24] + y_cost_ESS[24] = 0
+ c_cost_reg_ES[25]: - 0.03 y_chg[25] - 0.03 y_dis[25] + y_cost_ESS[25] = 0
+ c_cost_reg_ES[26]: - 0.03 y_chg[26] - 0.03 y_dis[26] + y_cost_ESS[26] = 0
+ c_cost_reg_ES[27]: - 0.03 y_chg[27] - 0.03 y_dis[27] + y_cost_ESS[27] = 0
+ c_cost_reg_ES[28]: - 0.03 y_chg[28] - 0.03 y_dis[28] + y_cost_ESS[28] = 0
+ c_cost_reg_ES[29]: - 0.03 y_chg[29] - 0.03 y_dis[29] + y_cost_ESS[29] = 0
+ c_cost_reg_ES[30]: - 0.03 y_chg[30] - 0.03 y_dis[30] + y_cost_ESS[30] = 0
+ c_cost_reg_ES[31]: - 0.03 y_chg[31] - 0.03 y_dis[31] + y_cost_ESS[31] = 0
+ c_cost_reg_ES[32]: - 0.03 y_chg[32] - 0.03 y_dis[32] + y_cost_ESS[32] = 0
+ c_cost_reg_ES[33]: - 0.03 y_chg[33] - 0.03 y_dis[33] + y_cost_ESS[33] = 0
+ c_cost_reg_ES[34]: - 0.03 y_chg[34] - 0.03 y_dis[34] + y_cost_ESS[34] = 0
+ c_cost_reg_ES[35]: - 0.03 y_chg[35] - 0.03 y_dis[35] + y_cost_ESS[35] = 0
+ c_cost_reg_ES[36]: - 0.03 y_chg[36] - 0.03 y_dis[36] + y_cost_ESS[36] = 0
+ c_cost_reg_ES[37]: - 0.03 y_chg[37] - 0.03 y_dis[37] + y_cost_ESS[37] = 0
+ c_cost_reg_ES[38]: - 0.03 y_chg[38] - 0.03 y_dis[38] + y_cost_ESS[38] = 0
+ c_cost_reg_ES[39]: - 0.03 y_chg[39] - 0.03 y_dis[39] + y_cost_ESS[39] = 0
+ c_cost_reg_ES[40]: - 0.03 y_chg[40] - 0.03 y_dis[40] + y_cost_ESS[40] = 0
+ c_cost_reg_ES[41]: - 0.03 y_chg[41] - 0.03 y_dis[41] + y_cost_ESS[41] = 0
+ c_cost_reg_ES[42]: - 0.03 y_chg[42] - 0.03 y_dis[42] + y_cost_ESS[42] = 0
+ c_cost_reg_ES[43]: - 0.03 y_chg[43] - 0.03 y_dis[43] + y_cost_ESS[43] = 0
+ c_cost_reg_ES[44]: - 0.03 y_chg[44] - 0.03 y_dis[44] + y_cost_ESS[44] = 0
+ c_cost_reg_ES[45]: - 0.03 y_chg[45] - 0.03 y_dis[45] + y_cost_ESS[45] = 0
+ c_cost_reg_ES[46]: - 0.03 y_chg[46] - 0.03 y_dis[46] + y_cost_ESS[46] = 0
+ c_cost_reg_ES[47]: - 0.03 y_chg[47] - 0.03 y_dis[47] + y_cost_ESS[47] = 0
+ c_cost_reg_ES[48]: - 0.03 y_chg[48] - 0.03 y_dis[48] + y_cost_ESS[48] = 0
+ c_cost_reg_ES[49]: - 0.03 y_chg[49] - 0.03 y_dis[49] + y_cost_ESS[49] = 0
+ c_cost_reg_ES[50]: - 0.03 y_chg[50] - 0.03 y_dis[50] + y_cost_ESS[50] = 0
+ c_cost_reg_ES[51]: - 0.03 y_chg[51] - 0.03 y_dis[51] + y_cost_ESS[51] = 0
+ c_cost_reg_ES[52]: - 0.03 y_chg[52] - 0.03 y_dis[52] + y_cost_ESS[52] = 0
+ c_cost_reg_ES[53]: - 0.03 y_chg[53] - 0.03 y_dis[53] + y_cost_ESS[53] = 0
+ c_cost_reg_ES[54]: - 0.03 y_chg[54] - 0.03 y_dis[54] + y_cost_ESS[54] = 0
+ c_cost_reg_ES[55]: - 0.03 y_chg[55] - 0.03 y_dis[55] + y_cost_ESS[55] = 0
+ c_cost_reg_ES[56]: - 0.03 y_chg[56] - 0.03 y_dis[56] + y_cost_ESS[56] = 0
+ c_cost_reg_ES[57]: - 0.03 y_chg[57] - 0.03 y_dis[57] + y_cost_ESS[57] = 0
+ c_cost_reg_ES[58]: - 0.03 y_chg[58] - 0.03 y_dis[58] + y_cost_ESS[58] = 0
+ c_cost_reg_ES[59]: - 0.03 y_chg[59] - 0.03 y_dis[59] + y_cost_ESS[59] = 0
+ c_cost_reg_ES[60]: - 0.03 y_chg[60] - 0.03 y_dis[60] + y_cost_ESS[60] = 0
+ c_cost_reg_ES[61]: - 0.03 y_chg[61] - 0.03 y_dis[61] + y_cost_ESS[61] = 0
+ c_cost_reg_ES[62]: - 0.03 y_chg[62] - 0.03 y_dis[62] + y_cost_ESS[62] = 0
+ c_cost_reg_ES[63]: - 0.03 y_chg[63] - 0.03 y_dis[63] + y_cost_ESS[63] = 0
+ c_cost_reg_ES[64]: - 0.03 y_chg[64] - 0.03 y_dis[64] + y_cost_ESS[64] = 0
+ c_cost_reg_ES[65]: - 0.03 y_chg[65] - 0.03 y_dis[65] + y_cost_ESS[65] = 0
+ c_cost_reg_ES[66]: - 0.03 y_chg[66] - 0.03 y_dis[66] + y_cost_ESS[66] = 0
+ c_cost_reg_ES[67]: - 0.03 y_chg[67] - 0.03 y_dis[67] + y_cost_ESS[67] = 0
+ c_cost_reg_ES[68]: - 0.03 y_chg[68] - 0.03 y_dis[68] + y_cost_ESS[68] = 0
+ c_cost_reg_ES[69]: - 0.03 y_chg[69] - 0.03 y_dis[69] + y_cost_ESS[69] = 0
+ c_cost_reg_ES[70]: - 0.03 y_chg[70] - 0.03 y_dis[70] + y_cost_ESS[70] = 0
+ c_cost_reg_ES[71]: - 0.03 y_chg[71] - 0.03 y_dis[71] + y_cost_ESS[71] = 0
+ c_cost_reg_ES[72]: - 0.03 y_chg[72] - 0.03 y_dis[72] + y_cost_ESS[72] = 0
+ c_cost_reg_ES[73]: - 0.03 y_chg[73] - 0.03 y_dis[73] + y_cost_ESS[73] = 0
+ c_cost_reg_ES[74]: - 0.03 y_chg[74] - 0.03 y_dis[74] + y_cost_ESS[74] = 0
+ c_cost_reg_ES[75]: - 0.03 y_chg[75] - 0.03 y_dis[75] + y_cost_ESS[75] = 0
+ c_cost_reg_ES[76]: - 0.03 y_chg[76] - 0.03 y_dis[76] + y_cost_ESS[76] = 0
+ c_cost_reg_ES[77]: - 0.03 y_chg[77] - 0.03 y_dis[77] + y_cost_ESS[77] = 0
+ c_cost_reg_ES[78]: - 0.03 y_chg[78] - 0.03 y_dis[78] + y_cost_ESS[78] = 0
+ c_cost_reg_ES[79]: - 0.03 y_chg[79] - 0.03 y_dis[79] + y_cost_ESS[79] = 0
+ c_cost_reg_ES[80]: - 0.03 y_chg[80] - 0.03 y_dis[80] + y_cost_ESS[80] = 0
+ c_cost_reg_ES[81]: - 0.03 y_chg[81] - 0.03 y_dis[81] + y_cost_ESS[81] = 0
+ c_cost_reg_ES[82]: - 0.03 y_chg[82] - 0.03 y_dis[82] + y_cost_ESS[82] = 0
+ c_cost_reg_ES[83]: - 0.03 y_chg[83] - 0.03 y_dis[83] + y_cost_ESS[83] = 0
+ c_cost_reg_ES[84]: - 0.03 y_chg[84] - 0.03 y_dis[84] + y_cost_ESS[84] = 0
+ c_cost_reg_ES[85]: - 0.03 y_chg[85] - 0.03 y_dis[85] + y_cost_ESS[85] = 0
+ c_cost_reg_ES[86]: - 0.03 y_chg[86] - 0.03 y_dis[86] + y_cost_ESS[86] = 0
+ c_cost_reg_ES[87]: - 0.03 y_chg[87] - 0.03 y_dis[87] + y_cost_ESS[87] = 0
+ c_cost_reg_ES[88]: - 0.03 y_chg[88] - 0.03 y_dis[88] + y_cost_ESS[88] = 0
+ c_cost_reg_ES[89]: - 0.03 y_chg[89] - 0.03 y_dis[89] + y_cost_ESS[89] = 0
+ c_cost_reg_ES[90]: - 0.03 y_chg[90] - 0.03 y_dis[90] + y_cost_ESS[90] = 0
+ c_cost_reg_ES[91]: - 0.03 y_chg[91] - 0.03 y_dis[91] + y_cost_ESS[91] = 0
+ c_cost_reg_ES[92]: - 0.03 y_chg[92] - 0.03 y_dis[92] + y_cost_ESS[92] = 0
+ c_cost_reg_ES[93]: - 0.03 y_chg[93] - 0.03 y_dis[93] + y_cost_ESS[93] = 0
+ c_cost_reg_ES[94]: - 0.03 y_chg[94] - 0.03 y_dis[94] + y_cost_ESS[94] = 0
+ c_cost_reg_ES[95]: - 0.03 y_chg[95] - 0.03 y_dis[95] + y_cost_ESS[95] = 0
+ c_cost_PV_cut_re[0]: - 0.04 y_cut[0] + y_cost_cut[0] = 0
+ c_cost_PV_cut_re[1]: - 0.04 y_cut[1] + y_cost_cut[1] = 0
+ c_cost_PV_cut_re[2]: - 0.04 y_cut[2] + y_cost_cut[2] = 0
+ c_cost_PV_cut_re[3]: - 0.04 y_cut[3] + y_cost_cut[3] = 0
+ c_cost_PV_cut_re[4]: - 0.04 y_cut[4] + y_cost_cut[4] = 0
+ c_cost_PV_cut_re[5]: - 0.04 y_cut[5] + y_cost_cut[5] = 0
+ c_cost_PV_cut_re[6]: - 0.04 y_cut[6] + y_cost_cut[6] = 0
+ c_cost_PV_cut_re[7]: - 0.04 y_cut[7] + y_cost_cut[7] = 0
+ c_cost_PV_cut_re[8]: - 0.04 y_cut[8] + y_cost_cut[8] = 0
+ c_cost_PV_cut_re[9]: - 0.04 y_cut[9] + y_cost_cut[9] = 0
+ c_cost_PV_cut_re[10]: - 0.04 y_cut[10] + y_cost_cut[10] = 0
+ c_cost_PV_cut_re[11]: - 0.04 y_cut[11] + y_cost_cut[11] = 0
+ c_cost_PV_cut_re[12]: - 0.04 y_cut[12] + y_cost_cut[12] = 0
+ c_cost_PV_cut_re[13]: - 0.04 y_cut[13] + y_cost_cut[13] = 0
+ c_cost_PV_cut_re[14]: - 0.04 y_cut[14] + y_cost_cut[14] = 0
+ c_cost_PV_cut_re[15]: - 0.04 y_cut[15] + y_cost_cut[15] = 0
+ c_cost_PV_cut_re[16]: - 0.04 y_cut[16] + y_cost_cut[16] = 0
+ c_cost_PV_cut_re[17]: - 0.04 y_cut[17] + y_cost_cut[17] = 0
+ c_cost_PV_cut_re[18]: - 0.04 y_cut[18] + y_cost_cut[18] = 0
+ c_cost_PV_cut_re[19]: - 0.04 y_cut[19] + y_cost_cut[19] = 0
+ c_cost_PV_cut_re[20]: - 0.04 y_cut[20] + y_cost_cut[20] = 0
+ c_cost_PV_cut_re[21]: - 0.04 y_cut[21] + y_cost_cut[21] = 0
+ c_cost_PV_cut_re[22]: - 0.04 y_cut[22] + y_cost_cut[22] = 0
+ c_cost_PV_cut_re[23]: - 0.04 y_cut[23] + y_cost_cut[23] = 0
+ c_cost_PV_cut_re[24]: - 0.04 y_cut[24] + y_cost_cut[24] = 0
+ c_cost_PV_cut_re[25]: - 0.04 y_cut[25] + y_cost_cut[25] = 0
+ c_cost_PV_cut_re[26]: - 0.04 y_cut[26] + y_cost_cut[26] = 0
+ c_cost_PV_cut_re[27]: - 0.04 y_cut[27] + y_cost_cut[27] = 0
+ c_cost_PV_cut_re[28]: - 0.04 y_cut[28] + y_cost_cut[28] = 0
+ c_cost_PV_cut_re[29]: - 0.04 y_cut[29] + y_cost_cut[29] = 0
+ c_cost_PV_cut_re[30]: - 0.04 y_cut[30] + y_cost_cut[30] = 0
+ c_cost_PV_cut_re[31]: - 0.04 y_cut[31] + y_cost_cut[31] = 0
+ c_cost_PV_cut_re[32]: - 0.04 y_cut[32] + y_cost_cut[32] = 0
+ c_cost_PV_cut_re[33]: - 0.04 y_cut[33] + y_cost_cut[33] = 0
+ c_cost_PV_cut_re[34]: - 0.04 y_cut[34] + y_cost_cut[34] = 0
+ c_cost_PV_cut_re[35]: - 0.04 y_cut[35] + y_cost_cut[35] = 0
+ c_cost_PV_cut_re[36]: - 0.04 y_cut[36] + y_cost_cut[36] = 0
+ c_cost_PV_cut_re[37]: - 0.04 y_cut[37] + y_cost_cut[37] = 0
+ c_cost_PV_cut_re[38]: - 0.04 y_cut[38] + y_cost_cut[38] = 0
+ c_cost_PV_cut_re[39]: - 0.04 y_cut[39] + y_cost_cut[39] = 0
+ c_cost_PV_cut_re[40]: - 0.04 y_cut[40] + y_cost_cut[40] = 0
+ c_cost_PV_cut_re[41]: - 0.04 y_cut[41] + y_cost_cut[41] = 0
+ c_cost_PV_cut_re[42]: - 0.04 y_cut[42] + y_cost_cut[42] = 0
+ c_cost_PV_cut_re[43]: - 0.04 y_cut[43] + y_cost_cut[43] = 0
+ c_cost_PV_cut_re[44]: - 0.04 y_cut[44] + y_cost_cut[44] = 0
+ c_cost_PV_cut_re[45]: - 0.04 y_cut[45] + y_cost_cut[45] = 0
+ c_cost_PV_cut_re[46]: - 0.04 y_cut[46] + y_cost_cut[46] = 0
+ c_cost_PV_cut_re[47]: - 0.04 y_cut[47] + y_cost_cut[47] = 0
+ c_cost_PV_cut_re[48]: - 0.04 y_cut[48] + y_cost_cut[48] = 0
+ c_cost_PV_cut_re[49]: - 0.04 y_cut[49] + y_cost_cut[49] = 0
+ c_cost_PV_cut_re[50]: - 0.04 y_cut[50] + y_cost_cut[50] = 0
+ c_cost_PV_cut_re[51]: - 0.04 y_cut[51] + y_cost_cut[51] = 0
+ c_cost_PV_cut_re[52]: - 0.04 y_cut[52] + y_cost_cut[52] = 0
+ c_cost_PV_cut_re[53]: - 0.04 y_cut[53] + y_cost_cut[53] = 0
+ c_cost_PV_cut_re[54]: - 0.04 y_cut[54] + y_cost_cut[54] = 0
+ c_cost_PV_cut_re[55]: - 0.04 y_cut[55] + y_cost_cut[55] = 0
+ c_cost_PV_cut_re[56]: - 0.04 y_cut[56] + y_cost_cut[56] = 0
+ c_cost_PV_cut_re[57]: - 0.04 y_cut[57] + y_cost_cut[57] = 0
+ c_cost_PV_cut_re[58]: - 0.04 y_cut[58] + y_cost_cut[58] = 0
+ c_cost_PV_cut_re[59]: - 0.04 y_cut[59] + y_cost_cut[59] = 0
+ c_cost_PV_cut_re[60]: - 0.04 y_cut[60] + y_cost_cut[60] = 0
+ c_cost_PV_cut_re[61]: - 0.04 y_cut[61] + y_cost_cut[61] = 0
+ c_cost_PV_cut_re[62]: - 0.04 y_cut[62] + y_cost_cut[62] = 0
+ c_cost_PV_cut_re[63]: - 0.04 y_cut[63] + y_cost_cut[63] = 0
+ c_cost_PV_cut_re[64]: - 0.04 y_cut[64] + y_cost_cut[64] = 0
+ c_cost_PV_cut_re[65]: - 0.04 y_cut[65] + y_cost_cut[65] = 0
+ c_cost_PV_cut_re[66]: - 0.04 y_cut[66] + y_cost_cut[66] = 0
+ c_cost_PV_cut_re[67]: - 0.04 y_cut[67] + y_cost_cut[67] = 0
+ c_cost_PV_cut_re[68]: - 0.04 y_cut[68] + y_cost_cut[68] = 0
+ c_cost_PV_cut_re[69]: - 0.04 y_cut[69] + y_cost_cut[69] = 0
+ c_cost_PV_cut_re[70]: - 0.04 y_cut[70] + y_cost_cut[70] = 0
+ c_cost_PV_cut_re[71]: - 0.04 y_cut[71] + y_cost_cut[71] = 0
+ c_cost_PV_cut_re[72]: - 0.04 y_cut[72] + y_cost_cut[72] = 0
+ c_cost_PV_cut_re[73]: - 0.04 y_cut[73] + y_cost_cut[73] = 0
+ c_cost_PV_cut_re[74]: - 0.04 y_cut[74] + y_cost_cut[74] = 0
+ c_cost_PV_cut_re[75]: - 0.04 y_cut[75] + y_cost_cut[75] = 0
+ c_cost_PV_cut_re[76]: - 0.04 y_cut[76] + y_cost_cut[76] = 0
+ c_cost_PV_cut_re[77]: - 0.04 y_cut[77] + y_cost_cut[77] = 0
+ c_cost_PV_cut_re[78]: - 0.04 y_cut[78] + y_cost_cut[78] = 0
+ c_cost_PV_cut_re[79]: - 0.04 y_cut[79] + y_cost_cut[79] = 0
+ c_cost_PV_cut_re[80]: - 0.04 y_cut[80] + y_cost_cut[80] = 0
+ c_cost_PV_cut_re[81]: - 0.04 y_cut[81] + y_cost_cut[81] = 0
+ c_cost_PV_cut_re[82]: - 0.04 y_cut[82] + y_cost_cut[82] = 0
+ c_cost_PV_cut_re[83]: - 0.04 y_cut[83] + y_cost_cut[83] = 0
+ c_cost_PV_cut_re[84]: - 0.04 y_cut[84] + y_cost_cut[84] = 0
+ c_cost_PV_cut_re[85]: - 0.04 y_cut[85] + y_cost_cut[85] = 0
+ c_cost_PV_cut_re[86]: - 0.04 y_cut[86] + y_cost_cut[86] = 0
+ c_cost_PV_cut_re[87]: - 0.04 y_cut[87] + y_cost_cut[87] = 0
+ c_cost_PV_cut_re[88]: - 0.04 y_cut[88] + y_cost_cut[88] = 0
+ c_cost_PV_cut_re[89]: - 0.04 y_cut[89] + y_cost_cut[89] = 0
+ c_cost_PV_cut_re[90]: - 0.04 y_cut[90] + y_cost_cut[90] = 0
+ c_cost_PV_cut_re[91]: - 0.04 y_cut[91] + y_cost_cut[91] = 0
+ c_cost_PV_cut_re[92]: - 0.04 y_cut[92] + y_cost_cut[92] = 0
+ c_cost_PV_cut_re[93]: - 0.04 y_cut[93] + y_cost_cut[93] = 0
+ c_cost_PV_cut_re[94]: - 0.04 y_cut[94] + y_cost_cut[94] = 0
+ c_cost_PV_cut_re[95]: - 0.04 y_cut[95] + y_cost_cut[95] = 0
+ c_cost_PV_add_re[0]: - 0.01 y_add[0] + y_cost_add[0] = 0
+ c_cost_PV_add_re[1]: - 0.01 y_add[1] + y_cost_add[1] = 0
+ c_cost_PV_add_re[2]: - 0.01 y_add[2] + y_cost_add[2] = 0
+ c_cost_PV_add_re[3]: - 0.01 y_add[3] + y_cost_add[3] = 0
+ c_cost_PV_add_re[4]: - 0.01 y_add[4] + y_cost_add[4] = 0
+ c_cost_PV_add_re[5]: - 0.01 y_add[5] + y_cost_add[5] = 0
+ c_cost_PV_add_re[6]: - 0.01 y_add[6] + y_cost_add[6] = 0
+ c_cost_PV_add_re[7]: - 0.01 y_add[7] + y_cost_add[7] = 0
+ c_cost_PV_add_re[8]: - 0.01 y_add[8] + y_cost_add[8] = 0
+ c_cost_PV_add_re[9]: - 0.01 y_add[9] + y_cost_add[9] = 0
+ c_cost_PV_add_re[10]: - 0.01 y_add[10] + y_cost_add[10] = 0
+ c_cost_PV_add_re[11]: - 0.01 y_add[11] + y_cost_add[11] = 0
+ c_cost_PV_add_re[12]: - 0.01 y_add[12] + y_cost_add[12] = 0
+ c_cost_PV_add_re[13]: - 0.01 y_add[13] + y_cost_add[13] = 0
+ c_cost_PV_add_re[14]: - 0.01 y_add[14] + y_cost_add[14] = 0
+ c_cost_PV_add_re[15]: - 0.01 y_add[15] + y_cost_add[15] = 0
+ c_cost_PV_add_re[16]: - 0.01 y_add[16] + y_cost_add[16] = 0
+ c_cost_PV_add_re[17]: - 0.01 y_add[17] + y_cost_add[17] = 0
+ c_cost_PV_add_re[18]: - 0.01 y_add[18] + y_cost_add[18] = 0
+ c_cost_PV_add_re[19]: - 0.01 y_add[19] + y_cost_add[19] = 0
+ c_cost_PV_add_re[20]: - 0.01 y_add[20] + y_cost_add[20] = 0
+ c_cost_PV_add_re[21]: - 0.01 y_add[21] + y_cost_add[21] = 0
+ c_cost_PV_add_re[22]: - 0.01 y_add[22] + y_cost_add[22] = 0
+ c_cost_PV_add_re[23]: - 0.01 y_add[23] + y_cost_add[23] = 0
+ c_cost_PV_add_re[24]: - 0.01 y_add[24] + y_cost_add[24] = 0
+ c_cost_PV_add_re[25]: - 0.01 y_add[25] + y_cost_add[25] = 0
+ c_cost_PV_add_re[26]: - 0.01 y_add[26] + y_cost_add[26] = 0
+ c_cost_PV_add_re[27]: - 0.01 y_add[27] + y_cost_add[27] = 0
+ c_cost_PV_add_re[28]: - 0.01 y_add[28] + y_cost_add[28] = 0
+ c_cost_PV_add_re[29]: - 0.01 y_add[29] + y_cost_add[29] = 0
+ c_cost_PV_add_re[30]: - 0.01 y_add[30] + y_cost_add[30] = 0
+ c_cost_PV_add_re[31]: - 0.01 y_add[31] + y_cost_add[31] = 0
+ c_cost_PV_add_re[32]: - 0.01 y_add[32] + y_cost_add[32] = 0
+ c_cost_PV_add_re[33]: - 0.01 y_add[33] + y_cost_add[33] = 0
+ c_cost_PV_add_re[34]: - 0.01 y_add[34] + y_cost_add[34] = 0
+ c_cost_PV_add_re[35]: - 0.01 y_add[35] + y_cost_add[35] = 0
+ c_cost_PV_add_re[36]: - 0.01 y_add[36] + y_cost_add[36] = 0
+ c_cost_PV_add_re[37]: - 0.01 y_add[37] + y_cost_add[37] = 0
+ c_cost_PV_add_re[38]: - 0.01 y_add[38] + y_cost_add[38] = 0
+ c_cost_PV_add_re[39]: - 0.01 y_add[39] + y_cost_add[39] = 0
+ c_cost_PV_add_re[40]: - 0.01 y_add[40] + y_cost_add[40] = 0
+ c_cost_PV_add_re[41]: - 0.01 y_add[41] + y_cost_add[41] = 0
+ c_cost_PV_add_re[42]: - 0.01 y_add[42] + y_cost_add[42] = 0
+ c_cost_PV_add_re[43]: - 0.01 y_add[43] + y_cost_add[43] = 0
+ c_cost_PV_add_re[44]: - 0.01 y_add[44] + y_cost_add[44] = 0
+ c_cost_PV_add_re[45]: - 0.01 y_add[45] + y_cost_add[45] = 0
+ c_cost_PV_add_re[46]: - 0.01 y_add[46] + y_cost_add[46] = 0
+ c_cost_PV_add_re[47]: - 0.01 y_add[47] + y_cost_add[47] = 0
+ c_cost_PV_add_re[48]: - 0.01 y_add[48] + y_cost_add[48] = 0
+ c_cost_PV_add_re[49]: - 0.01 y_add[49] + y_cost_add[49] = 0
+ c_cost_PV_add_re[50]: - 0.01 y_add[50] + y_cost_add[50] = 0
+ c_cost_PV_add_re[51]: - 0.01 y_add[51] + y_cost_add[51] = 0
+ c_cost_PV_add_re[52]: - 0.01 y_add[52] + y_cost_add[52] = 0
+ c_cost_PV_add_re[53]: - 0.01 y_add[53] + y_cost_add[53] = 0
+ c_cost_PV_add_re[54]: - 0.01 y_add[54] + y_cost_add[54] = 0
+ c_cost_PV_add_re[55]: - 0.01 y_add[55] + y_cost_add[55] = 0
+ c_cost_PV_add_re[56]: - 0.01 y_add[56] + y_cost_add[56] = 0
+ c_cost_PV_add_re[57]: - 0.01 y_add[57] + y_cost_add[57] = 0
+ c_cost_PV_add_re[58]: - 0.01 y_add[58] + y_cost_add[58] = 0
+ c_cost_PV_add_re[59]: - 0.01 y_add[59] + y_cost_add[59] = 0
+ c_cost_PV_add_re[60]: - 0.01 y_add[60] + y_cost_add[60] = 0
+ c_cost_PV_add_re[61]: - 0.01 y_add[61] + y_cost_add[61] = 0
+ c_cost_PV_add_re[62]: - 0.01 y_add[62] + y_cost_add[62] = 0
+ c_cost_PV_add_re[63]: - 0.01 y_add[63] + y_cost_add[63] = 0
+ c_cost_PV_add_re[64]: - 0.01 y_add[64] + y_cost_add[64] = 0
+ c_cost_PV_add_re[65]: - 0.01 y_add[65] + y_cost_add[65] = 0
+ c_cost_PV_add_re[66]: - 0.01 y_add[66] + y_cost_add[66] = 0
+ c_cost_PV_add_re[67]: - 0.01 y_add[67] + y_cost_add[67] = 0
+ c_cost_PV_add_re[68]: - 0.01 y_add[68] + y_cost_add[68] = 0
+ c_cost_PV_add_re[69]: - 0.01 y_add[69] + y_cost_add[69] = 0
+ c_cost_PV_add_re[70]: - 0.01 y_add[70] + y_cost_add[70] = 0
+ c_cost_PV_add_re[71]: - 0.01 y_add[71] + y_cost_add[71] = 0
+ c_cost_PV_add_re[72]: - 0.01 y_add[72] + y_cost_add[72] = 0
+ c_cost_PV_add_re[73]: - 0.01 y_add[73] + y_cost_add[73] = 0
+ c_cost_PV_add_re[74]: - 0.01 y_add[74] + y_cost_add[74] = 0
+ c_cost_PV_add_re[75]: - 0.01 y_add[75] + y_cost_add[75] = 0
+ c_cost_PV_add_re[76]: - 0.01 y_add[76] + y_cost_add[76] = 0
+ c_cost_PV_add_re[77]: - 0.01 y_add[77] + y_cost_add[77] = 0
+ c_cost_PV_add_re[78]: - 0.01 y_add[78] + y_cost_add[78] = 0
+ c_cost_PV_add_re[79]: - 0.01 y_add[79] + y_cost_add[79] = 0
+ c_cost_PV_add_re[80]: - 0.01 y_add[80] + y_cost_add[80] = 0
+ c_cost_PV_add_re[81]: - 0.01 y_add[81] + y_cost_add[81] = 0
+ c_cost_PV_add_re[82]: - 0.01 y_add[82] + y_cost_add[82] = 0
+ c_cost_PV_add_re[83]: - 0.01 y_add[83] + y_cost_add[83] = 0
+ c_cost_PV_add_re[84]: - 0.01 y_add[84] + y_cost_add[84] = 0
+ c_cost_PV_add_re[85]: - 0.01 y_add[85] + y_cost_add[85] = 0
+ c_cost_PV_add_re[86]: - 0.01 y_add[86] + y_cost_add[86] = 0
+ c_cost_PV_add_re[87]: - 0.01 y_add[87] + y_cost_add[87] = 0
+ c_cost_PV_add_re[88]: - 0.01 y_add[88] + y_cost_add[88] = 0
+ c_cost_PV_add_re[89]: - 0.01 y_add[89] + y_cost_add[89] = 0
+ c_cost_PV_add_re[90]: - 0.01 y_add[90] + y_cost_add[90] = 0
+ c_cost_PV_add_re[91]: - 0.01 y_add[91] + y_cost_add[91] = 0
+ c_cost_PV_add_re[92]: - 0.01 y_add[92] + y_cost_add[92] = 0
+ c_cost_PV_add_re[93]: - 0.01 y_add[93] + y_cost_add[93] = 0
+ c_cost_PV_add_re[94]: - 0.01 y_add[94] + y_cost_add[94] = 0
+ c_cost_PV_add_re[95]: - 0.01 y_add[95] + y_cost_add[95] = 0
+ R3456: x[0] - x_chg[0] + x_dis[0] - x_cut[0] + y_pos[0] - y_neg[0]
    - y_chg[0] + y_dis[0] + y_PV[0] - y_cut[0] + y_add[0] - y_load[0] = 0
- R3647: x[1] - x_chg[1] + x_dis[1] - x_cut[1] + y_pos[1] - y_neg[1]
+ R3457: x[1] - x_chg[1] + x_dis[1] - x_cut[1] + y_pos[1] - y_neg[1]
    - y_chg[1] + y_dis[1] + y_PV[1] - y_cut[1] + y_add[1] - y_load[1] = 0
- R3648: x[2] - x_chg[2] + x_dis[2] - x_cut[2] + y_pos[2] - y_neg[2]
+ R3458: x[2] - x_chg[2] + x_dis[2] - x_cut[2] + y_pos[2] - y_neg[2]
    - y_chg[2] + y_dis[2] + y_PV[2] - y_cut[2] + y_add[2] - y_load[2] = 0
- R3649: x[3] - x_chg[3] + x_dis[3] - x_cut[3] + y_pos[3] - y_neg[3]
+ R3459: x[3] - x_chg[3] + x_dis[3] - x_cut[3] + y_pos[3] - y_neg[3]
    - y_chg[3] + y_dis[3] + y_PV[3] - y_cut[3] + y_add[3] - y_load[3] = 0
- R3650: x[4] - x_chg[4] + x_dis[4] - x_cut[4] + y_pos[4] - y_neg[4]
+ R3460: x[4] - x_chg[4] + x_dis[4] - x_cut[4] + y_pos[4] - y_neg[4]
    - y_chg[4] + y_dis[4] + y_PV[4] - y_cut[4] + y_add[4] - y_load[4] = 0
- R3651: x[5] - x_chg[5] + x_dis[5] - x_cut[5] + y_pos[5] - y_neg[5]
+ R3461: x[5] - x_chg[5] + x_dis[5] - x_cut[5] + y_pos[5] - y_neg[5]
    - y_chg[5] + y_dis[5] + y_PV[5] - y_cut[5] + y_add[5] - y_load[5] = 0
- R3652: x[6] - x_chg[6] + x_dis[6] - x_cut[6] + y_pos[6] - y_neg[6]
+ R3462: x[6] - x_chg[6] + x_dis[6] - x_cut[6] + y_pos[6] - y_neg[6]
    - y_chg[6] + y_dis[6] + y_PV[6] - y_cut[6] + y_add[6] - y_load[6] = 0
- R3653: x[7] - x_chg[7] + x_dis[7] - x_cut[7] + y_pos[7] - y_neg[7]
+ R3463: x[7] - x_chg[7] + x_dis[7] - x_cut[7] + y_pos[7] - y_neg[7]
    - y_chg[7] + y_dis[7] + y_PV[7] - y_cut[7] + y_add[7] - y_load[7] = 0
- R3654: x[8] - x_chg[8] + x_dis[8] - x_cut[8] + y_pos[8] - y_neg[8]
+ R3464: x[8] - x_chg[8] + x_dis[8] - x_cut[8] + y_pos[8] - y_neg[8]
    - y_chg[8] + y_dis[8] + y_PV[8] - y_cut[8] + y_add[8] - y_load[8] = 0
- R3655: x[9] - x_chg[9] + x_dis[9] - x_cut[9] + y_pos[9] - y_neg[9]
+ R3465: x[9] - x_chg[9] + x_dis[9] - x_cut[9] + y_pos[9] - y_neg[9]
    - y_chg[9] + y_dis[9] + y_PV[9] - y_cut[9] + y_add[9] - y_load[9] = 0
- R3656: x[10] - x_chg[10] + x_dis[10] - x_cut[10] + y_pos[10] - y_neg[10]
+ R3466: x[10] - x_chg[10] + x_dis[10] - x_cut[10] + y_pos[10] - y_neg[10]
    - y_chg[10] + y_dis[10] + y_PV[10] - y_cut[10] + y_add[10] - y_load[10]
    = 0
- R3657: x[11] - x_chg[11] + x_dis[11] - x_cut[11] + y_pos[11] - y_neg[11]
+ R3467: x[11] - x_chg[11] + x_dis[11] - x_cut[11] + y_pos[11] - y_neg[11]
    - y_chg[11] + y_dis[11] + y_PV[11] - y_cut[11] + y_add[11] - y_load[11]
    = 0
- R3658: x[12] - x_chg[12] + x_dis[12] - x_cut[12] + y_pos[12] - y_neg[12]
+ R3468: x[12] - x_chg[12] + x_dis[12] - x_cut[12] + y_pos[12] - y_neg[12]
    - y_chg[12] + y_dis[12] + y_PV[12] - y_cut[12] + y_add[12] - y_load[12]
    = 0
- R3659: x[13] - x_chg[13] + x_dis[13] - x_cut[13] + y_pos[13] - y_neg[13]
+ R3469: x[13] - x_chg[13] + x_dis[13] - x_cut[13] + y_pos[13] - y_neg[13]
    - y_chg[13] + y_dis[13] + y_PV[13] - y_cut[13] + y_add[13] - y_load[13]
    = 0
- R3660: x[14] - x_chg[14] + x_dis[14] - x_cut[14] + y_pos[14] - y_neg[14]
+ R3470: x[14] - x_chg[14] + x_dis[14] - x_cut[14] + y_pos[14] - y_neg[14]
    - y_chg[14] + y_dis[14] + y_PV[14] - y_cut[14] + y_add[14] - y_load[14]
    = 0
- R3661: x[15] - x_chg[15] + x_dis[15] - x_cut[15] + y_pos[15] - y_neg[15]
+ R3471: x[15] - x_chg[15] + x_dis[15] - x_cut[15] + y_pos[15] - y_neg[15]
    - y_chg[15] + y_dis[15] + y_PV[15] - y_cut[15] + y_add[15] - y_load[15]
    = 0
- R3662: x[16] - x_chg[16] + x_dis[16] - x_cut[16] + y_pos[16] - y_neg[16]
+ R3472: x[16] - x_chg[16] + x_dis[16] - x_cut[16] + y_pos[16] - y_neg[16]
    - y_chg[16] + y_dis[16] + y_PV[16] - y_cut[16] + y_add[16] - y_load[16]
    = 0
- R3663: x[17] - x_chg[17] + x_dis[17] - x_cut[17] + y_pos[17] - y_neg[17]
+ R3473: x[17] - x_chg[17] + x_dis[17] - x_cut[17] + y_pos[17] - y_neg[17]
    - y_chg[17] + y_dis[17] + y_PV[17] - y_cut[17] + y_add[17] - y_load[17]
    = 0
- R3664: x[18] - x_chg[18] + x_dis[18] - x_cut[18] + y_pos[18] - y_neg[18]
+ R3474: x[18] - x_chg[18] + x_dis[18] - x_cut[18] + y_pos[18] - y_neg[18]
    - y_chg[18] + y_dis[18] + y_PV[18] - y_cut[18] + y_add[18] - y_load[18]
    = 0
- R3665: x[19] - x_chg[19] + x_dis[19] - x_cut[19] + y_pos[19] - y_neg[19]
+ R3475: x[19] - x_chg[19] + x_dis[19] - x_cut[19] + y_pos[19] - y_neg[19]
    - y_chg[19] + y_dis[19] + y_PV[19] - y_cut[19] + y_add[19] - y_load[19]
    = 0
- R3666: x[20] - x_chg[20] + x_dis[20] - x_cut[20] + y_pos[20] - y_neg[20]
+ R3476: x[20] - x_chg[20] + x_dis[20] - x_cut[20] + y_pos[20] - y_neg[20]
    - y_chg[20] + y_dis[20] + y_PV[20] - y_cut[20] + y_add[20] - y_load[20]
    = 0
- R3667: x[21] - x_chg[21] + x_dis[21] - x_cut[21] + y_pos[21] - y_neg[21]
+ R3477: x[21] - x_chg[21] + x_dis[21] - x_cut[21] + y_pos[21] - y_neg[21]
    - y_chg[21] + y_dis[21] + y_PV[21] - y_cut[21] + y_add[21] - y_load[21]
    = 0
- R3668: x[22] - x_chg[22] + x_dis[22] - x_cut[22] + y_pos[22] - y_neg[22]
+ R3478: x[22] - x_chg[22] + x_dis[22] - x_cut[22] + y_pos[22] - y_neg[22]
    - y_chg[22] + y_dis[22] + y_PV[22] - y_cut[22] + y_add[22] - y_load[22]
    = 0
- R3669: x[23] - x_chg[23] + x_dis[23] - x_cut[23] + y_pos[23] - y_neg[23]
+ R3479: x[23] - x_chg[23] + x_dis[23] - x_cut[23] + y_pos[23] - y_neg[23]
    - y_chg[23] + y_dis[23] + y_PV[23] - y_cut[23] + y_add[23] - y_load[23]
    = 0
- R3670: x[24] - x_chg[24] + x_dis[24] - x_cut[24] + y_pos[24] - y_neg[24]
+ R3480: x[24] - x_chg[24] + x_dis[24] - x_cut[24] + y_pos[24] - y_neg[24]
    - y_chg[24] + y_dis[24] + y_PV[24] - y_cut[24] + y_add[24] - y_load[24]
    = 0
- R3671: x[25] - x_chg[25] + x_dis[25] - x_cut[25] + y_pos[25] - y_neg[25]
+ R3481: x[25] - x_chg[25] + x_dis[25] - x_cut[25] + y_pos[25] - y_neg[25]
    - y_chg[25] + y_dis[25] + y_PV[25] - y_cut[25] + y_add[25] - y_load[25]
    = 0
- R3672: x[26] - x_chg[26] + x_dis[26] - x_cut[26] + y_pos[26] - y_neg[26]
+ R3482: x[26] - x_chg[26] + x_dis[26] - x_cut[26] + y_pos[26] - y_neg[26]
    - y_chg[26] + y_dis[26] + y_PV[26] - y_cut[26] + y_add[26] - y_load[26]
    = 0
- R3673: x[27] - x_chg[27] + x_dis[27] - x_cut[27] + y_pos[27] - y_neg[27]
+ R3483: x[27] - x_chg[27] + x_dis[27] - x_cut[27] + y_pos[27] - y_neg[27]
    - y_chg[27] + y_dis[27] + y_PV[27] - y_cut[27] + y_add[27] - y_load[27]
    = 0
- R3674: x[28] - x_chg[28] + x_dis[28] - x_cut[28] + y_pos[28] - y_neg[28]
+ R3484: x[28] - x_chg[28] + x_dis[28] - x_cut[28] + y_pos[28] - y_neg[28]
    - y_chg[28] + y_dis[28] + y_PV[28] - y_cut[28] + y_add[28] - y_load[28]
    = 0
- R3675: x[29] - x_chg[29] + x_dis[29] - x_cut[29] + y_pos[29] - y_neg[29]
+ R3485: x[29] - x_chg[29] + x_dis[29] - x_cut[29] + y_pos[29] - y_neg[29]
    - y_chg[29] + y_dis[29] + y_PV[29] - y_cut[29] + y_add[29] - y_load[29]
    = 0
- R3676: x[30] - x_chg[30] + x_dis[30] - x_cut[30] + y_pos[30] - y_neg[30]
+ R3486: x[30] - x_chg[30] + x_dis[30] - x_cut[30] + y_pos[30] - y_neg[30]
    - y_chg[30] + y_dis[30] + y_PV[30] - y_cut[30] + y_add[30] - y_load[30]
    = 0
- R3677: x[31] - x_chg[31] + x_dis[31] - x_cut[31] + y_pos[31] - y_neg[31]
+ R3487: x[31] - x_chg[31] + x_dis[31] - x_cut[31] + y_pos[31] - y_neg[31]
    - y_chg[31] + y_dis[31] + y_PV[31] - y_cut[31] + y_add[31] - y_load[31]
    = 0
- R3678: x[32] - x_chg[32] + x_dis[32] - x_cut[32] + y_pos[32] - y_neg[32]
+ R3488: x[32] - x_chg[32] + x_dis[32] - x_cut[32] + y_pos[32] - y_neg[32]
    - y_chg[32] + y_dis[32] + y_PV[32] - y_cut[32] + y_add[32] - y_load[32]
    = 0
- R3679: x[33] - x_chg[33] + x_dis[33] - x_cut[33] + y_pos[33] - y_neg[33]
+ R3489: x[33] - x_chg[33] + x_dis[33] - x_cut[33] + y_pos[33] - y_neg[33]
    - y_chg[33] + y_dis[33] + y_PV[33] - y_cut[33] + y_add[33] - y_load[33]
    = 0
- R3680: x[34] - x_chg[34] + x_dis[34] - x_cut[34] + y_pos[34] - y_neg[34]
+ R3490: x[34] - x_chg[34] + x_dis[34] - x_cut[34] + y_pos[34] - y_neg[34]
    - y_chg[34] + y_dis[34] + y_PV[34] - y_cut[34] + y_add[34] - y_load[34]
    = 0
- R3681: x[35] - x_chg[35] + x_dis[35] - x_cut[35] + y_pos[35] - y_neg[35]
+ R3491: x[35] - x_chg[35] + x_dis[35] - x_cut[35] + y_pos[35] - y_neg[35]
    - y_chg[35] + y_dis[35] + y_PV[35] - y_cut[35] + y_add[35] - y_load[35]
    = 0
- R3682: x[36] - x_chg[36] + x_dis[36] - x_cut[36] + y_pos[36] - y_neg[36]
+ R3492: x[36] - x_chg[36] + x_dis[36] - x_cut[36] + y_pos[36] - y_neg[36]
    - y_chg[36] + y_dis[36] + y_PV[36] - y_cut[36] + y_add[36] - y_load[36]
    = 0
- R3683: x[37] - x_chg[37] + x_dis[37] - x_cut[37] + y_pos[37] - y_neg[37]
+ R3493: x[37] - x_chg[37] + x_dis[37] - x_cut[37] + y_pos[37] - y_neg[37]
    - y_chg[37] + y_dis[37] + y_PV[37] - y_cut[37] + y_add[37] - y_load[37]
    = 0
- R3684: x[38] - x_chg[38] + x_dis[38] - x_cut[38] + y_pos[38] - y_neg[38]
+ R3494: x[38] - x_chg[38] + x_dis[38] - x_cut[38] + y_pos[38] - y_neg[38]
    - y_chg[38] + y_dis[38] + y_PV[38] - y_cut[38] + y_add[38] - y_load[38]
    = 0
- R3685: x[39] - x_chg[39] + x_dis[39] - x_cut[39] + y_pos[39] - y_neg[39]
+ R3495: x[39] - x_chg[39] + x_dis[39] - x_cut[39] + y_pos[39] - y_neg[39]
    - y_chg[39] + y_dis[39] + y_PV[39] - y_cut[39] + y_add[39] - y_load[39]
    = 0
- R3686: x[40] - x_chg[40] + x_dis[40] - x_cut[40] + y_pos[40] - y_neg[40]
+ R3496: x[40] - x_chg[40] + x_dis[40] - x_cut[40] + y_pos[40] - y_neg[40]
    - y_chg[40] + y_dis[40] + y_PV[40] - y_cut[40] + y_add[40] - y_load[40]
    = 0
- R3687: x[41] - x_chg[41] + x_dis[41] - x_cut[41] + y_pos[41] - y_neg[41]
+ R3497: x[41] - x_chg[41] + x_dis[41] - x_cut[41] + y_pos[41] - y_neg[41]
    - y_chg[41] + y_dis[41] + y_PV[41] - y_cut[41] + y_add[41] - y_load[41]
    = 0
- R3688: x[42] - x_chg[42] + x_dis[42] - x_cut[42] + y_pos[42] - y_neg[42]
+ R3498: x[42] - x_chg[42] + x_dis[42] - x_cut[42] + y_pos[42] - y_neg[42]
    - y_chg[42] + y_dis[42] + y_PV[42] - y_cut[42] + y_add[42] - y_load[42]
    = 0
- R3689: x[43] - x_chg[43] + x_dis[43] - x_cut[43] + y_pos[43] - y_neg[43]
+ R3499: x[43] - x_chg[43] + x_dis[43] - x_cut[43] + y_pos[43] - y_neg[43]
    - y_chg[43] + y_dis[43] + y_PV[43] - y_cut[43] + y_add[43] - y_load[43]
    = 0
- R3690: x[44] - x_chg[44] + x_dis[44] - x_cut[44] + y_pos[44] - y_neg[44]
+ R3500: x[44] - x_chg[44] + x_dis[44] - x_cut[44] + y_pos[44] - y_neg[44]
    - y_chg[44] + y_dis[44] + y_PV[44] - y_cut[44] + y_add[44] - y_load[44]
    = 0
- R3691: x[45] - x_chg[45] + x_dis[45] - x_cut[45] + y_pos[45] - y_neg[45]
+ R3501: x[45] - x_chg[45] + x_dis[45] - x_cut[45] + y_pos[45] - y_neg[45]
    - y_chg[45] + y_dis[45] + y_PV[45] - y_cut[45] + y_add[45] - y_load[45]
    = 0
- R3692: x[46] - x_chg[46] + x_dis[46] - x_cut[46] + y_pos[46] - y_neg[46]
+ R3502: x[46] - x_chg[46] + x_dis[46] - x_cut[46] + y_pos[46] - y_neg[46]
    - y_chg[46] + y_dis[46] + y_PV[46] - y_cut[46] + y_add[46] - y_load[46]
    = 0
- R3693: x[47] - x_chg[47] + x_dis[47] - x_cut[47] + y_pos[47] - y_neg[47]
+ R3503: x[47] - x_chg[47] + x_dis[47] - x_cut[47] + y_pos[47] - y_neg[47]
    - y_chg[47] + y_dis[47] + y_PV[47] - y_cut[47] + y_add[47] - y_load[47]
    = 0
- R3694: x[48] - x_chg[48] + x_dis[48] - x_cut[48] + y_pos[48] - y_neg[48]
+ R3504: x[48] - x_chg[48] + x_dis[48] - x_cut[48] + y_pos[48] - y_neg[48]
    - y_chg[48] + y_dis[48] + y_PV[48] - y_cut[48] + y_add[48] - y_load[48]
    = 0
- R3695: x[49] - x_chg[49] + x_dis[49] - x_cut[49] + y_pos[49] - y_neg[49]
+ R3505: x[49] - x_chg[49] + x_dis[49] - x_cut[49] + y_pos[49] - y_neg[49]
    - y_chg[49] + y_dis[49] + y_PV[49] - y_cut[49] + y_add[49] - y_load[49]
    = 0
- R3696: x[50] - x_chg[50] + x_dis[50] - x_cut[50] + y_pos[50] - y_neg[50]
+ R3506: x[50] - x_chg[50] + x_dis[50] - x_cut[50] + y_pos[50] - y_neg[50]
    - y_chg[50] + y_dis[50] + y_PV[50] - y_cut[50] + y_add[50] - y_load[50]
    = 0
- R3697: x[51] - x_chg[51] + x_dis[51] - x_cut[51] + y_pos[51] - y_neg[51]
+ R3507: x[51] - x_chg[51] + x_dis[51] - x_cut[51] + y_pos[51] - y_neg[51]
    - y_chg[51] + y_dis[51] + y_PV[51] - y_cut[51] + y_add[51] - y_load[51]
    = 0
- R3698: x[52] - x_chg[52] + x_dis[52] - x_cut[52] + y_pos[52] - y_neg[52]
+ R3508: x[52] - x_chg[52] + x_dis[52] - x_cut[52] + y_pos[52] - y_neg[52]
    - y_chg[52] + y_dis[52] + y_PV[52] - y_cut[52] + y_add[52] - y_load[52]
    = 0
- R3699: x[53] - x_chg[53] + x_dis[53] - x_cut[53] + y_pos[53] - y_neg[53]
+ R3509: x[53] - x_chg[53] + x_dis[53] - x_cut[53] + y_pos[53] - y_neg[53]
    - y_chg[53] + y_dis[53] + y_PV[53] - y_cut[53] + y_add[53] - y_load[53]
    = 0
- R3700: x[54] - x_chg[54] + x_dis[54] - x_cut[54] + y_pos[54] - y_neg[54]
+ R3510: x[54] - x_chg[54] + x_dis[54] - x_cut[54] + y_pos[54] - y_neg[54]
    - y_chg[54] + y_dis[54] + y_PV[54] - y_cut[54] + y_add[54] - y_load[54]
    = 0
- R3701: x[55] - x_chg[55] + x_dis[55] - x_cut[55] + y_pos[55] - y_neg[55]
+ R3511: x[55] - x_chg[55] + x_dis[55] - x_cut[55] + y_pos[55] - y_neg[55]
    - y_chg[55] + y_dis[55] + y_PV[55] - y_cut[55] + y_add[55] - y_load[55]
    = 0
- R3702: x[56] - x_chg[56] + x_dis[56] - x_cut[56] + y_pos[56] - y_neg[56]
+ R3512: x[56] - x_chg[56] + x_dis[56] - x_cut[56] + y_pos[56] - y_neg[56]
    - y_chg[56] + y_dis[56] + y_PV[56] - y_cut[56] + y_add[56] - y_load[56]
    = 0
- R3703: x[57] - x_chg[57] + x_dis[57] - x_cut[57] + y_pos[57] - y_neg[57]
+ R3513: x[57] - x_chg[57] + x_dis[57] - x_cut[57] + y_pos[57] - y_neg[57]
    - y_chg[57] + y_dis[57] + y_PV[57] - y_cut[57] + y_add[57] - y_load[57]
    = 0
- R3704: x[58] - x_chg[58] + x_dis[58] - x_cut[58] + y_pos[58] - y_neg[58]
+ R3514: x[58] - x_chg[58] + x_dis[58] - x_cut[58] + y_pos[58] - y_neg[58]
    - y_chg[58] + y_dis[58] + y_PV[58] - y_cut[58] + y_add[58] - y_load[58]
    = 0
- R3705: x[59] - x_chg[59] + x_dis[59] - x_cut[59] + y_pos[59] - y_neg[59]
+ R3515: x[59] - x_chg[59] + x_dis[59] - x_cut[59] + y_pos[59] - y_neg[59]
    - y_chg[59] + y_dis[59] + y_PV[59] - y_cut[59] + y_add[59] - y_load[59]
    = 0
- R3706: x[60] - x_chg[60] + x_dis[60] - x_cut[60] + y_pos[60] - y_neg[60]
+ R3516: x[60] - x_chg[60] + x_dis[60] - x_cut[60] + y_pos[60] - y_neg[60]
    - y_chg[60] + y_dis[60] + y_PV[60] - y_cut[60] + y_add[60] - y_load[60]
    = 0
- R3707: x[61] - x_chg[61] + x_dis[61] - x_cut[61] + y_pos[61] - y_neg[61]
+ R3517: x[61] - x_chg[61] + x_dis[61] - x_cut[61] + y_pos[61] - y_neg[61]
    - y_chg[61] + y_dis[61] + y_PV[61] - y_cut[61] + y_add[61] - y_load[61]
    = 0
- R3708: x[62] - x_chg[62] + x_dis[62] - x_cut[62] + y_pos[62] - y_neg[62]
+ R3518: x[62] - x_chg[62] + x_dis[62] - x_cut[62] + y_pos[62] - y_neg[62]
    - y_chg[62] + y_dis[62] + y_PV[62] - y_cut[62] + y_add[62] - y_load[62]
    = 0
- R3709: x[63] - x_chg[63] + x_dis[63] - x_cut[63] + y_pos[63] - y_neg[63]
+ R3519: x[63] - x_chg[63] + x_dis[63] - x_cut[63] + y_pos[63] - y_neg[63]
    - y_chg[63] + y_dis[63] + y_PV[63] - y_cut[63] + y_add[63] - y_load[63]
    = 0
- R3710: x[64] - x_chg[64] + x_dis[64] - x_cut[64] + y_pos[64] - y_neg[64]
+ R3520: x[64] - x_chg[64] + x_dis[64] - x_cut[64] + y_pos[64] - y_neg[64]
    - y_chg[64] + y_dis[64] + y_PV[64] - y_cut[64] + y_add[64] - y_load[64]
    = 0
- R3711: x[65] - x_chg[65] + x_dis[65] - x_cut[65] + y_pos[65] - y_neg[65]
+ R3521: x[65] - x_chg[65] + x_dis[65] - x_cut[65] + y_pos[65] - y_neg[65]
    - y_chg[65] + y_dis[65] + y_PV[65] - y_cut[65] + y_add[65] - y_load[65]
    = 0
- R3712: x[66] - x_chg[66] + x_dis[66] - x_cut[66] + y_pos[66] - y_neg[66]
+ R3522: x[66] - x_chg[66] + x_dis[66] - x_cut[66] + y_pos[66] - y_neg[66]
    - y_chg[66] + y_dis[66] + y_PV[66] - y_cut[66] + y_add[66] - y_load[66]
    = 0
- R3713: x[67] - x_chg[67] + x_dis[67] - x_cut[67] + y_pos[67] - y_neg[67]
+ R3523: x[67] - x_chg[67] + x_dis[67] - x_cut[67] + y_pos[67] - y_neg[67]
    - y_chg[67] + y_dis[67] + y_PV[67] - y_cut[67] + y_add[67] - y_load[67]
    = 0
- R3714: x[68] - x_chg[68] + x_dis[68] - x_cut[68] + y_pos[68] - y_neg[68]
+ R3524: x[68] - x_chg[68] + x_dis[68] - x_cut[68] + y_pos[68] - y_neg[68]
    - y_chg[68] + y_dis[68] + y_PV[68] - y_cut[68] + y_add[68] - y_load[68]
    = 0
- R3715: x[69] - x_chg[69] + x_dis[69] - x_cut[69] + y_pos[69] - y_neg[69]
+ R3525: x[69] - x_chg[69] + x_dis[69] - x_cut[69] + y_pos[69] - y_neg[69]
    - y_chg[69] + y_dis[69] + y_PV[69] - y_cut[69] + y_add[69] - y_load[69]
    = 0
- R3716: x[70] - x_chg[70] + x_dis[70] - x_cut[70] + y_pos[70] - y_neg[70]
+ R3526: x[70] - x_chg[70] + x_dis[70] - x_cut[70] + y_pos[70] - y_neg[70]
    - y_chg[70] + y_dis[70] + y_PV[70] - y_cut[70] + y_add[70] - y_load[70]
    = 0
- R3717: x[71] - x_chg[71] + x_dis[71] - x_cut[71] + y_pos[71] - y_neg[71]
+ R3527: x[71] - x_chg[71] + x_dis[71] - x_cut[71] + y_pos[71] - y_neg[71]
    - y_chg[71] + y_dis[71] + y_PV[71] - y_cut[71] + y_add[71] - y_load[71]
    = 0
- R3718: x[72] - x_chg[72] + x_dis[72] - x_cut[72] + y_pos[72] - y_neg[72]
+ R3528: x[72] - x_chg[72] + x_dis[72] - x_cut[72] + y_pos[72] - y_neg[72]
    - y_chg[72] + y_dis[72] + y_PV[72] - y_cut[72] + y_add[72] - y_load[72]
    = 0
- R3719: x[73] - x_chg[73] + x_dis[73] - x_cut[73] + y_pos[73] - y_neg[73]
+ R3529: x[73] - x_chg[73] + x_dis[73] - x_cut[73] + y_pos[73] - y_neg[73]
    - y_chg[73] + y_dis[73] + y_PV[73] - y_cut[73] + y_add[73] - y_load[73]
    = 0
- R3720: x[74] - x_chg[74] + x_dis[74] - x_cut[74] + y_pos[74] - y_neg[74]
+ R3530: x[74] - x_chg[74] + x_dis[74] - x_cut[74] + y_pos[74] - y_neg[74]
    - y_chg[74] + y_dis[74] + y_PV[74] - y_cut[74] + y_add[74] - y_load[74]
    = 0
- R3721: x[75] - x_chg[75] + x_dis[75] - x_cut[75] + y_pos[75] - y_neg[75]
+ R3531: x[75] - x_chg[75] + x_dis[75] - x_cut[75] + y_pos[75] - y_neg[75]
    - y_chg[75] + y_dis[75] + y_PV[75] - y_cut[75] + y_add[75] - y_load[75]
    = 0
- R3722: x[76] - x_chg[76] + x_dis[76] - x_cut[76] + y_pos[76] - y_neg[76]
+ R3532: x[76] - x_chg[76] + x_dis[76] - x_cut[76] + y_pos[76] - y_neg[76]
    - y_chg[76] + y_dis[76] + y_PV[76] - y_cut[76] + y_add[76] - y_load[76]
    = 0
- R3723: x[77] - x_chg[77] + x_dis[77] - x_cut[77] + y_pos[77] - y_neg[77]
+ R3533: x[77] - x_chg[77] + x_dis[77] - x_cut[77] + y_pos[77] - y_neg[77]
    - y_chg[77] + y_dis[77] + y_PV[77] - y_cut[77] + y_add[77] - y_load[77]
    = 0
- R3724: x[78] - x_chg[78] + x_dis[78] - x_cut[78] + y_pos[78] - y_neg[78]
+ R3534: x[78] - x_chg[78] + x_dis[78] - x_cut[78] + y_pos[78] - y_neg[78]
    - y_chg[78] + y_dis[78] + y_PV[78] - y_cut[78] + y_add[78] - y_load[78]
    = 0
- R3725: x[79] - x_chg[79] + x_dis[79] - x_cut[79] + y_pos[79] - y_neg[79]
+ R3535: x[79] - x_chg[79] + x_dis[79] - x_cut[79] + y_pos[79] - y_neg[79]
    - y_chg[79] + y_dis[79] + y_PV[79] - y_cut[79] + y_add[79] - y_load[79]
    = 0
- R3726: x[80] - x_chg[80] + x_dis[80] - x_cut[80] + y_pos[80] - y_neg[80]
+ R3536: x[80] - x_chg[80] + x_dis[80] - x_cut[80] + y_pos[80] - y_neg[80]
    - y_chg[80] + y_dis[80] + y_PV[80] - y_cut[80] + y_add[80] - y_load[80]
    = 0
- R3727: x[81] - x_chg[81] + x_dis[81] - x_cut[81] + y_pos[81] - y_neg[81]
+ R3537: x[81] - x_chg[81] + x_dis[81] - x_cut[81] + y_pos[81] - y_neg[81]
    - y_chg[81] + y_dis[81] + y_PV[81] - y_cut[81] + y_add[81] - y_load[81]
    = 0
- R3728: x[82] - x_chg[82] + x_dis[82] - x_cut[82] + y_pos[82] - y_neg[82]
+ R3538: x[82] - x_chg[82] + x_dis[82] - x_cut[82] + y_pos[82] - y_neg[82]
    - y_chg[82] + y_dis[82] + y_PV[82] - y_cut[82] + y_add[82] - y_load[82]
    = 0
- R3729: x[83] - x_chg[83] + x_dis[83] - x_cut[83] + y_pos[83] - y_neg[83]
+ R3539: x[83] - x_chg[83] + x_dis[83] - x_cut[83] + y_pos[83] - y_neg[83]
    - y_chg[83] + y_dis[83] + y_PV[83] - y_cut[83] + y_add[83] - y_load[83]
    = 0
- R3730: x[84] - x_chg[84] + x_dis[84] - x_cut[84] + y_pos[84] - y_neg[84]
+ R3540: x[84] - x_chg[84] + x_dis[84] - x_cut[84] + y_pos[84] - y_neg[84]
    - y_chg[84] + y_dis[84] + y_PV[84] - y_cut[84] + y_add[84] - y_load[84]
    = 0
- R3731: x[85] - x_chg[85] + x_dis[85] - x_cut[85] + y_pos[85] - y_neg[85]
+ R3541: x[85] - x_chg[85] + x_dis[85] - x_cut[85] + y_pos[85] - y_neg[85]
    - y_chg[85] + y_dis[85] + y_PV[85] - y_cut[85] + y_add[85] - y_load[85]
    = 0
- R3732: x[86] - x_chg[86] + x_dis[86] - x_cut[86] + y_pos[86] - y_neg[86]
+ R3542: x[86] - x_chg[86] + x_dis[86] - x_cut[86] + y_pos[86] - y_neg[86]
    - y_chg[86] + y_dis[86] + y_PV[86] - y_cut[86] + y_add[86] - y_load[86]
    = 0
- R3733: x[87] - x_chg[87] + x_dis[87] - x_cut[87] + y_pos[87] - y_neg[87]
+ R3543: x[87] - x_chg[87] + x_dis[87] - x_cut[87] + y_pos[87] - y_neg[87]
    - y_chg[87] + y_dis[87] + y_PV[87] - y_cut[87] + y_add[87] - y_load[87]
    = 0
- R3734: x[88] - x_chg[88] + x_dis[88] - x_cut[88] + y_pos[88] - y_neg[88]
+ R3544: x[88] - x_chg[88] + x_dis[88] - x_cut[88] + y_pos[88] - y_neg[88]
    - y_chg[88] + y_dis[88] + y_PV[88] - y_cut[88] + y_add[88] - y_load[88]
    = 0
- R3735: x[89] - x_chg[89] + x_dis[89] - x_cut[89] + y_pos[89] - y_neg[89]
+ R3545: x[89] - x_chg[89] + x_dis[89] - x_cut[89] + y_pos[89] - y_neg[89]
    - y_chg[89] + y_dis[89] + y_PV[89] - y_cut[89] + y_add[89] - y_load[89]
    = 0
- R3736: x[90] - x_chg[90] + x_dis[90] - x_cut[90] + y_pos[90] - y_neg[90]
+ R3546: x[90] - x_chg[90] + x_dis[90] - x_cut[90] + y_pos[90] - y_neg[90]
    - y_chg[90] + y_dis[90] + y_PV[90] - y_cut[90] + y_add[90] - y_load[90]
    = 0
- R3737: x[91] - x_chg[91] + x_dis[91] - x_cut[91] + y_pos[91] - y_neg[91]
+ R3547: x[91] - x_chg[91] + x_dis[91] - x_cut[91] + y_pos[91] - y_neg[91]
    - y_chg[91] + y_dis[91] + y_PV[91] - y_cut[91] + y_add[91] - y_load[91]
    = 0
- R3738: x[92] - x_chg[92] + x_dis[92] - x_cut[92] + y_pos[92] - y_neg[92]
+ R3548: x[92] - x_chg[92] + x_dis[92] - x_cut[92] + y_pos[92] - y_neg[92]
    - y_chg[92] + y_dis[92] + y_PV[92] - y_cut[92] + y_add[92] - y_load[92]
    = 0
- R3739: x[93] - x_chg[93] + x_dis[93] - x_cut[93] + y_pos[93] - y_neg[93]
+ R3549: x[93] - x_chg[93] + x_dis[93] - x_cut[93] + y_pos[93] - y_neg[93]
    - y_chg[93] + y_dis[93] + y_PV[93] - y_cut[93] + y_add[93] - y_load[93]
    = 0
- R3740: x[94] - x_chg[94] + x_dis[94] - x_cut[94] + y_pos[94] - y_neg[94]
+ R3550: x[94] - x_chg[94] + x_dis[94] - x_cut[94] + y_pos[94] - y_neg[94]
    - y_chg[94] + y_dis[94] + y_PV[94] - y_cut[94] + y_add[94] - y_load[94]
    = 0
- R3741: x[95] - x_chg[95] + x_dis[95] - x_cut[95] + y_pos[95] - y_neg[95]
+ R3551: x[95] - x_chg[95] + x_dis[95] - x_cut[95] + y_pos[95] - y_neg[95]
    - y_chg[95] + y_dis[95] + y_PV[95] - y_cut[95] + y_add[95] - y_load[95]
    = 0
 Bounds
@@ -4778,1437 +4416,1078 @@ General Constraints
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
- GC1: x_cost_cut[0] = PWL ( x_cut[0] ) : (0, 0) 
-  (0.1688257630929962, 5.7004276567864938e-04) 
-  (0.3376515261859924, 0.0022801710627146) 
-  (0.5064772892789885, 0.00513038489110784) 
-  (0.6753030523719847, 0.00912068425085839) 
-  (0.8441288154649808, 0.0142510691419662) 
-  (1.012954578557977, 0.0205215395644314) 
-  (1.181780341650973, 0.0279320955182538) 
-  (1.350606104743969, 0.0364827370034336) 
-  (1.519431867836965, 0.0461734640199706) 
-  (1.688257630929962, 0.0570042765678649)
+ GC1: x_cost_cut[0] = PWL ( x_cut[0] ) : (0, 0) (1e-06, 1e-15) 
+  (2e-06, 4e-15) (3e-06, 9e-15) (4e-06, 1.6e-14) (5e-06, 2.5e-14) 
+  (6e-06, 3.6e-14) (7e-06, 4.9e-14) (8e-06, 6.4e-14) (9e-06, 8.1e-14) 
+  (1e-05, 1e-13)
  GC2: x_cost_fuel[1] = PWL ( x[1] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
- GC3: x_cost_cut[1] = PWL ( x_cut[1] ) : (0, 0) 
-  (0.1688257630929962, 5.7004276567864938e-04) 
-  (0.3376515261859924, 0.0022801710627146) 
-  (0.5064772892789885, 0.00513038489110784) 
-  (0.6753030523719847, 0.00912068425085839) 
-  (0.8441288154649808, 0.0142510691419662) 
-  (1.012954578557977, 0.0205215395644314) 
-  (1.181780341650973, 0.0279320955182538) 
-  (1.350606104743969, 0.0364827370034336) 
-  (1.519431867836965, 0.0461734640199706) 
-  (1.688257630929962, 0.0570042765678649)
+ GC3: x_cost_cut[1] = PWL ( x_cut[1] ) : (0, 0) (1e-06, 1e-15) 
+  (2e-06, 4e-15) (3e-06, 9e-15) (4e-06, 1.6e-14) (5e-06, 2.5e-14) 
+  (6e-06, 3.6e-14) (7e-06, 4.9e-14) (8e-06, 6.4e-14) (9e-06, 8.1e-14) 
+  (1e-05, 1e-13)
  GC4: x_cost_fuel[2] = PWL ( x[2] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
- GC5: x_cost_cut[2] = PWL ( x_cut[2] ) : (0, 0) 
-  (0.1688257630929962, 5.7004276567864938e-04) 
-  (0.3376515261859924, 0.0022801710627146) 
-  (0.5064772892789885, 0.00513038489110784) 
-  (0.6753030523719847, 0.00912068425085839) 
-  (0.8441288154649808, 0.0142510691419662) 
-  (1.012954578557977, 0.0205215395644314) 
-  (1.181780341650973, 0.0279320955182538) 
-  (1.350606104743969, 0.0364827370034336) 
-  (1.519431867836965, 0.0461734640199706) 
-  (1.688257630929962, 0.0570042765678649)
+ GC5: x_cost_cut[2] = PWL ( x_cut[2] ) : (0, 0) (1e-06, 1e-15) 
+  (2e-06, 4e-15) (3e-06, 9e-15) (4e-06, 1.6e-14) (5e-06, 2.5e-14) 
+  (6e-06, 3.6e-14) (7e-06, 4.9e-14) (8e-06, 6.4e-14) (9e-06, 8.1e-14) 
+  (1e-05, 1e-13)
  GC6: x_cost_fuel[3] = PWL ( x[3] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
- GC7: x_cost_cut[3] = PWL ( x_cut[3] ) : (0, 0) 
-  (0.1688257630929962, 5.7004276567864938e-04) 
-  (0.3376515261859924, 0.0022801710627146) 
-  (0.5064772892789885, 0.00513038489110784) 
-  (0.6753030523719847, 0.00912068425085839) 
-  (0.8441288154649808, 0.0142510691419662) 
-  (1.012954578557977, 0.0205215395644314) 
-  (1.181780341650973, 0.0279320955182538) 
-  (1.350606104743969, 0.0364827370034336) 
-  (1.519431867836965, 0.0461734640199706) 
-  (1.688257630929962, 0.0570042765678649)
+ GC7: x_cost_cut[3] = PWL ( x_cut[3] ) : (0, 0) (1e-06, 1e-15) 
+  (2e-06, 4e-15) (3e-06, 9e-15) (4e-06, 1.6e-14) (5e-06, 2.5e-14) 
+  (6e-06, 3.6e-14) (7e-06, 4.9e-14) (8e-06, 6.4e-14) (9e-06, 8.1e-14) 
+  (1e-05, 1e-13)
  GC8: x_cost_fuel[4] = PWL ( x[4] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
- GC9: x_cost_cut[4] = PWL ( x_cut[4] ) : (0, 0) 
-  (0.1691636786804867, 0.000572327) 
-  (0.3383273573609733, 0.00228930801477719) 
-  (0.50749103604146, 0.00515094303324869) 
-  (0.6766547147219466, 0.00915723205910878) 
-  (0.8458183934024334, 0.0143081750923575) 
-  (1.01498207208292, 0.0206037721329948) 
-  (1.184145750763407, 0.0280440231810206) 
-  (1.353309429443893, 0.0366289282364351) 
-  (1.52247310812438, 0.0463584872992382) 
-  (1.691636786804867, 0.0572327003694299)
+ GC9: x_cost_cut[4] = PWL ( x_cut[4] ) : (0, 0) (1e-06, 1e-15) 
+  (2e-06, 4e-15) (3e-06, 9e-15) (4e-06, 1.6e-14) (5e-06, 2.5e-14) 
+  (6e-06, 3.6e-14) (7e-06, 4.9e-14) (8e-06, 6.4e-14) (9e-06, 8.1e-14) 
+  (1e-05, 1e-13)
  GC10: x_cost_fuel[5] = PWL ( x[5] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
- GC11: x_cost_cut[5] = PWL ( x_cut[5] ) : (0, 0) 
-  (0.2029964144212899, 8.2415088535800149e-04) 
-  (0.4059928288425798, 0.00329660354143201) 
-  (0.6089892432638697, 0.00741735796822201) 
-  (0.8119856576851596, 0.013186414165728) 
-  (1.01498207210645, 0.02060377213395) 
-  (1.217978486527739, 0.0296694318728881) 
-  (1.420974900949029, 0.0403833933825421) 
-  (1.623971315370319, 0.0527456566629121) 
-  (1.826967729791609, 0.0667562217139981) 
-  (2.029964144212899, 0.0824150885358002)
+ GC11: x_cost_cut[5] = PWL ( x_cut[5] ) : (0, 0) (1e-06, 1e-15) 
+  (2e-06, 4e-15) (3e-06, 9e-15) (4e-06, 1.6e-14) (5e-06, 2.5e-14) 
+  (6e-06, 3.6e-14) (7e-06, 4.9e-14) (8e-06, 6.4e-14) (9e-06, 8.1e-14) 
+  (1e-05, 1e-13)
  GC12: x_cost_fuel[6] = PWL ( x[6] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
- GC13: x_cost_cut[6] = PWL ( x_cut[6] ) : (0, 0) 
-  (0.2029964144212899, 8.2415088535800149e-04) 
-  (0.4059928288425798, 0.00329660354143201) 
-  (0.6089892432638697, 0.00741735796822201) 
-  (0.8119856576851596, 0.013186414165728) 
-  (1.01498207210645, 0.02060377213395) 
-  (1.217978486527739, 0.0296694318728881) 
-  (1.420974900949029, 0.0403833933825421) 
-  (1.623971315370319, 0.0527456566629121) 
-  (1.826967729791609, 0.0667562217139981) 
-  (2.029964144212899, 0.0824150885358002)
+ GC13: x_cost_cut[6] = PWL ( x_cut[6] ) : (0, 0) (1e-06, 1e-15) 
+  (2e-06, 4e-15) (3e-06, 9e-15) (4e-06, 1.6e-14) (5e-06, 2.5e-14) 
+  (6e-06, 3.6e-14) (7e-06, 4.9e-14) (8e-06, 6.4e-14) (9e-06, 8.1e-14) 
+  (1e-05, 1e-13)
  GC14: x_cost_fuel[7] = PWL ( x[7] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
- GC15: x_cost_cut[7] = PWL ( x_cut[7] ) : (0, 0) 
-  (0.2029964144212899, 8.2415088535800149e-04) 
-  (0.4059928288425798, 0.00329660354143201) 
-  (0.6089892432638697, 0.00741735796822201) 
-  (0.8119856576851596, 0.013186414165728) 
-  (1.01498207210645, 0.02060377213395) 
-  (1.217978486527739, 0.0296694318728881) 
-  (1.420974900949029, 0.0403833933825421) 
-  (1.623971315370319, 0.0527456566629121) 
-  (1.826967729791609, 0.0667562217139981) 
-  (2.029964144212899, 0.0824150885358002)
+ GC15: x_cost_cut[7] = PWL ( x_cut[7] ) : (0, 0) (1e-06, 1e-15) 
+  (2e-06, 4e-15) (3e-06, 9e-15) (4e-06, 1.6e-14) (5e-06, 2.5e-14) 
+  (6e-06, 3.6e-14) (7e-06, 4.9e-14) (8e-06, 6.4e-14) (9e-06, 8.1e-14) 
+  (1e-05, 1e-13)
  GC16: x_cost_fuel[8] = PWL ( x[8] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
- GC17: x_cost_cut[8] = PWL ( x_cut[8] ) : (0, 0) 
-  (0.203193036095842, 8.2574819835692275e-04) 
-  (0.4063860721916839, 0.00330299279342769) 
-  (0.6095791082875259, 0.00743173378521231) 
-  (0.8127721443833679, 0.0132119711737108) 
-  (1.01596518047921, 0.0206437049589231) 
-  (1.219158216575052, 0.0297269351408492) 
-  (1.422351252670894, 0.0404616617194892) 
-  (1.625544288766736, 0.0528478846948431) 
-  (1.828737324862578, 0.0668856040669107) 
-  (2.03193036095842, 0.0825748198356923)
+ GC17: x_cost_cut[8] = PWL ( x_cut[8] ) : (0, 0) (1e-06, 1e-15) 
+  (2e-06, 4e-15) (3e-06, 9e-15) (4e-06, 1.6e-14) (5e-06, 2.5e-14) 
+  (6e-06, 3.6e-14) (7e-06, 4.9e-14) (8e-06, 6.4e-14) (9e-06, 8.1e-14) 
+  (1e-05, 1e-13)
  GC18: x_cost_fuel[9] = PWL ( x[9] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
- GC19: x_cost_cut[9] = PWL ( x_cut[9] ) : (0, 0) 
-  (0.203193036095842, 8.2574819835692275e-04) 
-  (0.4063860721916839, 0.00330299279342769) 
-  (0.6095791082875259, 0.00743173378521231) 
-  (0.8127721443833679, 0.0132119711737108) 
-  (1.01596518047921, 0.0206437049589231) 
-  (1.219158216575052, 0.0297269351408492) 
-  (1.422351252670894, 0.0404616617194892) 
-  (1.625544288766736, 0.0528478846948431) 
-  (1.828737324862578, 0.0668856040669107) 
-  (2.03193036095842, 0.0825748198356923)
+ GC19: x_cost_cut[9] = PWL ( x_cut[9] ) : (0, 0) (1e-06, 1e-15) 
+  (2e-06, 4e-15) (3e-06, 9e-15) (4e-06, 1.6e-14) (5e-06, 2.5e-14) 
+  (6e-06, 3.6e-14) (7e-06, 4.9e-14) (8e-06, 6.4e-14) (9e-06, 8.1e-14) 
+  (1e-05, 1e-13)
  GC20: x_cost_fuel[10] = PWL ( x[10] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
- GC21: x_cost_cut[10] = PWL ( x_cut[10] ) : (0, 0) 
-  (0.2370585421255473, 0.0011239350478938) 
-  (0.4741170842510947, 0.00449574019157519) 
-  (0.711175626376642, 0.0101154154310442) 
-  (0.9482341685021893, 0.0179829607663008) 
-  (1.185292710627737, 0.028098376197345) 
-  (1.422351252753284, 0.0404616617241767) 
-  (1.659409794878831, 0.0550728173467961) 
-  (1.896468337004379, 0.0719318430652031) 
-  (2.133526879129926, 0.0910387388793976) 
-  (2.370585421255473, 0.1123935047893798)
+ GC21: x_cost_cut[10] = PWL ( x_cut[10] ) : (0, 0) (1e-06, 1e-15) 
+  (2e-06, 4e-15) (3e-06, 9e-15) (4e-06, 1.6e-14) (5e-06, 2.5e-14) 
+  (6e-06, 3.6e-14) (7e-06, 4.9e-14) (8e-06, 6.4e-14) (9e-06, 8.1e-14) 
+  (1e-05, 1e-13)
  GC22: x_cost_fuel[11] = PWL ( x[11] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
- GC23: x_cost_cut[11] = PWL ( x_cut[11] ) : (0, 0) 
-  (0.2370585421255473, 0.0011239350478938) 
-  (0.4741170842510947, 0.00449574019157519) 
-  (0.711175626376642, 0.0101154154310442) 
-  (0.9482341685021893, 0.0179829607663008) 
-  (1.185292710627737, 0.028098376197345) 
-  (1.422351252753284, 0.0404616617241767) 
-  (1.659409794878831, 0.0550728173467961) 
-  (1.896468337004379, 0.0719318430652031) 
-  (2.133526879129926, 0.0910387388793976) 
-  (2.370585421255473, 0.1123935047893798)
+ GC23: x_cost_cut[11] = PWL ( x_cut[11] ) : (0, 0) (1e-06, 1e-15) 
+  (2e-06, 4e-15) (3e-06, 9e-15) (4e-06, 1.6e-14) (5e-06, 2.5e-14) 
+  (6e-06, 3.6e-14) (7e-06, 4.9e-14) (8e-06, 6.4e-14) (9e-06, 8.1e-14) 
+  (1e-05, 1e-13)
  GC24: x_cost_fuel[12] = PWL ( x[12] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
- GC25: x_cost_cut[12] = PWL ( x_cut[12] ) : (0, 0) 
-  (0.2371470060290423, 0.00112477404937077) 
-  (0.4742940120580846, 0.00449909619748309) 
-  (0.7114410180871269, 0.010122966444337) 
-  (0.9485880241161692, 0.0179963847899324) 
-  (1.185735030145211, 0.0281193512342693) 
-  (1.422882036174254, 0.0404918657773478) 
-  (1.660029042203296, 0.0551139284191678) 
-  (1.897176048232338, 0.0719855391597294) 
-  (2.13432305426138, 0.0911066979990326) 
-  (2.371470060290423, 0.1124774049370772)
+ GC25: x_cost_cut[12] = PWL ( x_cut[12] ) : (0, 0) (1e-06, 1e-15) 
+  (2e-06, 4e-15) (3e-06, 9e-15) (4e-06, 1.6e-14) (5e-06, 2.5e-14) 
+  (6e-06, 3.6e-14) (7e-06, 4.9e-14) (8e-06, 6.4e-14) (9e-06, 8.1e-14) 
+  (1e-05, 1e-13)
  GC26: x_cost_fuel[13] = PWL ( x[13] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
- GC27: x_cost_cut[13] = PWL ( x_cut[13] ) : (0, 0) 
-  (0.2371470060290423, 0.00112477404937077) 
-  (0.4742940120580846, 0.00449909619748309) 
-  (0.7114410180871269, 0.010122966444337) 
-  (0.9485880241161692, 0.0179963847899324) 
-  (1.185735030145211, 0.0281193512342693) 
-  (1.422882036174254, 0.0404918657773478) 
-  (1.660029042203296, 0.0551139284191678) 
-  (1.897176048232338, 0.0719855391597294) 
-  (2.13432305426138, 0.0911066979990326) 
-  (2.371470060290423, 0.1124774049370772)
+ GC27: x_cost_cut[13] = PWL ( x_cut[13] ) : (0, 0) (1e-06, 1e-15) 
+  (2e-06, 4e-15) (3e-06, 9e-15) (4e-06, 1.6e-14) (5e-06, 2.5e-14) 
+  (6e-06, 3.6e-14) (7e-06, 4.9e-14) (8e-06, 6.4e-14) (9e-06, 8.1e-14) 
+  (1e-05, 1e-13)
  GC28: x_cost_fuel[14] = PWL ( x[14] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
- GC29: x_cost_cut[14] = PWL ( x_cut[14] ) : (0, 0) 
-  (0.2371470060290423, 0.00112477404937077) 
-  (0.4742940120580846, 0.00449909619748309) 
-  (0.7114410180871269, 0.010122966444337) 
-  (0.9485880241161692, 0.0179963847899324) 
-  (1.185735030145211, 0.0281193512342693) 
-  (1.422882036174254, 0.0404918657773478) 
-  (1.660029042203296, 0.0551139284191678) 
-  (1.897176048232338, 0.0719855391597294) 
-  (2.13432305426138, 0.0911066979990326) 
-  (2.371470060290423, 0.1124774049370772)
+ GC29: x_cost_cut[14] = PWL ( x_cut[14] ) : (0, 0) (1e-06, 1e-15) 
+  (2e-06, 4e-15) (3e-06, 9e-15) (4e-06, 1.6e-14) (5e-06, 2.5e-14) 
+  (6e-06, 3.6e-14) (7e-06, 4.9e-14) (8e-06, 6.4e-14) (9e-06, 8.1e-14) 
+  (1e-05, 1e-13)
  GC30: x_cost_fuel[15] = PWL ( x[15] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
- GC31: x_cost_cut[15] = PWL ( x_cut[15] ) : (0, 0) 
-  (0.2710251497330067, 0.00146909263575597) 
-  (0.5420502994660135, 0.0058763705430239) 
-  (0.8130754491990203, 0.0132218337218038) 
-  (1.084100598932027, 0.0235054821720956) 
-  (1.355125748665034, 0.0367273158938994) 
-  (1.626150898398041, 0.0528873348872151) 
-  (1.897176048131047, 0.0719855391520427) 
-  (2.168201197864054, 0.0940219286883824) 
-  (2.439226347597061, 0.1189965034962339) 
-  (2.710251497330067, 0.1469092635755974)
+ GC31: x_cost_cut[15] = PWL ( x_cut[15] ) : (0, 0) (1e-06, 1e-15) 
+  (2e-06, 4e-15) (3e-06, 9e-15) (4e-06, 1.6e-14) (5e-06, 2.5e-14) 
+  (6e-06, 3.6e-14) (7e-06, 4.9e-14) (8e-06, 6.4e-14) (9e-06, 8.1e-14) 
+  (1e-05, 1e-13)
  GC32: x_cost_fuel[16] = PWL ( x[16] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
- GC33: x_cost_cut[16] = PWL ( x_cut[16] ) : (0, 0) 
-  (0.271103118528473, 0.00146993801751727) 
-  (0.5422062370569459, 0.00587975207006906) 
-  (0.8133093555854188, 0.0132294421576554) 
-  (1.084412474113892, 0.0235190082802762) 
-  (1.355515592642365, 0.0367484504379316) 
-  (1.626618711170838, 0.0529177686306215) 
-  (1.897721829699311, 0.072026962858346) 
-  (2.168824948227784, 0.094076033121105) 
-  (2.439928066756257, 0.1190649794188985) 
-  (2.71103118528473, 0.1469938017517265)
+ GC33: x_cost_cut[16] = PWL ( x_cut[16] ) : (0, 0) (1e-06, 1e-15) 
+  (2e-06, 4e-15) (3e-06, 9e-15) (4e-06, 1.6e-14) (5e-06, 2.5e-14) 
+  (6e-06, 3.6e-14) (7e-06, 4.9e-14) (8e-06, 6.4e-14) (9e-06, 8.1e-14) 
+  (1e-05, 1e-13)
  GC34: x_cost_fuel[17] = PWL ( x[17] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
- GC35: x_cost_cut[17] = PWL ( x_cut[17] ) : (0, 0) 
-  (0.271103118528473, 0.00146993801751727) 
-  (0.5422062370569459, 0.00587975207006906) 
-  (0.8133093555854188, 0.0132294421576554) 
-  (1.084412474113892, 0.0235190082802762) 
-  (1.355515592642365, 0.0367484504379316) 
-  (1.626618711170838, 0.0529177686306215) 
-  (1.897721829699311, 0.072026962858346) 
-  (2.168824948227784, 0.094076033121105) 
-  (2.439928066756257, 0.1190649794188985) 
-  (2.71103118528473, 0.1469938017517265)
+ GC35: x_cost_cut[17] = PWL ( x_cut[17] ) : (0, 0) (1e-06, 1e-15) 
+  (2e-06, 4e-15) (3e-06, 9e-15) (4e-06, 1.6e-14) (5e-06, 2.5e-14) 
+  (6e-06, 3.6e-14) (7e-06, 4.9e-14) (8e-06, 6.4e-14) (9e-06, 8.1e-14) 
+  (1e-05, 1e-13)
  GC36: x_cost_fuel[18] = PWL ( x[18] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
- GC37: x_cost_cut[18] = PWL ( x_cut[18] ) : (0, 0) 
-  (0.271103118528473, 0.00146993801751727) 
-  (0.5422062370569459, 0.00587975207006906) 
-  (0.8133093555854188, 0.0132294421576554) 
-  (1.084412474113892, 0.0235190082802762) 
-  (1.355515592642365, 0.0367484504379316) 
-  (1.626618711170838, 0.0529177686306215) 
-  (1.897721829699311, 0.072026962858346) 
-  (2.168824948227784, 0.094076033121105) 
-  (2.439928066756257, 0.1190649794188985) 
-  (2.71103118528473, 0.1469938017517265)
+ GC37: x_cost_cut[18] = PWL ( x_cut[18] ) : (0, 0) (1e-06, 1e-15) 
+  (2e-06, 4e-15) (3e-06, 9e-15) (4e-06, 1.6e-14) (5e-06, 2.5e-14) 
+  (6e-06, 3.6e-14) (7e-06, 4.9e-14) (8e-06, 6.4e-14) (9e-06, 8.1e-14) 
+  (1e-05, 1e-13)
  GC38: x_cost_fuel[19] = PWL ( x[19] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
- GC39: x_cost_cut[19] = PWL ( x_cut[19] ) : (0, 0) 
-  (0.271103118528473, 0.00146993801751727) 
-  (0.5422062370569459, 0.00587975207006906) 
-  (0.8133093555854188, 0.0132294421576554) 
-  (1.084412474113892, 0.0235190082802762) 
-  (1.355515592642365, 0.0367484504379316) 
-  (1.626618711170838, 0.0529177686306215) 
-  (1.897721829699311, 0.072026962858346) 
-  (2.168824948227784, 0.094076033121105) 
-  (2.439928066756257, 0.1190649794188985) 
-  (2.71103118528473, 0.1469938017517265)
+ GC39: x_cost_cut[19] = PWL ( x_cut[19] ) : (0, 0) (1e-06, 1e-15) 
+  (2e-06, 4e-15) (3e-06, 9e-15) (4e-06, 1.6e-14) (5e-06, 2.5e-14) 
+  (6e-06, 3.6e-14) (7e-06, 4.9e-14) (8e-06, 6.4e-14) (9e-06, 8.1e-14) 
+  (1e-05, 1e-13)
  GC40: x_cost_fuel[20] = PWL ( x[20] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
- GC41: x_cost_cut[20] = PWL ( x_cut[20] ) : (0, 0) 
-  (0.3050281973631449, 0.00186084402373219) 
-  (0.6100563947262898, 0.00744337609492877) 
-  (0.9150845920894346, 0.0167475962135897) 
-  (1.22011278945258, 0.0297735043797151) 
-  (1.525140986815724, 0.0465211005933048) 
-  (1.830169184178869, 0.066990384854359) 
-  (2.135197381542014, 0.0911813571628775) 
-  (2.440225578905159, 0.1190940175188604) 
-  (2.745253776268304, 0.1507283659223076) 
-  (3.050281973631449, 0.1860844023732193)
+ GC41: x_cost_cut[20] = PWL ( x_cut[20] ) : (0, 0) (1e-06, 1e-15) 
+  (2e-06, 4e-15) (3e-06, 9e-15) (4e-06, 1.6e-14) (5e-06, 2.5e-14) 
+  (6e-06, 3.6e-14) (7e-06, 4.9e-14) (8e-06, 6.4e-14) (9e-06, 8.1e-14) 
+  (1e-05, 1e-13)
  GC42: x_cost_fuel[21] = PWL ( x[21] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
- GC43: x_cost_cut[21] = PWL ( x_cut[21] ) : (0, 0) 
-  (0.3050281973631449, 0.00186084402373219) 
-  (0.6100563947262898, 0.00744337609492877) 
-  (0.9150845920894346, 0.0167475962135897) 
-  (1.22011278945258, 0.0297735043797151) 
-  (1.525140986815724, 0.0465211005933048) 
-  (1.830169184178869, 0.066990384854359) 
-  (2.135197381542014, 0.0911813571628775) 
-  (2.440225578905159, 0.1190940175188604) 
-  (2.745253776268304, 0.1507283659223076) 
-  (3.050281973631449, 0.1860844023732193)
+ GC43: x_cost_cut[21] = PWL ( x_cut[21] ) : (0, 0) (1e-06, 1e-15) 
+  (2e-06, 4e-15) (3e-06, 9e-15) (4e-06, 1.6e-14) (5e-06, 2.5e-14) 
+  (6e-06, 3.6e-14) (7e-06, 4.9e-14) (8e-06, 6.4e-14) (9e-06, 8.1e-14) 
+  (1e-05, 1e-13)
  GC44: x_cost_fuel[22] = PWL ( x[22] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
- GC45: x_cost_cut[22] = PWL ( x_cut[22] ) : (0, 0) 
-  (0.3050281973631449, 0.00186084402373219) 
-  (0.6100563947262898, 0.00744337609492877) 
-  (0.9150845920894346, 0.0167475962135897) 
-  (1.22011278945258, 0.0297735043797151) 
-  (1.525140986815724, 0.0465211005933048) 
-  (1.830169184178869, 0.066990384854359) 
-  (2.135197381542014, 0.0911813571628775) 
-  (2.440225578905159, 0.1190940175188604) 
-  (2.745253776268304, 0.1507283659223076) 
-  (3.050281973631449, 0.1860844023732193)
+ GC45: x_cost_cut[22] = PWL ( x_cut[22] ) : (0, 0) (1e-06, 1e-15) 
+  (2e-06, 4e-15) (3e-06, 9e-15) (4e-06, 1.6e-14) (5e-06, 2.5e-14) 
+  (6e-06, 3.6e-14) (7e-06, 4.9e-14) (8e-06, 6.4e-14) (9e-06, 8.1e-14) 
+  (1e-05, 1e-13)
  GC46: x_cost_fuel[23] = PWL ( x[23] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
- GC47: x_cost_cut[23] = PWL ( x_cut[23] ) : (0, 0) 
-  (0.3050281973631449, 0.00186084402373219) 
-  (0.6100563947262898, 0.00744337609492877) 
-  (0.9150845920894346, 0.0167475962135897) 
-  (1.22011278945258, 0.0297735043797151) 
-  (1.525140986815724, 0.0465211005933048) 
-  (1.830169184178869, 0.066990384854359) 
-  (2.135197381542014, 0.0911813571628775) 
-  (2.440225578905159, 0.1190940175188604) 
-  (2.745253776268304, 0.1507283659223076) 
-  (3.050281973631449, 0.1860844023732193)
+ GC47: x_cost_cut[23] = PWL ( x_cut[23] ) : (0, 0) (1e-06, 1e-15) 
+  (2e-06, 4e-15) (3e-06, 9e-15) (4e-06, 1.6e-14) (5e-06, 2.5e-14) 
+  (6e-06, 3.6e-14) (7e-06, 4.9e-14) (8e-06, 6.4e-14) (9e-06, 8.1e-14) 
+  (1e-05, 1e-13)
  GC48: x_cost_fuel[24] = PWL ( x[24] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
- GC49: x_cost_cut[24] = PWL ( x_cut[24] ) : (0, 0) 
-  (0.3048299485071396, 0.00185842595013731) 
-  (0.6096598970142791, 0.00743370380054923) 
-  (0.9144898455214185, 0.0167258335512358) 
-  (1.219319794028558, 0.0297348152021969) 
-  (1.524149742535698, 0.0464606487534327) 
-  (1.828979691042837, 0.066903334204943) 
-  (2.133809639549977, 0.091062871556728) 
-  (2.438639588057117, 0.1189392608087877) 
-  (2.743469536564256, 0.1505325019611219) 
-  (3.048299485071396, 0.1858425950137307)
+ GC49: x_cost_cut[24] = PWL ( x_cut[24] ) : (0, 0) (1e-06, 1e-15) 
+  (2e-06, 4e-15) (3e-06, 9e-15) (4e-06, 1.6e-14) (5e-06, 2.5e-14) 
+  (6e-06, 3.6e-14) (7e-06, 4.9e-14) (8e-06, 6.4e-14) (9e-06, 8.1e-14) 
+  (1e-05, 1e-13)
  GC50: x_cost_fuel[25] = PWL ( x[25] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
- GC51: x_cost_cut[25] = PWL ( x_cut[25] ) : (0, 0) 
-  (0.3386999427879683, 0.00229435302489146) 
-  (0.6773998855759366, 0.00917741209956584) 
-  (1.016099828363905, 0.0206491772240231) 
-  (1.354799771151873, 0.0367096483982634) 
-  (1.693499713939841, 0.0573588256222865) 
-  (2.032199656727809, 0.0825967088960925) 
-  (2.370899599515778, 0.1124232982196815) 
-  (2.709599542303746, 0.1468385935930534) 
-  (3.048299485091714, 0.1858425950162082) 
-  (3.386999427879682, 0.2294353024891459)
+ GC51: x_cost_cut[25] = PWL ( x_cut[25] ) : (0, 0) (1e-06, 1e-15) 
+  (2e-06, 4e-15) (3e-06, 9e-15) (4e-06, 1.6e-14) (5e-06, 2.5e-14) 
+  (6e-06, 3.6e-14) (7e-06, 4.9e-14) (8e-06, 6.4e-14) (9e-06, 8.1e-14) 
+  (1e-05, 1e-13)
  GC52: x_cost_fuel[26] = PWL ( x[26] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
- GC53: x_cost_cut[26] = PWL ( x_cut[26] ) : (0, 0) 
-  (0.3048299485071396, 0.00185842595013731) 
-  (0.6096598970142791, 0.00743370380054923) 
-  (0.9144898455214185, 0.0167258335512358) 
-  (1.219319794028558, 0.0297348152021969) 
-  (1.524149742535698, 0.0464606487534327) 
-  (1.828979691042837, 0.066903334204943) 
-  (2.133809639549977, 0.091062871556728) 
-  (2.438639588057117, 0.1189392608087877) 
-  (2.743469536564256, 0.1505325019611219) 
-  (3.048299485071396, 0.1858425950137307)
+ GC53: x_cost_cut[26] = PWL ( x_cut[26] ) : (0, 0) (1e-06, 1e-15) 
+  (2e-06, 4e-15) (3e-06, 9e-15) (4e-06, 1.6e-14) (5e-06, 2.5e-14) 
+  (6e-06, 3.6e-14) (7e-06, 4.9e-14) (8e-06, 6.4e-14) (9e-06, 8.1e-14) 
+  (1e-05, 1e-13)
  GC54: x_cost_fuel[27] = PWL ( x[27] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
- GC55: x_cost_cut[27] = PWL ( x_cut[27] ) : (0, 0) 
-  (1.117709763542994, 0.0249855023103867) 
-  (2.235419527085988, 0.0999420092415469) 
-  (3.353129290628982, 0.2248695207934805) 
-  (4.470839054171976, 0.3997680369661874) 
-  (5.58854881771497, 0.6246375577596678) 
-  (6.706258581257964, 0.8994780831739219) 
-  (7.823968344800957, 1.224289613208949) 
-  (8.941678108343952, 1.59907214786475) 
-  (10.05938787188695, 2.023825687141324) 
-  (11.17709763542994, 2.498550231038671)
+ GC55: x_cost_cut[27] = PWL ( x_cut[27] ) : (0, 0) (1e-06, 1e-15) 
+  (2e-06, 4e-15) (3e-06, 9e-15) (4e-06, 1.6e-14) (5e-06, 2.5e-14) 
+  (6e-06, 3.6e-14) (7e-06, 4.9e-14) (8e-06, 6.4e-14) (9e-06, 8.1e-14) 
+  (1e-05, 1e-13)
  GC56: x_cost_fuel[28] = PWL ( x[28] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
- GC57: x_cost_cut[28] = PWL ( x_cut[28] ) : (0, 0) 
-  (1.975026374057731, 0.0780145835644726) 
-  (3.950052748115461, 0.3120583342578902) 
-  (5.925079122173192, 0.7021312520802528) 
-  (7.900105496230923, 1.248233337031561) 
-  (9.875131870288653, 1.950364589111814) 
-  (11.85015824434638, 2.808525008321011) 
-  (13.82518461840411, 3.822714594659154) 
-  (15.80021099246185, 4.992933348126243) 
-  (17.77523736651958, 6.319181268722277) 
-  (19.75026374057731, 7.801458356447254)
+ GC57: x_cost_cut[28] = PWL ( x_cut[28] ) : (0, 0) (1e-06, 1e-15) 
+  (2e-06, 4e-15) (3e-06, 9e-15) (4e-06, 1.6e-14) (5e-06, 2.5e-14) 
+  (6e-06, 3.6e-14) (7e-06, 4.9e-14) (8e-06, 6.4e-14) (9e-06, 8.1e-14) 
+  (1e-05, 1e-13)
  GC58: x_cost_fuel[29] = PWL ( x[29] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
  GC59: x_cost_cut[29] = PWL ( x_cut[29] ) : (0, 0) 
-  (3.146652169532811, 0.198028397520511) 
-  (6.293304339065623, 0.7921135900820439) 
-  (9.439956508598433, 1.782255577684599) 
-  (12.58660867813125, 3.168454360328175) 
-  (15.73326084766406, 4.950709938012774) 
-  (18.87991301719687, 7.129022310738394) 
-  (22.02656518672968, 9.703391478505035) 
-  (25.17321735626249, 12.6738174413127) 
-  (28.3198695257953, 16.04030019916138) 
-  (31.46652169532811, 19.8028397520511)
+  (0.0605917768495456, 3.67136e-06) (0.1211835536990911, 1.46855e-05) 
+  (0.1817753305486366, 3.30423e-05) (0.2423671073981822, 5.87418e-05) 
+  (0.3029588842477278, 9.17841e-05) (0.3635506610972733, 0.000132169) 
+  (0.4241424379468189, 1.7989680766747112e-04) 
+  (0.4847342147963644, 2.3496725899424794e-04) 
+  (0.54532599164591, 2.9738043716459508e-04) 
+  (0.6059177684954555, 3.6713634217851242e-04)
  GC60: x_cost_fuel[30] = PWL ( x[30] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
  GC61: x_cost_cut[30] = PWL ( x_cut[30] ) : (0, 0) 
-  (2.343251590950161, 0.1098165603698092) 
-  (4.686503181900322, 0.4392662414792368) 
-  (7.029754772850483, 0.9883490433282829) 
-  (9.373006363800643, 1.757064965916947) 
-  (11.7162579547508, 2.74541400924523) 
-  (14.05950954570097, 3.953396173313132) 
-  (16.40276113665113, 5.381011458120651) 
-  (18.74601272760129, 7.028259863667788) 
-  (21.08926431855145, 8.895141389954546) 
-  (23.43251590950161, 10.98165603698092)
+  (0.3490993849703651, 1.2187038058668715e-04) 
+  (0.6981987699407302, 4.874815223467486e-04) 
+  (1.047298154911095, 0.00109683342528018) 
+  (1.39639753988146, 0.00194992608938699) 
+  (1.745496924851825, 0.00304675951466718) 
+  (2.09459630982219, 0.00438733370112074) 
+  (2.443695694792555, 0.00597164864874767) 
+  (2.792795079762921, 0.00779970435754798) 
+  (3.141894464733285, 0.00987150082752166) 
+  (3.490993849703651, 0.0121870380586687)
  GC62: x_cost_fuel[31] = PWL ( x[31] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
  GC63: x_cost_cut[31] = PWL ( x_cut[31] ) : (0, 0) 
-  (5.9585540062675, 0.7100873169121295) 
-  (11.917108012535, 2.840349267648518) 
-  (17.8756620188025, 6.390785852209167) 
-  (23.83421602507, 11.36139707059407) 
-  (29.7927700313375, 17.75218292280324) 
-  (35.751324037605, 25.56314340883667) 
-  (41.7098780438725, 34.79427852869434) 
-  (47.66843205014, 45.44558828237628) 
-  (53.6269860564075, 57.51707266988248) 
-  (59.585540062675, 71.00873169121296)
+  (1.068170421714074, 0.00114098804982482) 
+  (2.136340843428147, 0.00456395219929929) 
+  (3.204511265142222, 0.0102688924484234) 
+  (4.272681686856295, 0.0182558087971972) 
+  (5.340852108570369, 0.0285247012456206) 
+  (6.409022530284443, 0.0410755697936936) 
+  (7.477192951998516, 0.0559084144414163) 
+  (8.54536337371259, 0.0730232351887886) 
+  (9.613533795426664, 0.0924200320358106) 
+  (10.68170421714074, 0.1140988049824822)
  GC64: x_cost_fuel[32] = PWL ( x[32] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
  GC65: x_cost_cut[32] = PWL ( x_cut[32] ) : (0, 0) 
-  (9.143868172352466, 1.672206503067209) 
-  (18.28773634470493, 6.688826012268835) 
-  (27.43160451705739, 15.04985852760487) 
-  (36.57547268940986, 26.75530404907534) 
-  (45.71934086176233, 41.8051625766802) 
-  (54.86320903411479, 60.1994341104195) 
-  (64.00707720646726, 81.93811865029321) 
-  (73.15094537881973, 107.0212161963014) 
-  (82.29481355117218, 135.4487267484438) 
-  (91.43868172352465, 167.2206503067208)
+  (2.617549032259065, 0.00685156293628037) 
+  (5.235098064518129, 0.0274062517451215) 
+  (7.852647096777194, 0.0616640664265233) 
+  (10.47019612903626, 0.1096250069804859) 
+  (13.08774516129532, 0.1712890734070091) 
+  (15.70529419355439, 0.2466562657060932) 
+  (18.32284322581345, 0.335726583877738) 
+  (20.94039225807252, 0.4385000279219434) 
+  (23.55794129033158, 0.5549765978387096) 
+  (26.17549032259064, 0.6851562936280364)
  GC66: x_cost_fuel[33] = PWL ( x[33] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
  GC67: x_cost_cut[33] = PWL ( x_cut[33] ) : (0, 0) 
-  (12.27798470926726, 3.014978170420014) 
-  (24.55596941853452, 12.05991268168006) 
-  (36.83395412780178, 27.13480353378012) 
-  (49.11193883706905, 48.23965072672022) 
-  (61.38992354633631, 75.37445426050034) 
-  (73.66790825560356, 108.5392141351205) 
-  (85.94589296487082, 147.7339303505806) 
-  (98.22387767413809, 192.9586029068809) 
-  (110.5018623834053, 244.213231804021) 
-  (122.7798470926726, 301.4978170420014)
+  (3.009743708804796, 0.00905855719269005) 
+  (6.019487417609591, 0.0362342287707602) 
+  (9.029231126414386, 0.0815270147342104) 
+  (12.03897483521918, 0.1449369150830407) 
+  (15.04871854402398, 0.2264639298172512) 
+  (18.05846225282877, 0.3261080589368416) 
+  (21.06820596163357, 0.4438693024418122) 
+  (24.07794967043836, 0.579747660332163) 
+  (27.08769337924316, 0.7337431326078937) 
+  (30.09743708804796, 0.9058557192690048)
  GC68: x_cost_fuel[34] = PWL ( x[34] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
  GC69: x_cost_cut[34] = PWL ( x_cut[34] ) : (0, 0) 
-  (14.08737315580175, 3.969081648616074) 
-  (28.1747463116035, 15.8763265944643) 
-  (42.26211946740524, 35.72173483754466) 
-  (56.34949262320699, 63.50530637785719) 
-  (70.43686577900874, 99.22704121540185) 
-  (84.52423893481048, 142.8869393501786) 
-  (98.61161209061224, 194.4850007821877) 
-  (112.698985246414, 254.0212255114288) 
-  (126.7863584022157, 321.495613537902) 
-  (140.8737315580175, 396.9081648616074)
+  (4.733007549570251, 0.022401360464289) 
+  (9.466015099140503, 0.089605441857156) 
+  (14.19902264871075, 0.2016122441786009) 
+  (18.93203019828101, 0.3584217674286239) 
+  (23.66503774785125, 0.5600340116072249) 
+  (28.3980452974215, 0.8064489767144036) 
+  (33.13105284699176, 1.097666662750161) 
+  (37.86406039656201, 1.433687069714496) 
+  (42.59706794613226, 1.814510197607408) 
+  (47.33007549570251, 2.2401360464289)
  GC70: x_cost_fuel[35] = PWL ( x[35] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
  GC71: x_cost_cut[35] = PWL ( x_cut[35] ) : (0, 0) 
-  (15.96138084487444, 5.095313569502492) 
-  (31.92276168974887, 20.38125427800997) 
-  (47.88414253462331, 45.85782212552242) 
-  (63.84552337949775, 81.52501711203988) 
-  (79.80690422437219, 127.3828392375623) 
-  (95.76828506924662, 183.4312885020897) 
-  (111.7296659141211, 249.6703649056222) 
-  (127.6910467589955, 326.1000684481595) 
-  (143.6524276038699, 412.7203991297019) 
-  (159.6138084487444, 509.5313569502492)
+  (12.0242739059926, 0.1445831629663345) 
+  (24.04854781198519, 0.5783326518653379) 
+  (36.07282171797779, 1.30124846669701) 
+  (48.09709562397039, 2.313330607461352) 
+  (60.12136952996299, 3.614579074158363) 
+  (72.14564343595558, 5.20499386678804) 
+  (84.16991734194818, 7.084574985350389) 
+  (96.19419124794078, 9.253322429845406) 
+  (108.2184651539334, 11.71123620027309) 
+  (120.242739059926, 14.45831629663345)
  GC72: x_cost_fuel[36] = PWL ( x[36] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
  GC73: x_cost_cut[36] = PWL ( x_cut[36] ) : (0, 0) 
-  (17.93931319942829, 6.436379161343645) 
-  (35.87862639885659, 25.74551664537458) 
-  (53.81793959828489, 57.92741245209282) 
-  (71.75725279771318, 102.9820665814983) 
-  (89.69656599714148, 160.9094790335911) 
-  (107.6358791965698, 231.7096498083713) 
-  (125.5751923959981, 315.3825789058386) 
-  (143.5145055954264, 411.9282663259933) 
-  (161.4538187948547, 521.3467120688354) 
-  (179.393131994283, 643.6379161343646)
+  (14.41672323956743, 0.2078419089662837) 
+  (28.83344647913486, 0.8313676358651347) 
+  (43.2501697187023, 1.870577180696553) 
+  (57.66689295826973, 3.325470543460539) 
+  (72.08361619783716, 5.196047724157093) 
+  (86.50033943740459, 7.482308722786212) 
+  (100.917062676972, 10.1842535393479) 
+  (115.3337859165395, 13.30188217384216) 
+  (129.7505091561069, 16.83519462626898) 
+  (144.1672323956743, 20.78419089662837)
  GC74: x_cost_fuel[37] = PWL ( x[37] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
  GC75: x_cost_cut[37] = PWL ( x_cut[37] ) : (0, 0) 
-  (20.77183757665972, 8.629384726222659) 
-  (41.54367515331945, 34.51753890489064) 
-  (62.31551272997918, 77.66446253600392) 
-  (83.0873503066389, 138.0701556195625) 
-  (103.8591878832986, 215.7346181555665) 
-  (124.6310254599584, 310.6578501440157) 
-  (145.402863036618, 422.8398515849101) 
-  (166.1747006132778, 552.2806224782502) 
-  (186.9465381899375, 698.9801628240353) 
-  (207.7183757665972, 862.9384726222659)
+  (16.81505397301581, 0.2827460401154347) 
+  (33.63010794603161, 1.130984160461739) 
+  (50.44516191904742, 2.544714361038912) 
+  (67.26021589206323, 4.523936641846955) 
+  (84.07526986507904, 7.068651002885868) 
+  (100.8903238380948, 10.17885744415565) 
+  (117.7053778111107, 13.8545559656563) 
+  (134.5204317841265, 18.09574656738782) 
+  (151.3354857571423, 22.90242924935021) 
+  (168.1505397301581, 28.27460401154347)
  GC76: x_cost_fuel[38] = PWL ( x[38] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
  GC77: x_cost_cut[38] = PWL ( x_cut[38] ) : (0, 0) 
-  (22.78201521839735, 10.38040434822577) 
-  (45.56403043679471, 41.5216173929031) 
-  (68.34604565519206, 93.42363913403194) 
-  (91.12806087358942, 166.0864695716124) 
-  (113.9100760919868, 259.5101087056444) 
-  (136.6920913103841, 373.6945565361278) 
-  (159.4741065287815, 508.6398130630629) 
-  (182.2561217471788, 664.3458782864495) 
-  (205.0381369655762, 840.8127522062875) 
-  (227.8201521839736, 1038.040434822577)
+  (18.8290131501684, 0.3545317362092144) 
+  (37.65802630033679, 1.418126944836858) 
+  (56.48703945050519, 3.190785625882929) 
+  (75.31605260067359, 5.672507779347431) 
+  (94.14506575084198, 8.86329340523036) 
+  (112.9740789010104, 12.76314250353172) 
+  (131.8030920511788, 17.37205507425151) 
+  (150.6321052013472, 22.69003111738972) 
+  (169.4611183515156, 28.71707063294636) 
+  (188.290131501684, 35.45317362092144)
  GC78: x_cost_fuel[39] = PWL ( x[39] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
  GC79: x_cost_cut[39] = PWL ( x_cut[39] ) : (0, 0) 
-  (23.87847667319176, 11.40363296464326) 
-  (47.75695334638351, 45.61453185857302) 
-  (71.63543001957527, 102.6326966817893) 
-  (95.51390669276702, 182.4581274342921) 
-  (119.3923833659588, 285.0908241160814) 
-  (143.2708600391505, 410.5307867271572) 
-  (167.1493367123423, 558.7780152675195) 
-  (191.027813385534, 729.8325097371684) 
-  (214.9062900587258, 923.6942701361037) 
-  (238.7847667319175, 1140.363296464325)
+  (21.2977009673338, 0.4535920664939712) 
+  (42.59540193466761, 1.814368265975885) 
+  (63.89310290200142, 4.082328598445741) 
+  (85.19080386933521, 7.257473063903539) 
+  (106.488504836669, 11.33980166234928) 
+  (127.7862058040028, 16.32931439378297) 
+  (149.0839067713366, 22.2260112582046) 
+  (170.3816077386704, 29.02989225561416) 
+  (191.6793087060042, 36.74095738601167) 
+  (212.977009673338, 45.35920664939713)
  GC80: x_cost_fuel[40] = PWL ( x[40] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
  GC81: x_cost_cut[40] = PWL ( x_cut[40] ) : (0, 0) 
-  (24.72840247628037, 12.22987778057819) 
-  (49.45680495256074, 48.91951112231274) 
-  (74.18520742884112, 110.0689000252037) 
-  (98.91360990512149, 195.678044489251) 
-  (123.6420123814019, 305.7469445144548) 
-  (148.3704148576822, 440.2756001008148) 
-  (173.0988173339626, 599.2640112483311) 
-  (197.827219810243, 782.7121779570039) 
-  (222.5556222865234, 990.6201002268333) 
-  (247.2840247628038, 1222.987778057819)
+  (21.7406471351666, 0.4726557378558276) 
+  (43.48129427033319, 1.89062295142331) 
+  (65.22194140549979, 4.253901640702448) 
+  (86.96258854066639, 7.562491805693242) 
+  (108.703235675833, 11.81639344639569) 
+  (130.4438828109996, 17.01560656280979) 
+  (152.1845299461662, 23.16013115493555) 
+  (173.9251770813328, 30.24996722277297) 
+  (195.6658242164994, 38.28511476632204) 
+  (217.406471351666, 47.26557378558275)
  GC82: x_cost_fuel[41] = PWL ( x[41] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
  GC83: x_cost_cut[41] = PWL ( x_cut[41] ) : (0, 0) 
-  (26.26857949411971, 13.80076537277773) 
-  (52.53715898823941, 55.2030614911109) 
-  (78.80573848235912, 124.2068883549995) 
-  (105.0743179764788, 220.8122459644436) 
-  (131.3428974705985, 345.0191343194431) 
-  (157.6114769647182, 496.8275534199982) 
-  (183.8800564588379, 676.2375032661085) 
-  (210.1486359529576, 883.2489838577744) 
-  (236.4172154470774, 1117.861995194996) 
-  (262.6857949411971, 1380.076537277773)
+  (23.46595073492407, 0.5506508438938836) 
+  (46.93190146984814, 2.202603375575535) 
+  (70.39785220477222, 4.955857595044953) 
+  (93.86380293969628, 8.810413502302138) 
+  (117.3297536746204, 13.76627109734709) 
+  (140.7957044095444, 19.82343038017981) 
+  (164.2616551444685, 26.9818913508003) 
+  (187.7276058793926, 35.24165400920855) 
+  (211.1935566143166, 44.60271835540456) 
+  (234.6595073492407, 55.06508438938837)
  GC84: x_cost_fuel[42] = PWL ( x[42] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
  GC85: x_cost_cut[42] = PWL ( x_cut[42] ) : (0, 0) 
-  (21.59100345769659, 9.323428606205319) 
-  (43.18200691539317, 37.29371442482127) 
-  (64.77301037308976, 83.91085745584789) 
-  (86.36401383078635, 149.1748576992851) 
-  (107.9550172884829, 233.085715155133) 
-  (129.5460207461795, 335.6434298233916) 
-  (151.1370242038761, 456.8480017040607) 
-  (172.7280276615727, 596.6994307971404) 
-  (194.3190311192693, 755.1977171026309) 
-  (215.9100345769659, 932.342860620532)
+  (25.23758681926642, 0.6369357884600099) 
+  (50.47517363853283, 2.547743153840039) 
+  (75.71276045779925, 5.732422096140089) 
+  (100.9503472770657, 10.19097261536016) 
+  (126.1879340963321, 15.92339471150025) 
+  (151.4255209155985, 22.92968838456036) 
+  (176.6631077348649, 31.20985363454048) 
+  (201.9006945541313, 40.76389046144063) 
+  (227.1382813733977, 51.59179886526081) 
+  (252.3758681926642, 63.693578846001)
  GC86: x_cost_fuel[43] = PWL ( x[43] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
  GC87: x_cost_cut[43] = PWL ( x_cut[43] ) : (0, 0) 
-  (29.60563009630975, 17.52986666799043) 
-  (59.2112601926195, 70.11946667196173) 
-  (88.81689028892924, 157.7688000119139) 
-  (118.422520385239, 280.4778666878469) 
-  (148.0281504815487, 438.2466666997609) 
-  (177.6337805778585, 631.0752000476556) 
-  (207.2394106741683, 858.9634667315313) 
-  (236.845040770478, 1121.911466751388) 
-  (266.4506708667877, 1419.919200107225) 
-  (296.0563009630975, 1752.986666799043)
+  (26.68485096851355, 0.7120812712117784) 
+  (53.3697019370271, 2.848325084847114) 
+  (80.05455290554065, 6.408731440906006) 
+  (106.7394038740542, 11.39330033938846) 
+  (133.4242548425677, 17.80203178029446) 
+  (160.1091058110813, 25.63492576362403) 
+  (186.7939567795948, 34.89198228937714) 
+  (213.4788077481084, 45.57320135755382) 
+  (240.1636587166219, 57.67858296815404) 
+  (266.8485096851355, 71.20812712117784)
  GC88: x_cost_fuel[44] = PWL ( x[44] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
  GC89: x_cost_cut[44] = PWL ( x_cut[44] ) : (0, 0) 
-  (29.85805355476418, 17.83006724158332) 
-  (59.71610710952837, 71.32026896633329) 
-  (89.57416066429255, 160.4706051742499) 
-  (119.4322142190567, 285.2810758653332) 
-  (149.2902677738209, 445.751681039583) 
-  (179.1483213285851, 641.8824206969996) 
-  (209.0063748833493, 873.6732948375827) 
-  (238.8644284381135, 1141.124303461333) 
-  (268.7224819928776, 1444.235446568249) 
-  (298.5805355476418, 1783.006724158332)
+  (28.23144911496236, 0.7970147191307089) 
+  (56.46289822992471, 3.188058876522835) 
+  (84.69434734488706, 7.173132472176379) 
+  (112.9257964598494, 12.75223550609134) 
+  (141.1572455748118, 19.92536797826772) 
+  (169.3886946897741, 28.69252988870551) 
+  (197.6201438047365, 39.05372123740474) 
+  (225.8515929196988, 51.00894202436537) 
+  (254.0830420346612, 64.55819224958742) 
+  (282.3144911496236, 79.70147191307089)
  GC90: x_cost_fuel[45] = PWL ( x[45] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
  GC91: x_cost_cut[45] = PWL ( x_cut[45] ) : (0, 0) 
-  (30.79200392266976, 18.9629501114742) 
-  (61.58400784533951, 75.85180044589679) 
-  (92.37601176800926, 170.6665510032677) 
-  (123.168015690679, 303.4072017835871) 
-  (153.9600196133488, 474.0737527868548) 
-  (184.7520235360185, 682.6662040130709) 
-  (215.5440274586883, 929.1845554622354) 
-  (246.3360313813581, 1213.628807134349) 
-  (277.1280353040278, 1535.998959029409) 
-  (307.9200392266976, 1896.295011147419)
+  (29.67952755465318, 0.8808743558674175) 
+  (59.35905510930636, 3.52349742346967) 
+  (89.03858266395955, 7.927869202806757) 
+  (118.7181102186127, 14.09398969387868) 
+  (148.3976377732659, 22.02185889668543) 
+  (178.0771653279191, 31.71147681122703) 
+  (207.7566928825723, 43.16284343750346) 
+  (237.4362204372254, 56.37595877551472) 
+  (267.1157479918786, 71.35082282526079) 
+  (296.7952755465318, 88.08743558674173)
  GC92: x_cost_fuel[46] = PWL ( x[46] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
  GC93: x_cost_cut[46] = PWL ( x_cut[46] ) : (0, 0) 
-  (31.69764984318306, 20.09482011162086) 
-  (63.39529968636612, 80.37928044648343) 
-  (95.09294952954917, 180.8533810045877) 
-  (126.7905993727322, 321.5171217859337) 
-  (158.4882492159153, 502.3705027905215) 
-  (190.1858990590983, 723.4135240183509) 
-  (221.8835489022814, 984.6461854694218) 
-  (253.5811987454645, 1286.068487143735) 
-  (285.2788485886475, 1627.68042904129) 
-  (316.9764984318306, 2009.482011162086)
+  (30.79192158651074, 0.948142434989826) 
+  (61.58384317302148, 3.792569739959304) 
+  (92.37576475953222, 8.533281914908434) 
+  (123.167686346043, 15.17027895983722) 
+  (153.9596079325537, 23.70356087474565) 
+  (184.7515295190644, 34.13312765963374) 
+  (215.5434511055751, 46.45897931450146) 
+  (246.3353726920859, 60.68111583934886) 
+  (277.1272942785967, 76.79953723417592) 
+  (307.9192158651074, 94.81424349898261)
  GC94: x_cost_fuel[47] = PWL ( x[47] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
  GC95: x_cost_cut[47] = PWL ( x_cut[47] ) : (0, 0) 
-  (32.17877623910115, 20.70947280492281) 
-  (64.35755247820229, 82.83789121969124) 
-  (96.53632871730345, 186.3852552443053) 
-  (128.7151049564046, 331.351564878765) 
-  (160.8938811955057, 517.7368201230703) 
-  (193.0726574346069, 745.5410209772214) 
-  (225.251433673708, 1014.764167441218) 
-  (257.4302099128092, 1325.40625951506) 
-  (289.6089861519104, 1677.467297198748) 
-  (321.7877623910115, 2070.947280492281)
+  (32.16774723679669, 1.034763962290441) 
+  (64.33549447359339, 4.139055849161766) 
+  (96.50324171039009, 9.312875660613972) 
+  (128.6709889471868, 16.55622339664706) 
+  (160.8387361839835, 25.86909905726103) 
+  (193.0064834207802, 37.25150264245589) 
+  (225.1742306575769, 50.70343415223162) 
+  (257.3419778943735, 66.22489358658825) 
+  (289.5097251311702, 83.81588094552573) 
+  (321.6774723679669, 103.4763962290441)
  GC96: x_cost_fuel[48] = PWL ( x[48] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
  GC97: x_cost_cut[48] = PWL ( x_cut[48] ) : (0, 0) 
-  (31.62229156573108, 19.99938647736213) 
-  (63.24458313146215, 79.99754590944853) 
-  (94.86687469719323, 179.9944782962592) 
-  (126.4891662629243, 319.9901836377941) 
-  (158.1114578286554, 499.9846619340534) 
-  (189.7337493943865, 719.9779131850369) 
-  (221.3560409601175, 979.9699373907446) 
-  (252.9783325258486, 1279.960734551177) 
-  (284.6006240915797, 1619.950304666333) 
-  (316.2229156573108, 1999.938647736214)
+  (32.25408726738237, 1.040326145451917) 
+  (64.50817453476473, 4.161304581807669) 
+  (96.76226180214709, 9.362935309067256) 
+  (129.0163490695295, 16.64521832723068) 
+  (161.2704363369118, 26.00815363629794) 
+  (193.5245236042942, 37.45174123626902) 
+  (225.7786108716766, 50.97598112714395) 
+  (258.0326981390589, 66.5808733089227) 
+  (290.2867854064413, 84.26641778160531) 
+  (322.5408726738237, 104.0326145451917)
  GC98: x_cost_fuel[49] = PWL ( x[49] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
  GC99: x_cost_cut[49] = PWL ( x_cut[49] ) : (0, 0) 
-  (33.49702119927773, 22.44100858449724) 
-  (66.99404239855546, 89.76403433798895) 
-  (100.4910635978332, 201.9690772604751) 
-  (133.9880847971109, 359.0561373519558) 
-  (167.4851059963887, 561.0252146124309) 
-  (200.9821271956664, 807.8763090419004) 
-  (234.4791483949441, 1099.609420640365) 
-  (267.9761695942219, 1436.224549407823) 
-  (301.4731907934996, 1817.721695344276) 
-  (334.9702119927773, 2244.100858449724)
+  (32.60046851176703, 1.062790547186714) 
+  (65.20093702353407, 4.251162188746855) 
+  (97.80140553530109, 9.565114924680422) 
+  (130.4018740470681, 17.00464875498742) 
+  (163.0023425588352, 26.56976367966784) 
+  (195.6028110706022, 38.26045969872169) 
+  (228.2032795823692, 52.07673681214897) 
+  (260.8037480941363, 68.01859501994969) 
+  (293.4042166059033, 86.08603432212381) 
+  (326.0046851176703, 106.2790547186714)
  GC100: x_cost_fuel[50] = PWL ( x[50] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
  GC101: x_cost_cut[50] = PWL ( x_cut[50] ) : (0, 0) 
-  (31.76013897807323, 20.17412855813053) 
-  (63.52027795614646, 80.69651423252212) 
-  (95.28041693421969, 181.5671570231748) 
-  (127.0405559122929, 322.7860569300885) 
-  (158.8006948903661, 504.3532139532632) 
-  (190.5608338684394, 726.268628092699) 
-  (222.3209728465126, 988.5322993483957) 
-  (254.0811118245858, 1291.144227720354) 
-  (285.8412508026591, 1634.104413208573) 
-  (317.6013897807323, 2017.412855813053)
+  (33.34545566719594, 1.111919413652929) 
+  (66.69091133439187, 4.447677654611717) 
+  (100.0363670015878, 10.00727472287637) 
+  (133.3818226687837, 17.79071061844687) 
+  (166.7272783359797, 27.79798534132324) 
+  (200.0727340031756, 40.02909889150548) 
+  (233.4181896703716, 54.48405126899355) 
+  (266.7636453375675, 71.16284247378748) 
+  (300.1091010047634, 90.0654725058873) 
+  (333.4545566719594, 111.191941365293)
  GC102: x_cost_fuel[51] = PWL ( x[51] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
  GC103: x_cost_cut[51] = PWL ( x_cut[51] ) : (0, 0) 
-  (32.22882044196526, 20.77393734160876) 
-  (64.45764088393052, 83.09574936643503) 
-  (96.68646132589579, 186.9654360744788) 
-  (128.915281767861, 332.3829974657401) 
-  (161.1441022098263, 519.348433540219) 
-  (193.3729226517916, 747.8617442979154) 
-  (225.6017430937569, 1017.922929738829) 
-  (257.8305635357221, 1329.53198986296) 
-  (290.0593839776874, 1682.68892467031) 
-  (322.2882044196526, 2077.393734160876)
+  (33.70816616670964, 1.136240466322508) 
+  (67.41633233341928, 4.544961865290033) 
+  (101.1244985001289, 10.22616419690258) 
+  (134.8326646668386, 18.17984746116013) 
+  (168.5408308335482, 28.40601165806271) 
+  (202.2489970002578, 40.90465678761031) 
+  (235.9571631669675, 55.67578284980292) 
+  (269.6653293336771, 72.71938984464053) 
+  (303.3734955003868, 92.03547777212319) 
+  (337.0816616670964, 113.6240466322509)
  GC104: x_cost_fuel[52] = PWL ( x[52] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
  GC105: x_cost_cut[52] = PWL ( x_cut[52] ) : (0, 0) 
-  (31.53162051928028, 19.88486185143795) 
-  (63.06324103856057, 79.5394474057518) 
-  (94.59486155784086, 178.9637566629416) 
-  (126.1264820771211, 318.1577896230072) 
-  (157.6581025964014, 497.1215462859487) 
-  (189.1897231156817, 715.8550266517663) 
-  (220.721343634962, 974.3582307204595) 
-  (252.2529641542423, 1272.631158492029) 
-  (283.7845846735225, 1610.673809966474) 
-  (315.3162051928028, 1988.486185143795)
+  (33.57346913336156, 1.127177829648781) 
+  (67.14693826672311, 4.508711318595125) 
+  (100.7204074000847, 10.14460046683903) 
+  (134.2938765334462, 18.0348452743805) 
+  (167.8673456668078, 28.17944574121953) 
+  (201.4408148001693, 40.57840186735612) 
+  (235.0142839335309, 55.23171365279028) 
+  (268.5877530668924, 72.139381097522) 
+  (302.161222200254, 91.30140420155126) 
+  (335.7346913336156, 112.7177829648781)
  GC106: x_cost_fuel[53] = PWL ( x[53] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
  GC107: x_cost_cut[53] = PWL ( x_cut[53] ) : (0, 0) 
-  (31.23183772654194, 19.50855375554097) 
-  (62.46367545308387, 78.03421502216386) 
-  (93.69551317962581, 175.5769837998687) 
-  (124.9273509061677, 312.1368600886555) 
-  (156.1591886327097, 487.7138438885241) 
-  (187.3910263592516, 702.3079351994747) 
-  (218.6228640857936, 955.9191340215074) 
-  (249.8547018123355, 1248.547440354622) 
-  (281.0865395388774, 1580.192854198818) 
-  (312.3183772654194, 1950.855375554097)
+  (33.95248933955779, 1.152771532352785) 
+  (67.90497867911557, 4.611086129411141) 
+  (101.8574680186734, 10.37494379117507) 
+  (135.8099573582311, 18.44434451764456) 
+  (169.7624466977889, 28.81928830881963) 
+  (203.7149360373467, 41.49977516470027) 
+  (237.6674253769045, 56.48580508528649) 
+  (271.6199147164623, 73.77737807057825) 
+  (305.57240405602, 93.37449412057558) 
+  (339.5248933955779, 115.2771532352785)
  GC108: x_cost_fuel[54] = PWL ( x[54] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
  GC109: x_cost_cut[54] = PWL ( x_cut[54] ) : (0, 0) 
-  (31.83140087073406, 20.26476162786738) 
-  (63.66280174146812, 81.0590465114695) 
-  (95.49420261220217, 182.3828546508064) 
-  (127.3256034829362, 324.236186045878) 
-  (159.1570043536703, 506.6190406966845) 
-  (190.9884052244043, 729.5314186032256) 
-  (222.8198060951384, 992.9733197655016) 
-  (254.6512069658725, 1296.944744183512) 
-  (286.4826078366065, 1641.445691857258) 
-  (318.3140087073406, 2026.476162786738)
+  (34.49147106925211, 1.189661576521056) 
+  (68.98294213850423, 4.758646306084223) 
+  (103.4744132077563, 10.7069541886895) 
+  (137.9658842770085, 19.03458522433689) 
+  (172.4573553462606, 29.74153941302638) 
+  (206.9488264155127, 42.82781675475799) 
+  (241.4402974847648, 58.29341724953171) 
+  (275.9317685540169, 76.13834089734756) 
+  (310.423239623269, 96.36258769820549) 
+  (344.9147106925211, 118.9661576521055)
  GC110: x_cost_fuel[55] = PWL ( x[55] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
  GC111: x_cost_cut[55] = PWL ( x_cut[55] ) : (0, 0) 
-  (30.93205554427684, 19.13584120388456) 
-  (61.86411108855368, 76.54336481553823) 
-  (92.79616663283052, 172.222570834961) 
-  (123.7282221771074, 306.1734592621529) 
-  (154.6602777213842, 478.3960300971138) 
-  (185.592333265661, 688.8902833398439) 
-  (216.5243888099379, 937.6562189903429) 
-  (247.4564443542147, 1224.693837048612) 
-  (278.3884998984916, 1550.003137514649) 
-  (309.3205554427684, 1913.584120388455)
+  (34.27607578927414, 1.174849371512065) 
+  (68.55215157854828, 4.69939748604826) 
+  (102.8282273678224, 10.57364434360858) 
+  (137.1043031570966, 18.79758994419304) 
+  (171.3803789463707, 29.37123428780161) 
+  (205.6564547356448, 42.29457737443433) 
+  (239.9325305249189, 57.56761920409116) 
+  (274.2086063141931, 75.19035977677215) 
+  (308.4846821034672, 95.16279909247721) 
+  (342.7607578927414, 117.4849371512065)
  GC112: x_cost_fuel[56] = PWL ( x[56] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
  GC113: x_cost_cut[56] = PWL ( x_cut[56] ) : (0, 0) 
-  (28.39278641127199, 16.12300640392223) 
-  (56.78557282254398, 64.4920256156889) 
-  (85.17835923381597, 145.1070576353) 
-  (113.571145645088, 257.9681024627556) 
-  (141.9639320563599, 403.0751600980556) 
-  (170.3567184676319, 580.4282305412002) 
-  (198.7495048789039, 790.0273137921889) 
-  (227.1422912901759, 1031.872409851022) 
-  (255.5350777014479, 1305.9635187177) 
-  (283.9278641127199, 1612.300640392222)
+  (32.94629942043542, 1.085458645500983) 
+  (65.89259884087085, 4.341834582003933) 
+  (98.83889826130627, 9.769127809508852) 
+  (131.7851976817417, 17.36733832801573) 
+  (164.7314971021771, 27.13646613752459) 
+  (197.6777965226125, 39.07651123803541) 
+  (230.624095943048, 53.18747362954819) 
+  (263.5703953634834, 69.46935331206294) 
+  (296.5166947839188, 87.92215028557966) 
+  (329.4629942043542, 108.5458645500984)
  GC114: x_cost_fuel[57] = PWL ( x[57] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
  GC115: x_cost_cut[57] = PWL ( x_cut[57] ) : (0, 0) 
-  (29.1822311425927, 17.03205228919415) 
-  (58.3644622851854, 68.12820915677659) 
-  (87.54669342777811, 153.2884706027473) 
-  (116.7289245703708, 272.5128366271064) 
-  (145.9111557129635, 425.8013072298537) 
-  (175.0933868555562, 613.1538824109894) 
-  (204.2756179981489, 834.5705621705131) 
-  (233.4578491407416, 1090.051346508425) 
-  (262.6400802833343, 1379.596235424726) 
-  (291.822311425927, 1703.205228919415)
+  (31.55839464192492, 0.9959322723754753) 
+  (63.11678928384983, 3.983729089501901) 
+  (94.67518392577475, 8.963390451379277) 
+  (126.2335785676997, 15.93491635800761) 
+  (157.7919732096246, 24.89830680938688) 
+  (189.3503678515495, 35.85356180551711) 
+  (220.9087624934744, 48.8006813463983) 
+  (252.4671571353993, 63.73966543203042) 
+  (284.0255517773243, 80.6705140624135) 
+  (315.5839464192492, 99.59322723754754)
  GC116: x_cost_fuel[58] = PWL ( x[58] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
  GC117: x_cost_cut[58] = PWL ( x_cut[58] ) : (0, 0) 
-  (28.69223170065582, 16.46488319928238) 
-  (57.38446340131164, 65.85953279712952) 
-  (86.07669510196747, 148.1839487935414) 
-  (114.7689268026233, 263.4381311885181) 
-  (143.4611585032791, 411.6220799820595) 
-  (172.1533902039349, 592.7357951741657) 
-  (200.8456219045908, 806.7792767648365) 
-  (229.5378536052466, 1053.752524754072) 
-  (258.2300853059024, 1333.655539141873) 
-  (286.9223170065582, 1646.488319928238)
+  (29.95571436212072, 0.8973448229449653) 
+  (59.91142872424143, 3.589379291779861) 
+  (89.86714308636215, 8.076103406504687) 
+  (119.8228574484829, 14.35751716711945) 
+  (149.7785718106036, 22.43362057362413) 
+  (179.7342861727243, 32.30441362601875) 
+  (209.690000534845, 43.9698963243033) 
+  (239.6457148969657, 57.43006866847778) 
+  (269.6014292590864, 72.68493065854219) 
+  (299.5571436212072, 89.73448229449653)
  GC118: x_cost_fuel[59] = PWL ( x[59] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
  GC119: x_cost_cut[59] = PWL ( x_cut[59] ) : (0, 0) 
-  (30.81556525371178, 18.99198123811538) 
-  (61.63113050742356, 75.9679249524615) 
-  (92.44669576113535, 170.9278311430384) 
-  (123.2622610148471, 303.871699809846) 
-  (154.0778262685589, 474.7995309528844) 
-  (184.8933915222707, 683.7113245721536) 
-  (215.7089567759825, 930.6070806676536) 
-  (246.5245220296943, 1215.486799239384) 
-  (277.340087283406, 1538.350480287346) 
-  (308.1556525371178, 1899.198123811538)
+  (28.45721558225164, 0.8098131186947457) 
+  (56.91443116450328, 3.239252474778983) 
+  (85.37164674675493, 7.288318068252712) 
+  (113.8288623290066, 12.95700989911593) 
+  (142.2860779112582, 20.24532796736865) 
+  (170.7432934935099, 29.15327227301085) 
+  (199.2005090757615, 39.68084281604255) 
+  (227.6577246580131, 51.82803959646373) 
+  (256.1149402402648, 65.59486261427439) 
+  (284.5721558225164, 80.98131186947458)
  GC120: x_cost_fuel[60] = PWL ( x[60] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
  GC121: x_cost_cut[60] = PWL ( x_cut[60] ) : (0, 0) 
-  (28.61629642271457, 16.37784841905334) 
-  (57.23259284542915, 65.51139367621334) 
-  (85.84888926814372, 147.40063577148) 
-  (114.4651856908583, 262.0455747048534) 
-  (143.0814821135729, 409.4462104763334) 
-  (171.6977785362874, 589.6025430859202) 
-  (200.314074959002, 802.5145725336134) 
-  (228.9303713817166, 1048.182298819414) 
-  (257.5466678044311, 1326.60572194332) 
-  (286.1629642271457, 1637.784841905334)
+  (21.13734504241599, 0.4467873554421479) 
+  (42.27469008483198, 1.787149421768591) 
+  (63.41203512724796, 4.021086198979329) 
+  (84.54938016966396, 7.148597687074366) 
+  (105.6867252120799, 11.1696838860537) 
+  (126.8240702544959, 16.08434479591732) 
+  (147.9614152969119, 21.89258041666524) 
+  (169.0987603393279, 28.59439074829746) 
+  (190.2361053817439, 36.18977579081398) 
+  (211.3734504241599, 44.67873554421478)
  GC122: x_cost_fuel[61] = PWL ( x[61] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
  GC123: x_cost_cut[61] = PWL ( x_cut[61] ) : (0, 0) 
-  (26.64086757084418, 14.19471649854514) 
-  (53.28173514168835, 56.77886599418054) 
-  (79.92260271253254, 127.7524484869063) 
-  (106.5634702833767, 227.1154639767222) 
-  (133.2043378542209, 354.8679124636284) 
-  (159.8452054250651, 511.0097939476251) 
-  (186.4860729959092, 695.5411084287118) 
-  (213.1269405667534, 908.4618559068887) 
-  (239.7678081375976, 1149.772036382156) 
-  (266.4086757084418, 1419.471649854514)
+  (25.54029566712041, 0.6523067027639294) 
+  (51.08059133424081, 2.609226811055718) 
+  (76.62088700136123, 5.870760324875365) 
+  (102.1611826684816, 10.43690724422287) 
+  (127.701478335602, 16.30766756909824) 
+  (153.2417740027225, 23.48304129950146) 
+  (178.7820696698429, 31.96302843543254) 
+  (204.3223653369633, 41.74762897689148) 
+  (229.8626610040837, 52.83684292387829) 
+  (255.4029566712041, 65.23067027639296)
  GC124: x_cost_fuel[62] = PWL ( x[62] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
  GC125: x_cost_cut[62] = PWL ( x_cut[62] ) : (0, 0) 
-  (24.06183423911568, 11.57943733901359) 
-  (48.12366847823135, 46.31774935605436) 
-  (72.18550271734702, 104.2149360511223) 
-  (96.2473369564627, 185.2709974242174) 
-  (120.3091711955784, 289.4859334753397) 
-  (144.371005434694, 416.8597442044891) 
-  (168.4328396738097, 567.3924296116659) 
-  (192.4946739129254, 741.0839896968697) 
-  (216.5565081520411, 937.9344244601008) 
-  (240.6183423911568, 1157.943733901359)
+  (23.52148546795059, 0.5532602786190106) 
+  (47.04297093590117, 2.213041114476042) 
+  (70.56445640385176, 4.979342507571096) 
+  (94.08594187180235, 8.85216445790417) 
+  (117.6074273397529, 13.83150696547527) 
+  (141.1289128077035, 19.91737003028438) 
+  (164.6503982756541, 27.10975365233152) 
+  (188.1718837436047, 35.40865783161668) 
+  (211.6933692115553, 44.81408256813987) 
+  (235.2148546795059, 55.32602786190107)
  GC126: x_cost_fuel[63] = PWL ( x[63] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
  GC127: x_cost_cut[63] = PWL ( x_cut[63] ) : (0, 0) 
-  (27.07985045116168, 14.66636600914563) 
-  (54.15970090232336, 58.66546403658251) 
-  (81.23955135348504, 131.9972940823107) 
-  (108.3194018046467, 234.6618561463301) 
-  (135.3992522558084, 366.6591502286407) 
-  (162.4791027069701, 527.9891763292427) 
-  (189.5589531581317, 718.6519344481356) 
-  (216.6388036092934, 938.6474245853202) 
-  (243.7186540604551, 1187.975646740796) 
-  (270.7985045116168, 1466.636600914563)
+  (21.34780589103799, 0.4557288163614365) 
+  (42.69561178207599, 1.822915265445746) 
+  (64.04341767311398, 4.101559347252929) 
+  (85.39122356415197, 7.291661061782984) 
+  (106.73902945519, 11.39322040903591) 
+  (128.086835346228, 16.40623738901171) 
+  (149.4346412372659, 22.33071200171038) 
+  (170.7824471283039, 29.16664424713193) 
+  (192.1302530193419, 36.91403412527636) 
+  (213.4780589103799, 45.57288163614364)
  GC128: x_cost_fuel[64] = PWL ( x[64] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
  GC129: x_cost_cut[64] = PWL ( x_cut[64] ) : (0, 0) 
-  (21.66701397295666, 9.389189890085987) 
-  (43.33402794591333, 37.55675956034395) 
-  (65.00104191886999, 84.50270901077386) 
-  (86.66805589182665, 150.2270382413758) 
-  (108.3350698647833, 234.7297472521497) 
-  (130.00208383774, 338.0108360430954) 
-  (151.6690978106967, 460.0703046142134) 
-  (173.3361117836533, 600.9081529655032) 
-  (195.00312575661, 760.524381096965) 
-  (216.6701397295666, 938.9189890085986)
+  (19.83838969661062, 0.3935617057545863) 
+  (39.67677939322123, 1.574246823018345) 
+  (59.51516908983185, 3.542055351791277) 
+  (79.35355878644246, 6.29698729207338) 
+  (99.19194848305308, 9.839042643864657) 
+  (119.0303381796637, 14.16822140716511) 
+  (138.8687278762743, 19.28452358197472) 
+  (158.7071175728849, 25.18794916829352) 
+  (178.5455072694955, 31.87849816612149) 
+  (198.3838969661062, 39.35617057545863)
  GC130: x_cost_fuel[65] = PWL ( x[65] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
  GC131: x_cost_cut[65] = PWL ( x_cut[65] ) : (0, 0) 
-  (21.01302232100081, 8.830942141257562) 
-  (42.02604464200162, 35.32376856503025) 
-  (63.03906696300241, 79.47847927131804) 
-  (84.05208928400323, 141.295074260121) 
-  (105.065111605004, 220.7735535314391) 
-  (126.0781339260048, 317.9139170852721) 
-  (147.0911562470056, 432.7161649216205) 
-  (168.1041785680065, 565.180297040484) 
-  (189.1172008890073, 715.3063134418627) 
-  (210.1302232100081, 883.0942141257564)
+  (17.46803872368736, 0.3051323768522413) 
+  (34.93607744737473, 1.220529507408965) 
+  (52.40411617106209, 2.746191391670171) 
+  (69.87215489474946, 4.882118029635861) 
+  (87.34019361843681, 7.628309421306031) 
+  (104.8082323421242, 10.98476556668068) 
+  (122.2762710658115, 14.95148646575982) 
+  (139.7443097894989, 19.52847211854344) 
+  (157.2123485131863, 24.71572252503154) 
+  (174.6803872368736, 30.51323768522412)
  GC132: x_cost_fuel[66] = PWL ( x[66] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
  GC133: x_cost_cut[66] = PWL ( x_cut[66] ) : (0, 0) 
-  (10.26481883702014, 2.107330115136872) 
-  (20.52963767404029, 8.429320460547487) 
-  (30.79445651106044, 18.96597103623185) 
-  (41.05927534808058, 33.71728184218995) 
-  (51.32409418510072, 52.68325287842179) 
-  (61.58891302212087, 75.8638841449274) 
-  (71.85373185914101, 103.2591756417067) 
-  (82.11855069616115, 134.8691273687598) 
-  (92.38336953318129, 170.6937393260866) 
-  (102.6481883702014, 210.7330115136872)
+  (15.097880292198, 0.2279459893175407) 
+  (30.195760584396, 0.9117839572701629) 
+  (45.293640876594, 2.051513903857867) 
+  (60.391521168792, 3.647135829080652) (75.48940146099, 5.698649732938518) 
+  (90.58728175318799, 8.206055615431467) 
+  (105.685162045386, 11.1693534765595) 
+  (120.783042337584, 14.58854331632261) 
+  (135.880922629782, 18.4636251347208) 
+  (150.97880292198, 22.79459893175407)
  GC134: x_cost_fuel[67] = PWL ( x[67] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
  GC135: x_cost_cut[67] = PWL ( x_cut[67] ) : (0, 0) 
-  (17.48715737846006, 6.116013463580606) 
-  (34.97431475692013, 24.46405385432243) 
-  (52.4614721353802, 55.04412117222545) 
-  (69.94862951384026, 97.8562154172897) 
-  (87.43578689230033, 152.9003365895151) 
-  (104.9229442707604, 220.1764846889018) 
-  (122.4101016492205, 299.6846597154497) 
-  (139.8972590276805, 391.4248616691588) 
-  (157.3844164061406, 495.3970905500291) 
-  (174.8715737846007, 611.6013463580606)
+  (12.5161584326801, 0.1566542219119493) 
+  (25.03231686536021, 0.6266168876477971) 
+  (37.54847529804032, 1.409887997207544) 
+  (50.06463373072042, 2.506467550591188) 
+  (62.58079216340052, 3.916355547798731) 
+  (75.09695059608063, 5.639551988830176) 
+  (87.61310902876073, 7.676056873685516) 
+  (100.1292674614408, 10.02587020236475) 
+  (112.6454258941209, 12.68899197486789) 
+  (125.161584326801, 15.66542219119492)
  GC136: x_cost_fuel[68] = PWL ( x[68] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
  GC137: x_cost_cut[68] = PWL ( x_cut[68] ) : (0, 0) 
-  (8.48882644347661, 1.441203487749355) 
-  (16.97765288695322, 5.76481395099742) 
-  (25.46647933042983, 12.9708313897442) 
-  (33.95530577390644, 23.05925580398968) 
-  (42.44413221738305, 36.03008719373388) 
-  (50.93295866085966, 51.88332555897679) 
-  (59.42178510433627, 70.61897089971839) 
-  (67.91061154781288, 92.23702321595871) 
-  (76.39943799128949, 116.7374825076977) 
-  (84.8882644347661, 144.1203487749355)
+  (10.55930754377942, 0.111498975804117) 
+  (21.11861508755884, 0.4459959032164679) 
+  (31.67792263133826, 1.003490782237052) 
+  (42.23723017511768, 1.783983612865872) 
+  (52.79653771889709, 2.787474395102923) 
+  (63.35584526267652, 4.01396312894821) 
+  (73.91515280645595, 5.463449814401733) 
+  (84.47446035023536, 7.135934451463487) 
+  (95.03376789401477, 9.031417040133473) 
+  (105.5930754377942, 11.14989758041169)
  GC138: x_cost_fuel[69] = PWL ( x[69] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
  GC139: x_cost_cut[69] = PWL ( x_cut[69] ) : (0, 0) 
-  (9.478689519076797, 1.796911099981126) 
-  (18.95737903815359, 7.187644399924506) 
-  (28.43606855723039, 16.17219989983014) 
-  (37.91475807630719, 28.75057759969802) 
-  (47.39344759538398, 44.92277749952815) 
-  (56.87213711446078, 64.68879959932056) 
-  (66.35082663353758, 88.0486438990752) 
-  (75.82951615261437, 115.0023103987921) 
-  (85.30820567169117, 145.5497990984712) 
-  (94.78689519076796, 179.6911099981126)
+  (7.817251152491338, 0.0611094155811271) 
+  (15.63450230498268, 0.2444376623245086) 
+  (23.45175345747401, 0.5499847402301443) 
+  (31.26900460996535, 0.9777506492980343) 
+  (39.08625576245669, 1.527735389528179) 
+  (46.90350691494803, 2.199938960920577) 
+  (54.72075806743936, 2.99436136347523) 
+  (62.5380092199307, 3.911002597192137) 
+  (70.35526037242204, 4.949862662071299) 
+  (78.17251152491338, 6.110941558112715)
  GC140: x_cost_fuel[70] = PWL ( x[70] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
  GC141: x_cost_cut[70] = PWL ( x_cut[70] ) : (0, 0) 
-  (4.349398632080582, 0.3783453692148888) 
-  (8.698797264161165, 1.513381476859555) 
-  (13.04819589624175, 3.405108322934) 
-  (17.39759452832233, 6.053525907438221) 
-  (21.74699316040291, 9.458634230372221) 
-  (26.09639179248349, 13.620433291736) 
-  (30.44579042456407, 18.53892309152955) 
-  (34.79518905664466, 24.21410362975288) 
-  (39.14458768872525, 30.645974906406) 
-  (43.49398632080582, 37.83453692148888)
+  (3.234669685327343, 0.0104630879731757) 
+  (6.469339370654685, 0.0418523518927028) 
+  (9.704009055982029, 0.0941677917585812) 
+  (12.93867874130937, 0.167409407570811) 
+  (16.17334842663671, 0.2615771993293923) 
+  (19.40801811196406, 0.3766711670343249) 
+  (22.6426877972914, 0.5126913106856088) 
+  (25.87735748261874, 0.6696376302832442) 
+  (29.11202716794609, 0.8475101258272312) 
+  (32.34669685327343, 1.046308797317569)
  GC142: x_cost_fuel[71] = PWL ( x[71] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
  GC143: x_cost_cut[71] = PWL ( x_cut[71] ) : (0, 0) 
-  (4.829332289408057, 0.4664490072303852) 
-  (9.658664578816113, 1.865796028921541) 
-  (14.48799686822417, 4.198041065073467) 
-  (19.31732915763223, 7.463184115686164) 
-  (24.14666144704028, 11.66122518075963) 
-  (28.97599373644834, 16.79216426029387) 
-  (33.8053260258564, 22.85600135428887) 
-  (38.63465831526445, 29.85273646274466) 
-  (43.46399060467251, 37.7823695856612) 
-  (48.29332289408057, 46.64490072303853)
+  (2.392431722359775, 0.00572372954615336) 
+  (4.784863444719551, 0.0228949181846134) 
+  (7.177295167079326, 0.0515135659153803) 
+  (9.569726889439101, 0.0915796727384538) 
+  (11.96215861179888, 0.1430932386538341) 
+  (14.35459033415865, 0.206054263661521) 
+  (16.74702205651842, 0.2804627477615146) 
+  (19.1394537788782, 0.3663186909538151) 
+  (21.53188550123798, 0.4636220932384223) 
+  (23.92431722359775, 0.5723729546153362)
  GC144: x_cost_fuel[72] = PWL ( x[72] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
  GC145: x_cost_cut[72] = PWL ( x_cut[72] ) : (0, 0) 
-  (5.419038344912236, 0.5873195316725829) 
-  (10.83807668982447, 2.349278126690332) 
-  (16.25711503473671, 5.285875785053248) 
-  (21.67615337964894, 9.397112506761326) 
-  (27.09519172456118, 14.68298829181458) 
-  (32.51423006947342, 21.14350314021299) 
-  (37.93326841438566, 28.77865705195657) 
-  (43.35230675929789, 37.5884500270453) 
-  (48.77134510421013, 47.57288206547923) 
-  (54.19038344912236, 58.73195316725831)
+  (1.332271298179269, 0.00177494681195227) 
+  (2.664542596358538, 0.0070997872478091) 
+  (3.996813894537806, 0.0159745213075705) 
+  (5.329085192717075, 0.0283991489912364) 
+  (6.661356490896344, 0.0443736702988069) 
+  (7.993627789075613, 0.0638980852302819) 
+  (9.325899087254882, 0.0869723937856614) 
+  (10.65817038543415, 0.1135965959649456) 
+  (11.99044168361342, 0.1437706917681342) 
+  (13.32271298179269, 0.1774946811952274)
  GC146: x_cost_fuel[73] = PWL ( x[73] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
  GC147: x_cost_cut[73] = PWL ( x_cut[73] ) : (0, 0) 
-  (5.140345070680846, 0.5284629489134575) 
-  (10.28069014136169, 2.11385179565383) 
-  (15.42103521204254, 4.756166540221115) 
-  (20.56138028272338, 8.455407182615319) 
-  (25.70172535340423, 13.21157372283644) 
-  (30.84207042408507, 19.02466616088446) 
-  (35.98241549476592, 25.89468449675941) 
-  (41.12276056544677, 33.82162873046128) 
-  (46.26310563612761, 42.80549886199005) 
-  (51.40345070680846, 52.84629489134575)
+  (0.2159068581029276, 4.66158e-05) (0.4318137162058552, 0.000186463) 
+  (0.6477205743087827, 0.000419542) 
+  (0.8636274324117104, 7.4585234201404336e-04) 
+  (1.079534290514638, 0.00116539428439694) 
+  (1.295441148617565, 0.0016781677695316) 
+  (1.511348006720493, 0.00228417279741801) 
+  (1.727254864823421, 0.00298340936805617) 
+  (1.943161722926348, 0.00377587748144609) 
+  (2.159068581029276, 0.00466157713758777)
  GC148: x_cost_fuel[74] = PWL ( x[74] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
- GC149: x_cost_cut[74] = PWL ( x_cut[74] ) : (0, 0) 
-  (2.632104317962992, 0.1385594628127886) 
-  (5.264208635925985, 0.5542378512511543) 
-  (7.896312953888978, 1.247035165315097) 
-  (10.52841727185197, 2.216951405004617) 
-  (13.16052158981496, 3.463986570319715) 
-  (15.79262590777796, 4.988140661260389) 
-  (18.42473022574095, 6.789413677826642) 
-  (21.05683454370394, 8.867805620018469) 
-  (23.68893886166693, 11.22331648783588) 
-  (26.32104317962992, 13.85594628127886)
+ GC149: x_cost_cut[74] = PWL ( x_cut[74] ) : (0, 0) (1e-06, 1e-15) 
+  (2e-06, 4e-15) (3e-06, 9e-15) (4e-06, 1.6e-14) (5e-06, 2.5e-14) 
+  (6e-06, 3.6e-14) (7e-06, 4.9e-14) (8e-06, 6.4e-14) (9e-06, 8.1e-14) 
+  (1e-05, 1e-13)
  GC150: x_cost_fuel[75] = PWL ( x[75] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
- GC151: x_cost_cut[75] = PWL ( x_cut[75] ) : (0, 0) 
-  (1.021875796043316, 0.0208846028507832) 
-  (2.043751592086632, 0.0835384114031329) 
-  (3.065627388129948, 0.187961425657049) 
-  (4.087503184173264, 0.3341536456125315) 
-  (5.10937898021658, 0.5221150712695805) 
-  (6.131254776259897, 0.7518457026281958) 
-  (7.153130572303212, 1.023345539688377) 
-  (8.175006368346528, 1.336614582450126) 
-  (9.196882164389844, 1.69165283091344) 
-  (10.21875796043316, 2.088460285078322)
+ GC151: x_cost_cut[75] = PWL ( x_cut[75] ) : (0, 0) (1e-06, 1e-15) 
+  (2e-06, 4e-15) (3e-06, 9e-15) (4e-06, 1.6e-14) (5e-06, 2.5e-14) 
+  (6e-06, 3.6e-14) (7e-06, 4.9e-14) (8e-06, 6.4e-14) (9e-06, 8.1e-14) 
+  (1e-05, 1e-13)
  GC152: x_cost_fuel[76] = PWL ( x[76] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
- GC153: x_cost_cut[76] = PWL ( x_cut[76] ) : (0, 0) 
-  (0.4100334662328383, 0.00336254886861832) 
-  (0.8200669324656765, 0.0134501954744733) 
-  (1.230100398698515, 0.0302629398175649) 
-  (1.640133864931353, 0.0538007818978932) 
-  (2.050167331164191, 0.084063721715458) 
-  (2.46020079739703, 0.1210517592702596) 
-  (2.870234263629868, 0.1647648945622978) 
-  (3.280267729862706, 0.2152031275915726) 
-  (3.690301196095544, 0.272366458358084) 
-  (4.100334662328383, 0.3362548868618322)
+ GC153: x_cost_cut[76] = PWL ( x_cut[76] ) : (0, 0) (1e-06, 1e-15) 
+  (2e-06, 4e-15) (3e-06, 9e-15) (4e-06, 1.6e-14) (5e-06, 2.5e-14) 
+  (6e-06, 3.6e-14) (7e-06, 4.9e-14) (8e-06, 6.4e-14) (9e-06, 8.1e-14) 
+  (1e-05, 1e-13)
  GC154: x_cost_fuel[77] = PWL ( x[77] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
- GC155: x_cost_cut[77] = PWL ( x_cut[77] ) : (0, 0) 
-  (0.0315410356525913, 1.98967e-05) (0.0630820713051825, 7.9587e-05) 
-  (0.0946231069577738, 1.7907064740684599e-04) 
-  (0.126164142610365, 3.1834781761217053e-04) 
-  (0.1577051782629563, 4.9741846501901647e-04) 
-  (0.1892462139155476, 7.1628258962738397e-04) 
-  (0.2207872495681388, 9.7494019143727216e-04) 
-  (0.2523282852207301, 0.00127339127044868) 
-  (0.2838693208733213, 0.00161163582666161) 
-  (0.3154103565259126, 0.00198967386007607)
+ GC155: x_cost_cut[77] = PWL ( x_cut[77] ) : (0, 0) (1e-06, 1e-15) 
+  (2e-06, 4e-15) (3e-06, 9e-15) (4e-06, 1.6e-14) (5e-06, 2.5e-14) 
+  (6e-06, 3.6e-14) (7e-06, 4.9e-14) (8e-06, 6.4e-14) (9e-06, 8.1e-14) 
+  (1e-05, 1e-13)
  GC156: x_cost_fuel[78] = PWL ( x[78] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
- GC157: x_cost_cut[78] = PWL ( x_cut[78] ) : (0, 0) 
-  (0.0315410356525913, 1.98967e-05) (0.0630820713051825, 7.9587e-05) 
-  (0.0946231069577738, 1.7907064740684599e-04) 
-  (0.126164142610365, 3.1834781761217053e-04) 
-  (0.1577051782629563, 4.9741846501901647e-04) 
-  (0.1892462139155476, 7.1628258962738397e-04) 
-  (0.2207872495681388, 9.7494019143727216e-04) 
-  (0.2523282852207301, 0.00127339127044868) 
-  (0.2838693208733213, 0.00161163582666161) 
-  (0.3154103565259126, 0.00198967386007607)
+ GC157: x_cost_cut[78] = PWL ( x_cut[78] ) : (0, 0) (1e-06, 1e-15) 
+  (2e-06, 4e-15) (3e-06, 9e-15) (4e-06, 1.6e-14) (5e-06, 2.5e-14) 
+  (6e-06, 3.6e-14) (7e-06, 4.9e-14) (8e-06, 6.4e-14) (9e-06, 8.1e-14) 
+  (1e-05, 1e-13)
  GC158: x_cost_fuel[79] = PWL ( x[79] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
- GC159: x_cost_cut[79] = PWL ( x_cut[79] ) : (0, 0) 
-  (0.0315410356525913, 1.98967e-05) (0.0630820713051825, 7.9587e-05) 
-  (0.0946231069577738, 1.7907064740684599e-04) 
-  (0.126164142610365, 3.1834781761217053e-04) 
-  (0.1577051782629563, 4.9741846501901647e-04) 
-  (0.1892462139155476, 7.1628258962738397e-04) 
-  (0.2207872495681388, 9.7494019143727216e-04) 
-  (0.2523282852207301, 0.00127339127044868) 
-  (0.2838693208733213, 0.00161163582666161) 
-  (0.3154103565259126, 0.00198967386007607)
+ GC159: x_cost_cut[79] = PWL ( x_cut[79] ) : (0, 0) (1e-06, 1e-15) 
+  (2e-06, 4e-15) (3e-06, 9e-15) (4e-06, 1.6e-14) (5e-06, 2.5e-14) 
+  (6e-06, 3.6e-14) (7e-06, 4.9e-14) (8e-06, 6.4e-14) (9e-06, 8.1e-14) 
+  (1e-05, 1e-13)
  GC160: x_cost_fuel[80] = PWL ( x[80] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
- GC161: x_cost_cut[80] = PWL ( x_cut[80] ) : (0, 0) 
-  (0.0634274515389979, 8.04608e-05) 
-  (0.1268549030779958, 3.2184332869855415e-04) 
-  (0.1902823546169937, 7.241474895717466e-04) 
-  (0.2537098061559916, 0.00128737331479422) 
-  (0.3171372576949895, 0.00201152080436596) 
-  (0.3805647092339873, 0.00289659) 
-  (0.4439921607729852, 0.00394258077655729) 
-  (0.5074196123119832, 0.00514949325917687) 
-  (0.5708470638509811, 0.00651732740614572) 
-  (0.6342745153899789, 0.00804608321746385)
+ GC161: x_cost_cut[80] = PWL ( x_cut[80] ) : (0, 0) (1e-06, 1e-15) 
+  (2e-06, 4e-15) (3e-06, 9e-15) (4e-06, 1.6e-14) (5e-06, 2.5e-14) 
+  (6e-06, 3.6e-14) (7e-06, 4.9e-14) (8e-06, 6.4e-14) (9e-06, 8.1e-14) 
+  (1e-05, 1e-13)
  GC162: x_cost_fuel[81] = PWL ( x[81] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
- GC163: x_cost_cut[81] = PWL ( x_cut[81] ) : (0, 0) 
-  (0.0634274515389979, 8.04608e-05) 
-  (0.1268549030779958, 3.2184332869855415e-04) 
-  (0.1902823546169937, 7.241474895717466e-04) 
-  (0.2537098061559916, 0.00128737331479422) 
-  (0.3171372576949895, 0.00201152080436596) 
-  (0.3805647092339873, 0.00289659) 
-  (0.4439921607729852, 0.00394258077655729) 
-  (0.5074196123119832, 0.00514949325917687) 
-  (0.5708470638509811, 0.00651732740614572) 
-  (0.6342745153899789, 0.00804608321746385)
+ GC163: x_cost_cut[81] = PWL ( x_cut[81] ) : (0, 0) (1e-06, 1e-15) 
+  (2e-06, 4e-15) (3e-06, 9e-15) (4e-06, 1.6e-14) (5e-06, 2.5e-14) 
+  (6e-06, 3.6e-14) (7e-06, 4.9e-14) (8e-06, 6.4e-14) (9e-06, 8.1e-14) 
+  (1e-05, 1e-13)
  GC164: x_cost_fuel[82] = PWL ( x[82] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
- GC165: x_cost_cut[82] = PWL ( x_cut[82] ) : (0, 0) 
-  (0.0634274515389979, 8.04608e-05) 
-  (0.1268549030779958, 3.2184332869855415e-04) 
-  (0.1902823546169937, 7.241474895717466e-04) 
-  (0.2537098061559916, 0.00128737331479422) 
-  (0.3171372576949895, 0.00201152080436596) 
-  (0.3805647092339873, 0.00289659) 
-  (0.4439921607729852, 0.00394258077655729) 
-  (0.5074196123119832, 0.00514949325917687) 
-  (0.5708470638509811, 0.00651732740614572) 
-  (0.6342745153899789, 0.00804608321746385)
+ GC165: x_cost_cut[82] = PWL ( x_cut[82] ) : (0, 0) (1e-06, 1e-15) 
+  (2e-06, 4e-15) (3e-06, 9e-15) (4e-06, 1.6e-14) (5e-06, 2.5e-14) 
+  (6e-06, 3.6e-14) (7e-06, 4.9e-14) (8e-06, 6.4e-14) (9e-06, 8.1e-14) 
+  (1e-05, 1e-13)
  GC166: x_cost_fuel[83] = PWL ( x[83] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
- GC167: x_cost_cut[83] = PWL ( x_cut[83] ) : (0, 0) 
-  (0.0634274515389979, 8.04608e-05) 
-  (0.1268549030779958, 3.2184332869855415e-04) 
-  (0.1902823546169937, 7.241474895717466e-04) 
-  (0.2537098061559916, 0.00128737331479422) 
-  (0.3171372576949895, 0.00201152080436596) 
-  (0.3805647092339873, 0.00289659) 
-  (0.4439921607729852, 0.00394258077655729) 
-  (0.5074196123119832, 0.00514949325917687) 
-  (0.5708470638509811, 0.00651732740614572) 
-  (0.6342745153899789, 0.00804608321746385)
+ GC167: x_cost_cut[83] = PWL ( x_cut[83] ) : (0, 0) (1e-06, 1e-15) 
+  (2e-06, 4e-15) (3e-06, 9e-15) (4e-06, 1.6e-14) (5e-06, 2.5e-14) 
+  (6e-06, 3.6e-14) (7e-06, 4.9e-14) (8e-06, 6.4e-14) (9e-06, 8.1e-14) 
+  (1e-05, 1e-13)
  GC168: x_cost_fuel[84] = PWL ( x[84] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
- GC169: x_cost_cut[84] = PWL ( x_cut[84] ) : (0, 0) 
-  (0.0967000930509036, 1.8701815992106842e-04) 
-  (0.1934001861018073, 7.4807263968427367e-04) 
-  (0.2901002791527109, 0.00168316343928962) 
-  (0.3868003722036145, 0.00299229055873709) 
-  (0.4835004652545182, 0.00467545399802671) 
-  (0.5802005583054217, 0.00673265375715846) 
-  (0.6769006513563254, 0.00916388983613235) 
-  (0.773600744407229, 0.0119691622349484) 
-  (0.8703008374581327, 0.0151484709536065) 
-  (0.9670009305090363, 0.0187018159921068)
+ GC169: x_cost_cut[84] = PWL ( x_cut[84] ) : (0, 0) (1e-06, 1e-15) 
+  (2e-06, 4e-15) (3e-06, 9e-15) (4e-06, 1.6e-14) (5e-06, 2.5e-14) 
+  (6e-06, 3.6e-14) (7e-06, 4.9e-14) (8e-06, 6.4e-14) (9e-06, 8.1e-14) 
+  (1e-05, 1e-13)
  GC170: x_cost_fuel[85] = PWL ( x[85] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
- GC171: x_cost_cut[85] = PWL ( x_cut[85] ) : (0, 0) 
-  (0.0967000930509036, 1.8701815992106842e-04) 
-  (0.1934001861018073, 7.4807263968427367e-04) 
-  (0.2901002791527109, 0.00168316343928962) 
-  (0.3868003722036145, 0.00299229055873709) 
-  (0.4835004652545182, 0.00467545399802671) 
-  (0.5802005583054217, 0.00673265375715846) 
-  (0.6769006513563254, 0.00916388983613235) 
-  (0.773600744407229, 0.0119691622349484) 
-  (0.8703008374581327, 0.0151484709536065) 
-  (0.9670009305090363, 0.0187018159921068)
+ GC171: x_cost_cut[85] = PWL ( x_cut[85] ) : (0, 0) (1e-06, 1e-15) 
+  (2e-06, 4e-15) (3e-06, 9e-15) (4e-06, 1.6e-14) (5e-06, 2.5e-14) 
+  (6e-06, 3.6e-14) (7e-06, 4.9e-14) (8e-06, 6.4e-14) (9e-06, 8.1e-14) 
+  (1e-05, 1e-13)
  GC172: x_cost_fuel[86] = PWL ( x[86] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
- GC173: x_cost_cut[86] = PWL ( x_cut[86] ) : (0, 0) 
-  (0.0967000930509036, 1.8701815992106842e-04) 
-  (0.1934001861018073, 7.4807263968427367e-04) 
-  (0.2901002791527109, 0.00168316343928962) 
-  (0.3868003722036145, 0.00299229055873709) 
-  (0.4835004652545182, 0.00467545399802671) 
-  (0.5802005583054217, 0.00673265375715846) 
-  (0.6769006513563254, 0.00916388983613235) 
-  (0.773600744407229, 0.0119691622349484) 
-  (0.8703008374581327, 0.0151484709536065) 
-  (0.9670009305090363, 0.0187018159921068)
+ GC173: x_cost_cut[86] = PWL ( x_cut[86] ) : (0, 0) (1e-06, 1e-15) 
+  (2e-06, 4e-15) (3e-06, 9e-15) (4e-06, 1.6e-14) (5e-06, 2.5e-14) 
+  (6e-06, 3.6e-14) (7e-06, 4.9e-14) (8e-06, 6.4e-14) (9e-06, 8.1e-14) 
+  (1e-05, 1e-13)
  GC174: x_cost_fuel[87] = PWL ( x[87] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
- GC175: x_cost_cut[87] = PWL ( x_cut[87] ) : (0, 0) 
-  (0.0967000930509036, 1.8701815992106842e-04) 
-  (0.1934001861018073, 7.4807263968427367e-04) 
-  (0.2901002791527109, 0.00168316343928962) 
-  (0.3868003722036145, 0.00299229055873709) 
-  (0.4835004652545182, 0.00467545399802671) 
-  (0.5802005583054217, 0.00673265375715846) 
-  (0.6769006513563254, 0.00916388983613235) 
-  (0.773600744407229, 0.0119691622349484) 
-  (0.8703008374581327, 0.0151484709536065) 
-  (0.9670009305090363, 0.0187018159921068)
+ GC175: x_cost_cut[87] = PWL ( x_cut[87] ) : (0, 0) (1e-06, 1e-15) 
+  (2e-06, 4e-15) (3e-06, 9e-15) (4e-06, 1.6e-14) (5e-06, 2.5e-14) 
+  (6e-06, 3.6e-14) (7e-06, 4.9e-14) (8e-06, 6.4e-14) (9e-06, 8.1e-14) 
+  (1e-05, 1e-13)
  GC176: x_cost_fuel[88] = PWL ( x[88] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
- GC177: x_cost_cut[88] = PWL ( x_cut[88] ) : (0, 0) 
-  (0.1315768449962975, 3.4624932278359409e-04) 
-  (0.263153689992595, 0.00138499729113438) 
-  (0.3947305349888925, 0.00311624390505235) 
-  (0.5263073799851901, 0.00553998916453751) 
-  (0.6578842249814876, 0.00865623306958985) 
-  (0.7894610699777851, 0.0124649756202094) 
-  (0.9210379149740826, 0.0169662168163961) 
-  (1.05261475997038, 0.02215995665815) 
-  (1.184191604966678, 0.0280461951454711) 
-  (1.315768449962975, 0.0346249322783594)
+ GC177: x_cost_cut[88] = PWL ( x_cut[88] ) : (0, 0) (1e-06, 1e-15) 
+  (2e-06, 4e-15) (3e-06, 9e-15) (4e-06, 1.6e-14) (5e-06, 2.5e-14) 
+  (6e-06, 3.6e-14) (7e-06, 4.9e-14) (8e-06, 6.4e-14) (9e-06, 8.1e-14) 
+  (1e-05, 1e-13)
  GC178: x_cost_fuel[89] = PWL ( x[89] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
- GC179: x_cost_cut[89] = PWL ( x_cut[89] ) : (0, 0) 
-  (0.1315768449962975, 3.4624932278359409e-04) 
-  (0.263153689992595, 0.00138499729113438) 
-  (0.3947305349888925, 0.00311624390505235) 
-  (0.5263073799851901, 0.00553998916453751) 
-  (0.6578842249814876, 0.00865623306958985) 
-  (0.7894610699777851, 0.0124649756202094) 
-  (0.9210379149740826, 0.0169662168163961) 
-  (1.05261475997038, 0.02215995665815) 
-  (1.184191604966678, 0.0280461951454711) 
-  (1.315768449962975, 0.0346249322783594)
+ GC179: x_cost_cut[89] = PWL ( x_cut[89] ) : (0, 0) (1e-06, 1e-15) 
+  (2e-06, 4e-15) (3e-06, 9e-15) (4e-06, 1.6e-14) (5e-06, 2.5e-14) 
+  (6e-06, 3.6e-14) (7e-06, 4.9e-14) (8e-06, 6.4e-14) (9e-06, 8.1e-14) 
+  (1e-05, 1e-13)
  GC180: x_cost_fuel[90] = PWL ( x[90] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
- GC181: x_cost_cut[90] = PWL ( x_cut[90] ) : (0, 0) 
-  (0.1315768449962975, 3.4624932278359409e-04) 
-  (0.263153689992595, 0.00138499729113438) 
-  (0.3947305349888925, 0.00311624390505235) 
-  (0.5263073799851901, 0.00553998916453751) 
-  (0.6578842249814876, 0.00865623306958985) 
-  (0.7894610699777851, 0.0124649756202094) 
-  (0.9210379149740826, 0.0169662168163961) 
-  (1.05261475997038, 0.02215995665815) 
-  (1.184191604966678, 0.0280461951454711) 
-  (1.315768449962975, 0.0346249322783594)
+ GC181: x_cost_cut[90] = PWL ( x_cut[90] ) : (0, 0) (1e-06, 1e-15) 
+  (2e-06, 4e-15) (3e-06, 9e-15) (4e-06, 1.6e-14) (5e-06, 2.5e-14) 
+  (6e-06, 3.6e-14) (7e-06, 4.9e-14) (8e-06, 6.4e-14) (9e-06, 8.1e-14) 
+  (1e-05, 1e-13)
  GC182: x_cost_fuel[91] = PWL ( x[91] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
- GC183: x_cost_cut[91] = PWL ( x_cut[91] ) : (0, 0) 
-  (0.1315768449962975, 3.4624932278359409e-04) 
-  (0.263153689992595, 0.00138499729113438) 
-  (0.3947305349888925, 0.00311624390505235) 
-  (0.5263073799851901, 0.00553998916453751) 
-  (0.6578842249814876, 0.00865623306958985) 
-  (0.7894610699777851, 0.0124649756202094) 
-  (0.9210379149740826, 0.0169662168163961) 
-  (1.05261475997038, 0.02215995665815) 
-  (1.184191604966678, 0.0280461951454711) 
-  (1.315768449962975, 0.0346249322783594)
+ GC183: x_cost_cut[91] = PWL ( x_cut[91] ) : (0, 0) (1e-06, 1e-15) 
+  (2e-06, 4e-15) (3e-06, 9e-15) (4e-06, 1.6e-14) (5e-06, 2.5e-14) 
+  (6e-06, 3.6e-14) (7e-06, 4.9e-14) (8e-06, 6.4e-14) (9e-06, 8.1e-14) 
+  (1e-05, 1e-13)
  GC184: x_cost_fuel[92] = PWL ( x[92] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
- GC185: x_cost_cut[92] = PWL ( x_cut[92] ) : (0, 0) 
-  (0.1674795753533, 5.6098816321043367e-04) 
-  (0.3349591507065999, 0.00224395265284173) 
-  (0.5024387260598999, 0.0050488934688939) 
-  (0.6699183014131999, 0.00897581061136694) 
-  (0.8373978767664998, 0.0140247040802608) 
-  (1.0048774521198, 0.0201955738755756) 
-  (1.1723570274731, 0.0274884199973112) 
-  (1.3398366028264, 0.0359032424454678) 
-  (1.5073161781797, 0.0454400412200451) 
-  (1.674795753533, 0.0560988163210434)
+ GC185: x_cost_cut[92] = PWL ( x_cut[92] ) : (0, 0) (1e-06, 1e-15) 
+  (2e-06, 4e-15) (3e-06, 9e-15) (4e-06, 1.6e-14) (5e-06, 2.5e-14) 
+  (6e-06, 3.6e-14) (7e-06, 4.9e-14) (8e-06, 6.4e-14) (9e-06, 8.1e-14) 
+  (1e-05, 1e-13)
  GC186: x_cost_fuel[93] = PWL ( x[93] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
- GC187: x_cost_cut[93] = PWL ( x_cut[93] ) : (0, 0) 
-  (0.1674795753533, 5.6098816321043367e-04) 
-  (0.3349591507065999, 0.00224395265284173) 
-  (0.5024387260598999, 0.0050488934688939) 
-  (0.6699183014131999, 0.00897581061136694) 
-  (0.8373978767664998, 0.0140247040802608) 
-  (1.0048774521198, 0.0201955738755756) 
-  (1.1723570274731, 0.0274884199973112) 
-  (1.3398366028264, 0.0359032424454678) 
-  (1.5073161781797, 0.0454400412200451) 
-  (1.674795753533, 0.0560988163210434)
+ GC187: x_cost_cut[93] = PWL ( x_cut[93] ) : (0, 0) (1e-06, 1e-15) 
+  (2e-06, 4e-15) (3e-06, 9e-15) (4e-06, 1.6e-14) (5e-06, 2.5e-14) 
+  (6e-06, 3.6e-14) (7e-06, 4.9e-14) (8e-06, 6.4e-14) (9e-06, 8.1e-14) 
+  (1e-05, 1e-13)
  GC188: x_cost_fuel[94] = PWL ( x[94] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
- GC189: x_cost_cut[94] = PWL ( x_cut[94] ) : (0, 0) 
-  (0.1674795753533, 5.6098816321043367e-04) 
-  (0.3349591507065999, 0.00224395265284173) 
-  (0.5024387260598999, 0.0050488934688939) 
-  (0.6699183014131999, 0.00897581061136694) 
-  (0.8373978767664998, 0.0140247040802608) 
-  (1.0048774521198, 0.0201955738755756) 
-  (1.1723570274731, 0.0274884199973112) 
-  (1.3398366028264, 0.0359032424454678) 
-  (1.5073161781797, 0.0454400412200451) 
-  (1.674795753533, 0.0560988163210434)
+ GC189: x_cost_cut[94] = PWL ( x_cut[94] ) : (0, 0) (1e-06, 1e-15) 
+  (2e-06, 4e-15) (3e-06, 9e-15) (4e-06, 1.6e-14) (5e-06, 2.5e-14) 
+  (6e-06, 3.6e-14) (7e-06, 4.9e-14) (8e-06, 6.4e-14) (9e-06, 8.1e-14) 
+  (1e-05, 1e-13)
  GC190: x_cost_fuel[95] = PWL ( x[95] ) : (150, 24.809) (210, 47.309) 
   (270, 77.009) (330, 113.909) (390, 158.009) (450, 209.309) 
   (510, 267.809) (570, 333.509) (630, 406.409) (690, 486.509) 
   (750, 573.809)
- GC191: x_cost_cut[95] = PWL ( x_cut[95] ) : (0, 0) 
-  (0.1674795753533, 5.6098816321043367e-04) 
-  (0.3349591507065999, 0.00224395265284173) 
-  (0.5024387260598999, 0.0050488934688939) 
-  (0.6699183014131999, 0.00897581061136694) 
-  (0.8373978767664998, 0.0140247040802608) 
-  (1.0048774521198, 0.0201955738755756) 
-  (1.1723570274731, 0.0274884199973112) 
-  (1.3398366028264, 0.0359032424454678) 
-  (1.5073161781797, 0.0454400412200451) 
-  (1.674795753533, 0.0560988163210434)
+ GC191: x_cost_cut[95] = PWL ( x_cut[95] ) : (0, 0) (1e-06, 1e-15) 
+  (2e-06, 4e-15) (3e-06, 9e-15) (4e-06, 1.6e-14) (5e-06, 2.5e-14) 
+  (6e-06, 3.6e-14) (7e-06, 4.9e-14) (8e-06, 6.4e-14) (9e-06, 8.1e-14) 
+  (1e-05, 1e-13)
 End

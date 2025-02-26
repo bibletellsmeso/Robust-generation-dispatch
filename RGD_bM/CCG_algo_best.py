@@ -18,7 +18,7 @@ from planner_MILP import Planner_MILP
 from Data_read import *
 from root_project import ROOT_DIR
 from Params import PARAMETERS
-from utils import dump_file, check_ESS
+from utils import dump_file, check_ESS, check_PV
 
 def ccg_algo(dir:str, tol:float, power:np.array, reserve_pos:np.array, reserve_neg:np.array,
              charge:np.array, discharge:np.array, SOC:np.array, curtailment:np.array,
@@ -129,7 +129,7 @@ def ccg_algo(dir:str, tol:float, power:np.array, reserve_pos:np.array, reserve_n
             if printconsole:
                 print('     i = %s : %s simultaneous charge and discharge' % (iteration, ESS_nb_count))
 
-            PV_nb_count = check_ESS(SP_primal_sol=SP_primal_sol)
+            PV_nb_count = check_PV(SP_primal_sol=SP_primal_sol)
             if PV_nb_count > 0:
                 PV_cut_add_list.append([iteration, SP_primal_sol['y_cut'], SP_primal_sol['y_add']])
             else:
@@ -300,10 +300,10 @@ solver_param['TimeLimit'] = 10
 solver_param['Threads'] = 1
 
 # Convergence threshold between MP and SP objectives
-conv_tol = 50
+conv_tol = 5
 printconsole = True
 
-day = '2018-07-04'
+day = '2025-01-15'
 
 # --------------------------------------
 # Static RO parameters
@@ -321,7 +321,7 @@ if __name__ == "__main__":
     print(os.getcwd())
 
     # Create folder
-    dirname = '/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/RGD_bM/export_best/'
+    dirname = '/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/RGD_bM/export_best/'
     if PV_Sandia:
         dirname += 'PV_Sandia/'
         pdfname = str(PV_Sandia) + '_' + str(GAMMA) + '_' + str(PI)
@@ -395,13 +395,13 @@ if __name__ == "__main__":
 
     phi_PV = [SP_dual_sol['phi_PV'][i] for i in range(nb_periods)]
     phi_data = np.column_stack((np.array(SP_dual_sol['phi_PV']), np.array(SP_dual_sol['phi_cut']), np.array(SP_dual_sol['phi_load']).flatten()))
-    np.savetxt('/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/result/bM_phi_best.csv', phi_data, delimiter=',', header='phi_PV,phi_cut,phi_load', comments='', fmt='%.18f')
+    np.savetxt('/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/result/bM_phi_best.csv', phi_data, delimiter=',', header='phi_PV,phi_cut,phi_load', comments='', fmt='%.18f')
 
     dump_file(dir=dirname, name=day + '_PV_best_case', file=PV_worst_case)
     dump_file(dir=dirname, name=day + '_load_best_case', file=load_worst_case)
-    dump_file(dir='/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/result/', name=day + '_bM_phi_PV_best', file=SP_dual_sol['phi_PV'])
-    dump_file(dir='/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/result/', name=day + '_bM_phi_cut_best', file=SP_dual_sol['phi_cut'])
-    dump_file(dir='/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/result/', name=day + '_bM_phi_load_best', file=SP_dual_sol['phi_load'])
+    dump_file(dir='/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/result/', name=day + '_bM_phi_PV_best', file=SP_dual_sol['phi_PV'])
+    dump_file(dir='/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/result/', name=day + '_bM_phi_cut_best', file=SP_dual_sol['phi_cut'])
+    dump_file(dir='/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/result/', name=day + '_bM_phi_load_best', file=SP_dual_sol['phi_load'])
 
     # ------------------------------------------------------------------------------------------------------------------
     # Second-stage variables comparison:
@@ -654,7 +654,7 @@ if __name__ == "__main__":
     # plt.close('all')
 
     data = np.column_stack((np.array(PV_worst_case), np.array(load_worst_case).flatten()))
-    np.savetxt('/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/result/best_case_bM.csv', data, delimiter=',', header='PV_best, load_best', comments='', fmt='%.18f')
+    np.savetxt('/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/result/best_case_bM.csv', data, delimiter=',', header='PV_best, load_best', comments='', fmt='%.18f')
 
     data = {"Variable": [], "Value": []}
 
@@ -664,4 +664,4 @@ if __name__ == "__main__":
         data["Value"].append(v.x)
 
     df = pd.DataFrame(data)
-    df.to_excel('/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/result/bM_phi_all_best.xlsx', index=False)
+    df.to_excel('/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/result/bM_phi_all_best.xlsx', index=False)

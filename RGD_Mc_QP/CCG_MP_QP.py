@@ -53,6 +53,8 @@ class CCG_MP_QP():
         self.soc_end = PARAMETERS['ESS']['soc_end']  # (kWh)
         self.soc_min = PARAMETERS['ESS']['soc_min']  # (kWh)
         self.soc_max = PARAMETERS['ESS']['soc_max']  # (kWh)
+        self.soc_min_re = PARAMETERS['ESS']['soc_min_re']  # (kWh)
+        self.soc_max_re = PARAMETERS['ESS']['soc_max_re']  # (kWh)
         self.charge_eff = PARAMETERS['ESS']['charge_eff']  # (/)
         self.discharge_eff = PARAMETERS['ESS']['discharge_eff']  # (/)
         self.charge_power = PARAMETERS['ESS']['charge_power']  # (kW)
@@ -61,12 +63,6 @@ class CCG_MP_QP():
         # RE parameters
         self.PV_min = PARAMETERS['RE']['PV_min']
         self.PV_max = PARAMETERS['RE']['PV_max']
-        self.PV_ramp_up = PARAMETERS['RE']['PV_ramp_up']
-        self.PV_ramp_down = PARAMETERS['RE']['PV_ramp_down']
-
-        # load parameters
-        self.load_ramp_up = PARAMETERS['load']['ramp_up']
-        self.load_ramp_down = PARAMETERS['load']['ramp_down']
 
         # Cost parameters
         self.cost_DG_a = PARAMETERS['cost']['DG_a']
@@ -84,6 +80,13 @@ class CCG_MP_QP():
 
         # Piecewise linearlization parameters
         self.seg_num = PARAMETERS['PWL']
+
+        # -------------------------------------------------------------------------------------------------------------
+        # Discretize variables for Convex combination approach
+        self.y_cut_n = [[n * self.PV_ub[i] / self.seg_num for n in range(self.seg_num)] for i in self.t_set]
+        self.y_add_n = [[n * self.PV_lb[i] / self.seg_num for n in range(self.seg_num)] for i in self.t_set]
+        self.g_cut_n = [[self.cost_PV_cut_re * (self.y_cut_n[i][n] ** 2) for n in range(self.seg_num)] for i in self.t_set]
+        self.g_add_n = [[self.cost_PV_add_re * (self.y_add_n[i][n] ** 2) for n in range(self.seg_num)] for i in self.t_set]
 
         self.time_building_model = None
         self.time_solving_model = None
@@ -199,6 +202,7 @@ class CCG_MP_QP():
         :param iteration: update at iteration i.
         :return: the model is directly updated
         """
+
         # -------------------------------------------------------------------------------------------------------------
         # 4.1 Second-stage variables
         # Incremental output of DG (kW)
@@ -211,8 +215,6 @@ class CCG_MP_QP():
         y_S = self.model.addVars(self.nb_periods, lb=0, ub=GRB.INFINITY, obj=0, vtype=GRB.CONTINUOUS, name="SoC_" + str(iteration))
         # Real-time RG
         y_PV = self.model.addVars(self.nb_periods, lb=0, ub=GRB.INFINITY, obj=0, vtype=GRB.CONTINUOUS, name="y_PV_" + str(iteration))
-        y_cut = self.model.addVars(self.nb_periods, lb=0, ub=GRB.INFINITY, obj=0, vtype=GRB.CONTINUOUS, name="y_cut_" + str(iteration))
-        y_add = self.model.addVars(self.nb_periods, lb=0, ub=GRB.INFINITY, obj=0, vtype=GRB.CONTINUOUS, name="y_add" + str(iteration))
         y_load = self.model.addVars(self.nb_periods, lb=0, ub=GRB.INFINITY, obj=0, vtype=GRB.CONTINUOUS, name="y_load_" + str(iteration))
 
         # -------------------------------------------------------------------------------------------------------------
@@ -221,14 +223,14 @@ class CCG_MP_QP():
         y_cost_ESS = self.model.addVars(self.nb_periods, lb=0, ub=GRB.INFINITY, obj=0, vtype=GRB.CONTINUOUS, name="y_cost_ESS_" + str(iteration))
 
         # RG re-dispatch curtailment cost
-        y_cost_cut = self.model.addVars(self.nb_periods, lb=0, ub=GRB.INFINITY, obj=0, vtype=GRB.CONTINUOUS, name="y_cost_cut_" + str(iteration))
-        y_cost_add = self.model.addVars(self.nb_periods, lb=0, ub=GRB.INFINITY, obj=0, vtype=GRB.CONTINUOUS, name="y_cost_add_" + str(iteration))
+        sigma_cut_n = self.model.addVars(self.nb_periods, self.seg_num, lb=0, ub=GRB.INFINITY, obj=0, vtype=GRB.CONTINUOUS, name="simga_cut_n")
+        sigma_add_n = self.model.addVars(self.nb_periods, self.seg_num, lb=0, ub=GRB.INFINITY, obj=0, vtype=GRB.CONTINUOUS, name="simga_add_n")
 
         # -------------------------------------------------------------------------------------------------------------
         # 4.2 Add the constraint related to the objective
-        # objective
-
-        objective = gp.quicksum(y_cost_fuel[i] + y_cost_ESS[i] + y_cost_cut[i] + y_cost_add[i] for i in self.t_set)
+        objective = 0
+        objective += gp.quicksum(y_cost_fuel[i] + y_cost_ESS[i] for i in self.t_set)
+        objective += gp.quicksum(sigma_cut_n[i, n] * self.g_cut_n[i][n] + sigma_add_n[i, n] * self.g_add_n[i][n] for i in self.t_set for n in range(self.seg_num))
         # theta = MP.model.getVarByname() = only theta variable of the MP model
         self.model.addConstr(self.model.getVarByName('theta') >= objective, name='theta_' + str(iteration))
 
@@ -237,42 +239,42 @@ class CCG_MP_QP():
         # 4.3.1 cost cst
         self.model.addConstrs((y_cost_fuel[i] == self.cost_DG_pos_re * y_pos[i] + self.cost_DG_neg_re * y_neg[i] for i in self.t_set), name='c_cost_fuel' + str(iteration))
         self.model.addConstrs((y_cost_ESS[i] == self.cost_ESS_OM_re * (y_dis[i] + y_chg[i]) for i in self.t_set), name='c_cost_ESS_res' + str(iteration))
-        for i in self.t_set:
-            self.model.addGenConstrPWL(y_cut[i], y_cost_cut[i], PWL(self.seg_num, self.PV_min, self.PV_ub[i], RC_PV)[0],
-                                       PWL(self.seg_num, self.PV_min, self.PV_ub[i], RC_PV)[1])
-            self.model.addGenConstrPWL(y_add[i], y_cost_add[i], PWL(self.seg_num, self.PV_min, self.PV_lb[i], RA_PV)[0],
-                                       PWL(self.seg_num, self.PV_min, self.PV_lb[i], RA_PV)[1])
+ 
         # 4.3.2 DE1 reserve power
         # max/min DG reserve cst: self.model.getVarByName() -> return variables of the model from name, the x_b variable are index 0 to 95
-
         self.model.addConstrs((y_pos[i] <= self.model.getVars()[i+96] for i in self.t_set), name='c_DG_reserve_max_' + str(iteration))
         self.model.addConstrs((y_neg[i] <= self.model.getVars()[i+192] for i in self.t_set), name='c_DG_reserve_min_' + str(iteration))
         # 4.3.3 ES reserve power
         self.model.addConstrs((y_chg[i] <= y_b[i] * self.charge_power for i in self.t_set), name='c_ESS_chg_re_' + str(iteration))
         self.model.addConstrs((y_dis[i] <= (1 - y_b[i]) * self.discharge_power for i in self.t_set), name='c_ESS_dis_re_' + str(iteration))
         self.model.addConstr((y_S[0] - (y_chg[0] * self.charge_eff - y_dis[0] / self.discharge_eff) * self.period_hours == self.soc_ini), name='c_y_SOC_first_period_' + str(iteration))
-        self.model.addConstrs((y_S[i] - y_S[i - 1] - (self.charge_eff * self.model.getVars()[i+288] - self.model.getVars()[i+384] / self.discharge_eff) * self.period_hours
+        self.model.addConstrs((y_S[i] - y_S[i - 1] - (self.charge_eff * self.model.getVars()[i+384] - self.model.getVars()[i+480] / self.discharge_eff) * self.period_hours
                                - (self.charge_eff * y_chg[i] - y_dis[i] / self.discharge_eff) * self.period_hours == 0 for i in range(1, self.nb_periods)), name='c_y_S_Incremental_' + str(iteration))
         self.model.addConstr((y_S[self.nb_periods - 1] == self.soc_end), name='c_y_SOC_last_period_' + str(iteration))
-        self.model.addConstrs((- y_S[i] <= - self.soc_min for i in self.t_set), name='c_y_SOC_min_' + str(iteration))
-        self.model.addConstrs((y_S[i] <= self.soc_max for i in self.t_set), name='c_y_SOC_max_' + str(iteration))
+        self.model.addConstrs((- y_S[i] <= - self.soc_min_re for i in self.t_set), name='c_y_SOC_min_' + str(iteration))
+        self.model.addConstrs((y_S[i] <= self.soc_max_re for i in self.t_set), name='c_y_SOC_max_' + str(iteration))
         # 4.3.6 RG generation cst
         self.model.addConstrs((y_PV[i] == PV_trajectory[i] for i in self.t_set), name='c_y_PV_generation_' + str(iteration))
         # 4.3.7 load cst
         self.model.addConstrs((y_load[i] == load_trajectory[i] for i in self.t_set), name='c_y_load_' + str(iteration))
         # 4.3.4 real-time curtailment cst using Convex combination approach
-        self.model.addConstrs((y_cut[i] <= PV_trajectory[i] - self.model.getVars()[i+672] for i in self.t_set), name='c_y_PV_curtailment_' + str(iteration))
-        self.model.addConstrs((y_add[i] <= self.model.getVars()[i+672] for i in self.t_set), name='c_y_add' + str(iteration))
+        self.model.addConstrs((gp.quicksum(sigma_cut_n[i, n] * self.y_cut_n[i][n] for n in range(self.seg_num)) <= PV_trajectory[i] - self.model.getVars()[i+672] for i in self.t_set), name='c_y_cut')
+        self.model.addConstrs((gp.quicksum(sigma_add_n[i, n] * self.y_add_n[i][n] for n in range(self.seg_num)) <= self.model.getVars()[i+672] for i in self.t_set), name='c_y_add')
+
         # 4.3.4 power balance equation
-        self.model.addConstrs((self.model.getVars()[i] + y_pos[i] - y_neg[i] - self.model.getVars()[i+288] + self.model.getVars()[i+384] - y_chg[i] + y_dis[i] + y_PV[i] - self.model.getVars()[i+672] - y_cut[i] + y_add[i] - y_load[i] == 0 for i in self.t_set), name='c_real-time_power_balance_' + str(iteration))
+        self.model.addConstrs((self.model.getVars()[i] + y_pos[i] - y_neg[i] - self.model.getVars()[i+384] + self.model.getVars()[i+480] - y_chg[i] + y_dis[i] + y_PV[i] - self.model.getVars()[i+672] - gp.quicksum(sigma_cut_n[i, n] * self.y_cut_n[i][n] for n in range(self.seg_num)) + gp.quicksum(sigma_add_n[i, n] * self.y_add_n[i][n] for n in range(self.seg_num)) - y_load[i] == 0 for i in self.t_set), name='c_real-time_power_balance_' + str(iteration))
+
+        # Convex combination constraints
+        self.model.addConstrs((gp.quicksum(sigma_cut_n[i, n] for n in range(self.seg_num)) == 1 for i in self.t_set), name='c_y_cut_weight')
+        self.model.addConstrs((gp.quicksum(sigma_add_n[i, n] for n in range(self.seg_num)) == 1 for i in self.t_set), name='c_y_add_weight')
 
         # -------------------------------------------------------------------------------------------------------------
         # 5. Store the added variables to the MP in a new dict
         self.allvar['var_' + str(iteration)] = dict()
         self.allvar['var_' + str(iteration)]['y_cost_fuel'] = y_cost_fuel
         self.allvar['var_' + str(iteration)]['y_cost_ESS'] = y_cost_ESS
-        self.allvar['var_' + str(iteration)]['y_cost_cut'] = y_cost_cut
-        self.allvar['var_' + str(iteration)]['y_cost_add'] = y_cost_add
+        self.allvar['var_' + str(iteration)]['sigma_cut_n'] = sigma_cut_n
+        self.allvar['var_' + str(iteration)]['sigma_add_n'] = sigma_add_n
         self.allvar['var_' + str(iteration)]['y_pos'] = y_pos
         self.allvar['var_' + str(iteration)]['y_neg'] = y_neg
         self.allvar['var_' + str(iteration)]['y_b'] = y_b
@@ -280,8 +282,6 @@ class CCG_MP_QP():
         self.allvar['var_' + str(iteration)]['y_dis'] = y_dis
         self.allvar['var_' + str(iteration)]['y_S'] = y_S
         self.allvar['var_' + str(iteration)]['y_PV'] = y_PV
-        self.allvar['var_' + str(iteration)]['y_cut'] = y_cut
-        self.allvar['var_' + str(iteration)]['y_add'] = y_add
         self.allvar['var_' + str(iteration)]['y_load'] = y_load
 
 
@@ -348,9 +348,11 @@ class CCG_MP_QP():
         if MP_status == 2 or MP_status == 9:
             MP_sol['var_' + str(i)] = dict()
             # add the solution of the 1 dimensional variables at iteration
-            for var in ['y_pos', 'y_neg', 'y_b', 'y_chg', 'y_dis', 'y_S', 'y_PV', 'y_cut', 'y_add', 'y_load',
-                        'y_cost_fuel', 'y_cost_ESS', 'y_cost_cut', 'y_cost_add']:
+            for var in ['y_pos', 'y_neg', 'y_b', 'y_chg', 'y_dis', 'y_S', 'y_PV', 'y_load',
+                        'y_cost_fuel', 'y_cost_ESS']:
                 MP_sol['var_' + str(i)][var] = [self.allvar['var_' + str(i)][var][t].X for t in self.t_set]
+            for var in ['sigma_cut_n', 'sigma_add_n']:
+                MP_sol['var_' + str(i)][var] = [self.allvar['var_' + str(i)][var][t, n].X for t in self.t_set for n in range(self.seg_num)]
         else:
             self.model.computeIIS()
             self.model.write("infeasible_model.ilp")
@@ -373,7 +375,7 @@ if __name__ == "__main__":
 
 
     day = '2018-07-04'
-    dirname = '/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/RGD_Mc/export_MP/'
+    dirname = '/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/RGD_Mc_QP/export_MP/'
 
     PV_forecast = data.PV_pred
     load_forecast = data.load_pred

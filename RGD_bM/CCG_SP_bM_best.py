@@ -86,12 +86,6 @@ class CCG_SP_best():
         # RE parameters
         self.PV_min = PARAMETERS['RE']['PV_min']
         self.PV_max = PARAMETERS['RE']['PV_max']
-        self.PV_ramp_up = PARAMETERS['RE']['PV_ramp_up']
-        self.PV_ramp_down = PARAMETERS['RE']['PV_ramp_down']
-
-        # load parameters
-        self.load_ramp_up = PARAMETERS['load']['ramp_up']
-        self.load_ramp_down = PARAMETERS['load']['ramp_down']
 
         # Cost parameters
         self.cost_DG_a = PARAMETERS['cost']['DG_a']
@@ -379,19 +373,19 @@ if __name__ == "__main__":
     os.chdir(ROOT_DIR)
     print(os.getcwd())
 
-    dirname = '/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/RGD_bM_best'
-    day = '2018-07-04'
+    dirname = '/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/RGD_bM_best'
+    day = '2025-01-15'
 
     PV_forecast = data.PV_pred
     load_forecast = data.load_pred
     
-    power = read_file(dir='/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/export_MILP/', name='sol_MILP_power')
-    reserve_pos = read_file(dir='/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/export_MILP/', name='sol_MILP_reserve_pos')
-    reserve_neg = read_file(dir='/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/export_MILP/', name='sol_MILP_reserve_neg')
-    charge = read_file(dir='/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/export_MILP/', name='sol_MILP_charge')
-    discharge = read_file(dir='/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/export_MILP/', name='sol_MILP_discharge')
-    SOC = read_file(dir='/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/export_MILP/', name='sol_MILP_SOC')
-    curtailment = read_file(dir='/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/export_MILP/', name='sol_MILP_curtailment')
+    power = read_file(dir='/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/RGD_bM/export_MILP/', name='sol_MILP_power')
+    reserve_pos = read_file(dir='/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/RGD_bM/export_MILP/', name='sol_MILP_reserve_pos')
+    reserve_neg = read_file(dir='/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/RGD_bM/export_MILP/', name='sol_MILP_reserve_neg')
+    charge = read_file(dir='/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/RGD_bM/export_MILP/', name='sol_MILP_charge')
+    discharge = read_file(dir='/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/RGD_bM/export_MILP/', name='sol_MILP_discharge')
+    SOC = read_file(dir='/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/RGD_bM/export_MILP/', name='sol_MILP_SOC')
+    curtailment = read_file(dir='/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/RGD_bM/export_MILP/', name='sol_MILP_curtailment')
 
     PV_lb = PV_forecast - data.PV_neg
     PV_ub = PV_forecast + data.PV_pos
@@ -430,10 +424,13 @@ if __name__ == "__main__":
     plt.plot(solution['phi_load'], label='phi_load')
     plt.legend()
     plt.title('phi_load')
-
     plt.tight_layout()
     plt.show()
 
+    print(solution['phi_PV'])
+    print(solution['phi_cut'])
+    print(solution['phi_load'])
+    
     # 2. epsilon_pos, epsilon_neg, delta_pos, delta_neg을 한 플롯에 나눠서
     plt.figure(figsize=(12, 6))
 

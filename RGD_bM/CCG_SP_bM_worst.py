@@ -86,13 +86,7 @@ class CCG_SP_worst():
         # RE parameters
         self.PV_min = PARAMETERS['RE']['PV_min']
         self.PV_max = PARAMETERS['RE']['PV_max']
-        self.PV_ramp_up = PARAMETERS['RE']['PV_ramp_up']
-        self.PV_ramp_down = PARAMETERS['RE']['PV_ramp_down']
-
-        # load parameters
-        self.load_ramp_up = PARAMETERS['load']['ramp_up']
-        self.load_ramp_down = PARAMETERS['load']['ramp_down']
-
+        
         # Cost parameters
         self.cost_DG_a = PARAMETERS['cost']['DG_a']
         self.cost_DG_b = PARAMETERS['cost']['DG_b']
@@ -211,16 +205,6 @@ class CCG_SP_worst():
         model.addConstr(gp.quicksum(epsilon_pos[i] + epsilon_neg[i] for i in self.t_set) <= self.GAMMA, name='c_GAMMA') # PV uncertainty budget
         model.addConstr(gp.quicksum(delta_pos[i] + delta_neg[i] for i in self.t_set) <= self.PI, name='c_PI') # load uncertainty budget
 
-        # model.addConstrs(((self.PV_forecast[i] + self.PV_pos[i] * epsilon_pos[i]) - (self.PV_forecast[i-1] - self.PV_neg[i-1] * epsilon_neg[i-1]) <= self.PV_ramp_up * self.period_hours for i in range(1, self.nb_periods)), name='c_PV_ramp_1')
-        # model.addConstrs((- (self.PV_forecast[i] + self.PV_pos[i] * epsilon_pos[i]) + (self.PV_forecast[i-1] - self.PV_neg[i-1] * epsilon_neg[i-1]) <= self.PV_ramp_down * self.period_hours for i in range(1, self.nb_periods)), name='c_PV_ramp_2')
-        # model.addConstrs(((self.PV_forecast[i] - self.PV_neg[i] * epsilon_neg[i]) - (self.PV_forecast[i-1] + self.PV_pos[i-1] * epsilon_pos[i-1]) <= self.PV_ramp_up * self.period_hours for i in range(1, self.nb_periods)), name='c_PV_ramp_3')
-        # model.addConstrs((- (self.PV_forecast[i] - self.PV_neg[i] * epsilon_neg[i]) + (self.PV_forecast[i-1] + self.PV_pos[i-1] * epsilon_pos[i-1]) <= self.PV_ramp_down * self.period_hours for i in range(1, self.nb_periods)), name='c_PV_ramp_4')
-
-        # model.addConstrs(((self.load_forecast[i] + self.load_pos[i] * delta_pos[i]) - (self.load_forecast[i-1] - self.load_neg[i-1] * delta_neg[i-1]) <= self.load_ramp_up * self.period_hours for i in range(1, self.nb_periods)), name='c_load_ramp_1')
-        # model.addConstrs((- (self.load_forecast[i] + self.load_pos[i] * delta_pos[i]) + (self.load_forecast[i-1] - self.load_neg[i-1] * delta_neg[i-1]) <= self.load_ramp_down * self.period_hours for i in range(1, self.nb_periods)), name='c_load_ramp_2')
-        # model.addConstrs(((self.load_forecast[i] - self.load_neg[i] * delta_neg[i]) - (self.load_forecast[i-1] + self.load_pos[i-1] * delta_pos[i-1]) <= self.load_ramp_up * self.period_hours for i in range(1, self.nb_periods)), name='c_load_ramp_3')
-        # model.addConstrs((- (self.load_forecast[i] - self.load_neg[i] * delta_neg[i]) + (self.load_forecast[i-1] + self.load_pos[i-1] * delta_pos[i-1]) <= self.load_ramp_down * self.period_hours for i in range(1, self.nb_periods)), name='c_load_ramp_4')
-
         # Constraints related to the big-M method----------------------------------------------------------------------------------------------------------------------------------
         # -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         # # Constraints related uncertainty variable simultaneous
@@ -258,13 +242,6 @@ class CCG_SP_worst():
         model.addConstrs((gamma_neg[i] >= phi_load[i] + self.M * delta_neg[i] - self.M for i in self.t_set), name='c_gamma_neg__2')
         model.addConstrs((gamma_neg[i] <= self.M * delta_neg[i] for i in self.t_set), name='c_gamma_neg__3')
         model.addConstrs((gamma_neg[i] <= phi_load[i] - self.M * delta_neg[i] + self.M for i in self.t_set), name='c_gamma_neg__4')
-
-        # model.addConstrs((- phi_PV[i] <= self.M for i in self.t_set), name='c_phi_PV_lb')
-        # model.addConstrs((phi_PV[i] <= self.M for i in self.t_set), name='c_phi_PV_MC_ub')
-        # model.addConstrs((- phi_cut[i] <= self.M for i in self.t_set), name='c_phi_cut_lb')
-        # model.addConstrs((phi_cut[i] <= 0 for i in self.t_set), name='c_phi_cut_MC_ub')
-        # model.addConstrs((- phi_load[i] <= self.M for i in self.t_set), name='c_phi_load_lb')
-        # model.addConstrs((phi_load[i] <= self.M for i in self.t_set), name='c_phi_load_MC_ub')
 
         # -------------------------------------------------------------------------------------------------------------
         # 5. Store variables
@@ -379,19 +356,19 @@ if __name__ == "__main__":
     os.chdir(ROOT_DIR)
     print(os.getcwd())
 
-    dirname = '/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/RGD_bM'
-    day = '2018-07-04'
+    dirname = '/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/RGD_bM'
+    day = '2025-01-15'
 
     PV_forecast = data.PV_pred
     load_forecast = data.load_pred
     
-    power = read_file(dir='/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/RGD_bM/export_MILP/', name='sol_MILP_power')
-    reserve_pos = read_file(dir='/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/RGD_bM/export_MILP/', name='sol_MILP_reserve_pos')
-    reserve_neg = read_file(dir='/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/RGD_bM/export_MILP/', name='sol_MILP_reserve_neg')
-    charge = read_file(dir='/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/RGD_bM/export_MILP/', name='sol_MILP_charge')
-    discharge = read_file(dir='/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/RGD_bM/export_MILP/', name='sol_MILP_discharge')
-    SOC = read_file(dir='/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/RGD_bM/export_MILP/', name='sol_MILP_SOC')
-    curtailment = read_file(dir='/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/RGD_bM/export_MILP/', name='sol_MILP_curtailment')
+    power = read_file(dir='/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/RGD_bM/export_MILP/', name='sol_MILP_power')
+    reserve_pos = read_file(dir='/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/RGD_bM/export_MILP/', name='sol_MILP_reserve_pos')
+    reserve_neg = read_file(dir='/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/RGD_bM/export_MILP/', name='sol_MILP_reserve_neg')
+    charge = read_file(dir='/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/RGD_bM/export_MILP/', name='sol_MILP_charge')
+    discharge = read_file(dir='/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/RGD_bM/export_MILP/', name='sol_MILP_discharge')
+    SOC = read_file(dir='/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/RGD_bM/export_MILP/', name='sol_MILP_SOC')
+    curtailment = read_file(dir='/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/RGD_bM/export_MILP/', name='sol_MILP_curtailment')
 
     PV_lb = PV_forecast - data.PV_neg
     PV_ub = PV_forecast + data.PV_pos
@@ -430,10 +407,13 @@ if __name__ == "__main__":
     plt.plot(solution['phi_load'], label='phi_load')
     plt.legend()
     plt.title('phi_load')
-
     plt.tight_layout()
     plt.show()
 
+    print(solution['phi_PV'])
+    print(solution['phi_cut'])
+    print(solution['phi_load'])
+    
     # 2. epsilon_pos, epsilon_neg, delta_pos, delta_neg을 한 플롯에 나눠서
     plt.figure(figsize=(12, 6))
 

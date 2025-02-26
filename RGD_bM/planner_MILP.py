@@ -70,12 +70,6 @@ class Planner_MILP():
         # RE parameters
         self.PV_min = PARAMETERS['RE']['PV_min']
         self.PV_max = PARAMETERS['RE']['PV_max']
-        self.PV_ramp_up = PARAMETERS['RE']['PV_ramp_up']
-        self.PV_ramp_down = PARAMETERS['RE']['PV_ramp_down']
-
-        # load parameters
-        self.load_ramp_up = PARAMETERS['load']['ramp_up']
-        self.load_ramp_down = PARAMETERS['load']['ramp_down']
 
         # Cost parameters
         self.cost_DG_a = PARAMETERS['cost']['DG_a']
@@ -161,8 +155,8 @@ class Planner_MILP():
         model.addConstrs((- x[i] <= - self.u_DG[i] * self.DG_min for i in self.t_set), name='c_x_min')
         model.addConstrs((x[i] <= self.u_DG[i] * self.DG_max for i in self.t_set), name='c_x_max')
         model.addConstrs(((x[i] + x_pos[i]) - (x[i-1] - x_neg[i-1]) <= self.u_DG[i-1] * self.DG_ramp_up + (1 - self.u_DG[i-1]) * self.DG_max for i in range(1, self.nb_periods)), name='c_DG_RAMP1')
-        model.addConstrs((-(x[i] + x_pos[i]) + (x[i-1] - x_neg[i-1]) <= self.u_DG[i] * self.DG_ramp_down + (1 - self.u_DG[i]) * self.DG_max for i in range(1, self.nb_periods)), name='c_DG_RAMP2')
-        model.addConstrs(((x[i] - x_neg[i]) - (x[i-1] + x_pos[i-1]) <= self.u_DG[i-1] * self.DG_ramp_up + (1 - self.u_DG[i-1]) * self.DG_max for i in range(1, self.nb_periods)), name='c_DG_RAMP3')
+        # model.addConstrs((-(x[i] + x_pos[i]) + (x[i-1] - x_neg[i-1]) <= self.u_DG[i] * self.DG_ramp_down + (1 - self.u_DG[i]) * self.DG_max for i in range(1, self.nb_periods)), name='c_DG_RAMP2')
+        # model.addConstrs(((x[i] - x_neg[i]) - (x[i-1] + x_pos[i-1]) <= self.u_DG[i-1] * self.DG_ramp_up + (1 - self.u_DG[i-1]) * self.DG_max for i in range(1, self.nb_periods)), name='c_DG_RAMP3')
         model.addConstrs((-(x[i] - x_neg[i]) + (x[i-1] + x_pos[i-1]) <= self.u_DG[i] * self.DG_ramp_down + (1 - self.u_DG[i]) * self.DG_max for i in range(1, self.nb_periods)), name='c_DG_RAMP4')
         model.addConstrs((- x[i] + x_neg[i] <= - self.u_DG[i] * self.DG_min for i in self.t_set), name='c_xr_neg_min')
         model.addConstrs((x[i] - x_neg[i] <= self.u_DG[i] * self.DG_max for i in self.t_set), name='c_xr_neg_max')
@@ -188,12 +182,13 @@ class Planner_MILP():
         model.addConstrs((x_cost_res[i] == self.cost_DG_pos * x_pos[i] + self.cost_DG_neg * x_neg[i] for i in self.t_set), name='c_cost_fuel_res')
         model.addConstrs((x_cost_ESS[i] == self.cost_ESS_OM_pre * (x_chg[i] + x_dis[i]) for i in self.t_set), name='c_cost_OM_ESS')
 
+
         for i in self.t_set:
             model.addGenConstrPWL(x[i], x_cost_fuel[i], PWL(self.seg_num, self.DG_min, self.DG_max, FC)[0],
                                   PWL(self.seg_num, self.DG_min, self.DG_max, FC)[1])
             model.addGenConstrPWL(x_cut[i], x_cost_cut[i], PWL(self.seg_num, self.PV_min, self.PV_lb[i], PC_PV)[0],
                                   PWL(self.seg_num, self.PV_min, self.PV_lb[i], PC_PV)[1])
-            
+
         # 4.2 Second stage constraints
         model.addConstrs((y_pos[i] <= x_pos[i] for i in self.t_set), name='c_reserve_pos_DG')
         model.addConstrs((y_neg[i] <= x_neg[i] for i in self.t_set), name='c_reserve_neg_DG')
@@ -331,19 +326,19 @@ if __name__ == "__main__":
     os.chdir(ROOT_DIR)
     print(os.getcwd())
 
-    dirname = '/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/RGD_bM/export_MILP/'
+    dirname = '/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/RGD_bM/export_MILP/'
 
     
     PV_forecast = data.PV_pred
     load_forecast = data.load_pred
-    PV_trajectory = read_file(dir='/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/RGD_bM/export_worst/PV_Sandia/', name='2018-07-04_PV_worst_case')
-    load_trajectory = read_file(dir='/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/RGD_bM/export_worst/PV_Sandia/', name='2018-07-04_load_worst_case')
+    PV_trajectory = read_file(dir='/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/RGD_bM/export_worst/PV_Sandia/', name='2025-01-15_PV_worst_case')
+    load_trajectory = read_file(dir='/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/RGD_bM/export_worst/PV_Sandia/', name='2025-01-15_load_worst_case')
     PV_lb = data.PV_lb
     PV_ub = data.PV_ub
     load_lb = data.load_lb
     load_ub = data.load_ub
 
-    day = '2018-07-04'
+    day = '2025-01-15'
 
     # Plot point forecasts vs observations
     FONTSIZE = 20

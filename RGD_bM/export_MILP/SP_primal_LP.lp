@@ -786,197 +786,197 @@ Subject To
    + y_cost_fuel[94] = 0
  c_cost_fuel_res_re[95]: - 0.02 y_pos[95] - 0.01 y_neg[95]
    + y_cost_fuel[95] = 0
- c_cost_ESS_OM_re[0]: - 0.007 y_chg[0] - 0.007 y_dis[0] + y_cost_ESS[0]
+ c_cost_ESS_OM_re[0]: - 0.005 y_chg[0] - 0.005 y_dis[0] + y_cost_ESS[0]
    = 0
- c_cost_ESS_OM_re[1]: - 0.007 y_chg[1] - 0.007 y_dis[1] + y_cost_ESS[1]
+ c_cost_ESS_OM_re[1]: - 0.005 y_chg[1] - 0.005 y_dis[1] + y_cost_ESS[1]
    = 0
- c_cost_ESS_OM_re[2]: - 0.007 y_chg[2] - 0.007 y_dis[2] + y_cost_ESS[2]
+ c_cost_ESS_OM_re[2]: - 0.005 y_chg[2] - 0.005 y_dis[2] + y_cost_ESS[2]
    = 0
- c_cost_ESS_OM_re[3]: - 0.007 y_chg[3] - 0.007 y_dis[3] + y_cost_ESS[3]
+ c_cost_ESS_OM_re[3]: - 0.005 y_chg[3] - 0.005 y_dis[3] + y_cost_ESS[3]
    = 0
- c_cost_ESS_OM_re[4]: - 0.007 y_chg[4] - 0.007 y_dis[4] + y_cost_ESS[4]
+ c_cost_ESS_OM_re[4]: - 0.005 y_chg[4] - 0.005 y_dis[4] + y_cost_ESS[4]
    = 0
- c_cost_ESS_OM_re[5]: - 0.007 y_chg[5] - 0.007 y_dis[5] + y_cost_ESS[5]
+ c_cost_ESS_OM_re[5]: - 0.005 y_chg[5] - 0.005 y_dis[5] + y_cost_ESS[5]
    = 0
- c_cost_ESS_OM_re[6]: - 0.007 y_chg[6] - 0.007 y_dis[6] + y_cost_ESS[6]
+ c_cost_ESS_OM_re[6]: - 0.005 y_chg[6] - 0.005 y_dis[6] + y_cost_ESS[6]
    = 0
- c_cost_ESS_OM_re[7]: - 0.007 y_chg[7] - 0.007 y_dis[7] + y_cost_ESS[7]
+ c_cost_ESS_OM_re[7]: - 0.005 y_chg[7] - 0.005 y_dis[7] + y_cost_ESS[7]
    = 0
- c_cost_ESS_OM_re[8]: - 0.007 y_chg[8] - 0.007 y_dis[8] + y_cost_ESS[8]
+ c_cost_ESS_OM_re[8]: - 0.005 y_chg[8] - 0.005 y_dis[8] + y_cost_ESS[8]
    = 0
- c_cost_ESS_OM_re[9]: - 0.007 y_chg[9] - 0.007 y_dis[9] + y_cost_ESS[9]
+ c_cost_ESS_OM_re[9]: - 0.005 y_chg[9] - 0.005 y_dis[9] + y_cost_ESS[9]
    = 0
- c_cost_ESS_OM_re[10]: - 0.007 y_chg[10] - 0.007 y_dis[10] + y_cost_ESS[10]
+ c_cost_ESS_OM_re[10]: - 0.005 y_chg[10] - 0.005 y_dis[10] + y_cost_ESS[10]
    = 0
- c_cost_ESS_OM_re[11]: - 0.007 y_chg[11] - 0.007 y_dis[11] + y_cost_ESS[11]
+ c_cost_ESS_OM_re[11]: - 0.005 y_chg[11] - 0.005 y_dis[11] + y_cost_ESS[11]
    = 0
- c_cost_ESS_OM_re[12]: - 0.007 y_chg[12] - 0.007 y_dis[12] + y_cost_ESS[12]
+ c_cost_ESS_OM_re[12]: - 0.005 y_chg[12] - 0.005 y_dis[12] + y_cost_ESS[12]
    = 0
- c_cost_ESS_OM_re[13]: - 0.007 y_chg[13] - 0.007 y_dis[13] + y_cost_ESS[13]
+ c_cost_ESS_OM_re[13]: - 0.005 y_chg[13] - 0.005 y_dis[13] + y_cost_ESS[13]
    = 0
- c_cost_ESS_OM_re[14]: - 0.007 y_chg[14] - 0.007 y_dis[14] + y_cost_ESS[14]
+ c_cost_ESS_OM_re[14]: - 0.005 y_chg[14] - 0.005 y_dis[14] + y_cost_ESS[14]
    = 0
- c_cost_ESS_OM_re[15]: - 0.007 y_chg[15] - 0.007 y_dis[15] + y_cost_ESS[15]
+ c_cost_ESS_OM_re[15]: - 0.005 y_chg[15] - 0.005 y_dis[15] + y_cost_ESS[15]
    = 0
- c_cost_ESS_OM_re[16]: - 0.007 y_chg[16] - 0.007 y_dis[16] + y_cost_ESS[16]
+ c_cost_ESS_OM_re[16]: - 0.005 y_chg[16] - 0.005 y_dis[16] + y_cost_ESS[16]
    = 0
- c_cost_ESS_OM_re[17]: - 0.007 y_chg[17] - 0.007 y_dis[17] + y_cost_ESS[17]
+ c_cost_ESS_OM_re[17]: - 0.005 y_chg[17] - 0.005 y_dis[17] + y_cost_ESS[17]
    = 0
- c_cost_ESS_OM_re[18]: - 0.007 y_chg[18] - 0.007 y_dis[18] + y_cost_ESS[18]
+ c_cost_ESS_OM_re[18]: - 0.005 y_chg[18] - 0.005 y_dis[18] + y_cost_ESS[18]
    = 0
- c_cost_ESS_OM_re[19]: - 0.007 y_chg[19] - 0.007 y_dis[19] + y_cost_ESS[19]
+ c_cost_ESS_OM_re[19]: - 0.005 y_chg[19] - 0.005 y_dis[19] + y_cost_ESS[19]
    = 0
- c_cost_ESS_OM_re[20]: - 0.007 y_chg[20] - 0.007 y_dis[20] + y_cost_ESS[20]
+ c_cost_ESS_OM_re[20]: - 0.005 y_chg[20] - 0.005 y_dis[20] + y_cost_ESS[20]
    = 0
- c_cost_ESS_OM_re[21]: - 0.007 y_chg[21] - 0.007 y_dis[21] + y_cost_ESS[21]
+ c_cost_ESS_OM_re[21]: - 0.005 y_chg[21] - 0.005 y_dis[21] + y_cost_ESS[21]
    = 0
- c_cost_ESS_OM_re[22]: - 0.007 y_chg[22] - 0.007 y_dis[22] + y_cost_ESS[22]
+ c_cost_ESS_OM_re[22]: - 0.005 y_chg[22] - 0.005 y_dis[22] + y_cost_ESS[22]
    = 0
- c_cost_ESS_OM_re[23]: - 0.007 y_chg[23] - 0.007 y_dis[23] + y_cost_ESS[23]
+ c_cost_ESS_OM_re[23]: - 0.005 y_chg[23] - 0.005 y_dis[23] + y_cost_ESS[23]
    = 0
- c_cost_ESS_OM_re[24]: - 0.007 y_chg[24] - 0.007 y_dis[24] + y_cost_ESS[24]
+ c_cost_ESS_OM_re[24]: - 0.005 y_chg[24] - 0.005 y_dis[24] + y_cost_ESS[24]
    = 0
- c_cost_ESS_OM_re[25]: - 0.007 y_chg[25] - 0.007 y_dis[25] + y_cost_ESS[25]
+ c_cost_ESS_OM_re[25]: - 0.005 y_chg[25] - 0.005 y_dis[25] + y_cost_ESS[25]
    = 0
- c_cost_ESS_OM_re[26]: - 0.007 y_chg[26] - 0.007 y_dis[26] + y_cost_ESS[26]
+ c_cost_ESS_OM_re[26]: - 0.005 y_chg[26] - 0.005 y_dis[26] + y_cost_ESS[26]
    = 0
- c_cost_ESS_OM_re[27]: - 0.007 y_chg[27] - 0.007 y_dis[27] + y_cost_ESS[27]
+ c_cost_ESS_OM_re[27]: - 0.005 y_chg[27] - 0.005 y_dis[27] + y_cost_ESS[27]
    = 0
- c_cost_ESS_OM_re[28]: - 0.007 y_chg[28] - 0.007 y_dis[28] + y_cost_ESS[28]
+ c_cost_ESS_OM_re[28]: - 0.005 y_chg[28] - 0.005 y_dis[28] + y_cost_ESS[28]
    = 0
- c_cost_ESS_OM_re[29]: - 0.007 y_chg[29] - 0.007 y_dis[29] + y_cost_ESS[29]
+ c_cost_ESS_OM_re[29]: - 0.005 y_chg[29] - 0.005 y_dis[29] + y_cost_ESS[29]
    = 0
- c_cost_ESS_OM_re[30]: - 0.007 y_chg[30] - 0.007 y_dis[30] + y_cost_ESS[30]
+ c_cost_ESS_OM_re[30]: - 0.005 y_chg[30] - 0.005 y_dis[30] + y_cost_ESS[30]
    = 0
- c_cost_ESS_OM_re[31]: - 0.007 y_chg[31] - 0.007 y_dis[31] + y_cost_ESS[31]
+ c_cost_ESS_OM_re[31]: - 0.005 y_chg[31] - 0.005 y_dis[31] + y_cost_ESS[31]
    = 0
- c_cost_ESS_OM_re[32]: - 0.007 y_chg[32] - 0.007 y_dis[32] + y_cost_ESS[32]
+ c_cost_ESS_OM_re[32]: - 0.005 y_chg[32] - 0.005 y_dis[32] + y_cost_ESS[32]
    = 0
- c_cost_ESS_OM_re[33]: - 0.007 y_chg[33] - 0.007 y_dis[33] + y_cost_ESS[33]
+ c_cost_ESS_OM_re[33]: - 0.005 y_chg[33] - 0.005 y_dis[33] + y_cost_ESS[33]
    = 0
- c_cost_ESS_OM_re[34]: - 0.007 y_chg[34] - 0.007 y_dis[34] + y_cost_ESS[34]
+ c_cost_ESS_OM_re[34]: - 0.005 y_chg[34] - 0.005 y_dis[34] + y_cost_ESS[34]
    = 0
- c_cost_ESS_OM_re[35]: - 0.007 y_chg[35] - 0.007 y_dis[35] + y_cost_ESS[35]
+ c_cost_ESS_OM_re[35]: - 0.005 y_chg[35] - 0.005 y_dis[35] + y_cost_ESS[35]
    = 0
- c_cost_ESS_OM_re[36]: - 0.007 y_chg[36] - 0.007 y_dis[36] + y_cost_ESS[36]
+ c_cost_ESS_OM_re[36]: - 0.005 y_chg[36] - 0.005 y_dis[36] + y_cost_ESS[36]
    = 0
- c_cost_ESS_OM_re[37]: - 0.007 y_chg[37] - 0.007 y_dis[37] + y_cost_ESS[37]
+ c_cost_ESS_OM_re[37]: - 0.005 y_chg[37] - 0.005 y_dis[37] + y_cost_ESS[37]
    = 0
- c_cost_ESS_OM_re[38]: - 0.007 y_chg[38] - 0.007 y_dis[38] + y_cost_ESS[38]
+ c_cost_ESS_OM_re[38]: - 0.005 y_chg[38] - 0.005 y_dis[38] + y_cost_ESS[38]
    = 0
- c_cost_ESS_OM_re[39]: - 0.007 y_chg[39] - 0.007 y_dis[39] + y_cost_ESS[39]
+ c_cost_ESS_OM_re[39]: - 0.005 y_chg[39] - 0.005 y_dis[39] + y_cost_ESS[39]
    = 0
- c_cost_ESS_OM_re[40]: - 0.007 y_chg[40] - 0.007 y_dis[40] + y_cost_ESS[40]
+ c_cost_ESS_OM_re[40]: - 0.005 y_chg[40] - 0.005 y_dis[40] + y_cost_ESS[40]
    = 0
- c_cost_ESS_OM_re[41]: - 0.007 y_chg[41] - 0.007 y_dis[41] + y_cost_ESS[41]
+ c_cost_ESS_OM_re[41]: - 0.005 y_chg[41] - 0.005 y_dis[41] + y_cost_ESS[41]
    = 0
- c_cost_ESS_OM_re[42]: - 0.007 y_chg[42] - 0.007 y_dis[42] + y_cost_ESS[42]
+ c_cost_ESS_OM_re[42]: - 0.005 y_chg[42] - 0.005 y_dis[42] + y_cost_ESS[42]
    = 0
- c_cost_ESS_OM_re[43]: - 0.007 y_chg[43] - 0.007 y_dis[43] + y_cost_ESS[43]
+ c_cost_ESS_OM_re[43]: - 0.005 y_chg[43] - 0.005 y_dis[43] + y_cost_ESS[43]
    = 0
- c_cost_ESS_OM_re[44]: - 0.007 y_chg[44] - 0.007 y_dis[44] + y_cost_ESS[44]
+ c_cost_ESS_OM_re[44]: - 0.005 y_chg[44] - 0.005 y_dis[44] + y_cost_ESS[44]
    = 0
- c_cost_ESS_OM_re[45]: - 0.007 y_chg[45] - 0.007 y_dis[45] + y_cost_ESS[45]
+ c_cost_ESS_OM_re[45]: - 0.005 y_chg[45] - 0.005 y_dis[45] + y_cost_ESS[45]
    = 0
- c_cost_ESS_OM_re[46]: - 0.007 y_chg[46] - 0.007 y_dis[46] + y_cost_ESS[46]
+ c_cost_ESS_OM_re[46]: - 0.005 y_chg[46] - 0.005 y_dis[46] + y_cost_ESS[46]
    = 0
- c_cost_ESS_OM_re[47]: - 0.007 y_chg[47] - 0.007 y_dis[47] + y_cost_ESS[47]
+ c_cost_ESS_OM_re[47]: - 0.005 y_chg[47] - 0.005 y_dis[47] + y_cost_ESS[47]
    = 0
- c_cost_ESS_OM_re[48]: - 0.007 y_chg[48] - 0.007 y_dis[48] + y_cost_ESS[48]
+ c_cost_ESS_OM_re[48]: - 0.005 y_chg[48] - 0.005 y_dis[48] + y_cost_ESS[48]
    = 0
- c_cost_ESS_OM_re[49]: - 0.007 y_chg[49] - 0.007 y_dis[49] + y_cost_ESS[49]
+ c_cost_ESS_OM_re[49]: - 0.005 y_chg[49] - 0.005 y_dis[49] + y_cost_ESS[49]
    = 0
- c_cost_ESS_OM_re[50]: - 0.007 y_chg[50] - 0.007 y_dis[50] + y_cost_ESS[50]
+ c_cost_ESS_OM_re[50]: - 0.005 y_chg[50] - 0.005 y_dis[50] + y_cost_ESS[50]
    = 0
- c_cost_ESS_OM_re[51]: - 0.007 y_chg[51] - 0.007 y_dis[51] + y_cost_ESS[51]
+ c_cost_ESS_OM_re[51]: - 0.005 y_chg[51] - 0.005 y_dis[51] + y_cost_ESS[51]
    = 0
- c_cost_ESS_OM_re[52]: - 0.007 y_chg[52] - 0.007 y_dis[52] + y_cost_ESS[52]
+ c_cost_ESS_OM_re[52]: - 0.005 y_chg[52] - 0.005 y_dis[52] + y_cost_ESS[52]
    = 0
- c_cost_ESS_OM_re[53]: - 0.007 y_chg[53] - 0.007 y_dis[53] + y_cost_ESS[53]
+ c_cost_ESS_OM_re[53]: - 0.005 y_chg[53] - 0.005 y_dis[53] + y_cost_ESS[53]
    = 0
- c_cost_ESS_OM_re[54]: - 0.007 y_chg[54] - 0.007 y_dis[54] + y_cost_ESS[54]
+ c_cost_ESS_OM_re[54]: - 0.005 y_chg[54] - 0.005 y_dis[54] + y_cost_ESS[54]
    = 0
- c_cost_ESS_OM_re[55]: - 0.007 y_chg[55] - 0.007 y_dis[55] + y_cost_ESS[55]
+ c_cost_ESS_OM_re[55]: - 0.005 y_chg[55] - 0.005 y_dis[55] + y_cost_ESS[55]
    = 0
- c_cost_ESS_OM_re[56]: - 0.007 y_chg[56] - 0.007 y_dis[56] + y_cost_ESS[56]
+ c_cost_ESS_OM_re[56]: - 0.005 y_chg[56] - 0.005 y_dis[56] + y_cost_ESS[56]
    = 0
- c_cost_ESS_OM_re[57]: - 0.007 y_chg[57] - 0.007 y_dis[57] + y_cost_ESS[57]
+ c_cost_ESS_OM_re[57]: - 0.005 y_chg[57] - 0.005 y_dis[57] + y_cost_ESS[57]
    = 0
- c_cost_ESS_OM_re[58]: - 0.007 y_chg[58] - 0.007 y_dis[58] + y_cost_ESS[58]
+ c_cost_ESS_OM_re[58]: - 0.005 y_chg[58] - 0.005 y_dis[58] + y_cost_ESS[58]
    = 0
- c_cost_ESS_OM_re[59]: - 0.007 y_chg[59] - 0.007 y_dis[59] + y_cost_ESS[59]
+ c_cost_ESS_OM_re[59]: - 0.005 y_chg[59] - 0.005 y_dis[59] + y_cost_ESS[59]
    = 0
- c_cost_ESS_OM_re[60]: - 0.007 y_chg[60] - 0.007 y_dis[60] + y_cost_ESS[60]
+ c_cost_ESS_OM_re[60]: - 0.005 y_chg[60] - 0.005 y_dis[60] + y_cost_ESS[60]
    = 0
- c_cost_ESS_OM_re[61]: - 0.007 y_chg[61] - 0.007 y_dis[61] + y_cost_ESS[61]
+ c_cost_ESS_OM_re[61]: - 0.005 y_chg[61] - 0.005 y_dis[61] + y_cost_ESS[61]
    = 0
- c_cost_ESS_OM_re[62]: - 0.007 y_chg[62] - 0.007 y_dis[62] + y_cost_ESS[62]
+ c_cost_ESS_OM_re[62]: - 0.005 y_chg[62] - 0.005 y_dis[62] + y_cost_ESS[62]
    = 0
- c_cost_ESS_OM_re[63]: - 0.007 y_chg[63] - 0.007 y_dis[63] + y_cost_ESS[63]
+ c_cost_ESS_OM_re[63]: - 0.005 y_chg[63] - 0.005 y_dis[63] + y_cost_ESS[63]
    = 0
- c_cost_ESS_OM_re[64]: - 0.007 y_chg[64] - 0.007 y_dis[64] + y_cost_ESS[64]
+ c_cost_ESS_OM_re[64]: - 0.005 y_chg[64] - 0.005 y_dis[64] + y_cost_ESS[64]
    = 0
- c_cost_ESS_OM_re[65]: - 0.007 y_chg[65] - 0.007 y_dis[65] + y_cost_ESS[65]
+ c_cost_ESS_OM_re[65]: - 0.005 y_chg[65] - 0.005 y_dis[65] + y_cost_ESS[65]
    = 0
- c_cost_ESS_OM_re[66]: - 0.007 y_chg[66] - 0.007 y_dis[66] + y_cost_ESS[66]
+ c_cost_ESS_OM_re[66]: - 0.005 y_chg[66] - 0.005 y_dis[66] + y_cost_ESS[66]
    = 0
- c_cost_ESS_OM_re[67]: - 0.007 y_chg[67] - 0.007 y_dis[67] + y_cost_ESS[67]
+ c_cost_ESS_OM_re[67]: - 0.005 y_chg[67] - 0.005 y_dis[67] + y_cost_ESS[67]
    = 0
- c_cost_ESS_OM_re[68]: - 0.007 y_chg[68] - 0.007 y_dis[68] + y_cost_ESS[68]
+ c_cost_ESS_OM_re[68]: - 0.005 y_chg[68] - 0.005 y_dis[68] + y_cost_ESS[68]
    = 0
- c_cost_ESS_OM_re[69]: - 0.007 y_chg[69] - 0.007 y_dis[69] + y_cost_ESS[69]
+ c_cost_ESS_OM_re[69]: - 0.005 y_chg[69] - 0.005 y_dis[69] + y_cost_ESS[69]
    = 0
- c_cost_ESS_OM_re[70]: - 0.007 y_chg[70] - 0.007 y_dis[70] + y_cost_ESS[70]
+ c_cost_ESS_OM_re[70]: - 0.005 y_chg[70] - 0.005 y_dis[70] + y_cost_ESS[70]
    = 0
- c_cost_ESS_OM_re[71]: - 0.007 y_chg[71] - 0.007 y_dis[71] + y_cost_ESS[71]
+ c_cost_ESS_OM_re[71]: - 0.005 y_chg[71] - 0.005 y_dis[71] + y_cost_ESS[71]
    = 0
- c_cost_ESS_OM_re[72]: - 0.007 y_chg[72] - 0.007 y_dis[72] + y_cost_ESS[72]
+ c_cost_ESS_OM_re[72]: - 0.005 y_chg[72] - 0.005 y_dis[72] + y_cost_ESS[72]
    = 0
- c_cost_ESS_OM_re[73]: - 0.007 y_chg[73] - 0.007 y_dis[73] + y_cost_ESS[73]
+ c_cost_ESS_OM_re[73]: - 0.005 y_chg[73] - 0.005 y_dis[73] + y_cost_ESS[73]
    = 0
- c_cost_ESS_OM_re[74]: - 0.007 y_chg[74] - 0.007 y_dis[74] + y_cost_ESS[74]
+ c_cost_ESS_OM_re[74]: - 0.005 y_chg[74] - 0.005 y_dis[74] + y_cost_ESS[74]
    = 0
- c_cost_ESS_OM_re[75]: - 0.007 y_chg[75] - 0.007 y_dis[75] + y_cost_ESS[75]
+ c_cost_ESS_OM_re[75]: - 0.005 y_chg[75] - 0.005 y_dis[75] + y_cost_ESS[75]
    = 0
- c_cost_ESS_OM_re[76]: - 0.007 y_chg[76] - 0.007 y_dis[76] + y_cost_ESS[76]
+ c_cost_ESS_OM_re[76]: - 0.005 y_chg[76] - 0.005 y_dis[76] + y_cost_ESS[76]
    = 0
- c_cost_ESS_OM_re[77]: - 0.007 y_chg[77] - 0.007 y_dis[77] + y_cost_ESS[77]
+ c_cost_ESS_OM_re[77]: - 0.005 y_chg[77] - 0.005 y_dis[77] + y_cost_ESS[77]
    = 0
- c_cost_ESS_OM_re[78]: - 0.007 y_chg[78] - 0.007 y_dis[78] + y_cost_ESS[78]
+ c_cost_ESS_OM_re[78]: - 0.005 y_chg[78] - 0.005 y_dis[78] + y_cost_ESS[78]
    = 0
- c_cost_ESS_OM_re[79]: - 0.007 y_chg[79] - 0.007 y_dis[79] + y_cost_ESS[79]
+ c_cost_ESS_OM_re[79]: - 0.005 y_chg[79] - 0.005 y_dis[79] + y_cost_ESS[79]
    = 0
- c_cost_ESS_OM_re[80]: - 0.007 y_chg[80] - 0.007 y_dis[80] + y_cost_ESS[80]
+ c_cost_ESS_OM_re[80]: - 0.005 y_chg[80] - 0.005 y_dis[80] + y_cost_ESS[80]
    = 0
- c_cost_ESS_OM_re[81]: - 0.007 y_chg[81] - 0.007 y_dis[81] + y_cost_ESS[81]
+ c_cost_ESS_OM_re[81]: - 0.005 y_chg[81] - 0.005 y_dis[81] + y_cost_ESS[81]
    = 0
- c_cost_ESS_OM_re[82]: - 0.007 y_chg[82] - 0.007 y_dis[82] + y_cost_ESS[82]
+ c_cost_ESS_OM_re[82]: - 0.005 y_chg[82] - 0.005 y_dis[82] + y_cost_ESS[82]
    = 0
- c_cost_ESS_OM_re[83]: - 0.007 y_chg[83] - 0.007 y_dis[83] + y_cost_ESS[83]
+ c_cost_ESS_OM_re[83]: - 0.005 y_chg[83] - 0.005 y_dis[83] + y_cost_ESS[83]
    = 0
- c_cost_ESS_OM_re[84]: - 0.007 y_chg[84] - 0.007 y_dis[84] + y_cost_ESS[84]
+ c_cost_ESS_OM_re[84]: - 0.005 y_chg[84] - 0.005 y_dis[84] + y_cost_ESS[84]
    = 0
- c_cost_ESS_OM_re[85]: - 0.007 y_chg[85] - 0.007 y_dis[85] + y_cost_ESS[85]
+ c_cost_ESS_OM_re[85]: - 0.005 y_chg[85] - 0.005 y_dis[85] + y_cost_ESS[85]
    = 0
- c_cost_ESS_OM_re[86]: - 0.007 y_chg[86] - 0.007 y_dis[86] + y_cost_ESS[86]
+ c_cost_ESS_OM_re[86]: - 0.005 y_chg[86] - 0.005 y_dis[86] + y_cost_ESS[86]
    = 0
- c_cost_ESS_OM_re[87]: - 0.007 y_chg[87] - 0.007 y_dis[87] + y_cost_ESS[87]
+ c_cost_ESS_OM_re[87]: - 0.005 y_chg[87] - 0.005 y_dis[87] + y_cost_ESS[87]
    = 0
- c_cost_ESS_OM_re[88]: - 0.007 y_chg[88] - 0.007 y_dis[88] + y_cost_ESS[88]
+ c_cost_ESS_OM_re[88]: - 0.005 y_chg[88] - 0.005 y_dis[88] + y_cost_ESS[88]
    = 0
- c_cost_ESS_OM_re[89]: - 0.007 y_chg[89] - 0.007 y_dis[89] + y_cost_ESS[89]
+ c_cost_ESS_OM_re[89]: - 0.005 y_chg[89] - 0.005 y_dis[89] + y_cost_ESS[89]
    = 0
- c_cost_ESS_OM_re[90]: - 0.007 y_chg[90] - 0.007 y_dis[90] + y_cost_ESS[90]
+ c_cost_ESS_OM_re[90]: - 0.005 y_chg[90] - 0.005 y_dis[90] + y_cost_ESS[90]
    = 0
- c_cost_ESS_OM_re[91]: - 0.007 y_chg[91] - 0.007 y_dis[91] + y_cost_ESS[91]
+ c_cost_ESS_OM_re[91]: - 0.005 y_chg[91] - 0.005 y_dis[91] + y_cost_ESS[91]
    = 0
- c_cost_ESS_OM_re[92]: - 0.007 y_chg[92] - 0.007 y_dis[92] + y_cost_ESS[92]
+ c_cost_ESS_OM_re[92]: - 0.005 y_chg[92] - 0.005 y_dis[92] + y_cost_ESS[92]
    = 0
- c_cost_ESS_OM_re[93]: - 0.007 y_chg[93] - 0.007 y_dis[93] + y_cost_ESS[93]
+ c_cost_ESS_OM_re[93]: - 0.005 y_chg[93] - 0.005 y_dis[93] + y_cost_ESS[93]
    = 0
- c_cost_ESS_OM_re[94]: - 0.007 y_chg[94] - 0.007 y_dis[94] + y_cost_ESS[94]
+ c_cost_ESS_OM_re[94]: - 0.005 y_chg[94] - 0.005 y_dis[94] + y_cost_ESS[94]
    = 0
- c_cost_ESS_OM_re[95]: - 0.007 y_chg[95] - 0.007 y_dis[95] + y_cost_ESS[95]
+ c_cost_ESS_OM_re[95]: - 0.005 y_chg[95] - 0.005 y_dis[95] + y_cost_ESS[95]
    = 0
  c_cost_PV_cut_re[0]: - 0.03 y_cut[0] + y_cost_cut[0] = 0
  c_cost_PV_cut_re[1]: - 0.03 y_cut[1] + y_cost_cut[1] = 0
@@ -1554,391 +1554,391 @@ Subject To
  c_discharge_re[93]: y_dis[93] <= 250
  c_discharge_re[94]: y_dis[94] <= 250
  c_discharge_re[95]: y_dis[95] <= 250
- c_SOC_min[0]: - y=S[0] <= -113.4
- c_SOC_min[1]: - y=S[1] <= -113.4
- c_SOC_min[2]: - y=S[2] <= -113.4
- c_SOC_min[3]: - y=S[3] <= -113.4
- c_SOC_min[4]: - y=S[4] <= -113.4
- c_SOC_min[5]: - y=S[5] <= -113.4
- c_SOC_min[6]: - y=S[6] <= -113.4
- c_SOC_min[7]: - y=S[7] <= -113.4
- c_SOC_min[8]: - y=S[8] <= -113.4
- c_SOC_min[9]: - y=S[9] <= -113.4
- c_SOC_min[10]: - y=S[10] <= -113.4
- c_SOC_min[11]: - y=S[11] <= -113.4
- c_SOC_min[12]: - y=S[12] <= -113.4
- c_SOC_min[13]: - y=S[13] <= -113.4
- c_SOC_min[14]: - y=S[14] <= -113.4
- c_SOC_min[15]: - y=S[15] <= -113.4
- c_SOC_min[16]: - y=S[16] <= -113.4
- c_SOC_min[17]: - y=S[17] <= -113.4
- c_SOC_min[18]: - y=S[18] <= -113.4
- c_SOC_min[19]: - y=S[19] <= -113.4
- c_SOC_min[20]: - y=S[20] <= -113.4
- c_SOC_min[21]: - y=S[21] <= -113.4
- c_SOC_min[22]: - y=S[22] <= -113.4
- c_SOC_min[23]: - y=S[23] <= -113.4
- c_SOC_min[24]: - y=S[24] <= -113.4
- c_SOC_min[25]: - y=S[25] <= -113.4
- c_SOC_min[26]: - y=S[26] <= -113.4
- c_SOC_min[27]: - y=S[27] <= -113.4
- c_SOC_min[28]: - y=S[28] <= -113.4
- c_SOC_min[29]: - y=S[29] <= -113.4
- c_SOC_min[30]: - y=S[30] <= -113.4
- c_SOC_min[31]: - y=S[31] <= -113.4
- c_SOC_min[32]: - y=S[32] <= -113.4
- c_SOC_min[33]: - y=S[33] <= -113.4
- c_SOC_min[34]: - y=S[34] <= -113.4
- c_SOC_min[35]: - y=S[35] <= -113.4
- c_SOC_min[36]: - y=S[36] <= -113.4
- c_SOC_min[37]: - y=S[37] <= -113.4
- c_SOC_min[38]: - y=S[38] <= -113.4
- c_SOC_min[39]: - y=S[39] <= -113.4
- c_SOC_min[40]: - y=S[40] <= -113.4
- c_SOC_min[41]: - y=S[41] <= -113.4
- c_SOC_min[42]: - y=S[42] <= -113.4
- c_SOC_min[43]: - y=S[43] <= -113.4
- c_SOC_min[44]: - y=S[44] <= -113.4
- c_SOC_min[45]: - y=S[45] <= -113.4
- c_SOC_min[46]: - y=S[46] <= -113.4
- c_SOC_min[47]: - y=S[47] <= -113.4
- c_SOC_min[48]: - y=S[48] <= -113.4
- c_SOC_min[49]: - y=S[49] <= -113.4
- c_SOC_min[50]: - y=S[50] <= -113.4
- c_SOC_min[51]: - y=S[51] <= -113.4
- c_SOC_min[52]: - y=S[52] <= -113.4
- c_SOC_min[53]: - y=S[53] <= -113.4
- c_SOC_min[54]: - y=S[54] <= -113.4
- c_SOC_min[55]: - y=S[55] <= -113.4
- c_SOC_min[56]: - y=S[56] <= -113.4
- c_SOC_min[57]: - y=S[57] <= -113.4
- c_SOC_min[58]: - y=S[58] <= -113.4
- c_SOC_min[59]: - y=S[59] <= -113.4
- c_SOC_min[60]: - y=S[60] <= -113.4
- c_SOC_min[61]: - y=S[61] <= -113.4
- c_SOC_min[62]: - y=S[62] <= -113.4
- c_SOC_min[63]: - y=S[63] <= -113.4
- c_SOC_min[64]: - y=S[64] <= -113.4
- c_SOC_min[65]: - y=S[65] <= -113.4
- c_SOC_min[66]: - y=S[66] <= -113.4
- c_SOC_min[67]: - y=S[67] <= -113.4
- c_SOC_min[68]: - y=S[68] <= -113.4
- c_SOC_min[69]: - y=S[69] <= -113.4
- c_SOC_min[70]: - y=S[70] <= -113.4
- c_SOC_min[71]: - y=S[71] <= -113.4
- c_SOC_min[72]: - y=S[72] <= -113.4
- c_SOC_min[73]: - y=S[73] <= -113.4
- c_SOC_min[74]: - y=S[74] <= -113.4
- c_SOC_min[75]: - y=S[75] <= -113.4
- c_SOC_min[76]: - y=S[76] <= -113.4
- c_SOC_min[77]: - y=S[77] <= -113.4
- c_SOC_min[78]: - y=S[78] <= -113.4
- c_SOC_min[79]: - y=S[79] <= -113.4
- c_SOC_min[80]: - y=S[80] <= -113.4
- c_SOC_min[81]: - y=S[81] <= -113.4
- c_SOC_min[82]: - y=S[82] <= -113.4
- c_SOC_min[83]: - y=S[83] <= -113.4
- c_SOC_min[84]: - y=S[84] <= -113.4
- c_SOC_min[85]: - y=S[85] <= -113.4
- c_SOC_min[86]: - y=S[86] <= -113.4
- c_SOC_min[87]: - y=S[87] <= -113.4
- c_SOC_min[88]: - y=S[88] <= -113.4
- c_SOC_min[89]: - y=S[89] <= -113.4
- c_SOC_min[90]: - y=S[90] <= -113.4
- c_SOC_min[91]: - y=S[91] <= -113.4
- c_SOC_min[92]: - y=S[92] <= -113.4
- c_SOC_min[93]: - y=S[93] <= -113.4
- c_SOC_min[94]: - y=S[94] <= -113.4
- c_SOC_min[95]: - y=S[95] <= -113.4
- c_S_max[0]: y=S[0] <= 453.6
- c_S_max[1]: y=S[1] <= 453.6
- c_S_max[2]: y=S[2] <= 453.6
- c_S_max[3]: y=S[3] <= 453.6
- c_S_max[4]: y=S[4] <= 453.6
- c_S_max[5]: y=S[5] <= 453.6
- c_S_max[6]: y=S[6] <= 453.6
- c_S_max[7]: y=S[7] <= 453.6
- c_S_max[8]: y=S[8] <= 453.6
- c_S_max[9]: y=S[9] <= 453.6
- c_S_max[10]: y=S[10] <= 453.6
- c_S_max[11]: y=S[11] <= 453.6
- c_S_max[12]: y=S[12] <= 453.6
- c_S_max[13]: y=S[13] <= 453.6
- c_S_max[14]: y=S[14] <= 453.6
- c_S_max[15]: y=S[15] <= 453.6
- c_S_max[16]: y=S[16] <= 453.6
- c_S_max[17]: y=S[17] <= 453.6
- c_S_max[18]: y=S[18] <= 453.6
- c_S_max[19]: y=S[19] <= 453.6
- c_S_max[20]: y=S[20] <= 453.6
- c_S_max[21]: y=S[21] <= 453.6
- c_S_max[22]: y=S[22] <= 453.6
- c_S_max[23]: y=S[23] <= 453.6
- c_S_max[24]: y=S[24] <= 453.6
- c_S_max[25]: y=S[25] <= 453.6
- c_S_max[26]: y=S[26] <= 453.6
- c_S_max[27]: y=S[27] <= 453.6
- c_S_max[28]: y=S[28] <= 453.6
- c_S_max[29]: y=S[29] <= 453.6
- c_S_max[30]: y=S[30] <= 453.6
- c_S_max[31]: y=S[31] <= 453.6
- c_S_max[32]: y=S[32] <= 453.6
- c_S_max[33]: y=S[33] <= 453.6
- c_S_max[34]: y=S[34] <= 453.6
- c_S_max[35]: y=S[35] <= 453.6
- c_S_max[36]: y=S[36] <= 453.6
- c_S_max[37]: y=S[37] <= 453.6
- c_S_max[38]: y=S[38] <= 453.6
- c_S_max[39]: y=S[39] <= 453.6
- c_S_max[40]: y=S[40] <= 453.6
- c_S_max[41]: y=S[41] <= 453.6
- c_S_max[42]: y=S[42] <= 453.6
- c_S_max[43]: y=S[43] <= 453.6
- c_S_max[44]: y=S[44] <= 453.6
- c_S_max[45]: y=S[45] <= 453.6
- c_S_max[46]: y=S[46] <= 453.6
- c_S_max[47]: y=S[47] <= 453.6
- c_S_max[48]: y=S[48] <= 453.6
- c_S_max[49]: y=S[49] <= 453.6
- c_S_max[50]: y=S[50] <= 453.6
- c_S_max[51]: y=S[51] <= 453.6
- c_S_max[52]: y=S[52] <= 453.6
- c_S_max[53]: y=S[53] <= 453.6
- c_S_max[54]: y=S[54] <= 453.6
- c_S_max[55]: y=S[55] <= 453.6
- c_S_max[56]: y=S[56] <= 453.6
- c_S_max[57]: y=S[57] <= 453.6
- c_S_max[58]: y=S[58] <= 453.6
- c_S_max[59]: y=S[59] <= 453.6
- c_S_max[60]: y=S[60] <= 453.6
- c_S_max[61]: y=S[61] <= 453.6
- c_S_max[62]: y=S[62] <= 453.6
- c_S_max[63]: y=S[63] <= 453.6
- c_S_max[64]: y=S[64] <= 453.6
- c_S_max[65]: y=S[65] <= 453.6
- c_S_max[66]: y=S[66] <= 453.6
- c_S_max[67]: y=S[67] <= 453.6
- c_S_max[68]: y=S[68] <= 453.6
- c_S_max[69]: y=S[69] <= 453.6
- c_S_max[70]: y=S[70] <= 453.6
- c_S_max[71]: y=S[71] <= 453.6
- c_S_max[72]: y=S[72] <= 453.6
- c_S_max[73]: y=S[73] <= 453.6
- c_S_max[74]: y=S[74] <= 453.6
- c_S_max[75]: y=S[75] <= 453.6
- c_S_max[76]: y=S[76] <= 453.6
- c_S_max[77]: y=S[77] <= 453.6
- c_S_max[78]: y=S[78] <= 453.6
- c_S_max[79]: y=S[79] <= 453.6
- c_S_max[80]: y=S[80] <= 453.6
- c_S_max[81]: y=S[81] <= 453.6
- c_S_max[82]: y=S[82] <= 453.6
- c_S_max[83]: y=S[83] <= 453.6
- c_S_max[84]: y=S[84] <= 453.6
- c_S_max[85]: y=S[85] <= 453.6
- c_S_max[86]: y=S[86] <= 453.6
- c_S_max[87]: y=S[87] <= 453.6
- c_S_max[88]: y=S[88] <= 453.6
- c_S_max[89]: y=S[89] <= 453.6
- c_S_max[90]: y=S[90] <= 453.6
- c_S_max[91]: y=S[91] <= 453.6
- c_S_max[92]: y=S[92] <= 453.6
- c_S_max[93]: y=S[93] <= 453.6
- c_S_max[94]: y=S[94] <= 453.6
- c_S_max[95]: y=S[95] <= 453.6
+ c_SOC_min[0]: - y_S[0] <= -113.4
+ c_SOC_min[1]: - y_S[1] <= -113.4
+ c_SOC_min[2]: - y_S[2] <= -113.4
+ c_SOC_min[3]: - y_S[3] <= -113.4
+ c_SOC_min[4]: - y_S[4] <= -113.4
+ c_SOC_min[5]: - y_S[5] <= -113.4
+ c_SOC_min[6]: - y_S[6] <= -113.4
+ c_SOC_min[7]: - y_S[7] <= -113.4
+ c_SOC_min[8]: - y_S[8] <= -113.4
+ c_SOC_min[9]: - y_S[9] <= -113.4
+ c_SOC_min[10]: - y_S[10] <= -113.4
+ c_SOC_min[11]: - y_S[11] <= -113.4
+ c_SOC_min[12]: - y_S[12] <= -113.4
+ c_SOC_min[13]: - y_S[13] <= -113.4
+ c_SOC_min[14]: - y_S[14] <= -113.4
+ c_SOC_min[15]: - y_S[15] <= -113.4
+ c_SOC_min[16]: - y_S[16] <= -113.4
+ c_SOC_min[17]: - y_S[17] <= -113.4
+ c_SOC_min[18]: - y_S[18] <= -113.4
+ c_SOC_min[19]: - y_S[19] <= -113.4
+ c_SOC_min[20]: - y_S[20] <= -113.4
+ c_SOC_min[21]: - y_S[21] <= -113.4
+ c_SOC_min[22]: - y_S[22] <= -113.4
+ c_SOC_min[23]: - y_S[23] <= -113.4
+ c_SOC_min[24]: - y_S[24] <= -113.4
+ c_SOC_min[25]: - y_S[25] <= -113.4
+ c_SOC_min[26]: - y_S[26] <= -113.4
+ c_SOC_min[27]: - y_S[27] <= -113.4
+ c_SOC_min[28]: - y_S[28] <= -113.4
+ c_SOC_min[29]: - y_S[29] <= -113.4
+ c_SOC_min[30]: - y_S[30] <= -113.4
+ c_SOC_min[31]: - y_S[31] <= -113.4
+ c_SOC_min[32]: - y_S[32] <= -113.4
+ c_SOC_min[33]: - y_S[33] <= -113.4
+ c_SOC_min[34]: - y_S[34] <= -113.4
+ c_SOC_min[35]: - y_S[35] <= -113.4
+ c_SOC_min[36]: - y_S[36] <= -113.4
+ c_SOC_min[37]: - y_S[37] <= -113.4
+ c_SOC_min[38]: - y_S[38] <= -113.4
+ c_SOC_min[39]: - y_S[39] <= -113.4
+ c_SOC_min[40]: - y_S[40] <= -113.4
+ c_SOC_min[41]: - y_S[41] <= -113.4
+ c_SOC_min[42]: - y_S[42] <= -113.4
+ c_SOC_min[43]: - y_S[43] <= -113.4
+ c_SOC_min[44]: - y_S[44] <= -113.4
+ c_SOC_min[45]: - y_S[45] <= -113.4
+ c_SOC_min[46]: - y_S[46] <= -113.4
+ c_SOC_min[47]: - y_S[47] <= -113.4
+ c_SOC_min[48]: - y_S[48] <= -113.4
+ c_SOC_min[49]: - y_S[49] <= -113.4
+ c_SOC_min[50]: - y_S[50] <= -113.4
+ c_SOC_min[51]: - y_S[51] <= -113.4
+ c_SOC_min[52]: - y_S[52] <= -113.4
+ c_SOC_min[53]: - y_S[53] <= -113.4
+ c_SOC_min[54]: - y_S[54] <= -113.4
+ c_SOC_min[55]: - y_S[55] <= -113.4
+ c_SOC_min[56]: - y_S[56] <= -113.4
+ c_SOC_min[57]: - y_S[57] <= -113.4
+ c_SOC_min[58]: - y_S[58] <= -113.4
+ c_SOC_min[59]: - y_S[59] <= -113.4
+ c_SOC_min[60]: - y_S[60] <= -113.4
+ c_SOC_min[61]: - y_S[61] <= -113.4
+ c_SOC_min[62]: - y_S[62] <= -113.4
+ c_SOC_min[63]: - y_S[63] <= -113.4
+ c_SOC_min[64]: - y_S[64] <= -113.4
+ c_SOC_min[65]: - y_S[65] <= -113.4
+ c_SOC_min[66]: - y_S[66] <= -113.4
+ c_SOC_min[67]: - y_S[67] <= -113.4
+ c_SOC_min[68]: - y_S[68] <= -113.4
+ c_SOC_min[69]: - y_S[69] <= -113.4
+ c_SOC_min[70]: - y_S[70] <= -113.4
+ c_SOC_min[71]: - y_S[71] <= -113.4
+ c_SOC_min[72]: - y_S[72] <= -113.4
+ c_SOC_min[73]: - y_S[73] <= -113.4
+ c_SOC_min[74]: - y_S[74] <= -113.4
+ c_SOC_min[75]: - y_S[75] <= -113.4
+ c_SOC_min[76]: - y_S[76] <= -113.4
+ c_SOC_min[77]: - y_S[77] <= -113.4
+ c_SOC_min[78]: - y_S[78] <= -113.4
+ c_SOC_min[79]: - y_S[79] <= -113.4
+ c_SOC_min[80]: - y_S[80] <= -113.4
+ c_SOC_min[81]: - y_S[81] <= -113.4
+ c_SOC_min[82]: - y_S[82] <= -113.4
+ c_SOC_min[83]: - y_S[83] <= -113.4
+ c_SOC_min[84]: - y_S[84] <= -113.4
+ c_SOC_min[85]: - y_S[85] <= -113.4
+ c_SOC_min[86]: - y_S[86] <= -113.4
+ c_SOC_min[87]: - y_S[87] <= -113.4
+ c_SOC_min[88]: - y_S[88] <= -113.4
+ c_SOC_min[89]: - y_S[89] <= -113.4
+ c_SOC_min[90]: - y_S[90] <= -113.4
+ c_SOC_min[91]: - y_S[91] <= -113.4
+ c_SOC_min[92]: - y_S[92] <= -113.4
+ c_SOC_min[93]: - y_S[93] <= -113.4
+ c_SOC_min[94]: - y_S[94] <= -113.4
+ c_SOC_min[95]: - y_S[95] <= -113.4
+ c_S_max[0]: y_S[0] <= 453.6
+ c_S_max[1]: y_S[1] <= 453.6
+ c_S_max[2]: y_S[2] <= 453.6
+ c_S_max[3]: y_S[3] <= 453.6
+ c_S_max[4]: y_S[4] <= 453.6
+ c_S_max[5]: y_S[5] <= 453.6
+ c_S_max[6]: y_S[6] <= 453.6
+ c_S_max[7]: y_S[7] <= 453.6
+ c_S_max[8]: y_S[8] <= 453.6
+ c_S_max[9]: y_S[9] <= 453.6
+ c_S_max[10]: y_S[10] <= 453.6
+ c_S_max[11]: y_S[11] <= 453.6
+ c_S_max[12]: y_S[12] <= 453.6
+ c_S_max[13]: y_S[13] <= 453.6
+ c_S_max[14]: y_S[14] <= 453.6
+ c_S_max[15]: y_S[15] <= 453.6
+ c_S_max[16]: y_S[16] <= 453.6
+ c_S_max[17]: y_S[17] <= 453.6
+ c_S_max[18]: y_S[18] <= 453.6
+ c_S_max[19]: y_S[19] <= 453.6
+ c_S_max[20]: y_S[20] <= 453.6
+ c_S_max[21]: y_S[21] <= 453.6
+ c_S_max[22]: y_S[22] <= 453.6
+ c_S_max[23]: y_S[23] <= 453.6
+ c_S_max[24]: y_S[24] <= 453.6
+ c_S_max[25]: y_S[25] <= 453.6
+ c_S_max[26]: y_S[26] <= 453.6
+ c_S_max[27]: y_S[27] <= 453.6
+ c_S_max[28]: y_S[28] <= 453.6
+ c_S_max[29]: y_S[29] <= 453.6
+ c_S_max[30]: y_S[30] <= 453.6
+ c_S_max[31]: y_S[31] <= 453.6
+ c_S_max[32]: y_S[32] <= 453.6
+ c_S_max[33]: y_S[33] <= 453.6
+ c_S_max[34]: y_S[34] <= 453.6
+ c_S_max[35]: y_S[35] <= 453.6
+ c_S_max[36]: y_S[36] <= 453.6
+ c_S_max[37]: y_S[37] <= 453.6
+ c_S_max[38]: y_S[38] <= 453.6
+ c_S_max[39]: y_S[39] <= 453.6
+ c_S_max[40]: y_S[40] <= 453.6
+ c_S_max[41]: y_S[41] <= 453.6
+ c_S_max[42]: y_S[42] <= 453.6
+ c_S_max[43]: y_S[43] <= 453.6
+ c_S_max[44]: y_S[44] <= 453.6
+ c_S_max[45]: y_S[45] <= 453.6
+ c_S_max[46]: y_S[46] <= 453.6
+ c_S_max[47]: y_S[47] <= 453.6
+ c_S_max[48]: y_S[48] <= 453.6
+ c_S_max[49]: y_S[49] <= 453.6
+ c_S_max[50]: y_S[50] <= 453.6
+ c_S_max[51]: y_S[51] <= 453.6
+ c_S_max[52]: y_S[52] <= 453.6
+ c_S_max[53]: y_S[53] <= 453.6
+ c_S_max[54]: y_S[54] <= 453.6
+ c_S_max[55]: y_S[55] <= 453.6
+ c_S_max[56]: y_S[56] <= 453.6
+ c_S_max[57]: y_S[57] <= 453.6
+ c_S_max[58]: y_S[58] <= 453.6
+ c_S_max[59]: y_S[59] <= 453.6
+ c_S_max[60]: y_S[60] <= 453.6
+ c_S_max[61]: y_S[61] <= 453.6
+ c_S_max[62]: y_S[62] <= 453.6
+ c_S_max[63]: y_S[63] <= 453.6
+ c_S_max[64]: y_S[64] <= 453.6
+ c_S_max[65]: y_S[65] <= 453.6
+ c_S_max[66]: y_S[66] <= 453.6
+ c_S_max[67]: y_S[67] <= 453.6
+ c_S_max[68]: y_S[68] <= 453.6
+ c_S_max[69]: y_S[69] <= 453.6
+ c_S_max[70]: y_S[70] <= 453.6
+ c_S_max[71]: y_S[71] <= 453.6
+ c_S_max[72]: y_S[72] <= 453.6
+ c_S_max[73]: y_S[73] <= 453.6
+ c_S_max[74]: y_S[74] <= 453.6
+ c_S_max[75]: y_S[75] <= 453.6
+ c_S_max[76]: y_S[76] <= 453.6
+ c_S_max[77]: y_S[77] <= 453.6
+ c_S_max[78]: y_S[78] <= 453.6
+ c_S_max[79]: y_S[79] <= 453.6
+ c_S_max[80]: y_S[80] <= 453.6
+ c_S_max[81]: y_S[81] <= 453.6
+ c_S_max[82]: y_S[82] <= 453.6
+ c_S_max[83]: y_S[83] <= 453.6
+ c_S_max[84]: y_S[84] <= 453.6
+ c_S_max[85]: y_S[85] <= 453.6
+ c_S_max[86]: y_S[86] <= 453.6
+ c_S_max[87]: y_S[87] <= 453.6
+ c_S_max[88]: y_S[88] <= 453.6
+ c_S_max[89]: y_S[89] <= 453.6
+ c_S_max[90]: y_S[90] <= 453.6
+ c_S_max[91]: y_S[91] <= 453.6
+ c_S_max[92]: y_S[92] <= 453.6
+ c_S_max[93]: y_S[93] <= 453.6
+ c_S_max[94]: y_S[94] <= 453.6
+ c_S_max[95]: y_S[95] <= 453.6
  c_ESS_first_period: - 0.2325 y_chg[0] + 0.2688172043010753 y_dis[0]
-   + y=S[0] = 187.5
- c_SOC_re[1]: - 0.2325 y_chg[1] + 0.2688172043010753 y_dis[1] - y=S[0]
-   + y=S[1] = 0
- c_SOC_re[2]: - 0.2325 y_chg[2] + 0.2688172043010753 y_dis[2] - y=S[1]
-   + y=S[2] = 0
- c_SOC_re[3]: - 0.2325 y_chg[3] + 0.2688172043010753 y_dis[3] - y=S[2]
-   + y=S[3] = 0
- c_SOC_re[4]: - 0.2325 y_chg[4] + 0.2688172043010753 y_dis[4] - y=S[3]
-   + y=S[4] = 0
- c_SOC_re[5]: - 0.2325 y_chg[5] + 0.2688172043010753 y_dis[5] - y=S[4]
-   + y=S[5] = 0
- c_SOC_re[6]: - 0.2325 y_chg[6] + 0.2688172043010753 y_dis[6] - y=S[5]
-   + y=S[6] = 0
- c_SOC_re[7]: - 0.2325 y_chg[7] + 0.2688172043010753 y_dis[7] - y=S[6]
-   + y=S[7] = 0
- c_SOC_re[8]: - 0.2325 y_chg[8] + 0.2688172043010753 y_dis[8] - y=S[7]
-   + y=S[8] = 0
- c_SOC_re[9]: - 0.2325 y_chg[9] + 0.2688172043010753 y_dis[9] - y=S[8]
-   + y=S[9] = 0
- c_SOC_re[10]: - 0.2325 y_chg[10] + 0.2688172043010753 y_dis[10] - y=S[9]
-   + y=S[10] = 0
- c_SOC_re[11]: - 0.2325 y_chg[11] + 0.2688172043010753 y_dis[11] - y=S[10]
-   + y=S[11] = 0
- c_SOC_re[12]: - 0.2325 y_chg[12] + 0.2688172043010753 y_dis[12] - y=S[11]
-   + y=S[12] = 0
- c_SOC_re[13]: - 0.2325 y_chg[13] + 0.2688172043010753 y_dis[13] - y=S[12]
-   + y=S[13] = 0
- c_SOC_re[14]: - 0.2325 y_chg[14] + 0.2688172043010753 y_dis[14] - y=S[13]
-   + y=S[14] = 0
- c_SOC_re[15]: - 0.2325 y_chg[15] + 0.2688172043010753 y_dis[15] - y=S[14]
-   + y=S[15] = 0
- c_SOC_re[16]: - 0.2325 y_chg[16] + 0.2688172043010753 y_dis[16] - y=S[15]
-   + y=S[16] = 0
- c_SOC_re[17]: - 0.2325 y_chg[17] + 0.2688172043010753 y_dis[17] - y=S[16]
-   + y=S[17] = 0
- c_SOC_re[18]: - 0.2325 y_chg[18] + 0.2688172043010753 y_dis[18] - y=S[17]
-   + y=S[18] = 0
- c_SOC_re[19]: - 0.2325 y_chg[19] + 0.2688172043010753 y_dis[19] - y=S[18]
-   + y=S[19] = 0
- c_SOC_re[20]: - 0.2325 y_chg[20] + 0.2688172043010753 y_dis[20] - y=S[19]
-   + y=S[20] = 0
- c_SOC_re[21]: - 0.2325 y_chg[21] + 0.2688172043010753 y_dis[21] - y=S[20]
-   + y=S[21] = -7.59755689046716
- c_SOC_re[22]: - 0.2325 y_chg[22] + 0.2688172043010753 y_dis[22] - y=S[21]
-   + y=S[22] = 0
- c_SOC_re[23]: - 0.2325 y_chg[23] + 0.2688172043010753 y_dis[23] - y=S[22]
-   + y=S[23] = 0
- c_SOC_re[24]: - 0.2325 y_chg[24] + 0.2688172043010753 y_dis[24] - y=S[23]
-   + y=S[24] = 0
- c_SOC_re[25]: - 0.2325 y_chg[25] + 0.2688172043010753 y_dis[25] - y=S[24]
-   + y=S[25] = 0
- c_SOC_re[26]: - 0.2325 y_chg[26] + 0.2688172043010753 y_dis[26] - y=S[25]
-   + y=S[26] = 0
- c_SOC_re[27]: - 0.2325 y_chg[27] + 0.2688172043010753 y_dis[27] - y=S[26]
-   + y=S[27] = 0
- c_SOC_re[28]: - 0.2325 y_chg[28] + 0.2688172043010753 y_dis[28] - y=S[27]
-   + y=S[28] = 0
- c_SOC_re[29]: - 0.2325 y_chg[29] + 0.2688172043010753 y_dis[29] - y=S[28]
-   + y=S[29] = 0
- c_SOC_re[30]: - 0.2325 y_chg[30] + 0.2688172043010753 y_dis[30] - y=S[29]
-   + y=S[30] = 0
- c_SOC_re[31]: - 0.2325 y_chg[31] + 0.2688172043010753 y_dis[31] - y=S[30]
-   + y=S[31] = 0
- c_SOC_re[32]: - 0.2325 y_chg[32] + 0.2688172043010753 y_dis[32] - y=S[31]
-   + y=S[32] = 0
- c_SOC_re[33]: - 0.2325 y_chg[33] + 0.2688172043010753 y_dis[33] - y=S[32]
-   + y=S[33] = 0
- c_SOC_re[34]: - 0.2325 y_chg[34] + 0.2688172043010753 y_dis[34] - y=S[33]
-   + y=S[34] = 0
- c_SOC_re[35]: - 0.2325 y_chg[35] + 0.2688172043010753 y_dis[35] - y=S[34]
-   + y=S[35] = 0
- c_SOC_re[36]: - 0.2325 y_chg[36] + 0.2688172043010753 y_dis[36] - y=S[35]
-   + y=S[36] = 0
- c_SOC_re[37]: - 0.2325 y_chg[37] + 0.2688172043010753 y_dis[37] - y=S[36]
-   + y=S[37] = 0
- c_SOC_re[38]: - 0.2325 y_chg[38] + 0.2688172043010753 y_dis[38] - y=S[37]
-   + y=S[38] = 1.172090776089679
- c_SOC_re[39]: - 0.2325 y_chg[39] + 0.2688172043010753 y_dis[39] - y=S[38]
-   + y=S[39] = -1.172090776089675
- c_SOC_re[40]: - 0.2325 y_chg[40] + 0.2688172043010753 y_dis[40] - y=S[39]
-   + y=S[40] = 3.023965458726406
- c_SOC_re[41]: - 0.2325 y_chg[41] + 0.2688172043010753 y_dis[41] - y=S[40]
-   + y=S[41] = 5.333663636669795
- c_SOC_re[42]: - 0.2325 y_chg[42] + 0.2688172043010753 y_dis[42] - y=S[41]
-   + y=S[42] = -8.357629095396163
- c_SOC_re[43]: - 0.2325 y_chg[43] + 0.2688172043010753 y_dis[43] - y=S[42]
-   + y=S[43] = 3.759672001365675
- c_SOC_re[44]: - 0.2325 y_chg[44] + 0.2688172043010753 y_dis[44] - y=S[43]
-   + y=S[44] = 4.903138963589316
- c_SOC_re[45]: - 0.2325 y_chg[45] + 0.2688172043010753 y_dis[45] - y=S[44]
-   + y=S[45] = 6.491755708905966
- c_SOC_re[46]: - 0.2325 y_chg[46] + 0.2688172043010753 y_dis[46] - y=S[45]
-   + y=S[46] = 14.750439500537
- c_SOC_re[47]: - 0.2325 y_chg[47] + 0.2688172043010753 y_dis[47] - y=S[46]
-   + y=S[47] = 16.00061836179101
- c_SOC_re[48]: - 0.2325 y_chg[48] + 0.2688172043010753 y_dis[48] - y=S[47]
-   + y=S[48] = 17.2450159254431
- c_SOC_re[49]: - 0.2325 y_chg[49] + 0.2688172043010753 y_dis[49] - y=S[48]
-   + y=S[49] = 20.32499026062479
- c_SOC_re[50]: - 0.2325 y_chg[50] + 0.2688172043010753 y_dis[50] - y=S[49]
-   + y=S[50] = 17.74620980639807
- c_SOC_re[51]: - 0.2325 y_chg[51] + 0.2688172043010753 y_dis[51] - y=S[50]
-   + y=S[51] = 17.98319568384721
- c_SOC_re[52]: - 0.2325 y_chg[52] + 0.2688172043010753 y_dis[52] - y=S[51]
-   + y=S[52] = 18.21760599924195
- c_SOC_re[53]: - 0.2325 y_chg[53] + 0.2688172043010753 y_dis[53] - y=S[52]
-   + y=S[53] = 17.55267652436472
- c_SOC_re[54]: - 0.2325 y_chg[54] + 0.2688172043010753 y_dis[54] - y=S[53]
-   + y=S[54] = 18.54540337864081
- c_SOC_re[55]: - 0.2325 y_chg[55] + 0.2688172043010753 y_dis[55] - y=S[54]
-   + y=S[55] = 15.54728011875957
- c_SOC_re[56]: - 0.2325 y_chg[56] + 0.2688172043010753 y_dis[56] - y=S[55]
-   + y=S[56] = 6.224632994117372
- c_SOC_re[57]: - 0.2325 y_chg[57] + 0.2688172043010753 y_dis[57] - y=S[56]
-   + y=S[57] = 6.871875660331226
- c_SOC_re[58]: - 0.2325 y_chg[58] + 0.2688172043010753 y_dis[58] - y=S[57]
-   + y=S[58] = 6.594808503048979
- c_SOC_re[59]: - 0.2325 y_chg[59] + 0.2688172043010753 y_dis[59] - y=S[58]
-   + y=S[59] = 9.189662874880659
- c_SOC_re[60]: - 0.2325 y_chg[60] + 0.2688172043010753 y_dis[60] - y=S[59]
-   + y=S[60] = 6.136034541460631
- c_SOC_re[61]: - 0.2325 y_chg[61] + 0.2688172043010753 y_dis[61] - y=S[60]
-   + y=S[61] = 2.714983192651863
- c_SOC_re[62]: - 0.2325 y_chg[62] + 0.2688172043010753 y_dis[62] - y=S[61]
-   + y=S[62] = -7.181370974562418
- c_SOC_re[63]: - 0.2325 y_chg[63] + 0.2688172043010753 y_dis[63] - y=S[62]
-   + y=S[63] = 7.181370974562412
- c_SOC_re[64]: - 0.2325 y_chg[64] + 0.2688172043010753 y_dis[64] - y=S[63]
-   + y=S[64] = -1.698923166986444
- c_SOC_re[65]: - 0.2325 y_chg[65] + 0.2688172043010753 y_dis[65] - y=S[64]
-   + y=S[65] = 1.698923166986436
- c_SOC_re[66]: - 0.2325 y_chg[66] + 0.2688172043010753 y_dis[66] - y=S[65]
-   + y=S[66] = -10.99783032859454
- c_SOC_re[67]: - 0.2325 y_chg[67] + 0.2688172043010753 y_dis[67] - y=S[66]
-   + y=S[67] = 10.99783032859455
- c_SOC_re[68]: - 0.2325 y_chg[68] + 0.2688172043010753 y_dis[68] - y=S[67]
-   + y=S[68] = 0
- c_SOC_re[69]: - 0.2325 y_chg[69] + 0.2688172043010753 y_dis[69] - y=S[68]
-   + y=S[69] = 0
- c_SOC_re[70]: - 0.2325 y_chg[70] + 0.2688172043010753 y_dis[70] - y=S[69]
-   + y=S[70] = -8.463832021933875
- c_SOC_re[71]: - 0.2325 y_chg[71] + 0.2688172043010753 y_dis[71] - y=S[70]
-   + y=S[71] = 0
- c_SOC_re[72]: - 0.2325 y_chg[72] + 0.2688172043010753 y_dis[72] - y=S[71]
-   + y=S[72] = 0
- c_SOC_re[73]: - 0.2325 y_chg[73] + 0.2688172043010753 y_dis[73] - y=S[72]
-   + y=S[73] = 0
- c_SOC_re[74]: - 0.2325 y_chg[74] + 0.2688172043010753 y_dis[74] - y=S[73]
-   + y=S[74] = -1.636138526342248
- c_SOC_re[75]: - 0.2325 y_chg[75] + 0.2688172043010753 y_dis[75] - y=S[74]
-   + y=S[75] = -6.34772777557373
- c_SOC_re[76]: - 0.2325 y_chg[76] + 0.2688172043010753 y_dis[76] - y=S[75]
-   + y=S[76] = -7.874524849717335
- c_SOC_re[77]: - 0.2325 y_chg[77] + 0.2688172043010753 y_dis[77] - y=S[76]
-   + y=S[77] = -9.056724656012751
- c_SOC_re[78]: - 0.2325 y_chg[78] + 0.2688172043010753 y_dis[78] - y=S[77]
-   + y=S[78] = -8.838983376820881
- c_SOC_re[79]: - 0.2325 y_chg[79] + 0.2688172043010753 y_dis[79] - y=S[78]
-   + y=S[79] = -11.08610565391149
- c_SOC_re[80]: - 0.2325 y_chg[80] + 0.2688172043010753 y_dis[80] - y=S[79]
-   + y=S[80] = -8.683345394749795
- c_SOC_re[81]: - 0.2325 y_chg[81] + 0.2688172043010753 y_dis[81] - y=S[80]
-   + y=S[81] = -8.565065168565319
- c_SOC_re[82]: - 0.2325 y_chg[82] + 0.2688172043010753 y_dis[82] - y=S[81]
-   + y=S[82] = -8.850010748832457
- c_SOC_re[83]: - 0.2325 y_chg[83] + 0.2688172043010753 y_dis[83] - y=S[82]
-   + y=S[83] = -8.48979667950702
- c_SOC_re[84]: - 0.2325 y_chg[84] + 0.2688172043010753 y_dis[84] - y=S[83]
-   + y=S[84] = -8.656734420407203
- c_SOC_re[85]: - 0.2325 y_chg[85] + 0.2688172043010753 y_dis[85] - y=S[84]
-   + y=S[85] = -24.66748645228724
- c_SOC_re[86]: - 0.2325 y_chg[86] + 0.2688172043010753 y_dis[86] - y=S[85]
-   + y=S[86] = -8.500824051518594
- c_SOC_re[87]: - 0.2325 y_chg[87] + 0.2688172043010753 y_dis[87] - y=S[86]
-   + y=S[87] = -8.745440488220542
- c_SOC_re[88]: - 0.2325 y_chg[88] + 0.2688172043010753 y_dis[88] - y=S[87]
-   + y=S[88] = -8.460767294770928
- c_SOC_re[89]: - 0.2325 y_chg[89] + 0.2688172043010753 y_dis[89] - y=S[88]
-   + y=S[89] = -8.694645153578891
- c_SOC_re[90]: - 0.2325 y_chg[90] + 0.2688172043010753 y_dis[90] - y=S[89]
-   + y=S[90] = -8.78335122139223
- c_SOC_re[91]: - 0.2325 y_chg[91] + 0.2688172043010753 y_dis[91] - y=S[90]
-   + y=S[91] = -8.640878431258663
- c_SOC_re[92]: - 0.2325 y_chg[92] + 0.2688172043010753 y_dis[92] - y=S[91]
-   + y=S[92] = -9.079324173670942
- c_SOC_re[93]: - 0.2325 y_chg[93] + 0.2688172043010753 y_dis[93] - y=S[92]
-   + y=S[93] = -8.861582894479074
- c_SOC_re[94]: - 0.2325 y_chg[94] + 0.2688172043010753 y_dis[94] - y=S[93]
-   + y=S[94] = -9.194913602644396
- c_SOC_re[95]: - 0.2325 y_chg[95] + 0.2688172043010753 y_dis[95] - y=S[94]
-   + y=S[95] = -9.221796963804511
- c_ESS_last_period: y=S[95] = 187.5
+   + y_S[0] = 187.5
+ c_SOC_re[1]: - 0.2325 y_chg[1] + 0.2688172043010753 y_dis[1] - y_S[0]
+   + y_S[1] = 0
+ c_SOC_re[2]: - 0.2325 y_chg[2] + 0.2688172043010753 y_dis[2] - y_S[1]
+   + y_S[2] = 0
+ c_SOC_re[3]: - 0.2325 y_chg[3] + 0.2688172043010753 y_dis[3] - y_S[2]
+   + y_S[3] = 0
+ c_SOC_re[4]: - 0.2325 y_chg[4] + 0.2688172043010753 y_dis[4] - y_S[3]
+   + y_S[4] = 0
+ c_SOC_re[5]: - 0.2325 y_chg[5] + 0.2688172043010753 y_dis[5] - y_S[4]
+   + y_S[5] = 0
+ c_SOC_re[6]: - 0.2325 y_chg[6] + 0.2688172043010753 y_dis[6] - y_S[5]
+   + y_S[6] = 0
+ c_SOC_re[7]: - 0.2325 y_chg[7] + 0.2688172043010753 y_dis[7] - y_S[6]
+   + y_S[7] = 0
+ c_SOC_re[8]: - 0.2325 y_chg[8] + 0.2688172043010753 y_dis[8] - y_S[7]
+   + y_S[8] = 0
+ c_SOC_re[9]: - 0.2325 y_chg[9] + 0.2688172043010753 y_dis[9] - y_S[8]
+   + y_S[9] = 0
+ c_SOC_re[10]: - 0.2325 y_chg[10] + 0.2688172043010753 y_dis[10] - y_S[9]
+   + y_S[10] = 0
+ c_SOC_re[11]: - 0.2325 y_chg[11] + 0.2688172043010753 y_dis[11] - y_S[10]
+   + y_S[11] = 0
+ c_SOC_re[12]: - 0.2325 y_chg[12] + 0.2688172043010753 y_dis[12] - y_S[11]
+   + y_S[12] = 0
+ c_SOC_re[13]: - 0.2325 y_chg[13] + 0.2688172043010753 y_dis[13] - y_S[12]
+   + y_S[13] = 0
+ c_SOC_re[14]: - 0.2325 y_chg[14] + 0.2688172043010753 y_dis[14] - y_S[13]
+   + y_S[14] = 0
+ c_SOC_re[15]: - 0.2325 y_chg[15] + 0.2688172043010753 y_dis[15] - y_S[14]
+   + y_S[15] = 0
+ c_SOC_re[16]: - 0.2325 y_chg[16] + 0.2688172043010753 y_dis[16] - y_S[15]
+   + y_S[16] = 0
+ c_SOC_re[17]: - 0.2325 y_chg[17] + 0.2688172043010753 y_dis[17] - y_S[16]
+   + y_S[17] = 0
+ c_SOC_re[18]: - 0.2325 y_chg[18] + 0.2688172043010753 y_dis[18] - y_S[17]
+   + y_S[18] = 0
+ c_SOC_re[19]: - 0.2325 y_chg[19] + 0.2688172043010753 y_dis[19] - y_S[18]
+   + y_S[19] = 0
+ c_SOC_re[20]: - 0.2325 y_chg[20] + 0.2688172043010753 y_dis[20] - y_S[19]
+   + y_S[20] = 0
+ c_SOC_re[21]: - 0.2325 y_chg[21] + 0.2688172043010753 y_dis[21] - y_S[20]
+   + y_S[21] = -7.59755689046716
+ c_SOC_re[22]: - 0.2325 y_chg[22] + 0.2688172043010753 y_dis[22] - y_S[21]
+   + y_S[22] = 0
+ c_SOC_re[23]: - 0.2325 y_chg[23] + 0.2688172043010753 y_dis[23] - y_S[22]
+   + y_S[23] = 0
+ c_SOC_re[24]: - 0.2325 y_chg[24] + 0.2688172043010753 y_dis[24] - y_S[23]
+   + y_S[24] = 0
+ c_SOC_re[25]: - 0.2325 y_chg[25] + 0.2688172043010753 y_dis[25] - y_S[24]
+   + y_S[25] = 0
+ c_SOC_re[26]: - 0.2325 y_chg[26] + 0.2688172043010753 y_dis[26] - y_S[25]
+   + y_S[26] = 0
+ c_SOC_re[27]: - 0.2325 y_chg[27] + 0.2688172043010753 y_dis[27] - y_S[26]
+   + y_S[27] = 0
+ c_SOC_re[28]: - 0.2325 y_chg[28] + 0.2688172043010753 y_dis[28] - y_S[27]
+   + y_S[28] = 0
+ c_SOC_re[29]: - 0.2325 y_chg[29] + 0.2688172043010753 y_dis[29] - y_S[28]
+   + y_S[29] = 0
+ c_SOC_re[30]: - 0.2325 y_chg[30] + 0.2688172043010753 y_dis[30] - y_S[29]
+   + y_S[30] = 0
+ c_SOC_re[31]: - 0.2325 y_chg[31] + 0.2688172043010753 y_dis[31] - y_S[30]
+   + y_S[31] = 0
+ c_SOC_re[32]: - 0.2325 y_chg[32] + 0.2688172043010753 y_dis[32] - y_S[31]
+   + y_S[32] = 0
+ c_SOC_re[33]: - 0.2325 y_chg[33] + 0.2688172043010753 y_dis[33] - y_S[32]
+   + y_S[33] = 0
+ c_SOC_re[34]: - 0.2325 y_chg[34] + 0.2688172043010753 y_dis[34] - y_S[33]
+   + y_S[34] = 0
+ c_SOC_re[35]: - 0.2325 y_chg[35] + 0.2688172043010753 y_dis[35] - y_S[34]
+   + y_S[35] = 0
+ c_SOC_re[36]: - 0.2325 y_chg[36] + 0.2688172043010753 y_dis[36] - y_S[35]
+   + y_S[36] = 0
+ c_SOC_re[37]: - 0.2325 y_chg[37] + 0.2688172043010753 y_dis[37] - y_S[36]
+   + y_S[37] = 0
+ c_SOC_re[38]: - 0.2325 y_chg[38] + 0.2688172043010753 y_dis[38] - y_S[37]
+   + y_S[38] = 1.172090776089679
+ c_SOC_re[39]: - 0.2325 y_chg[39] + 0.2688172043010753 y_dis[39] - y_S[38]
+   + y_S[39] = -1.172090776089675
+ c_SOC_re[40]: - 0.2325 y_chg[40] + 0.2688172043010753 y_dis[40] - y_S[39]
+   + y_S[40] = 3.023965458726406
+ c_SOC_re[41]: - 0.2325 y_chg[41] + 0.2688172043010753 y_dis[41] - y_S[40]
+   + y_S[41] = 5.333663636669795
+ c_SOC_re[42]: - 0.2325 y_chg[42] + 0.2688172043010753 y_dis[42] - y_S[41]
+   + y_S[42] = -8.357629095396163
+ c_SOC_re[43]: - 0.2325 y_chg[43] + 0.2688172043010753 y_dis[43] - y_S[42]
+   + y_S[43] = 3.759672001365675
+ c_SOC_re[44]: - 0.2325 y_chg[44] + 0.2688172043010753 y_dis[44] - y_S[43]
+   + y_S[44] = 4.903138963589316
+ c_SOC_re[45]: - 0.2325 y_chg[45] + 0.2688172043010753 y_dis[45] - y_S[44]
+   + y_S[45] = 6.491755708905966
+ c_SOC_re[46]: - 0.2325 y_chg[46] + 0.2688172043010753 y_dis[46] - y_S[45]
+   + y_S[46] = 14.750439500537
+ c_SOC_re[47]: - 0.2325 y_chg[47] + 0.2688172043010753 y_dis[47] - y_S[46]
+   + y_S[47] = 16.00061836179101
+ c_SOC_re[48]: - 0.2325 y_chg[48] + 0.2688172043010753 y_dis[48] - y_S[47]
+   + y_S[48] = 17.2450159254431
+ c_SOC_re[49]: - 0.2325 y_chg[49] + 0.2688172043010753 y_dis[49] - y_S[48]
+   + y_S[49] = 20.32499026062479
+ c_SOC_re[50]: - 0.2325 y_chg[50] + 0.2688172043010753 y_dis[50] - y_S[49]
+   + y_S[50] = 17.74620980639807
+ c_SOC_re[51]: - 0.2325 y_chg[51] + 0.2688172043010753 y_dis[51] - y_S[50]
+   + y_S[51] = 17.98319568384721
+ c_SOC_re[52]: - 0.2325 y_chg[52] + 0.2688172043010753 y_dis[52] - y_S[51]
+   + y_S[52] = 18.21760599924195
+ c_SOC_re[53]: - 0.2325 y_chg[53] + 0.2688172043010753 y_dis[53] - y_S[52]
+   + y_S[53] = 17.55267652436472
+ c_SOC_re[54]: - 0.2325 y_chg[54] + 0.2688172043010753 y_dis[54] - y_S[53]
+   + y_S[54] = 18.54540337864081
+ c_SOC_re[55]: - 0.2325 y_chg[55] + 0.2688172043010753 y_dis[55] - y_S[54]
+   + y_S[55] = 15.54728011875957
+ c_SOC_re[56]: - 0.2325 y_chg[56] + 0.2688172043010753 y_dis[56] - y_S[55]
+   + y_S[56] = 6.224632994117372
+ c_SOC_re[57]: - 0.2325 y_chg[57] + 0.2688172043010753 y_dis[57] - y_S[56]
+   + y_S[57] = 6.871875660331226
+ c_SOC_re[58]: - 0.2325 y_chg[58] + 0.2688172043010753 y_dis[58] - y_S[57]
+   + y_S[58] = 6.594808503048979
+ c_SOC_re[59]: - 0.2325 y_chg[59] + 0.2688172043010753 y_dis[59] - y_S[58]
+   + y_S[59] = 9.189662874880659
+ c_SOC_re[60]: - 0.2325 y_chg[60] + 0.2688172043010753 y_dis[60] - y_S[59]
+   + y_S[60] = 6.136034541460631
+ c_SOC_re[61]: - 0.2325 y_chg[61] + 0.2688172043010753 y_dis[61] - y_S[60]
+   + y_S[61] = 2.714983192651863
+ c_SOC_re[62]: - 0.2325 y_chg[62] + 0.2688172043010753 y_dis[62] - y_S[61]
+   + y_S[62] = -7.181370974562418
+ c_SOC_re[63]: - 0.2325 y_chg[63] + 0.2688172043010753 y_dis[63] - y_S[62]
+   + y_S[63] = 7.181370974562412
+ c_SOC_re[64]: - 0.2325 y_chg[64] + 0.2688172043010753 y_dis[64] - y_S[63]
+   + y_S[64] = -1.698923166986444
+ c_SOC_re[65]: - 0.2325 y_chg[65] + 0.2688172043010753 y_dis[65] - y_S[64]
+   + y_S[65] = 1.698923166986436
+ c_SOC_re[66]: - 0.2325 y_chg[66] + 0.2688172043010753 y_dis[66] - y_S[65]
+   + y_S[66] = -10.99783032859454
+ c_SOC_re[67]: - 0.2325 y_chg[67] + 0.2688172043010753 y_dis[67] - y_S[66]
+   + y_S[67] = 10.99783032859455
+ c_SOC_re[68]: - 0.2325 y_chg[68] + 0.2688172043010753 y_dis[68] - y_S[67]
+   + y_S[68] = 0
+ c_SOC_re[69]: - 0.2325 y_chg[69] + 0.2688172043010753 y_dis[69] - y_S[68]
+   + y_S[69] = 0
+ c_SOC_re[70]: - 0.2325 y_chg[70] + 0.2688172043010753 y_dis[70] - y_S[69]
+   + y_S[70] = -8.463832021933875
+ c_SOC_re[71]: - 0.2325 y_chg[71] + 0.2688172043010753 y_dis[71] - y_S[70]
+   + y_S[71] = 0
+ c_SOC_re[72]: - 0.2325 y_chg[72] + 0.2688172043010753 y_dis[72] - y_S[71]
+   + y_S[72] = 0
+ c_SOC_re[73]: - 0.2325 y_chg[73] + 0.2688172043010753 y_dis[73] - y_S[72]
+   + y_S[73] = 0
+ c_SOC_re[74]: - 0.2325 y_chg[74] + 0.2688172043010753 y_dis[74] - y_S[73]
+   + y_S[74] = -1.636138526342248
+ c_SOC_re[75]: - 0.2325 y_chg[75] + 0.2688172043010753 y_dis[75] - y_S[74]
+   + y_S[75] = -6.34772777557373
+ c_SOC_re[76]: - 0.2325 y_chg[76] + 0.2688172043010753 y_dis[76] - y_S[75]
+   + y_S[76] = -7.874524849717335
+ c_SOC_re[77]: - 0.2325 y_chg[77] + 0.2688172043010753 y_dis[77] - y_S[76]
+   + y_S[77] = -9.056724656012751
+ c_SOC_re[78]: - 0.2325 y_chg[78] + 0.2688172043010753 y_dis[78] - y_S[77]
+   + y_S[78] = -8.838983376820881
+ c_SOC_re[79]: - 0.2325 y_chg[79] + 0.2688172043010753 y_dis[79] - y_S[78]
+   + y_S[79] = -11.08610565391149
+ c_SOC_re[80]: - 0.2325 y_chg[80] + 0.2688172043010753 y_dis[80] - y_S[79]
+   + y_S[80] = -8.683345394749795
+ c_SOC_re[81]: - 0.2325 y_chg[81] + 0.2688172043010753 y_dis[81] - y_S[80]
+   + y_S[81] = -8.565065168565319
+ c_SOC_re[82]: - 0.2325 y_chg[82] + 0.2688172043010753 y_dis[82] - y_S[81]
+   + y_S[82] = -8.850010748832457
+ c_SOC_re[83]: - 0.2325 y_chg[83] + 0.2688172043010753 y_dis[83] - y_S[82]
+   + y_S[83] = -8.48979667950702
+ c_SOC_re[84]: - 0.2325 y_chg[84] + 0.2688172043010753 y_dis[84] - y_S[83]
+   + y_S[84] = -8.656734420407203
+ c_SOC_re[85]: - 0.2325 y_chg[85] + 0.2688172043010753 y_dis[85] - y_S[84]
+   + y_S[85] = -24.66748645228724
+ c_SOC_re[86]: - 0.2325 y_chg[86] + 0.2688172043010753 y_dis[86] - y_S[85]
+   + y_S[86] = -8.500824051518594
+ c_SOC_re[87]: - 0.2325 y_chg[87] + 0.2688172043010753 y_dis[87] - y_S[86]
+   + y_S[87] = -8.745440488220542
+ c_SOC_re[88]: - 0.2325 y_chg[88] + 0.2688172043010753 y_dis[88] - y_S[87]
+   + y_S[88] = -8.460767294770928
+ c_SOC_re[89]: - 0.2325 y_chg[89] + 0.2688172043010753 y_dis[89] - y_S[88]
+   + y_S[89] = -8.694645153578891
+ c_SOC_re[90]: - 0.2325 y_chg[90] + 0.2688172043010753 y_dis[90] - y_S[89]
+   + y_S[90] = -8.78335122139223
+ c_SOC_re[91]: - 0.2325 y_chg[91] + 0.2688172043010753 y_dis[91] - y_S[90]
+   + y_S[91] = -8.640878431258663
+ c_SOC_re[92]: - 0.2325 y_chg[92] + 0.2688172043010753 y_dis[92] - y_S[91]
+   + y_S[92] = -9.079324173670942
+ c_SOC_re[93]: - 0.2325 y_chg[93] + 0.2688172043010753 y_dis[93] - y_S[92]
+   + y_S[93] = -8.861582894479074
+ c_SOC_re[94]: - 0.2325 y_chg[94] + 0.2688172043010753 y_dis[94] - y_S[93]
+   + y_S[94] = -9.194913602644396
+ c_SOC_re[95]: - 0.2325 y_chg[95] + 0.2688172043010753 y_dis[95] - y_S[94]
+   + y_S[95] = -9.221796963804511
+ c_ESS_last_period: y_S[95] = 187.5
  c_y_PV[0]: y_PV[0] = 1.690000057220459
  c_y_PV[1]: y_PV[1] = 1.690000057220459
  c_y_PV[2]: y_PV[2] = 1.700000047683716

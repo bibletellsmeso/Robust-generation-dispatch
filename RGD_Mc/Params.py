@@ -11,12 +11,12 @@ U_DG = np.ones(96)
 # ------------------------------------------------------------------------------------------------------------------
 # 2. DG PARAMETERS
 
-DG_MIN = 150 # (kW)
+DG_MIN = 0 # (kW)
 DG_MAX = 750 # (kW)
 DG_RAMP_UP = 100 # (kWh)
 DG_RAMP_DOWN = 100 # (kWh)
-DG_RESERVE_UP = 150 # (kWh)
-DG_RESERVE_DOWN = 150 # (kWh)
+DG_RESERVE_UP = 750 # (kWh)
+DG_RESERVE_DOWN = 750 # (kWh)
 DG_P_RATE = 80 # (kW)
 
 # ------------------------------------------------------------------------------------------------------------------
@@ -42,8 +42,8 @@ DISCHARGING_POWER = BATTERY_CAPACITY # (kW)
 
 PV_MIN = 0 # (kW)
 PV_MAX = 600 # (kW)
-PV_RAMP_UP = 600 # (kWh)
-PV_RAMP_DOWN = 600 # (kWh)
+PV_RAMP_UP = 150 # (kWh)
+PV_RAMP_DOWN = 150 # (kWh)
 PV_CAPACITY = 600 # (kW)
 
 # ------------------------------------------------------------------------------------------------------------------
@@ -58,15 +58,15 @@ LOAD_RAMP_DOWN = 280
 C_DG_A = 0.001
 C_DG_B = 0.015
 C_DG_C = 0.059
-C_DG_POS = 0.00
-C_DG_NEG = 0.00
-C_ESS_OM_PRE = 0.001
-C_PV_CUT_PRE = 0.02
-C_DG_POS_RE = 0.02
-C_DG_NEG_RE = 0.01
-C_ESS_OM_RE = 0.005
-C_PV_CUT_RE = 0.03
-C_PV_ADD_RE = 0.005
+C_DG_POS = 0.2
+C_DG_NEG = 0.15
+C_ESS_OM_PRE = 0.3
+C_PV_CUT_PRE = 0.001
+C_DG_POS_RE = 0.2
+C_DG_NEG_RE = 0.1
+C_ESS_OM_RE = 0.03
+C_PV_CUT_RE = 0.04
+C_PV_ADD_RE = 0.01
 
 # ------------------------------------------------------------------------------------------------------------------
 
@@ -93,8 +93,6 @@ ESS_params = {"capacity": BATTERY_CAPACITY,
 
 RE_params = {"PV_min": PV_MIN,
              "PV_max": PV_MAX,
-             "PV_ramp_up": PV_RAMP_UP,
-             "PV_ramp_down": PV_RAMP_DOWN,
              "PV_capacity": PV_CAPACITY}
 
 cost_params = {"DG_a": C_DG_A,

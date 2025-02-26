@@ -1,0 +1,873 @@
+
+Gurobi 11.0.1 (win64) logging started Sat Dec 28 03:13:46 2024
+
+Set parameter LogFile to value "/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/RGD_Mc/SP_dual_MILP_start_MIPFocus_0.log"
+Set parameter Threads to value 1
+Gurobi Optimizer version 11.0.1 build v11.0.1rc0 (win64 - Windows 10.0 (19045.2))
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 1 threads
+
+Optimize a model with 4890 rows, 2497 columns and 10418 nonzeros
+Model fingerprint: 0x73966920
+Variable types: 2305 continuous, 192 integer (192 binary)
+Coefficient statistics:
+  Matrix range     [6e-04, 1e+03]
+  Objective range  [6e-04, 5e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [5e-03, 9e+03]
+Found heuristic solution: objective -6.51702e+13
+Presolve removed 4311 rows and 1793 columns
+Presolve time: 0.01s
+Presolved: 579 rows, 704 columns, 1567 nonzeros
+Found heuristic solution: objective 19500.954383
+Variable types: 672 continuous, 32 integer (32 binary)
+
+Root relaxation: objective 1.977701e+04, 296 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0    19777.005910 19777.0059  0.00%     -    0s
+
+Explored 1 nodes (296 simplex iterations) in 0.02 seconds (0.02 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 3: 19777 19501 -6.51702e+13 
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective 1.977700591007e+04, best bound 1.977700591007e+04, gap 0.0000%
+
+Gurobi 11.0.1 (win64) logging started Sat Dec 28 14:26:46 2024
+
+Set parameter LogFile to value "/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/RGD_Mc/SP_dual_MILP_start_MIPFocus_0.log"
+Set parameter Threads to value 1
+Gurobi Optimizer version 11.0.1 build v11.0.1rc0 (win64 - Windows 10.0 (19045.2))
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 1 threads
+
+Optimize a model with 4890 rows, 2497 columns and 10418 nonzeros
+Model fingerprint: 0x73966920
+Variable types: 2305 continuous, 192 integer (192 binary)
+Coefficient statistics:
+  Matrix range     [6e-04, 1e+03]
+  Objective range  [6e-04, 5e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [5e-03, 9e+03]
+Found heuristic solution: objective -6.51702e+13
+Presolve removed 4311 rows and 1793 columns
+Presolve time: 0.01s
+Presolved: 579 rows, 704 columns, 1567 nonzeros
+Found heuristic solution: objective 19500.954383
+Variable types: 672 continuous, 32 integer (32 binary)
+
+Root relaxation: objective 1.977701e+04, 296 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0    19777.005910 19777.0059  0.00%     -    0s
+
+Explored 1 nodes (296 simplex iterations) in 0.02 seconds (0.02 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 3: 19777 19501 -6.51702e+13 
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective 1.977700591007e+04, best bound 1.977700591007e+04, gap 0.0000%
+
+Gurobi 11.0.1 (win64) logging started Mon Dec 30 14:06:28 2024
+
+Set parameter LogFile to value "/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/RGD_Mc/SP_dual_MILP_start_MIPFocus_0.log"
+Set parameter Threads to value 1
+Gurobi Optimizer version 11.0.1 build v11.0.1rc0 (win64 - Windows 10.0 (19045.2))
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 1 threads
+
+Optimize a model with 4890 rows, 2497 columns and 10544 nonzeros
+Model fingerprint: 0x265099b5
+Variable types: 2305 continuous, 192 integer (192 binary)
+Coefficient statistics:
+  Matrix range     [6e-04, 2e+03]
+  Objective range  [6e-04, 5e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e-03, 2e+04]
+Found heuristic solution: objective -6.51702e+13
+Presolve removed 4312 rows and 1794 columns
+Presolve time: 0.01s
+Presolved: 578 rows, 703 columns, 1565 nonzeros
+Found heuristic solution: objective 19500.954383
+Variable types: 671 continuous, 32 integer (32 binary)
+
+Root relaxation: objective 1.977702e+04, 293 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0    19777.021998 19777.0220  0.00%     -    0s
+
+Explored 1 nodes (293 simplex iterations) in 0.02 seconds (0.02 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 3: 19777 19501 -6.51702e+13 
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective 1.977702199790e+04, best bound 1.977702199790e+04, gap 0.0000%
+
+Gurobi 11.0.1 (win64) logging started Mon Dec 30 14:44:32 2024
+
+Set parameter LogFile to value "/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/RGD_Mc/SP_dual_MILP_start_MIPFocus_0.log"
+Set parameter Threads to value 1
+Gurobi Optimizer version 11.0.1 build v11.0.1rc0 (win64 - Windows 10.0 (19045.2))
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 1 threads
+
+Optimize a model with 4890 rows, 2497 columns and 10544 nonzeros
+Model fingerprint: 0x265099b5
+Variable types: 2305 continuous, 192 integer (192 binary)
+Coefficient statistics:
+  Matrix range     [6e-04, 2e+03]
+  Objective range  [6e-04, 5e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e-03, 2e+04]
+Found heuristic solution: objective -6.51702e+13
+Presolve removed 4312 rows and 1794 columns
+Presolve time: 0.01s
+Presolved: 578 rows, 703 columns, 1565 nonzeros
+Found heuristic solution: objective 19500.954383
+Variable types: 671 continuous, 32 integer (32 binary)
+
+Root relaxation: objective 1.977702e+04, 293 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0    19777.021998 19777.0220  0.00%     -    0s
+
+Explored 1 nodes (293 simplex iterations) in 0.02 seconds (0.02 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 3: 19777 19501 -6.51702e+13 
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective 1.977702199790e+04, best bound 1.977702199790e+04, gap 0.0000%
+
+Gurobi 11.0.1 (win64) logging started Mon Dec 30 14:53:15 2024
+
+Set parameter LogFile to value "/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/RGD_Mc/SP_dual_MILP_start_MIPFocus_0.log"
+Set parameter Threads to value 1
+Gurobi Optimizer version 11.0.1 build v11.0.1rc0 (win64 - Windows 10.0 (19045.2))
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 1 threads
+
+Optimize a model with 4890 rows, 2497 columns and 10544 nonzeros
+Model fingerprint: 0x265099b5
+Variable types: 2305 continuous, 192 integer (192 binary)
+Coefficient statistics:
+  Matrix range     [6e-04, 2e+03]
+  Objective range  [6e-04, 5e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e-03, 2e+04]
+Found heuristic solution: objective -6.51702e+13
+Presolve removed 4312 rows and 1794 columns
+Presolve time: 0.01s
+Presolved: 578 rows, 703 columns, 1565 nonzeros
+Found heuristic solution: objective 19500.954383
+Variable types: 671 continuous, 32 integer (32 binary)
+
+Root relaxation: objective 1.977702e+04, 293 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0    19777.021998 19777.0220  0.00%     -    0s
+
+Explored 1 nodes (293 simplex iterations) in 0.02 seconds (0.02 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 3: 19777 19501 -6.51702e+13 
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective 1.977702199790e+04, best bound 1.977702199790e+04, gap 0.0000%
+
+Gurobi 11.0.1 (win64) logging started Mon Dec 30 14:55:38 2024
+
+Set parameter LogFile to value "/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/RGD_Mc/SP_dual_MILP_start_MIPFocus_0.log"
+Set parameter Threads to value 1
+Gurobi Optimizer version 11.0.1 build v11.0.1rc0 (win64 - Windows 10.0 (19045.2))
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 1 threads
+
+Optimize a model with 4890 rows, 2497 columns and 10544 nonzeros
+Model fingerprint: 0x265099b5
+Variable types: 2305 continuous, 192 integer (192 binary)
+Coefficient statistics:
+  Matrix range     [6e-04, 2e+03]
+  Objective range  [6e-04, 5e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e-03, 2e+04]
+Found heuristic solution: objective -6.51702e+13
+Presolve removed 4312 rows and 1794 columns
+Presolve time: 0.01s
+Presolved: 578 rows, 703 columns, 1565 nonzeros
+Found heuristic solution: objective 19500.954383
+Variable types: 671 continuous, 32 integer (32 binary)
+
+Root relaxation: objective 1.977702e+04, 293 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0    19777.021998 19777.0220  0.00%     -    0s
+
+Explored 1 nodes (293 simplex iterations) in 0.02 seconds (0.02 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 3: 19777 19501 -6.51702e+13 
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective 1.977702199790e+04, best bound 1.977702199790e+04, gap 0.0000%
+
+Gurobi 11.0.1 (win64) logging started Mon Dec 30 15:10:42 2024
+
+Set parameter LogFile to value "/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/RGD_Mc/SP_dual_MILP_start_MIPFocus_0.log"
+Set parameter Threads to value 1
+Gurobi Optimizer version 11.0.1 build v11.0.1rc0 (win64 - Windows 10.0 (19045.2))
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 1 threads
+
+Optimize a model with 4890 rows, 2497 columns and 10544 nonzeros
+Model fingerprint: 0x265099b5
+Variable types: 2305 continuous, 192 integer (192 binary)
+Coefficient statistics:
+  Matrix range     [6e-04, 2e+03]
+  Objective range  [6e-04, 5e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e-03, 2e+04]
+Found heuristic solution: objective -6.51702e+13
+Presolve removed 4312 rows and 1794 columns
+Presolve time: 0.01s
+Presolved: 578 rows, 703 columns, 1565 nonzeros
+Found heuristic solution: objective 19500.954383
+Variable types: 671 continuous, 32 integer (32 binary)
+
+Root relaxation: objective 1.977702e+04, 293 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0    19777.021998 19777.0220  0.00%     -    0s
+
+Explored 1 nodes (293 simplex iterations) in 0.02 seconds (0.02 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 3: 19777 19501 -6.51702e+13 
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective 1.977702199790e+04, best bound 1.977702199790e+04, gap 0.0000%
+
+Gurobi 11.0.1 (win64) logging started Mon Dec 30 16:07:49 2024
+
+Set parameter LogFile to value "/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/RGD_Mc/SP_dual_MILP_start_MIPFocus_0.log"
+Set parameter Threads to value 1
+Gurobi Optimizer version 11.0.1 build v11.0.1rc0 (win64 - Windows 10.0 (19045.2))
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 1 threads
+
+Optimize a model with 4890 rows, 2497 columns and 10544 nonzeros
+Model fingerprint: 0x265099b5
+Variable types: 2305 continuous, 192 integer (192 binary)
+Coefficient statistics:
+  Matrix range     [6e-04, 2e+03]
+  Objective range  [6e-04, 5e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e-03, 2e+04]
+Found heuristic solution: objective -6.51702e+13
+Presolve removed 4312 rows and 1794 columns
+Presolve time: 0.01s
+Presolved: 578 rows, 703 columns, 1565 nonzeros
+Found heuristic solution: objective 19500.954383
+Variable types: 671 continuous, 32 integer (32 binary)
+
+Root relaxation: objective 1.977702e+04, 293 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0    19777.021998 19777.0220  0.00%     -    0s
+
+Explored 1 nodes (293 simplex iterations) in 0.02 seconds (0.02 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 3: 19777 19501 -6.51702e+13 
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective 1.977702199790e+04, best bound 1.977702199790e+04, gap 0.0000%
+
+Gurobi 11.0.1 (win64) logging started Mon Jan  6 16:16:41 2025
+
+Set parameter LogFile to value "/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/RGD_Mc/SP_dual_MILP_start_MIPFocus_0.log"
+Set parameter Threads to value 1
+Gurobi Optimizer version 11.0.1 build v11.0.1rc0 (win64 - Windows 10.0 (19045.2))
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 1 threads
+
+Optimize a model with 6618 rows, 2497 columns and 15364 nonzeros
+Model fingerprint: 0x8f57bf59
+Variable types: 2305 continuous, 192 integer (192 binary)
+Coefficient statistics:
+  Matrix range     [9e-09, 4e+02]
+  Objective range  [6e-04, 5e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [9e-09, 6e+03]
+Found heuristic solution: objective -6.51702e+13
+Presolve removed 6028 rows and 1793 columns
+Presolve time: 0.01s
+Presolved: 590 rows, 704 columns, 1579 nonzeros
+Found heuristic solution: objective -5.98752e+13
+Variable types: 670 continuous, 34 integer (34 binary)
+
+Root relaxation: objective 1.977284e+04, 303 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0    19772.843201 19772.8432  0.00%     -    0s
+
+Explored 1 nodes (303 simplex iterations) in 0.02 seconds (0.02 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 4: 19772.8 19772.8 -5.98752e+13 -6.51702e+13 
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective 1.977284320118e+04, best bound 1.977284320118e+04, gap 0.0000%
+
+Gurobi 11.0.1 (win64) logging started Tue Jan  7 15:57:42 2025
+
+Set parameter LogFile to value "/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/RGD_Mc/SP_dual_MILP_start_MIPFocus_0.log"
+Set parameter Threads to value 1
+Gurobi Optimizer version 11.0.1 build v11.0.1rc0 (win64 - Windows 10.0 (19045.2))
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 1 threads
+
+Optimize a model with 4890 rows, 2305 columns and 10372 nonzeros
+Model fingerprint: 0x9f3447d1
+Variable types: 2113 continuous, 192 integer (192 binary)
+Coefficient statistics:
+  Matrix range     [9e-09, 8e+01]
+  Objective range  [6e-04, 5e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [9e-09, 2e+02]
+Presolve removed 921 rows and 258 columns
+Presolve time: 0.00s
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 0
+
+Model is infeasible or unbounded
+Best objective -, best bound -, gap -
+Gurobi Optimizer version 11.0.1 build v11.0.1rc0 (win64 - Windows 10.0 (19045.2))
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 1 threads
+
+IIS computation: initial model status unknown, solving to determine model status
+Presolve removed 1241 rows and 769 columns
+Presolve time: 0.00s
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 0
+No other solutions better than -1e+100
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+IIS computed: 1 constraints, 2 bounds
+IIS runtime: 0.00 seconds (0.00 work units)
+
+Gurobi 11.0.1 (win64) logging started Tue Jan  7 19:55:56 2025
+
+Set parameter LogFile to value "/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/RGD_Mc/SP_dual_MILP_start_MIPFocus_0.log"
+Set parameter Threads to value 1
+Gurobi Optimizer version 11.0.1 build v11.0.1rc0 (win64 - Windows 10.0 (19045.2))
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 1 threads
+
+Optimize a model with 3938 rows, 2305 columns and 8468 nonzeros
+Model fingerprint: 0xd7be92b7
+Variable types: 2113 continuous, 192 integer (192 binary)
+Coefficient statistics:
+  Matrix range     [9e-09, 1e+00]
+  Objective range  [6e-04, 5e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [9e-09, 1e+02]
+Found heuristic solution: objective -6.51702e+13
+Presolve removed 3452 rows and 1665 columns
+Presolve time: 0.01s
+Presolved: 486 rows, 640 columns, 1329 nonzeros
+Found heuristic solution: objective -5.98752e+13
+Variable types: 640 continuous, 0 integer (0 binary)
+
+Root relaxation: objective 1.977747e+04, 245 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0    19777.470321 19777.4703  0.00%     -    0s
+
+Explored 1 nodes (245 simplex iterations) in 0.01 seconds (0.01 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 2: 19777.5 -6.51702e+13 
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective 1.977747032077e+04, best bound 1.977747032077e+04, gap 0.0000%
+
+Gurobi 11.0.1 (win64) logging started Tue Jan  7 19:56:29 2025
+
+Set parameter LogFile to value "/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/RGD_Mc/SP_dual_MILP_start_MIPFocus_0.log"
+Set parameter Threads to value 1
+Gurobi Optimizer version 11.0.1 build v11.0.1rc0 (win64 - Windows 10.0 (19045.2))
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 1 threads
+
+Optimize a model with 4130 rows, 2305 columns and 8852 nonzeros
+Model fingerprint: 0x0724f02d
+Variable types: 2113 continuous, 192 integer (192 binary)
+Coefficient statistics:
+  Matrix range     [9e-09, 1e+00]
+  Objective range  [6e-04, 5e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [9e-09, 1e+02]
+Found heuristic solution: objective -6.51702e+13
+Presolve removed 3610 rows and 1631 columns
+Presolve time: 0.01s
+Presolved: 520 rows, 674 columns, 1397 nonzeros
+Found heuristic solution: objective -5.98752e+13
+Variable types: 640 continuous, 34 integer (34 binary)
+
+Root relaxation: objective 1.977747e+04, 273 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0    19777.470321 19777.4703  0.00%     -    0s
+
+Explored 1 nodes (273 simplex iterations) in 0.02 seconds (0.01 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 4: 19777.5 19777.5 -5.98752e+13 -6.51702e+13 
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective 1.977747032077e+04, best bound 1.977747032077e+04, gap 0.0000%
+
+Gurobi 11.0.1 (win64) logging started Tue Jan  7 20:02:11 2025
+
+Set parameter LogFile to value "/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/RGD_Mc/SP_dual_MILP_start_MIPFocus_0.log"
+Set parameter Threads to value 1
+Gurobi Optimizer version 11.0.1 build v11.0.1rc0 (win64 - Windows 10.0 (19045.2))
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 1 threads
+
+Optimize a model with 4128 rows, 2305 columns and 9228 nonzeros
+Model fingerprint: 0xb85378ce
+Variable types: 2113 continuous, 192 integer (192 binary)
+Coefficient statistics:
+  Matrix range     [9e-09, 7e+01]
+  Objective range  [6e-04, 5e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [9e-09, 1e+02]
+Presolve removed 352 rows and 450 columns
+Presolve time: 0.00s
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 0
+
+Model is infeasible or unbounded
+Best objective -, best bound -, gap -
+Gurobi Optimizer version 11.0.1 build v11.0.1rc0 (win64 - Windows 10.0 (19045.2))
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 1 threads
+
+IIS computation: initial model status unknown, solving to determine model status
+Presolve removed 672 rows and 961 columns
+Presolve time: 0.00s
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 0
+No other solutions better than -1e+100
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+Computing Irreducible Inconsistent Subsystem (IIS)...
+
+           Constraints          |            Bounds           |  Runtime
+      Min       Max     Guess   |   Min       Max     Guess   |
+--------------------------------------------------------------------------
+        0      4128         -         0      1536         -           0s
+        4         4         4         4         4         4           0s
+
+IIS computed: 4 constraints, 4 bounds
+IIS runtime: 0.03 seconds (0.01 work units)
+
+Gurobi 11.0.1 (win64) logging started Tue Jan  7 20:12:09 2025
+
+Set parameter LogFile to value "/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/RGD_Mc/SP_dual_MILP_start_MIPFocus_0.log"
+Set parameter Threads to value 1
+Gurobi Optimizer version 11.0.1 build v11.0.1rc0 (win64 - Windows 10.0 (19045.2))
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 1 threads
+
+Optimize a model with 4128 rows, 2305 columns and 9228 nonzeros
+Model fingerprint: 0xb9d0d981
+Variable types: 2113 continuous, 192 integer (192 binary)
+Coefficient statistics:
+  Matrix range     [9e-09, 7e+01]
+  Objective range  [6e-04, 5e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [9e-09, 1e+02]
+Presolve removed 409 rows and 450 columns
+Presolve time: 0.00s
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 0
+
+Model is infeasible or unbounded
+Best objective -, best bound -, gap -
+Gurobi Optimizer version 11.0.1 build v11.0.1rc0 (win64 - Windows 10.0 (19045.2))
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 1 threads
+
+IIS computation: initial model status unknown, solving to determine model status
+Presolve removed 729 rows and 961 columns
+Presolve time: 0.00s
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 0
+No other solutions better than -1e+100
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+IIS computed: 1 constraints, 4 bounds
+IIS runtime: 0.00 seconds (0.00 work units)
+
+Gurobi 11.0.1 (win64) logging started Wed Jan  8 00:06:16 2025
+
+Set parameter LogFile to value "/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/RGD_Mc/SP_dual_MILP_start_MIPFocus_0.log"
+Set parameter Threads to value 1
+Gurobi Optimizer version 11.0.1 build v11.0.1rc0 (win64 - Windows 10.0 (19045.2))
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 1 threads
+
+Optimize a model with 4128 rows, 2305 columns and 9228 nonzeros
+Model fingerprint: 0x7f1e0bca
+Variable types: 2113 continuous, 192 integer (192 binary)
+Coefficient statistics:
+  Matrix range     [9e-09, 7e+01]
+  Objective range  [6e-04, 5e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [9e-09, 1e+02]
+Found heuristic solution: objective -6.51702e+13
+Presolve removed 3552 rows and 1619 columns
+Presolve time: 0.01s
+Presolved: 576 rows, 686 columns, 1597 nonzeros
+Found heuristic solution: objective -5.98752e+13
+Variable types: 686 continuous, 0 integer (0 binary)
+
+Root relaxation: objective 1.977725e+04, 264 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0    19777.252962 19777.2530  0.00%     -    0s
+
+Explored 1 nodes (264 simplex iterations) in 0.02 seconds (0.01 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 3: 19777.3 19777.3 -6.51702e+13 
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective 1.977725296218e+04, best bound 1.977725296218e+04, gap 0.0000%
+
+Gurobi 11.0.1 (win64) logging started Wed Jan  8 00:06:55 2025
+
+Set parameter LogFile to value "/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/RGD_Mc/SP_dual_MILP_start_MIPFocus_0.log"
+Set parameter Threads to value 1
+Gurobi Optimizer version 11.0.1 build v11.0.1rc0 (win64 - Windows 10.0 (19045.2))
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 1 threads
+
+Optimize a model with 4128 rows, 2305 columns and 9228 nonzeros
+Model fingerprint: 0x7f1e0bca
+Variable types: 2113 continuous, 192 integer (192 binary)
+Coefficient statistics:
+  Matrix range     [9e-09, 7e+01]
+  Objective range  [6e-04, 5e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [9e-09, 1e+02]
+Found heuristic solution: objective -6.51702e+13
+Presolve removed 3552 rows and 1619 columns
+Presolve time: 0.01s
+Presolved: 576 rows, 686 columns, 1597 nonzeros
+Found heuristic solution: objective -5.98752e+13
+Variable types: 686 continuous, 0 integer (0 binary)
+
+Root relaxation: objective 1.977725e+04, 264 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0    19777.252962 19777.2530  0.00%     -    0s
+
+Explored 1 nodes (264 simplex iterations) in 0.02 seconds (0.01 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 3: 19777.3 19777.3 -6.51702e+13 
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective 1.977725296218e+04, best bound 1.977725296218e+04, gap 0.0000%
+
+Gurobi 11.0.1 (win64) logging started Wed Jan  8 00:07:41 2025
+
+Set parameter LogFile to value "/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/RGD_Mc/SP_dual_MILP_start_MIPFocus_0.log"
+Set parameter Threads to value 1
+Gurobi Optimizer version 11.0.1 build v11.0.1rc0 (win64 - Windows 10.0 (19045.2))
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 1 threads
+
+Optimize a model with 4128 rows, 2305 columns and 9228 nonzeros
+Model fingerprint: 0xe48c615d
+Variable types: 2113 continuous, 192 integer (192 binary)
+Coefficient statistics:
+  Matrix range     [9e-09, 7e+01]
+  Objective range  [6e-04, 5e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [9e-09, 1e+02]
+Found heuristic solution: objective -6.51702e+13
+Presolve removed 3001 rows and 1291 columns
+Presolve time: 0.01s
+Presolved: 1127 rows, 1014 columns, 3145 nonzeros
+Found heuristic solution: objective -5.98752e+13
+Variable types: 1014 continuous, 0 integer (0 binary)
+
+Root relaxation: objective 1.977612e+04, 352 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0    19776.116130 19776.1161  0.00%     -    0s
+
+Explored 1 nodes (352 simplex iterations) in 0.01 seconds (0.01 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 2: 19776.1 -6.51702e+13 
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective 1.977611613013e+04, best bound 1.977611613013e+04, gap 0.0000%
+
+Gurobi 11.0.1 (win64) logging started Wed Jan  8 00:15:49 2025
+
+Set parameter LogFile to value "/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/RGD_Mc/SP_dual_MILP_start_MIPFocus_0.log"
+Set parameter Threads to value 1
+Gurobi Optimizer version 11.0.1 build v11.0.1rc0 (win64 - Windows 10.0 (19045.2))
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 1 threads
+
+Optimize a model with 4318 rows, 2305 columns and 9988 nonzeros
+Model fingerprint: 0xdff6cc8f
+Variable types: 2113 continuous, 192 integer (192 binary)
+Coefficient statistics:
+  Matrix range     [9e-09, 8e+01]
+  Objective range  [6e-04, 5e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [9e-09, 2e+02]
+Found heuristic solution: objective -6.51702e+13
+Presolve removed 2647 rows and 875 columns
+Presolve time: 0.01s
+Presolved: 1671 rows, 1430 columns, 4677 nonzeros
+Found heuristic solution: objective -5.98752e+13
+Variable types: 1430 continuous, 0 integer (0 binary)
+
+Root relaxation: objective 1.977094e+04, 575 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0    19770.936125 19770.9361  0.00%     -    0s
+
+Explored 1 nodes (575 simplex iterations) in 0.02 seconds (0.01 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 3: 19770.9 19770.9 -6.51702e+13 
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective 1.977093612511e+04, best bound 1.977093612511e+04, gap 0.0000%
+
+Gurobi 11.0.1 (win64) logging started Wed Jan  8 00:16:31 2025
+
+Set parameter LogFile to value "/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/RGD_Mc/SP_dual_MILP_start_MIPFocus_0.log"
+Set parameter Threads to value 1
+Gurobi Optimizer version 11.0.1 build v11.0.1rc0 (win64 - Windows 10.0 (19045.2))
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 1 threads
+
+Optimize a model with 4318 rows, 2305 columns and 9988 nonzeros
+Model fingerprint: 0x6d0b29c5
+Variable types: 2113 continuous, 192 integer (192 binary)
+Coefficient statistics:
+  Matrix range     [9e-09, 8e+01]
+  Objective range  [6e-04, 5e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [9e-09, 2e+02]
+Found heuristic solution: objective -6.51702e+13
+Presolve removed 2649 rows and 875 columns
+Presolve time: 0.01s
+Presolved: 1669 rows, 1430 columns, 4669 nonzeros
+Found heuristic solution: objective -5.98752e+13
+Variable types: 1430 continuous, 0 integer (0 binary)
+
+Root relaxation: objective 1.977329e+04, 548 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0    19773.288545 19773.2885  0.00%     -    0s
+
+Explored 1 nodes (548 simplex iterations) in 0.02 seconds (0.01 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 3: 19773.3 19773.3 -6.51702e+13 
+No other solutions better than 19773.3
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective 1.977328856082e+04, best bound 1.977328856082e+04, gap 0.0000%
+
+Gurobi 11.0.1 (win64) logging started Sat Feb 22 13:29:19 2025
+
+Set parameter LogFile to value "/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/RGD_Mc/SP_dual_MILP_start_MIPFocus_0.log"
+Set parameter Threads to value 1
+Gurobi Optimizer version 11.0.1 build v11.0.1rc0 (win64 - Windows 10.0 (19045.2))
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 1 threads
+
+Optimize a model with 4318 rows, 2305 columns and 9852 nonzeros
+Model fingerprint: 0xc8e5fec0
+Variable types: 2113 continuous, 192 integer (192 binary)
+Coefficient statistics:
+  Matrix range     [2e-03, 7e+01]
+  Objective range  [2e-03, 5e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e-02, 7e+07]
+Presolve removed 61 rows and 0 columns
+Presolve time: 0.00s
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 0
+
+Model is infeasible or unbounded
+Best objective -, best bound -, gap -
+Gurobi Optimizer version 11.0.1 build v11.0.1rc0 (win64 - Windows 10.0 (19045.2))
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 1 threads
+
+IIS computation: initial model status unknown, solving to determine model status
+Presolve removed 61 rows and 0 columns
+Presolve time: 0.00s
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 0
+No other solutions better than -1e+100
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+IIS computed: 1 constraints, 4 bounds
+IIS runtime: 0.01 seconds (0.00 work units)
+
+Gurobi 11.0.1 (win64) logging started Sat Feb 22 17:17:12 2025
+
+Set parameter LogFile to value "/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/RGD_Mc/SP_dual_MILP_start_MIPFocus_0.log"
+Set parameter Threads to value 1
+Gurobi Optimizer version 11.0.1 build v11.0.1rc0 (win64 - Windows 10.0 (19045.2))
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 1 threads
+
+Optimize a model with 4318 rows, 2305 columns and 9772 nonzeros
+Model fingerprint: 0x6d81f26f
+Variable types: 2113 continuous, 192 integer (192 binary)
+Coefficient statistics:
+  Matrix range     [1e-02, 3e+02]
+  Objective range  [7e-01, 5e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e-02, 7e+07]
+Presolve removed 72 rows and 0 columns
+Presolve time: 0.00s
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 0
+
+Model is infeasible or unbounded
+Best objective -, best bound -, gap -
+Gurobi Optimizer version 11.0.1 build v11.0.1rc0 (win64 - Windows 10.0 (19045.2))
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 1 threads
+
+IIS computation: initial model status unknown, solving to determine model status
+Presolve removed 72 rows and 0 columns
+Presolve time: 0.00s
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 0
+No other solutions better than -1e+100
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+IIS computed: 1 constraints, 0 bounds
+IIS runtime: 0.00 seconds (0.00 work units)

@@ -57,6 +57,11 @@ class CCG_SP():
         self.PV_neg = data.PV_neg # (kW) The maximal deviation between the max and forecast PV uncertainty set bounds
         self.load_pos = data.load_pos # (kw) The maximal deviation between the min and forecast load uncertainty set bounds
         self.load_neg = data.load_neg # (kW) The maximal deviation between the max and forecast load uncertainty set bounds
+        self.PV_ramp_pos = data.PV_ramp_pos
+        self.PV_ramp_neg = data.PV_ramp_neg
+        self.load_ramp_pos = data.load_ramp_pos
+        self.load_ramp_neg = data.load_ramp_neg
+
         self.GAMMA = GAMMA # uncertainty budget <= self.nb_periods, gamma = 0: no uncertainty
         self.PI = PI
         self.M_PV_best = M_PV_best
@@ -92,8 +97,6 @@ class CCG_SP():
         # RE parameters
         self.PV_min = PARAMETERS['RE']['PV_min']
         self.PV_max = PARAMETERS['RE']['PV_max']
-        self.PV_ramp_up = PARAMETERS['RE']['PV_ramp_up']
-        self.PV_ramp_down = PARAMETERS['RE']['PV_ramp_down']
 
         # load parameters
         self.load_ramp_up = PARAMETERS['load']['ramp_up']
@@ -221,15 +224,16 @@ class CCG_SP():
         model.addConstr(gp.quicksum(epsilon_pos[i] + epsilon_neg[i] for i in self.t_set) <= self.GAMMA, name='c_GAMMA') # PV uncertainty budget
         model.addConstr(gp.quicksum(delta_pos[i] + delta_neg[i] for i in self.t_set) <= self.PI, name='c_PI') # load uncertainty budget
 
-        model.addConstrs(((self.PV_forecast[i] + self.PV_pos[i] * epsilon_pos[i]) - (self.PV_forecast[i-1] - self.PV_neg[i-1] * epsilon_neg[i-1]) <= self.PV_ramp_up * self.period_hours for i in range(1, self.nb_periods)), name='c_PV_ramp_1')
-        model.addConstrs((- (self.PV_forecast[i] + self.PV_pos[i] * epsilon_pos[i]) + (self.PV_forecast[i-1] - self.PV_neg[i-1] * epsilon_neg[i-1]) <= self.PV_ramp_down * self.period_hours for i in range(1, self.nb_periods)), name='c_PV_ramp_2')
-        model.addConstrs(((self.PV_forecast[i] - self.PV_neg[i] * epsilon_neg[i]) - (self.PV_forecast[i-1] + self.PV_pos[i-1] * epsilon_pos[i-1]) <= self.PV_ramp_up * self.period_hours for i in range(1, self.nb_periods)), name='c_PV_ramp_3')
-        model.addConstrs((- (self.PV_forecast[i] - self.PV_neg[i] * epsilon_neg[i]) + (self.PV_forecast[i-1] + self.PV_pos[i-1] * epsilon_pos[i-1]) <= self.PV_ramp_down * self.period_hours for i in range(1, self.nb_periods)), name='c_PV_ramp_4')
+        # Constratins related to the uncertainty ramping rate
+        model.addConstrs(((self.PV_forecast[i] + self.PV_pos[i] * epsilon_pos[i] - self.PV_neg[i] * epsilon_neg[i])
+                          <= (self.PV_forecast[i-1] + self.PV_pos[i-1] * epsilon_pos[i-1] - self.PV_neg[i-1] * epsilon_neg[i-1]) + self.PV_ramp_pos[i - 1] for i in range(1, self.nb_periods)), name='c_PV_ramp_up')
+        model.addConstrs(((self.PV_forecast[i] + self.PV_pos[i] * epsilon_pos[i] - self.PV_neg[i] * epsilon_neg[i])
+                          >= (self.PV_forecast[i-1] + self.PV_pos[i-1] * epsilon_pos[i-1] - self.PV_neg[i-1] * epsilon_neg[i-1]) + self.PV_ramp_neg[i - 1] for i in range(1, self.nb_periods)), name='c_PV_ramp_down')
 
-        model.addConstrs(((self.load_forecast[i] + self.load_pos[i] * delta_pos[i]) - (self.load_forecast[i-1] - self.load_neg[i-1] * delta_neg[i-1]) <= self.load_ramp_up * self.period_hours for i in range(1, self.nb_periods)), name='c_load_ramp_1')
-        model.addConstrs((- (self.load_forecast[i] + self.load_pos[i] * delta_pos[i]) + (self.load_forecast[i-1] - self.load_neg[i-1] * delta_neg[i-1]) <= self.load_ramp_down * self.period_hours for i in range(1, self.nb_periods)), name='c_load_ramp_2')
-        model.addConstrs(((self.load_forecast[i] - self.load_neg[i] * delta_neg[i]) - (self.load_forecast[i-1] + self.load_pos[i-1] * delta_pos[i-1]) <= self.load_ramp_up * self.period_hours for i in range(1, self.nb_periods)), name='c_load_ramp_3')
-        model.addConstrs((- (self.load_forecast[i] - self.load_neg[i] * delta_neg[i]) + (self.load_forecast[i-1] + self.load_pos[i-1] * delta_pos[i-1]) <= self.load_ramp_down * self.period_hours for i in range(1, self.nb_periods)), name='c_load_ramp_4')
+        model.addConstrs(((self.load_forecast[i] + self.load_pos[i] * delta_pos[i] - self.load_neg[i] * delta_neg[i])
+                          <= (self.load_forecast[i-1] + self.load_pos[i-1] * delta_pos[i-1] - self.load_neg[i-1] * delta_neg[i-1]) + self.load_ramp_pos[i] for i in range(1, self.nb_periods)), name='c_load_ramp_up')
+        model.addConstrs(((self.load_forecast[i] + self.load_pos[i] * delta_pos[i] - self.load_neg[i] * delta_neg[i])
+                          >= (self.load_forecast[i-1] + self.load_pos[i-1] * delta_pos[i-1] - self.load_neg[i-1] * delta_neg[i-1]) + self.load_ramp_neg[i] for i in range(1, self.nb_periods)), name='c_load_ramp_down')
 
         # Constraints related to the McCormick method----------------------------------------------------------------------------------------------------------------------------------
         # -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -292,15 +296,14 @@ class CCG_SP():
         model.addConstrs((gamma_neg[i] <= phi_load_lb[i] * delta_neg[i] + phi_load[i] * delta_neg_ub[i] - phi_load_lb[i] * delta_neg_ub[i] for i in self.t_set), name='c_gamma_neg_4')
 
         # -------------------------------------------------------------------------------------------------------------
-        # 5. Store variables
-        model.addConstrs((epsilon_pos[i] <= epsilon_multiple[i] for i in self.t_set), "linearization_x_pos")
-        model.addConstrs((epsilon_neg[i] <= (1 - epsilon_multiple[i]) for i in self.t_set), "linearization_x_neg")
+        # 5. Simultaenous uncertainty variables
+        # model.addConstrs((epsilon_pos[i] <= epsilon_multiple[i] for i in self.t_set), "linearization_x_pos")
+        # model.addConstrs((epsilon_neg[i] <= (1 - epsilon_multiple[i]) for i in self.t_set), "linearization_x_neg")
+        # model.addConstrs((delta_pos[i] <= delta_multiple[i] for i in self.t_set), "linearization_y_pos")
+        # model.addConstrs((delta_neg[i] <= (1 - delta_multiple[i]) for i in self.t_set), "linearization_y_neg")
 
-        model.addConstrs((delta_pos[i] <= delta_multiple[i] for i in self.t_set), "linearization_y_pos")
-        model.addConstrs((delta_neg[i] <= (1 - delta_multiple[i]) for i in self.t_set), "linearization_y_neg")
-
-        # model.addConstrs((epsilon_pos[i] + epsilon_neg[i] <= 1 for i in self.t_set), name='c_simultaneous_1')
-        # model.addConstrs((delta_pos[i] + delta_neg[i] <= 1 for i in self.t_set), name='c_simultaneous_2')
+        model.addConstrs((epsilon_pos[i] + epsilon_neg[i] <= 1 for i in self.t_set), 'simultaneous_epsilon')
+        model.addConstrs((delta_pos[i] + delta_neg[i] <= 1 for i in self.t_set), 'simultaenous_delta')
 
         # -------------------------------------------------------------------------------------------------------------
         # 5. Store variables
@@ -419,29 +422,29 @@ if __name__ == "__main__":
     os.chdir(ROOT_DIR)
     print(os.getcwd())
 
-    dirname = '/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/RGD_Mc/'
-    day = '2018-07-04'
+    dirname = '/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/RGD_Mc/'
+    day = '2025-01-15'
 
     PV_forecast = data.PV_pred
     load_forecast = data.load_pred
     
-    power = read_file(dir='/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/RGD_Mc/export_MILP/', name='sol_MILP_power')
-    reserve_pos = read_file(dir='/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/RGD_Mc/export_MILP/', name='sol_MILP_reserve_pos')
-    reserve_neg = read_file(dir='/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/RGD_Mc/export_MILP/', name='sol_MILP_reserve_neg')
-    charge = read_file(dir='/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/RGD_Mc/export_MILP/', name='sol_MILP_charge')
-    discharge = read_file(dir='/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/RGD_Mc/export_MILP/', name='sol_MILP_discharge')
-    SOC = read_file(dir='/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/RGD_Mc/export_MILP/', name='sol_MILP_SOC')
-    curtailment = read_file(dir='/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/RGD_Mc/export_MILP/', name='sol_MILP_curtailment')
+    power = read_file(dir='/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/RGD_Mc/export_MILP/', name='sol_MILP_power')
+    reserve_pos = read_file(dir='/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/RGD_Mc/export_MILP/', name='sol_MILP_reserve_pos')
+    reserve_neg = read_file(dir='/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/RGD_Mc/export_MILP/', name='sol_MILP_reserve_neg')
+    charge = read_file(dir='/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/RGD_Mc/export_MILP/', name='sol_MILP_charge')
+    discharge = read_file(dir='/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/RGD_Mc/export_MILP/', name='sol_MILP_discharge')
+    SOC = read_file(dir='/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/RGD_Mc/export_MILP/', name='sol_MILP_SOC')
+    curtailment = read_file(dir='/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/RGD_Mc/export_MILP/', name='sol_MILP_curtailment')
 
-    bM_phi_best = pd.read_csv('/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/result/bM_phi_best.csv')
-    bM_phi_worst = pd.read_csv('/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/result/bM_phi_worst.csv')
+    bM_phi_best = pd.read_csv('/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/result/bM_phi_best.csv')
+    bM_phi_worst = pd.read_csv('/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/result/bM_phi_worst.csv')
 
-    M_phi_PV_best = [x for x in read_file(dir='/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/result/', name=day+'_bM_phi_PV_best')]
-    M_phi_PV_worst = [x for x in read_file(dir='/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/result/', name=day+'_bM_phi_PV_worst')]
-    M_phi_cut_best = [x for x in read_file(dir='/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/result/', name=day+'_bM_phi_cut_best')]
-    M_phi_cut_worst = [x for x in read_file(dir='/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/result/', name=day+'_bM_phi_cut_worst')]
-    M_phi_load_best = [x for x in read_file(dir='/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/result/', name=day+'_bM_phi_load_best')]
-    M_phi_load_worst = [x for x in read_file(dir='/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/result/', name=day+'_bM_phi_load_worst')]
+    M_phi_PV_best = [x for x in read_file(dir='/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/result/', name=day+'_bM_phi_PV_best')]
+    M_phi_PV_worst = [x for x in read_file(dir='/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/result/', name=day+'_bM_phi_PV_worst')]
+    M_phi_cut_best = [x for x in read_file(dir='/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/result/', name=day+'_bM_phi_cut_best')]
+    M_phi_cut_worst = [x for x in read_file(dir='/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/result/', name=day+'_bM_phi_cut_worst')]
+    M_phi_load_best = [x for x in read_file(dir='/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/result/', name=day+'_bM_phi_load_best')]
+    M_phi_load_worst = [x for x in read_file(dir='/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/result/', name=day+'_bM_phi_load_worst')]
 
     PV_lb = PV_forecast - data.PV_neg
     PV_ub = PV_forecast + data.PV_pos

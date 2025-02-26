@@ -70,8 +70,6 @@ class Planner_MILP():
         # RE parameters
         self.PV_min = PARAMETERS['RE']['PV_min']
         self.PV_max = PARAMETERS['RE']['PV_max']
-        self.PV_ramp_up = PARAMETERS['RE']['PV_ramp_up']
-        self.PV_ramp_down = PARAMETERS['RE']['PV_ramp_down']
 
         # load parameters
         self.load_ramp_up = PARAMETERS['load']['ramp_up']
@@ -161,8 +159,8 @@ class Planner_MILP():
         model.addConstrs((- x[i] <= - self.u_DG[i] * self.DG_min for i in self.t_set), name='c_x_min')
         model.addConstrs((x[i] <= self.u_DG[i] * self.DG_max for i in self.t_set), name='c_x_max')
         model.addConstrs(((x[i] + x_pos[i]) - (x[i-1] - x_neg[i-1]) <= self.u_DG[i-1] * self.DG_ramp_up + (1 - self.u_DG[i-1]) * self.DG_max for i in range(1, self.nb_periods)), name='c_DG_RAMP1')
-        model.addConstrs((-(x[i] + x_pos[i]) + (x[i-1] - x_neg[i-1]) <= self.u_DG[i] * self.DG_ramp_down + (1 - self.u_DG[i]) * self.DG_max for i in range(1, self.nb_periods)), name='c_DG_RAMP2')
-        model.addConstrs(((x[i] - x_neg[i]) - (x[i-1] + x_pos[i-1]) <= self.u_DG[i-1] * self.DG_ramp_up + (1 - self.u_DG[i-1]) * self.DG_max for i in range(1, self.nb_periods)), name='c_DG_RAMP3')
+        # model.addConstrs((-(x[i] + x_pos[i]) + (x[i-1] - x_neg[i-1]) <= self.u_DG[i] * self.DG_ramp_down + (1 - self.u_DG[i]) * self.DG_max for i in range(1, self.nb_periods)), name='c_DG_RAMP2')
+        # model.addConstrs(((x[i] - x_neg[i]) - (x[i-1] + x_pos[i-1]) <= self.u_DG[i-1] * self.DG_ramp_up + (1 - self.u_DG[i-1]) * self.DG_max for i in range(1, self.nb_periods)), name='c_DG_RAMP3')
         model.addConstrs((-(x[i] - x_neg[i]) + (x[i-1] + x_pos[i-1]) <= self.u_DG[i] * self.DG_ramp_down + (1 - self.u_DG[i]) * self.DG_max for i in range(1, self.nb_periods)), name='c_DG_RAMP4')
         model.addConstrs((- x[i] + x_neg[i] <= - self.u_DG[i] * self.DG_min for i in self.t_set), name='c_xr_neg_min')
         model.addConstrs((x[i] - x_neg[i] <= self.u_DG[i] * self.DG_max for i in self.t_set), name='c_xr_neg_max')
@@ -331,19 +329,19 @@ if __name__ == "__main__":
     os.chdir(ROOT_DIR)
     print(os.getcwd())
 
-    dirname = '/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/RGD_Mc/export_MILP/'
+    dirname = '/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/RGD_Mc/export_MILP/'
 
     
     PV_forecast = data.PV_pred
     load_forecast = data.load_pred
-    PV_trajectory = read_file(dir='/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/RGD_Mc/export_worst/PV_Sandia/', name='2018-07-04_PV_worst_case')
-    load_trajectory = read_file(dir='/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/RGD_Mc/export_worst/PV_Sandia/', name='2018-07-04_load_worst_case')
+    PV_trajectory = read_file(dir='/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/RGD_Mc/export_worst/PV_Sandia/', name='2025-01-15_PV_worst_case')
+    load_trajectory = read_file(dir='/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/RGD_Mc/export_worst/PV_Sandia/', name='2025-01-15_load_worst_case')
     PV_lb = data.PV_lb
     PV_ub = data.PV_ub
     load_lb = data.load_lb
     load_ub = data.load_ub
 
-    day = '2018-07-04'
+    day = '2025-01-15'
 
     # Plot point forecasts vs observations
     FONTSIZE = 20

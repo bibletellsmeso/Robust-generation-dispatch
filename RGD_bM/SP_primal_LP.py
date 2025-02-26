@@ -78,12 +78,6 @@ class SP_primal_LP():
         # RE parameters
         self.PV_min = PARAMETERS['RE']['PV_min']
         self.PV_max = PARAMETERS['RE']['PV_max']
-        self.PV_ramp_up = PARAMETERS['RE']['PV_ramp_up']
-        self.PV_ramp_down = PARAMETERS['RE']['PV_ramp_down']
-
-        # load parameters
-        self.load_ramp_up = PARAMETERS['load']['ramp_up']
-        self.load_ramp_down = PARAMETERS['load']['ramp_down']
 
         # Cost parameters
         self.cost_DG_a = PARAMETERS['cost']['DG_a']
@@ -266,13 +260,13 @@ if __name__ == "__main__":
 
     print('objective SP primal %.2f' %(solution['obj']))
     
-    # plt.style.use(['science'])
-    # plt.figure()
-    # plt.plot(solution['y_chg'], label='y chg')
-    # plt.plot(solution['y_dis'], label='y dis')
-    # plt.plot(solution['y_S'], label='y S')
-    # plt.legend()
-    # plt.show()
+    plt.style.use(['science'])
+    plt.figure()
+    plt.plot(solution['y_chg'], label='y chg')
+    plt.plot(solution['y_dis'], label='y dis')
+    plt.plot(solution['y_S'], label='y S')
+    plt.legend()
+    plt.show()
 
     # print(solution['all_var'])
 

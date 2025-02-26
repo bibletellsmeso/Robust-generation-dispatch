@@ -70,12 +70,6 @@ class Planner_MIQP():
         # RE parameters
         self.PV_min = PARAMETERS['RE']['PV_min']
         self.PV_max = PARAMETERS['RE']['PV_max']
-        self.PV_ramp_up = PARAMETERS['RE']['PV_ramp_up']
-        self.PV_ramp_down = PARAMETERS['RE']['PV_ramp_down']
-
-        # load parameters
-        self.load_ramp_up = PARAMETERS['load']['ramp_up']
-        self.load_ramp_down = PARAMETERS['load']['ramp_down']
 
         # Cost parameters
         self.cost_DG_a = PARAMETERS['cost']['DG_a']
@@ -93,6 +87,17 @@ class Planner_MIQP():
 
         # Piecewise linearlization parameters
         self.seg_num = PARAMETERS['PWL']
+
+        # -------------------------------------------------------------------------------------------------------------
+        # Discretize variables for Convex combination approach
+        self.y_cut_n = [[n * self.PV_ub[i] / self.seg_num for n in range(self.seg_num)] for i in self.t_set]
+        self.y_add_n = [[n * self.PV_lb[i] / self.seg_num for n in range(self.seg_num)] for i in self.t_set]
+        self.g_cut_n = [[self.cost_PV_cut_re * (self.y_cut_n[i][n] ** 2) for n in range(self.seg_num)] for i in self.t_set]
+        self.g_add_n = [[self.cost_PV_add_re * (self.y_add_n[i][n] ** 2) for n in range(self.seg_num)] for i in self.t_set]
+        self.y_cut_n_sum = [sum(self.y_cut_n[i][n] for n in range(self.seg_num)) for i in self.t_set]
+        self.y_add_n_sum = [sum(self.y_add_n[i][n] for n in range(self.seg_num)) for i in self.t_set]
+        self.g_cut_n_sum = [sum(self.g_cut_n[i][n] for n in range(self.seg_num)) for i in self.t_set]
+        self.g_add_n_sum = [sum(self.g_add_n[i][n] for n in range(self.seg_num)) for i in self.t_set]
 
         self.time_building_model = None
         self.time_solving_model = None
@@ -134,9 +139,14 @@ class Planner_MIQP():
         y_dis = model.addVars(self.nb_periods, lb=0, ub=GRB.INFINITY, obj=0, vtype=GRB.CONTINUOUS, name="y_dis")
         y_S = model.addVars(self.nb_periods, lb=0, ub=GRB.INFINITY, obj=0, vtype=GRB.CONTINUOUS, name="y_S")
         y_PV = model.addVars(self.nb_periods, lb=0, ub=GRB.INFINITY, obj=0, vtype=GRB.CONTINUOUS, name="y_PV")
-        y_PV_cut = model.addVars(self.nb_periods, lb=0, ub=GRB.INFINITY, obj=0, vtype=GRB.CONTINUOUS, name="y_PV_cut")
-        y_PV_add = model.addVars(self.nb_periods, lb=0, ub=GRB.INFINITY, obj=0, vtype=GRB.CONTINUOUS, name="y_PV_add")
+        # y_PV_cut = model.addVars(self.nb_periods, lb=0, ub=GRB.INFINITY, obj=0, vtype=GRB.CONTINUOUS, name="y_PV_cut")
+        # y_PV_add = model.addVars(self.nb_periods, lb=0, ub=GRB.INFINITY, obj=0, vtype=GRB.CONTINUOUS, name="y_PV_add")
         y_load = model.addVars(self.nb_periods, lb=0, ub=GRB.INFINITY, obj=0, vtype=GRB.CONTINUOUS, name="y_load")
+        sigma_cut_n = model.addVars(self.nb_periods, self.seg_num, lb=0, ub=1, obj=0, vtype=GRB.CONTINUOUS, name="simga_cut_n")
+        sigma_add_n = model.addVars(self.nb_periods, self.seg_num, lb=0, ub=1, obj=0, vtype=GRB.CONTINUOUS, name="simga_add_n")
+
+        # -------------------------------------------------------------------------------------------------------------
+        # 3. Create objective function
 
         # # -------------------------------------------------------------------------------------------------------------
         x_cost_fuel = model.addVars(self.nb_periods, lb=0, ub=GRB.INFINITY, obj=0, vtype=GRB.CONTINUOUS, name="x_cost_fuel")
@@ -145,13 +155,13 @@ class Planner_MIQP():
         x_cost_cut = model.addVars(self.nb_periods, lb=0, ub=GRB.INFINITY, obj=0, vtype=GRB.CONTINUOUS, name="x_cost_cut")
         y_cost_fuel = model.addVars(self.nb_periods, lb=0, ub=GRB.INFINITY, obj=0, vtype=GRB.CONTINUOUS, name="y_cost_fuel")      
         y_cost_ESS = model.addVars(self.nb_periods, lb=0, ub=GRB.INFINITY, obj=0, vtype=GRB.CONTINUOUS, name="y_cost_ESS")
-        y_cost_cut = model.addVars(self.nb_periods, lb=0, ub=GRB.INFINITY, obj=0, vtype=GRB.CONTINUOUS, name="y_cost_cut")
-        y_cost_add = model.addVars(self.nb_periods, lb=0, ub=GRB.INFINITY, obj=0, vtype=GRB.CONTINUOUS, name="y_cost_add")
+        # y_cost_cut = model.addVars(self.nb_periods, lb=0, ub=GRB.INFINITY, obj=0, vtype=GRB.CONTINUOUS, name="y_cost_cut")
+        # y_cost_add = model.addVars(self.nb_periods, lb=0, ub=GRB.INFINITY, obj=0, vtype=GRB.CONTINUOUS, name="y_cost_add")
 
         # -------------------------------------------------------------------------------------------------------------
         # 3. Create objective
-        obj = gp.quicksum(x_cost_fuel[i] + x_cost_res[i] + x_cost_cut[i] + x_cost_ESS[i]
-                          + y_cost_fuel[i] + y_cost_ESS[i] + y_cost_cut[i] + y_cost_add[i] for i in self.t_set)
+        obj = gp.quicksum(x_cost_fuel[i] + x_cost_res[i] + x_cost_cut[i] + x_cost_ESS[i] + y_cost_fuel[i] + y_cost_ESS[i] for i in self.t_set)
+        obj += gp.quicksum(sigma_cut_n[i, n] * self.g_cut_n[i][n] + sigma_add_n[i, n] * self.g_add_n[i][n] for i in self.t_set for n in range(self.seg_num))
         model.setObjective(obj, GRB.MINIMIZE)
 
 
@@ -193,10 +203,7 @@ class Planner_MIQP():
                                   PWL(self.seg_num, self.DG_min, self.DG_max, FC)[1])
             model.addGenConstrPWL(x_PV_cut[i], x_cost_cut[i], PWL(self.seg_num, self.PV_min, self.PV_lb[i], PC_PV)[0],
                                   PWL(self.seg_num, self.PV_min, self.PV_lb[i], PC_PV)[1])
-            model.addGenConstrPWL(y_PV_cut[i], y_cost_cut[i], PWL(self.seg_num, self.PV_min, self.PV_ub[i], RC_PV)[0],
-                                  PWL(self.seg_num, self.PV_min, self.PV_ub[i], RC_PV)[1])
-            model.addGenConstrPWL(y_PV_add[i], y_cost_add[i], PWL(self.seg_num, self.PV_min, self.PV_ub[i], RA_PV)[0],
-                                  PWL(self.seg_num, self.PV_min, self.PV_ub[i], RA_PV)[1])        
+   
         # -------------------------------------------------------------------------------------------------------------
         # 4.2 Second stage constraints
         model.addConstrs((y_pos[i] <= x_pos[i] for i in self.t_set), name='c_reserve_pos_DG')
@@ -210,17 +217,21 @@ class Planner_MIQP():
         model.addConstr((y_S[self.nb_periods - 1] == self.soc_end), name='c_ESS_last_period')
         model.addConstrs((y_PV[i] == self.PV_trajectory[i] for i in self.t_set), name='c_PV_re-dispatch')
         model.addConstrs((y_load[i] == self.load_trajectory[i] for i in self.t_set), name='c_load_re-dispatch')
-        model.addConstrs((y_PV_cut[i] <= self.PV_trajectory[i] - x_PV_cut[i] for i in self.t_set), name='c_y_PV_cut')
-        model.addConstrs((y_PV_add[i] <= x_PV_cut[i] for i in self.t_set), name='c_y_PV_add')
-
+        # model.addConstrs((y_PV_cut[i] <= self.PV_trajectory[i] - x_PV_cut[i] for i in self.t_set), name='c_y_PV_cut')
+        # model.addConstrs((y_PV_add[i] <= x_PV_cut[i] for i in self.t_set), name='c_y_PV_add')
+        model.addConstrs((gp.quicksum(sigma_cut_n[i, n] * self.y_cut_n[i][n] for n in range(self.seg_num)) <= self.PV_trajectory[i] - x_PV_cut[i] for i in self.t_set), name='c_y_cut')
+        model.addConstrs((gp.quicksum(sigma_add_n[i, n] * self.y_add_n[i][n] for n in range(self.seg_num)) <= x_PV_cut[i] for i in self.t_set), name='c_y_add')
         model.addConstrs((y_cost_fuel[i] == self.cost_DG_pos_re * y_pos[i] + self.cost_DG_neg_re * y_neg[i] for i in self.t_set), name='c_cost_reg_DG')
         model.addConstrs((y_cost_ESS[i] == self.cost_ESS_OM_re * (y_chg[i] + y_dis[i]) for i in self.t_set), name='c_cost_reg_ES')
         # model.addConstrs((y_cost_cut[i] == self.cost_PV_cut_re * y_PV_cut[i] for i in self.t_set), name='c_cost_PV_cut_re')
         # model.addConstrs((y_cost_add[i] == self.cost_PV_add_re * y_PV_add[i] for i in self.t_set), name='c_cost_PV_add_re')
 
         # 4.2.2 power balance equation
-        model.addConstrs((x[i] + y_pos[i] - y_neg[i] - x_chg[i] + x_dis[i] - y_chg[i] + y_dis[i] + y_PV[i] - x_PV_cut[i] - y_PV_cut[i] + y_PV_add[i] - y_load[i] == 0 for i in self.t_set))
+        model.addConstrs((x[i] + y_pos[i] - y_neg[i] - x_chg[i] + x_dis[i] - y_chg[i] + y_dis[i] + y_PV[i] - x_PV_cut[i] - - gp.quicksum(sigma_cut_n[i, n] * self.y_cut_n[i][n] for n in range(self.seg_num)) + gp.quicksum(sigma_add_n[i, n] * self.y_add_n[i][n] for n in range(self.seg_num)) - y_load[i] == 0 for i in self.t_set))
 
+        # Convex combination constraints
+        model.addConstrs((gp.quicksum(sigma_cut_n[i, n] for n in range(self.seg_num)) == 1 for i in self.t_set), name='c_y_cut_conv_combin')
+        model.addConstrs((gp.quicksum(sigma_add_n[i, n] for n in range(self.seg_num)) == 1 for i in self.t_set), name='c_y_add_conv_combin')
         # -------------------------------------------------------------------------------------------------------------
         # 5. Store variables
         self.allvar = dict()
@@ -246,13 +257,15 @@ class Planner_MIQP():
         self.allvar['y_dis'] = y_dis
         self.allvar['y_S'] = y_S
         self.allvar['y_PV'] = y_PV
-        self.allvar['y_PV_cut'] = y_PV_cut
-        self.allvar['y_PV_add'] = y_PV_add
+        self.allvar['sigma_cut_n'] = sigma_cut_n
+        self.allvar['sigma_add_n'] = sigma_add_n
+        # self.allvar['y_PV_cut'] = y_PV_cut
+        # self.allvar['y_PV_add'] = y_PV_add
         self.allvar['y_load'] = y_load
         self.allvar['y_cost_fuel'] = y_cost_fuel
         self.allvar['y_cost_ESS'] = y_cost_ESS
-        self.allvar['y_cost_cut'] = y_cost_cut
-        self.allvar['y_cost_add'] = y_cost_add
+        # self.allvar['y_cost_cut'] = y_cost_cut
+        # self.allvar['y_cost_add'] = y_cost_add
 
         self.time_building_model = time.time() - t_build
         # print("Time spent building the mathematical program: %gs" % self.time_building_model)
@@ -306,8 +319,11 @@ class Planner_MIQP():
 
             # 1 dimensional variables
             for var in ['x', 'x_pos', 'x_neg', 'x_b', 'x_chg', 'x_dis', 'x_S', 'x_PV', 'x_PV_cut', 'x_load', 'x_cost_fuel', 'x_cost_ESS', 'x_cost_cut',
-                        'y_pos', 'y_neg', 'y_b', 'y_chg', 'y_dis', 'y_PV', 'y_PV_cut', 'y_PV_add', 'y_load', 'y_cost_fuel', 'y_cost_ESS', 'y_cost_cut', 'y_cost_add']:
+                        'y_pos', 'y_neg', 'y_b', 'y_chg', 'y_dis', 'y_PV', 'y_load', 'y_cost_fuel', 'y_cost_ESS']:
+                        # 'y_PV_cut', 'y_PV_add', 'y_cost_cut', 'y_cost_add']:
                 solution[var] = [self.allvar[var][t].X for t in self.t_set]
+            for var in ['sigma_cut_n', 'sigma_add_n']:
+                solution[var] = [self.allvar[var][t, n].X for t in self.t_set for n in range(self.seg_num)]
         else:
             print('WARNING planner MILP status %s -> problem not solved, objective is set to nan' %(solution['status']))
             solution['obj'] = math.nan

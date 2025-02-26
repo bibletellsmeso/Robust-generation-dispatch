@@ -10,6 +10,7 @@ import time
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+import matplotlib.ticker as ticker
 
 from CCG_MP import CCG_MP
 from CCG_SP_Mc import CCG_SP
@@ -18,7 +19,7 @@ from planner_MILP import Planner_MILP
 from Data_read import *
 from root_project import ROOT_DIR
 from Params import PARAMETERS
-from utils import read_file, dump_file, check_ESS
+from utils import *
 
 def ccg_algo(dir:str, tol:float, power:np.array, reserve_pos:np.array, reserve_neg:np.array, charge:np.array, discharge:np.array, SOC:np.array, curtailment:np.array,
              GAMMA:int, PI:int, solver_param:dict, day:str, log:bool=False, printconsole:bool=False):
@@ -64,18 +65,20 @@ def ccg_algo(dir:str, tol:float, power:np.array, reserve_pos:np.array, reserve_n
     gamma_neg_list = []
     SP_dual_status = []
     SP_primal_status = []
-    tolerance = 1e20
+    tolerance = 1e5
 
     # with CCG the convergence is stable.
-    tolerance_list = [tolerance] * 2
+    tolerance_list = [tolerance]
     iteration = 1
     ESS_count_list = []
     ESS_charge_discharge_list = []
     PV_count_list = []
     PV_cut_add_list = []
-    max_iteration = 5
+    DG_count_list =[]
+    DG_pos_neg_list = []
+    max_iteration = 50
 
-    while all(i < tol for i in tolerance_list) is not True and iteration < max_iteration:
+    while all(i > tol for i in tolerance_list) and iteration < max_iteration:
         logfile = ""
         if log:
             logfile = dir + 'logfile_' + str(iteration) + '.log'
@@ -129,7 +132,7 @@ def ccg_algo(dir:str, tol:float, power:np.array, reserve_pos:np.array, reserve_n
             if printconsole:
                 print('     i = %s : %s simultaneous charge and discharge' % (iteration, ESS_nb_count))
 
-            PV_nb_count = check_ESS(SP_primal_sol=SP_primal_sol)
+            PV_nb_count = check_PV(SP_primal_sol=SP_primal_sol)
             if PV_nb_count > 0:
                 PV_cut_add_list.append([iteration, SP_primal_sol['y_cut'], SP_primal_sol['y_add']])
             else:
@@ -137,6 +140,15 @@ def ccg_algo(dir:str, tol:float, power:np.array, reserve_pos:np.array, reserve_n
             PV_count_list.append(PV_nb_count)
             if printconsole:
                 print('     i = %s : %s simultaneous curtailment and addition' % (iteration, PV_nb_count))
+
+            DG_nb_count = check_DG(SP_primal_sol=SP_primal_sol)
+            if DG_nb_count > 0:
+                DG_pos_neg_list.append([iteration, SP_primal_sol['y_pos'], SP_primal_sol['y_neg']])
+            else:
+                DG_nb_count = float('nan')
+            DG_count_list.append(DG_nb_count)
+            if printconsole:
+                print('     i = %s : %s simultaneous reserve pos and neg power' % (iteration, DG_nb_count))
 
         # ------------------------------------------------------------------------------------------------------------------
         # 2. MP part
@@ -184,6 +196,12 @@ def ccg_algo(dir:str, tol:float, power:np.array, reserve_pos:np.array, reserve_n
         x_cost_res = MP_sol['x_cost_res']
         x_cost_ESS = MP_sol['x_cost_ESS']
         x_cost_cut = MP_sol['x_cost_cut']
+        y_cost_fuel = MP_sol['var_' + str(iteration)]['y_cost_fuel']
+        y_cost_ESS = MP_sol['var_' + str(iteration)]['y_cost_ESS']
+        y_cost_cut = MP_sol['var_' + str(iteration)]['y_cost_cut']
+        y_cost_add = MP_sol['var_' + str(iteration)]['y_cost_add']
+        y_cut = MP_sol['var_' + str(iteration)]['y_cut']
+        y_add = MP_sol['var_' + str(iteration)]['y_add']
 
         # Update the lower and upper bounds
         # MP -> give the lower bound
@@ -257,15 +275,16 @@ def ccg_algo(dir:str, tol:float, power:np.array, reserve_pos:np.array, reserve_n
     conv_inf['ESS_charge_discharge'] = ESS_charge_discharge_list
     conv_inf['PV_count'] = PV_count_list
     conv_inf['PV_cut_add'] = PV_cut_add_list
+    conv_inf['DG_count'] = DG_count_list
+    conv_inf['DG_pos_neg'] = DG_pos_neg_list
+    
 
     return power, reserve_pos, reserve_neg, charge, discharge, SOC, curtailment, df_objectives, conv_inf, \
-        x_cost_fuel, x_cost_res, x_cost_ESS, x_cost_cut
+        x_cost_fuel, x_cost_res, x_cost_ESS, x_cost_cut, y_cost_fuel, y_cost_ESS, y_cost_cut, y_cost_add, y_cut, y_add
 
 # ------------------------------------------------------------------------------------------------------------------
 # Parameters
 # ------------------------------------------------------------------------------------------------------------------
-
-FONTSIZE = 24
 
 # NB periods
 nb_periods = 96
@@ -277,10 +296,10 @@ solver_param['TimeLimit'] = 10
 solver_param['Threads'] = 1
 
 # Convergence threshold between MP and SP objectives
-conv_tol = 5
+conv_tol = 5 # 0.05%
 printconsole = True
 
-day = '2018-07-04'
+day = '2025-01-15'
 
 # --------------------------------------
 # Static RO parameters
@@ -297,7 +316,7 @@ if __name__ == "__main__":
     print(os.getcwd())
 
     # Create folder
-    dirname = '/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/RGD_Mc/export_CCG/'
+    dirname = '/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/RGD_Mc/export_CCG/'
     if PV_Sandia:
         dirname += 'PV_Sandia/'
         pdfname = str(PV_Sandia) + '_' + str(GAMMA) + '_' + str(PI)
@@ -318,19 +337,36 @@ if __name__ == "__main__":
     load_pos = data.load_pos # (kw) The maximal deviation between the min and forecast load uncertainty set bounds
     load_neg = data.load_neg # (kW) The maximal deviation between the max and forecast load uncertainty set bounds
 
-    M_PV_best = [x for x in read_file(dir='/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/result/', name=day+'_bM_phi_PV_best')]
-    M_PV_worst = [x for x in read_file(dir='/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/result/', name=day+'_bM_phi_PV_worst')]
-    M_cut_best = [x for x in read_file(dir='/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/result/', name=day+'_bM_phi_cut_best')]
-    M_cut_worst = [x for x in read_file(dir='/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/result/', name=day+'_bM_phi_cut_worst')]
-    M_load_best = [x for x in read_file(dir='/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/result/', name=day+'_bM_phi_load_best')]
-    M_load_worst = [x for x in read_file(dir='/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/result/', name=day+'_bM_phi_load_worst')]
+    M_PV_best = [x for x in read_file(dir='/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/result/', name=day+'_bM_phi_PV_best')]
+    M_PV_worst = [x for x in read_file(dir='/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/result/', name=day+'_bM_phi_PV_worst')]
+    M_cut_best = [x for x in read_file(dir='/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/result/', name=day+'_bM_phi_cut_best')]
+    M_cut_worst = [x for x in read_file(dir='/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/result/', name=day+'_bM_phi_cut_worst')]
+    M_load_best = [x for x in read_file(dir='/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/result/', name=day+'_bM_phi_load_best')]
+    M_load_worst = [x for x in read_file(dir='/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/result/', name=day+'_bM_phi_load_worst')]
 
     nb_periods = PV_pos.shape[0]
 
     # plot style
     plt.style.use(['science'])
+    plt.rcParams['figure.figsize'] = (7.16, 5.37)
+    plt.rcParams['lines.linewidth'] = 1.5
+    plt.rcParams['lines.markersize'] = 4
+    plt.rcParams['axes.labelsize'] = 12
+    plt.rcParams['legend.fontsize'] = 12
+    plt.rcParams['legend.frameon'] = True
+    plt.rcParams['legend.edgecolor'] = 'black'
+    plt.rcParams['legend.fancybox'] = False
+    # plt.rcParams['xtick.labelsize'] = 10
+    # plt.rcParams['ytick.labelsize'] = 10
+    # plt.rcParams['xtick.major.size'] = 5
+    # plt.rcParams['ytick.major.size'] = 5
+    plt.rcParams['savefig.dpi'] = 1200
+    plt.rcParams['grid.linewidth'] = 0.5
     plt.rcParams['font.family'] = 'Times New Roman'
     plt.rcParams['axes.unicode_minus'] = False
+    # plt.rcParams['text.usetex'] = True
+    # plt.rc('text', usetex=True)
+    
     x_index = [i for i in range(0, nb_periods)]
 
     
@@ -351,7 +387,8 @@ if __name__ == "__main__":
     # ------------------------------------------------------------------------------------------------------------------
     final_power, final_reserve_pos, final_reserve_neg, final_charge, final_discharge, final_SOC, \
         final_curtailment, df_objectives, conv_inf , final_x_cost_fuel, \
-        final_x_cost_res, final_x_cost_ESS, final_x_cost_cut \
+        final_x_cost_res, final_x_cost_ESS, final_x_cost_cut, \
+        final_y_cost_fuel, final_y_cost_ESS, final_y_cost_cut, final_y_cost_add, final_y_cut, final_y_add \
             = ccg_algo(dir=dirname, tol=conv_tol, power=power_ini, reserve_pos=reserve_pos_ini, reserve_neg=reserve_neg_ini,
                        charge=charge_ini, discharge=discharge_ini, SOC=SOC_ini, curtailment=curtailment_ini,
                        GAMMA=GAMMA, PI=PI, solver_param=solver_param, day=day, printconsole=printconsole)
@@ -378,6 +415,10 @@ if __name__ == "__main__":
     # dump_file(dir=dirname, name=day + '_PV_worst_case', file=PV_worst_case)
     # dump_file(dir=dirname, name=day + '_load_worst_case', file=load_worst_case)
 
+    phi_PV = [SP_dual_sol['phi_PV'][i] for i in range(nb_periods)]
+    phi_data = np.column_stack((np.array(SP_dual_sol['phi_PV']), np.array(SP_dual_sol['phi_cut']), np.array(SP_dual_sol['phi_load']).flatten()))
+    np.savetxt('/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/result/Mc_phi_worst.csv', phi_data, delimiter=',', header='phi_PV,phi_cut,phi_load', comments='', fmt='%.18f')
+
     # ------------------------------------------------------------------------------------------------------------------
     # Second-stage variables comparison:
     # ------------------------------------------------------------------------------------------------------------------
@@ -396,68 +437,76 @@ if __name__ == "__main__":
     # 1. Check if there is any simultaneous charge and discharge at the last CCG iteration
     ESS_nb_count = check_ESS(SP_primal_sol=SP_primal_sol)
     PV_nb_count = check_ESS(SP_primal_sol=SP_primal_sol)
-    print('CCG last iteration %d simultaneous charge and discharge / %d curtailment and re-generation' % (ESS_nb_count, PV_nb_count))
+    DG_nb_count = check_DG(SP_primal_sol=SP_primal_sol)
+    print('CCG last iteration %d simultaneous charge and discharge / %d curtailment and re-generation / %d reserve pos and neg' % (ESS_nb_count, PV_nb_count, DG_nb_count))
     
     # 2. Check if there is any simultaneous charge and discharge over all CCG iteration
     # check if there is nan value (meaning during an iteration the SP primal has not been solved because infeasible, etc)
     ESS_count = conv_inf['ESS_count']
     PV_count = conv_inf['PV_count']
-    if sum(np.isnan(ESS_count)) > 0 or sum(np.isnan(PV_count)) > 0:
-        print('WARNING %s ESS nan values and %s PV nan values' %(sum(np.isnan(conv_inf['ESS_count'])), sum(np.isnan(conv_inf['PV_count']))))
+    DG_count = conv_inf['DG_count']
+    if sum(np.isnan(ESS_count)) > 0 or sum(np.isnan(PV_count)) > 0 or sum(np.isnan(DG_count)) > 0:
+        print('WARNING %s ESS nan values, %s PV nan values %s DG nan values' %(sum(np.isnan(conv_inf['ESS_count'])), sum(np.isnan(conv_inf['PV_count'])), sum(np.isnan(conv_inf['DG_count']))))
     # “python list replace nan with 0” Code
     ESS_count = [0 if x != x else x for x in ESS_count]
     PV_count = [0 if x != x else x for x in PV_count]
-
+    DG_count = [0 if x != x else x for x in DG_count]
     print('%d and %d total simultaneous ESS and PV operation over all CCG iterations' % (sum(ESS_count), sum(PV_count)))
+
     if sum(conv_inf['ESS_count']) > 0:
-        plt.figure(figsize=(16,9))
-        plt.plot(conv_inf['ESS_count'], 'k', linewidth=2, label='ESS_count')
+        plt.figure()
+        plt.plot(conv_inf['ESS_count'], 'k', label='ESS_count')
         plt.ylim(0, max(conv_inf['ESS_count']))
-        plt.xlabel('iteration $j$', fontsize=FONTSIZE)
-        plt.xticks(fontsize=FONTSIZE)
-        plt.yticks(fontsize=FONTSIZE)
-        # plt.tight_layout()
+        plt.xlabel('iteration $j$')
         plt.legend()
         plt.savefig(dirname + day + '_ESS_count_' + pdfname + '.pdf')
-        # plt.close('all')
+        plt.close('all')
 
         # Plot at each iteration where there has been a simultaneous charge and discharge
         for l in conv_inf['ESS_charge_discharge']:
-            plt.figure(figsize = (8,6))
-            plt.plot(l[1], linewidth=2, label='charge')
-            plt.plot(l[2], linewidth=2, label='discharge')
+            plt.figure()
+            plt.plot(l[1], label='charge')
+            plt.plot(l[2], label='discharge')
             plt.ylim(0, PARAMETERS['ESS']['capacity'])
-            plt.ylabel('kW', fontsize=FONTSIZE)
-            plt.xticks(fontsize=FONTSIZE)
-            plt.yticks(fontsize=FONTSIZE)
-            plt.legend(fontsize=FONTSIZE)
+            plt.ylabel('kW')
+            plt.legend()
             plt.title('simultaneous charge discharge at iteration %s' %(l[0]))
-            # plt.tight_layout()
-            # plt.close('all')
+            plt.close('all')
 
     if sum(conv_inf['PV_count']) > 0:
-        plt.figure(figsize=(16,9))
-        plt.plot(conv_inf['PV_count'], 'k', linewidth=2, label='ESS_count')
+        plt.figure()
+        plt.plot(conv_inf['PV_count'], 'k', label='PV_count')
         plt.ylim(0, max(conv_inf['PV_count']))
-        plt.xlabel('iteration $j$', fontsize=FONTSIZE)
-        plt.xticks(fontsize=FONTSIZE)
-        plt.yticks(fontsize=FONTSIZE)
-        # plt.tight_layout()
+        plt.xlabel('iteration $j$')
         plt.legend()
         plt.savefig(dirname + day + '_PV_count_' + pdfname + '.pdf')
-        # plt.close('all')
+        plt.close('all')
 
-        # Plot at each iteration where there has been a simultaneous charge and discharge
         for l in conv_inf['PV_cut_add']:
-            plt.figure(figsize = (8,6))
-            plt.plot(l[1], linewidth=2, label='curtailment')
-            plt.plot(l[2], linewidth=2, label='addition')
-            plt.ylabel('kW', fontsize=FONTSIZE)
-            plt.xticks(fontsize=FONTSIZE)
-            plt.yticks(fontsize=FONTSIZE)
-            plt.legend(fontsize=FONTSIZE)
+            plt.figure()
+            plt.plot(l[1], label='curtailment')
+            plt.plot(l[2], label='addition')
+            plt.legend()
             plt.title('simultaneous curtailment and addition at iteration %s' %(l[0]))
-            # plt.tight_layout()
+            plt.close('all')
+
+    if sum(conv_inf['DG_count']) > 0:
+        plt.figure()
+        plt.plot(conv_inf['DG_count'], 'k', label='DG_count')
+        plt.ylim(0, max(conv_inf['DG_count']))
+        plt.xlabel('iteration $j$')
+        plt.legend()
+        plt.savefig(dirname + day + '_DG_count_' + pdfname + '.pdf')
+        plt.close('all')
+
+        for l in conv_inf['DG_pos_neg']:
+            plt.figure()
+            plt.plot(l[1], label='pos')
+            plt.plot(l[2], label='neg')
+            plt.ylim(0, PARAMETERS['DG']['capacity'])
+            plt.ylabel('kW')
+            plt.legend()
+            plt.title('simultaneous pos neg at iteration %s' %(l[0]))
             plt.close('all')
 
     # ------------------------------------------------------------------------------------------------------------------
@@ -470,24 +519,87 @@ if __name__ == "__main__":
     # ------------------------------------------------------------------------------------------------------------------
     # First-stage variables comparison: x and objectives
     # ------------------------------------------------------------------------------------------------------------------
-    # Convergence plot
-    error_MP_SP = np.abs(df_objectives['MP'].values - df_objectives['SP'].values)
-    error_SP = np.abs(df_objectives['SP'].values - df_objectives['SP_primal'].values)
+    # 1. Convergence plot
+    error_MP_SP_bigM = [1e5, 1524.695194, 14.852963, 19.95505, 6.04651, 12.806796, 19.490295, 0]
+    error_SP_bigM = [np.nan, np.nan, 0, 0, 0.000008, 0.000086, 0, 0]
+    mipgap_values_bigM = [np.nan, 0.0, 0.004212431290275784, 0.003709073806182863, 0.0019542674460082425, 0.0020527553587720653, 0.0032372829432906793, 0.0]
+    # error_MP_SP = np.abs(df_objectives['MP'].values - df_objectives['SP'].values)
+    error_MP_SP = [1e5, 470.560868, 1.500183]
+    # error_SP = np.abs(df_objectives['SP'].values - df_objectives['SP_primal'].values)
+    error_SP = [np.nan, np.nan, 1.500183]
+    # print(error_MP_SP)
+    # print(error_SP)
+    # print(conv_inf['mipgap'])
+    mipgap_values = [np.nan, 0, 0]
 
-    plt.figure(figsize = (16,9))
-    plt.plot(error_MP_SP, marker=10, markersize=10, linewidth=2, label='|MP - SP dual| $')
-    plt.plot(error_SP, marker=11, markersize=10, linewidth=2, label='|SP primal - SP dual| $')
-    plt.plot(100 * np.asarray(conv_inf['mipgap']), label='SP Dual mipgap %')
-    plt.xlabel('Iteration $j$', fontsize=FONTSIZE)
-    plt.ylabel('Gap', fontsize=FONTSIZE)
-    plt.ylim(-1, 50)
-    plt.xticks(fontsize=FONTSIZE)
-    plt.yticks(fontsize=FONTSIZE)
-    plt.legend(fontsize=FONTSIZE, loc='upper left', frameon=True, fancybox=False, edgecolor='black', framealpha=0.8)
-    # plt.tight_layout()
-    # plt.savefig(dirname + day + 'error_conv_' + pdfname + '.pdf')
-    plt.savefig(dirname + day + '_Error_conv.png', dpi=300)
-    # plt.close('all')
+    plt.figure()
+    plt.plot(error_MP_SP, linestyle='-', color='#1f77b4', marker='s', zorder=1, label='|MP - SP dual|')
+    plt.plot(error_SP, linestyle='--', color='#d62728', marker='o', zorder=2, label='|SP primal - SP dual|')
+    plt.plot(mipgap_values, linestyle='-.', color='#2ca02c', marker='D', zorder=3, label='SP dual mipgap')
+    plt.xlabel('Iteration $j$')
+    plt.ylabel('Gap [$]')
+    plt.yscale('log')
+    plt.xticks()
+    ax = plt.gca()
+    ax.minorticks_off()
+    ax.grid(True, which='major', linestyle='-', color='#7f7f7f', linewidth=0.5, alpha=0.5)
+    plt.legend()
+    plt.tight_layout()
+    plt.savefig(dirname + 'svg/' + day + '_Error_IEEE.svg', format='svg')
+    plt.savefig(dirname + 'png/' + day + '_Error_IEEE.png', format='png')
+    plt.savefig(dirname + 'pdf/' + day + '_Error_IEEE.pdf', format='pdf')
+    plt.close()
+
+
+    plt.figure()
+    ax1 = plt.subplot(2, 1, 1)
+    ax1.plot(error_MP_SP, linestyle='-', color='#1f77b4', marker='s', zorder=1, label='|MP - SP dual| (McCormick)') 
+    ax1.plot(error_SP, linestyle='--', color='#d62728', marker='o', zorder=3, label='|SP primal - SP dual| (McCormick)')
+    ax1.plot(mipgap_values, linestyle='-.', color='#2ca02c', marker='D', zorder=2, label='SP dual mipgap (McCormick)')
+    ax1 = plt.gca()
+    ax1.minorticks_off()
+    ax1.grid(True, which='major', linestyle='-', color='#7f7f7f', linewidth=0.5, alpha=0.5)
+    ax1.set_xlabel('Iteration $j$')
+    ax1.set_ylabel('Gap [$]')
+    ax1.set_ylim(-5, 1e5*3)
+    ax1.set_yticks([0, 1e1, 1e2, 1e3, 1e4, 1e5])
+    ax1.axhline(y=5, color='#ff7f0e', linestyle='--', linewidth=1, alpha=0.8)
+    ax1.legend(loc='upper right')
+    ax1.set_xticks([0, 1, 2, 3, 4, 5, 6, 7, 8])
+    ax1.set_yscale('symlog', linthresh=10)
+    ax1.text(0.5, -0.32, '(a)', transform=ax1.transAxes, fontsize=12)
+    ax1.annotate('0.9s', 
+                xy=(2, error_MP_SP[-1]), 
+                xytext=(2.2, 11), 
+                arrowprops=dict(facecolor='black', arrowstyle='->'), fontsize=10)
+
+    ax2 = plt.subplot(2, 1, 2)
+    ax2.plot(error_MP_SP_bigM, linestyle='-', color='#1f77b4', marker='s', zorder=1, label='|MP - SP dual| (big-M)')
+    ax2.plot(error_SP_bigM, linestyle='--', color='#d62728', marker='o', zorder=3, label='|SP primal - SP dual| (big-M)')
+    ax2.plot(mipgap_values_bigM, linestyle='-.', color='#2ca02c', marker='D', zorder=2, label='SP dual mipgap (big-M)')
+    ax2 = plt.gca()
+    ax2.minorticks_off()
+    ax2.grid(True, which='major', linestyle='-', color='#7f7f7f', linewidth=0.5, alpha=0.5)
+    ax2.set_xlabel('Iteration $j$')
+    ax2.set_ylabel('Gap [$]')
+    ax2.set_ylim(-5, 1e5*3)
+    ax2.set_yticks([0, 1e1, 1e2, 1e3, 1e4, 1e5])            
+    ax2.axhline(y=5, color='#ff7f0e', linestyle='--', linewidth=1, alpha=0.8)
+    ax2.legend(loc='upper right')
+    ax2.set_xticks([0, 1, 2, 3, 4, 5, 6, 7, 8])
+    ax2.set_yscale('symlog', linthresh=10)
+    ax2.text(0.5, -0.32, '(b)', transform=ax2.transAxes, fontsize=12)
+    ax2.annotate('63.2s', 
+                xy=(7, error_MP_SP_bigM[-1]), 
+                xytext=(7.2, 11), 
+                arrowprops=dict(facecolor='black', arrowstyle='->'), fontsize=10)
+
+    plt.tight_layout()
+    plt.savefig(dirname + 'svg/' + day + '_Error_conv_IEEE.svg', format='svg')
+    plt.savefig(dirname + 'png/' + day + '_Error_conv_IEEE.png', format='png')
+    plt.savefig(dirname + 'pdf/' + day + '_Error_conv_IEEE.pdf', format='pdf')
+    plt.close()
+
 
     print('')
     print('-----------------------CHECK COLUMN AND CONSTRAINT GENERATION CONVERGENCE-----------------------')
@@ -506,224 +618,297 @@ if __name__ == "__main__":
         print('-----------------------COLUMN AND CONSTRAINT GENERATION IS CONVERGED-----------------------')
         print('CCG is converged with |MILP planner - MP CCG| = %.4f $' % (err_planner_CCG))
 
-    plt.figure(figsize=(16,9))
-    plt.plot(PV_forecast, color='green', marker="D", markersize=8, zorder=3, linewidth=4, label='$ w^{*}_{t} $')
-    plt.plot(load_forecast, color='darkgoldenrod', marker='o', markersize=8, zorder=1, linewidth=4,  label='$ l^{*}_{t} $')
-    plt.xlabel('Time (h)', fontsize=FONTSIZE)
-    plt.ylabel('Power (kW)', fontsize=FONTSIZE)
-    plt.xticks([0, 16, 32, 48, 64, 80, 96],['0','4','8','12','16','20','24'], fontsize=FONTSIZE)
-    plt.yticks(fontsize=FONTSIZE)
-    plt.legend(fontsize=FONTSIZE, loc='upper left', frameon=True, fancybox=False, edgecolor='black', framealpha=0.8)
-    # plt.tight_layout()
-    # plt.savefig(dirname + day + '_Forecast_' + pdfname + '.pdf')
-    plt.savefig(dirname + day + '_Forecast_data', dpi=300)
-    # plt.close('all')
-
-    plt.figure(figsize=(12, 6))
-    plt.subplot(2, 1, 1)
-    plt.plot(SP_dual_sol['epsilon_pos'], label=r"$\epsilon^+$")
-    plt.plot(SP_dual_sol['epsilon_neg'], label=r"$\epsilon^-$")
-    plt.legend(ncol=1, loc='upper left', frameon=True, fancybox=False, edgecolor='black', framealpha=0.8)
-    plt.title('PV uncertainty variables')
-
-    plt.subplot(2, 1, 2)
-    plt.plot(SP_dual_sol['delta_pos'], label=r"$\delta^+$")
-    plt.plot(SP_dual_sol['delta_neg'], label=r"$\delta^-$")
-    plt.legend(ncol=1, loc='upper left', frameon=True, fancybox=False, edgecolor='black', framealpha=0.8)
-    plt.title('Load uncertainty variables')
-
+    plt.figure()
+    plt.plot(PV_forecast, color='#1f77b4', linestyle='-', zorder=1, label='$ w^{*}_{t} $')
+    plt.plot(load_forecast, color='#ff7f0e', linestyle='--', zorder=2, label='$ l^{*}_{t} $')
+    plt.xlabel('Time [h]')
+    plt.ylabel('Power [kW]')
+    plt.xticks([0, 16, 32, 48, 64, 80, 96],['0','4','8','12','16','20','24'])
+    ax = plt.gca()
+    ax.minorticks_off()
+    ax.grid(True, which='major', linestyle='-', color='#7f7f7f', linewidth=0.5, alpha=0.5)
+    plt.legend()
     plt.tight_layout()
-    plt.savefig(dirname + day + '_Uncertainty_variables.png', dpi=300)
-    # plt.close('all')
+    plt.savefig(dirname + 'svg/' + day + '_Forecast_IEEE.svg', format='svg')
+    plt.savefig(dirname + 'png/' + day + '_Forecast_IEEE.png', format='png')
+    plt.savefig(dirname + 'pdf/' + day + '_Forecast_IEEE.pdf', format='pdf')
+    plt.close()
 
-    plt.figure(figsize=(16,9))
-    plt.plot(PV_worst_case, color='crimson', marker="o", markersize=8, linewidth=4, zorder=3, label='$ \hat{w}_t$')
-    plt.plot(PV_forecast, 'steelblue', linestyle='solid', marker="s", markersize=8, linewidth=4, label='$ w^{*}_{t} $', zorder=1)
-    plt.plot(PV_forecast + PV_pos, 'dimgrey', linestyle=(0, (5, 5)), linewidth=2, label='$ w^{*}_{t} + w^{+} $', zorder=1)
-    plt.plot(PV_forecast - PV_neg, 'dimgrey', linestyle=(0, (5, 10)), linewidth=2, label='$ w^{*}_{t} - w^{-} $', zorder=1)
-    plt.xlabel('Time (h)', fontsize=FONTSIZE)
-    plt.ylabel('Power (kW)', fontsize=FONTSIZE)
-    plt.xticks([0, 16, 32, 48, 64, 80, 96],['0','4','8','12','16','20','24'], fontsize=FONTSIZE)
-    plt.yticks(fontsize=FONTSIZE)
-    plt.legend(fontsize=FONTSIZE, loc='upper left', frameon=True, fancybox=False, edgecolor='black', framealpha=0.8)
-    # plt.tight_layout()
-    # plt.savefig(dirname + day + '_PV_trajectory_' + pdfname + '.pdf')
-    plt.savefig(dirname + day + '_PV_trajectory', dpi=300)
-    # plt.close('all')
+    plt.figure()
+    ax1 = plt.subplot(2, 1, 1)
+    ax1.plot(SP_dual_sol['epsilon_pos'], color='#1f77b4', linestyle='-', marker='o', markerfacecolor='none', markeredgecolor='#1f77b4', zorder=1, label=r"$\epsilon^+$")
+    ax1.plot(SP_dual_sol['epsilon_neg'], color='#d62728', linestyle='--', marker='x', zorder=2, label=r"$\epsilon^-$")
+    ax1 = plt.gca()
+    ax1.minorticks_off()
+    ax1.grid(True, which='major', linestyle='-', color='#7f7f7f', linewidth=0.5, alpha=0.5)
+    ax1.set_xlabel('Time [h]')
+    ax1.set_xticks([0, 16, 32, 48, 64, 80, 96],['0','4','8','12','16','20','24'])
+    ax1.legend(loc='upper right')
+    ax1.set_ylabel('PV uncertainty variables')
+    ax1.text(0.5, -0.32, '(a)', transform=ax1.transAxes, fontsize=12)
+    ax2 = plt.subplot(2, 1, 2)
+    ax2.plot(SP_dual_sol['delta_pos'], color='#2ca02c', linestyle='-', marker='o', markerfacecolor='none', markeredgecolor='#2ca02c', zorder=1, label=r"$\delta^+$")
+    ax2.plot(SP_dual_sol['delta_neg'], color='#9467bd', linestyle='--', marker='x', zorder=2, label=r"$\delta^-$")
+    ax2 = plt.gca() 
+    ax2.minorticks_off()
+    ax2.grid(True, which='major', linestyle='-', color='#7f7f7f', linewidth=0.5, alpha=0.5)
+    ax2.legend(loc='upper right')
+    ax2.set_xlabel('Time [h]')
+    ax2.set_xticks([0, 16, 32, 48, 64, 80, 96],['0','4','8','12','16','20','24'])
+    ax2.set_ylabel('Load uncertainty variables')
+    ax2.text(0.5, -0.32, '(b)', transform=ax2.transAxes, fontsize=12)
+    plt.tight_layout()
+    plt.savefig(dirname + 'svg/' + day + '_Uncertainty_variables_IEEE.svg', format='svg')
+    plt.savefig(dirname + 'png/' + day + '_Uncertainty_variables_IEEE.png', format='png')
+    plt.savefig(dirname + 'pdf/' + day + '_Uncertainty_variables_IEEE.pdf', format='pdf')
+    plt.close()
 
-    plt.figure(figsize=(16,9))
-    plt.plot(load_worst_case, color='crimson', linestyle='solid', marker="o", markersize=8, linewidth=4, label='$ \hat{l}_t$')
-    plt.plot(load_forecast, 'orange', linestyle='solid', marker="d", markersize=8, linewidth=4, label='$ l^{*}_{t} $', zorder=1)
-    plt.plot(load_forecast + load_pos, 'dimgrey', linestyle=(0, (5, 5)), linewidth=2, label="$ l^{*}_{t} + l^{+} $", zorder=1)
-    plt.plot(load_forecast - load_neg, 'dimgrey', linestyle=(0, (5, 10)), linewidth=2, label="$ l^{*}_{t} - l^{-} $", zorder=1)
-    plt.xlabel('Time (h)', fontsize=FONTSIZE)
-    plt.ylabel('Power (kW)', fontsize=FONTSIZE)
-    plt.xticks([0, 16, 32, 48, 64, 80, 96],['0','4','8','12','16','20','24'], fontsize=FONTSIZE)
-    plt.yticks(fontsize=FONTSIZE)
-    plt.legend(fontsize=FONTSIZE, loc='upper left', frameon=True, fancybox=False, edgecolor='black', framealpha=0.8)
-    # plt.tight_layout()
-    # plt.savefig(dirname + day + '_load_trajectory_' + pdfname + '.pdf')
-    plt.savefig(dirname + day + '_Load_trajectory', dpi=300)
-    # plt.close('all')
+    plt.figure()
+    plt.plot(PV_worst_case, color='#d62728', linestyle='--', marker='o', markerfacecolor='none', markeredgecolor='#d62728', zorder=2, label='$ \hat{w}_t$')
+    plt.plot(PV_forecast, color='#1f77b4', linestyle='-', zorder=3, label='$ w^{*}_{t} $')
+    plt.plot(PV_forecast + PV_pos, color='#7f7f7f', linestyle=':', zorder=1, alpha=0.8, label='$ w^{*}_{t} + w^{+} $')
+    plt.plot(PV_forecast - PV_neg, color='#7f7f7f', linestyle='-.', zorder=1, alpha=0.8, label='$ w^{*}_{t} - w^{-} $')
+    plt.fill_between(range(len(PV_forecast)), PV_forecast - PV_neg, PV_forecast + PV_pos, color='#1f77b4', alpha=0.1)
+    plt.xlabel('Time [h]')
+    plt.ylabel('Power [kW]')
+    plt.xticks([0, 16, 32, 48, 64, 80, 96],['0','4','8','12','16','20','24'])
+    ax = plt.gca()
+    ax.minorticks_off()
+    ax.grid(True, which='major', linestyle='-', color='#7f7f7f', linewidth=0.5, alpha=0.5)
+    plt.legend()
+    plt.tight_layout()
+    plt.savefig(dirname + 'svg/' + day + '_PV_trajectory_IEEE.svg', format='svg')
+    plt.savefig(dirname + 'png/' + day + '_PV_trajectory_IEEE.png', format='png')
+    plt.savefig(dirname + 'pdf/' + day + '_PV_trajectory_IEEE.pdf', format='pdf')
+    plt.close()
 
-    plt.figure(figsize=(16,9))
-    plt.plot()
-    plt.plot(final_SOC, linewidth=2, label='Day-ahead SOC')
-    plt.plot(SP_primal_sol['y_S'], linewidth=2, label='Real-time SOC')
-    plt.xlabel('Time (h)', fontsize=FONTSIZE)
-    plt.ylabel('SOC (kWh)', fontsize=FONTSIZE)
-    plt.xticks([0, 16, 32, 48, 64, 80, 96],['0','4','8','12','16','20','24'], fontsize=FONTSIZE)
-    plt.yticks(fontsize=FONTSIZE)
-    plt.legend(fontsize=FONTSIZE, loc='upper left', frameon=True, fancybox=False, edgecolor='black', framealpha=0.8)
-    # plt.tight_layout()
-    # plt.savefig(dirname + day + '_SOC_' + pdfname + '.pdf')
-    plt.savefig(dirname + day + '_SOC', dpi=300)
-    # plt.close('all')
+    plt.figure()
+    plt.plot(load_worst_case, color='#d62728', linestyle='--', marker='o', markerfacecolor='none', markeredgecolor='#d62728', zorder=2, label='$ \hat{l}_{t}$')
+    plt.plot(load_forecast, color='#ff7f0e', linestyle='-', zorder=3, label='$ l^{*}_{t} $')
+    plt.plot(load_forecast + load_pos, color='#7f7f7f', linestyle=':', zorder=1, alpha=0.8, label='$ l^{*}_{t} + l^{+} $')
+    plt.plot(load_forecast - load_neg, color='#7f7f7f', linestyle='-.', zorder=1, alpha=0.8, label='$ l^{*}_{t} - l^{-} $')
+    plt.fill_between(range(len(load_forecast)), load_forecast - load_neg, load_forecast + load_pos, color='#ff7f0e', alpha=0.1)
+    plt.xlabel('Time [h]')
+    plt.ylabel('Power [kW]')
+    plt.xticks([0, 16, 32, 48, 64, 80, 96], ['0', '4', '8', '12', '16', '20', '24'])
+    ax = plt.gca()
+    ax.minorticks_off()
+    ax.grid(True, which='major', linestyle='-', color='#7f7f7f', linewidth=0.5, alpha=0.5)
+    plt.yticks()
+    plt.legend()
+    plt.tight_layout()
+    plt.savefig(dirname + 'svg/' + day + '_load_trajectory_IEEE.svg', format='svg')
+    plt.savefig(dirname + 'png/' + day + '_Load_trajectory_IEEE.png', format='png')
+    plt.savefig(dirname + 'pdf/' + day + '_Load_trajectory_IEEE.pdf', format='pdf')
+    plt.close()
 
+    plt.figure()
+    plt.plot(final_SOC, color='#1f77b4', linestyle='-', zorder=1, label='$ s_{t} $')
+    plt.plot(SP_primal_sol['y_S'], color='#ff7f0e', linestyle='--', zorder=2, label='$ \hat{s}_t $')
+    plt.xlabel('Time [h]')
+    plt.ylabel('SOC [kWh]')
+    plt.xticks([0, 16, 32, 48, 64, 80, 96], ['0', '4', '8', '12', '16', '20', '24'])
+    ax = plt.gca()
+    ax.minorticks_off()
+    ax.grid(True, which='major', linestyle='-', color='#7f7f7f', linewidth=0.5, alpha=0.5)
+    plt.legend()
+    plt.tight_layout()
+    plt.savefig(dirname + 'svg/' + day + '_SOC_IEEE.svg', format='svg')
+    plt.savefig(dirname + 'png/' + day + '_SOC_IEEE.png', format='png')
+    plt.savefig(dirname + 'pdf/' + day + '_SOC_IEEE.pdf', format='pdf')
+    plt.close()
 
-    plt.figure(figsize=(16,9))
-    plt.plot(final_power, color='firebrick', zorder=8, linewidth=3, label='DG output')
-    plt.plot(([dg + rp for dg, rp in zip(final_power, final_reserve_pos)]), marker='^', markersize=8, zorder=7, linewidth=3, alpha=0.8, label='DG reserve up')
-    plt.plot(([dg - rn for dg, rn in zip(final_power, final_reserve_neg)]), marker='v', markersize=8, zorder=6, linewidth=3, alpha=0.8, label='DG reserve down')
-    plt.plot(PV_forecast, color='mediumblue', linestyle="--", marker='o', markersize=8, zorder=5, linewidth=3, label='PV prediction')
-    plt.plot(([pv - ct for pv, ct in zip(PV_forecast, final_curtailment)]), color='green', marker="D", markersize=8, zorder=3, linewidth=3, label='PV output')
-    plt.plot(([ch - dis for ch, dis in zip(final_discharge, final_charge)]), color='gold', markersize=8, zorder=2, linewidth=3,  label='ESS output')
-    plt.plot(load_forecast, color='darkgoldenrod', marker='s', markersize=8, zorder=4, linewidth=3, label= 'Load demand')
-    plt.axhline(y=0, color='gray', linestyle='--', linewidth=2, zorder=1)
-    plt.xticks([0, 16, 32, 48, 64, 80, 96],['0','4','8','12','16','20','24'], fontsize=FONTSIZE)
-    plt.yticks(fontsize=FONTSIZE)
-    plt.xlabel('Time (h)', fontsize=FONTSIZE)
-    plt.ylabel('Power (kW)', fontsize=FONTSIZE)
-    plt.ylim(-100, 600)
-    plt.legend(ncol=2, loc='upper left', frameon=True, fancybox=False, edgecolor='black', framealpha=0.8, fontsize=FONTSIZE)
-    # plt.savefig(dirname + day + '_Pre-dispatch_' + pdfname + '.pdf', dpi=300)
-    plt.savefig(dirname + day + '_Pre-dispatch.png', dpi=300)
-    # plt.close('all')
+    plt.figure()
+    plt.plot(final_power, color='#d62728', linestyle='-', zorder=8, label='$ \sum_{i \in \mathcal{I}} p_{i,t} $')
+    plt.plot([dg + rp for dg, rp in zip(final_power, final_reserve_pos)], color='#9467bd', linestyle=':', marker='^', markerfacecolor='none', markeredgecolor='#9467bd', zorder=7, label=r'$ \sum_{i \in \mathcal{I}} \left( p_{i,t} + r^{+}_{i,t} \right) $')
+    plt.plot([dg - rn for dg, rn in zip(final_power, final_reserve_neg)], color='#8c564b', linestyle=':', marker='v', markerfacecolor='none', markeredgecolor='#8c564b', zorder=6, label=r'$ \sum_{i \in \mathcal{I}} \left( p_{i,t} + r^{-}_{i,t} \right) $')
+    plt.plot(PV_forecast, color='#1f77b4', linestyle='-.',  marker='o', markerfacecolor='none', markeredgecolor='#1f77b4', zorder=5, label='$ \sum_{v \in \mathcal{V}} p_{v,t}^{*} $')
+    plt.plot([pv - ct for pv, ct in zip(PV_forecast, final_curtailment)], color='#ff7f0e', linestyle='--', marker='o', zorder=3, label=r'$ \sum_{v \in \mathcal{V}} \left( p_{v,t}^{*} - w^{\mathrm{cut}}_{v,t} \right) $')
+    plt.plot([ch - dis for ch, dis in zip(final_discharge, final_charge)], color='#bcbd22', linestyle='-.', marker='s', markerfacecolor='none', markeredgecolor='#bcbd22', zorder=2, label=r'$ \sum_{j \in \mathcal{J}} \left( p^{\mathrm{dis}}_{j,t} - p^{\mathrm{chg}}_{j,t} \right) $')
+    plt.plot(load_forecast, color='#2ca02c', linestyle='--', zorder=4, label='$ l_{t} $')
+    plt.ylim(top=700)
+    plt.xlabel('Time [h]')
+    plt.xticks([0, 16, 32, 48, 64, 80, 96],['0','4','8','12','16','20','24'])
+    plt.ylabel('Power [kW]')
+    ax = plt.gca()
+    ax.minorticks_off()
+    ax.grid(True, which='major', linestyle='-', color='#7f7f7f', linewidth=0.5, alpha=0.5)
+    plt.legend(ncol=2)
+    plt.tight_layout()
+    plt.savefig(dirname + 'svg/' + day + '_Pre-dispatch_IEEE.svg', format='svg')
+    plt.savefig(dirname + 'png/' + day + '_Pre-dispatch_IEEE.png', format='png')
+    plt.savefig(dirname + 'pdf/' + day + '_Pre-dispatch_IEEE.pdf', format='pdf')
+    plt.close()
 
-    plt.figure(figsize=(16,9))
-    plt.plot(([dg + dgp - dgn for dg, dgp, dgn in zip(final_power, SP_primal_sol['y_pos'], SP_primal_sol['y_neg'])]), color='firebrick', zorder=8, linewidth=3, label='DG output')
-    plt.plot(PV_worst_case, color='mediumblue', marker='o', alpha=0.8, linestyle="--", markersize=8, zorder=5, linewidth=3, label='PV worst scenario')
-    plt.plot(([pvw - xct - yct + yad for pvw, xct, yct, yad in zip(SP_primal_sol['y_PV'], final_curtailment, SP_primal_sol['y_cut'], SP_primal_sol['y_add'])]), color='green', marker="D", markersize=8, zorder=3, linewidth=3, label='PV output')
-    plt.plot(([xch - xdis + ych - ydis for xch, xdis, ych, ydis in zip(final_discharge, final_charge, SP_primal_sol['y_dis'], SP_primal_sol['y_chg'])]), color='gold', markersize=8, zorder=2, linewidth=3, label='ESS output')
-    plt.plot(load_worst_case, color='darkgoldenrod', marker='s', markersize=8, zorder=4, linewidth=3, label='Load worst scenario')
-    plt.axhline(y=0, color='gray', linestyle='--', linewidth=2, zorder=1)
-    plt.xticks([0, 16, 32, 48, 64, 80, 96],['0','4','8','12','16','20','24'], fontsize=FONTSIZE)
-    plt.yticks(fontsize=FONTSIZE)
-    plt.xlabel('Time (h)', fontsize=FONTSIZE)
-    plt.ylabel('Power (kW)', fontsize=FONTSIZE)
-    plt.ylim(-250,750)
-    plt.legend(ncol=2, loc='upper left', frameon=True, fancybox=False, edgecolor='black', framealpha=0.8, fontsize=FONTSIZE)
-    # plt.savefig(dirname + day + '_Re-dispatch_' + pdfname + '.pdf', dpi=300)
-    plt.savefig(dirname + day + '_Re-dispatch.png', dpi=300)
-    # plt.close('all')
+    plt.figure()
+    plt.plot(([dg + dgp - dgn for dg, dgp, dgn in zip(final_power, SP_primal_sol['y_pos'], SP_primal_sol['y_neg'])]), color='#d62728', linestyle='-', zorder=8, label='$ p_{t} + p^{+} - p^{-}_{t} $')
+    plt.plot(PV_worst_case, color='#1f77b4', linestyle="-.", marker='o', markerfacecolor='none', markeredgecolor='#1f77b4', zorder=5, label='$ \hat{w}_{t} $')
+    plt.plot(load_worst_case, color='#2ca02c', linestyle='--', zorder=4, label='$ \hat{l}_{t}$')
+    plt.plot(([pvw - xct - yct + yad for pvw, xct, yct, yad in zip(SP_primal_sol['y_PV'], final_curtailment, SP_primal_sol['y_cut'], SP_primal_sol['y_add'])]), color='#ff7f0e', linestyle='--', marker='o', zorder=3, label='$ \hat{w}_{t} - w^{\mathrm{cut}}_{t} - \hat{w}^{\mathrm{cut}}_{t} + \hat{w}^{\mathrm{add}}_{t} $')
+    plt.plot(([xch - xdis + ych - ydis for xch, xdis, ych, ydis in zip(final_discharge, final_charge, SP_primal_sol['y_dis'], SP_primal_sol['y_chg'])]), color='#bcbd22', linestyle='-.', marker='s', markerfacecolor='none', markeredgecolor='#bcbd22', zorder=2, label='$ p^{\mathrm{dis}}_{t} - p^{\mathrm{chg}}_{t} + \hat{p}^{\mathrm{dis}}_{t} - \hat{p}^{\mathrm{chg}}_{t} $')
+    plt.xlabel('Time [h]')
+    plt.xticks([0, 16, 32, 48, 64, 80, 96],['0','4','8','12','16','20','24'])
+    plt.ylabel('Power [kW]')
+    ax = plt.gca()
+    ax.minorticks_off()
+    ax.grid(True, which='major', linestyle='-', color='#7f7f7f', linewidth=0.5, alpha=0.5)
+    plt.legend(ncol=2)
+    plt.ylim(top=700)
+    plt.legend(ncol=2)
+    plt.savefig(dirname + 'svg/' + day + '_Re-dispatch_IEEE.svg', format='svg')
+    plt.savefig(dirname + 'png/' + day + '_Re-dispatch_IEEE.png', format='png')
+    plt.savefig(dirname + 'pdf/' + day + '_Re-dispatch_IEEE.pdf', format='pdf')
+    plt.close()
 
-    plt.figure(figsize=(16,9))
-    plt.plot()
-    plt.plot(SP_primal_sol['y_chg'], linewidth=2, label='real-time charge')
-    plt.plot(SP_primal_sol['y_dis'], linewidth=2, label='real-time discharge')
-    # plt.ylim(0, PARAMETERS['ES']['capacity'])
-    plt.ylabel('kW', fontsize=FONTSIZE, rotation='horizontal')
-    plt.xticks(fontsize=FONTSIZE)
-    plt.yticks(fontsize=FONTSIZE)
-    plt.legend(fontsize=FONTSIZE)
-    # plt.tight_layout()
-    # plt.savefig(dirname + day + 'realtime_charge_discharge_' + pdfname + '.pdf')
-    plt.savefig(dirname + day + '_ESS_simultaneous.png', dpi=300)
-    # plt.close('all')
-
-    plt.figure(figsize=(16,9))
-    plt.plot()
-    plt.plot(SP_primal_sol['y_cut'], linewidth=2, label='Real-time curtailment')
-    plt.plot(SP_primal_sol['y_add'], linewidth=2, label='Real=time addition')
-    # plt.ylim(0, PARAMETERS['ES']['capacity'])
-    plt.ylabel('kW', fontsize=FONTSIZE, rotation='horizontal')
-    plt.xticks(fontsize=FONTSIZE)
-    plt.yticks(fontsize=FONTSIZE)
-    plt.legend(fontsize=FONTSIZE)
-    # plt.tight_layout()
-    # plt.savefig(dirname + day + 'realtime_charge_discharge_' + pdfname + '.pdf')
-    plt.savefig(dirname + day + '_Curtailment_simultaenous.png', dpi=300)
-    # plt.close('all')
-
-    plt.figure(figsize=(16,9))
-    plt.plot()
-    plt.plot(final_reserve_pos, linewidth=2, label='reserve pos')
-    plt.plot(final_reserve_neg, linewidth=2, label='reserve neg')
-    plt.ylabel('kW', fontsize=FONTSIZE)
-    plt.xticks(fontsize=FONTSIZE)
-    plt.yticks(fontsize=FONTSIZE)
-    plt.legend(fontsize=FONTSIZE)
-    # plt.tight_layout()
-    plt.savefig(dirname + day + '_Reserve_capacity.png', dpi=300)
-    # plt.close('all')
-
+    plt.figure(figsize=(7.16, 8.95))
+    ax1 = plt.subplot(3, 1, 1)
+    ax1.plot(SP_primal_sol['y_pos'], color='#1f77b4', linestyle='-', marker='o', markerfacecolor='none', markeredgecolor='#1f77b4', zorder=1, label='$ \hat{p}^{\mathrm{+}}_{t} $')
+    ax1.plot(SP_primal_sol['y_neg'], color='#d62728', linestyle='--', marker='x', zorder=2, label='$ \hat{p}^{\mathrm{-}}_{t} $')
+    ax1 = plt.gca()
+    ax1.minorticks_off()
+    ax1.grid(True, which='major', linestyle='-', color='#7f7f7f', linewidth=0.5, alpha=0.5)
+    ax1.set_xlabel('Time [h]')
+    ax1.set_xticks([0, 16, 32, 48, 64, 80, 96],['0','4','8','12','16','20','24'])
+    ax1.set_ylabel('Power [kW]')
+    ax1.text(0.5, -0.28, '(a)', transform=ax1.transAxes, fontsize=12)
+    ax1.legend()
+    ax2 = plt.subplot(3, 1, 2)
+    ax2.plot(SP_primal_sol['y_chg'], color='#2ca02c', linestyle='-', marker='o', markerfacecolor='none', markeredgecolor='#2ca02c', zorder=1, label='$ \hat{p}^{\mathrm{chg}}_{t} $')
+    ax2.plot(SP_primal_sol['y_dis'], color='#9467bd', linestyle='--', marker='x', zorder=2, label='$ \hat{p}^{\mathrm{dis}}_{t} $')
+    ax2 = plt.gca()
+    ax2.minorticks_off()
+    ax2.grid(True, which='major', linestyle='-', color='#7f7f7f', linewidth=0.5, alpha=0.5)
+    ax2.set_xlabel('Time [h]')
+    ax2.set_xticks([0, 16, 32, 48, 64, 80, 96],['0','4','8','12','16','20','24']) 
+    ax2.set_ylabel('Power [kW]')
+    ax2.text(0.5, -0.28, '(b)', transform=ax2.transAxes, fontsize=12)
+    ax2.legend()
+    ax3 = plt.subplot(3, 1, 3)
+    ax3.plot(SP_primal_sol['y_cut'], color='#ff7f0e', linestyle='-', marker='o', markerfacecolor='none', markeredgecolor='#ff7f0e', zorder=1, label='$ \hat{w}^{\mathrm{cut}}_{t} $')
+    ax3.plot(SP_primal_sol['y_add'], color='#17becf', linestyle='--', marker='x', zorder=2, label='$ \hat{w}^{\mathrm{add}}_{t} $')
+    ax3 = plt.gca()
+    ax3.minorticks_off()
+    ax3.grid(True, which='major', linestyle='-', color='#7f7f7f', linewidth=0.5, alpha=0.5)
+    ax3.set_xlabel('Time [h]')
+    ax3.set_xticks([0, 16, 32, 48, 64, 80, 96],['0','4','8','12','16','20','24'])
+    ax3.set_ylabel('Power [kW]')
+    ax3.text(0.5, -0.28, '(c)', transform=ax3.transAxes, fontsize=12)
+    ax3.legend()
+    plt.tight_layout()
+    plt.savefig(dirname + 'svg/' + day + '_Simultaneous_check_IEEE.svg', format='svg')
+    plt.savefig(dirname + 'png/' + day + '_Simultaneous_check_IEEE.png', format='png')
+    plt.savefig(dirname + 'pdf/' + day + '_Simultaneous_check_IEEE.pdf', format='pdf')
+    plt.close()
+    
     # data = np.column_stack(np.array(PV_worst_case, np.array(load_worst_case).flatten()))
     # np.savetxt('worst.csv', data, delimiter=',', header='PV_worst, load_worst', comments='', fmt='%.2f')
 
     phi_Mc = np.column_stack((np.array(SP_dual_sol['phi_PV']), np.array(SP_dual_sol['phi_cut']), np.array(SP_dual_sol['phi_load']).flatten()))
-    np.savetxt('/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/result/Mc_phi.csv', phi_Mc, delimiter=',', header='phi_PV,phi_cut,phi_load', comments='', fmt='%.2f')
+    np.savetxt('/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/result/Mc_phi.csv', phi_Mc, delimiter=',', header='phi_PV,phi_cut,phi_load', comments='', fmt='%.2f')
+    phi_bM_worst = pd.read_csv('/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/result/bM_phi_worst.csv', header=0)  # Assuming header is in the first row
+    phi_bM_best = pd.read_csv('/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/result/bM_phi_best.csv', header=0)
 
-    # Load data from CSV files
-    phi_bM = pd.read_csv('/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/result/bM_phi_worst.csv', header=0)  # Assuming header is in the first row
+    phi_PV_lb, phi_PV_ub, phi_cut_lb, phi_cut_ub, phi_load_lb, phi_load_ub = [], [], [], [], [], []
 
-    # Define LaTeX-style labels
+    M_phi_PV_best = [x for x in read_file(dir='/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/result/', name=day+'_bM_phi_PV_best')]
+    M_phi_PV_worst = [x for x in read_file(dir='/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/result/', name=day+'_bM_phi_PV_worst')]
+    M_phi_cut_best = [x for x in read_file(dir='/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/result/', name=day+'_bM_phi_cut_best')]
+    M_phi_cut_worst = [x for x in read_file(dir='/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/result/', name=day+'_bM_phi_cut_worst')]
+    M_phi_load_best = [x for x in read_file(dir='/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/result/', name=day+'_bM_phi_load_best')]
+    M_phi_load_worst = [x for x in read_file(dir='/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/result/', name=day+'_bM_phi_load_worst')]
+
+    for i in range(96):
+        phi_PV_lb.append(min(M_phi_PV_best[i], M_phi_PV_worst[i]))
+        phi_PV_ub.append(max(M_phi_PV_best[i], M_phi_PV_worst[i]))
+        phi_cut_lb.append(min(M_phi_cut_best[i], M_phi_cut_worst[i]))
+        phi_cut_ub.append(max(M_phi_cut_best[i], M_phi_cut_worst[i]))
+        phi_load_lb.append(min(M_phi_load_best[i], M_phi_load_worst[i]))
+        phi_load_ub.append(max(M_phi_load_best[i], M_phi_load_worst[i]))
+
     labels = {
         'phi_PV': r'$\phi^{\mathrm{PV}}_t$',
         'phi_cut': r'$\phi^{\mathrm{cut}}_t$',
         'phi_load': r'$\phi^{\mathrm{load}}_t$'
     }
-
     phi_Mc_df = pd.DataFrame(phi_Mc, columns=labels.keys())
 
-    # Plot the data
-    fig, axs = plt.subplots(len(labels), 1, figsize=(16, len(labels) * 3), sharex=True)
-
-    for i, (col, label) in enumerate(labels.items()):
-        axs[i].plot(phi_bM[col], label=f'{label} (big-M)', marker='^', markersize=8, linestyle='-', linewidth=3)
-        axs[i].plot(phi_Mc_df[col], label=f'{label} (McCormick)', marker='v', markersize=8, linestyle='--', linewidth=3)
-        axs[i].set_ylabel(f'{label} values', fontsize=FONTSIZE)
-        axs[i].legend(ncol=1, loc='upper left', frameon=True, fancybox=False, edgecolor='black', framealpha=0.8, fontsize=FONTSIZE)
-        axs[i].tick_params(axis='y', labelsize=FONTSIZE)  # Set y-axis tick font size
-
-    plt.xlabel('Time (h)', fontsize=FONTSIZE)
-    plt.xticks([0, 16, 32, 48, 64, 80, 96],['0','4','8','12','16','20','24'], fontsize=FONTSIZE)
+    plt.figure(figsize=(7.16, 8.95))
+    ax1 = plt.subplot(3, 1, 1)
+    ax1.plot(phi_PV_lb, color='#2ca02c', linestyle='--', marker='v', markerfacecolor='none', markeredgecolor='#2ca02c', zorder=1, label=r'$\phi_{v,t}^{\mathrm{lb}}$')
+    ax1.plot(phi_PV_ub, color='#1f77b4', linestyle='-.', marker='^', markerfacecolor='none', markeredgecolor='#1f77b4', zorder=1, label=r'$\phi_{v,t}^{\mathrm{ub}}$')
+    ax1.plot(phi_Mc_df['phi_PV'], color='#d62728', linestyle='-', marker='o', markerfacecolor='none', markeredgecolor='#d62728', zorder=2, label=r'$\phi_{v,t}$')
+    ax1 = plt.gca()
+    ax1.minorticks_off()
+    ax1.grid(True, which='major', linestyle='-', color='#7f7f7f', linewidth=0.5, alpha=0.5)
+    ax1.set_xlabel('Time [h]')
+    ax1.set_xticks([0, 16, 32, 48, 64, 80, 96],['0','4','8','12','16','20','24'])
+    ax1.set_ylabel(r'$\phi_{r,t}$')
+    ax1.text(0.5, -0.28, '(a)', transform=ax1.transAxes, fontsize=12)
+    ax1.legend()
+    ax2 = plt.subplot(3, 1, 2)
+    ax2.plot(phi_cut_lb, color='#2ca02c', linestyle='--', marker='v', markerfacecolor='none', markeredgecolor='#2ca02c', zorder=1, label=r'$\phi_{v,t}^{\mathrm{cut,lb}}$')
+    ax2.plot(phi_cut_ub, color='#1f77b4', linestyle='-.', marker='^', markerfacecolor='none', markeredgecolor='#1f77b4', zorder=1, label=r'$\phi_{v,t}^{\mathrm{cut,ub}}$')
+    ax2.plot(phi_Mc_df['phi_cut'], color='#d62728', linestyle='-', marker='o', markerfacecolor='none', markeredgecolor='#d62728', zorder=2, label=r'$\phi_{v,t}^{\mathrm{cut}}$')
+    ax2 = plt.gca()
+    ax2.minorticks_off()
+    ax2.grid(True, which='major', linestyle='-', color='#7f7f7f', linewidth=0.5, alpha=0.5)
+    ax2.set_xlabel('Time [h]')
+    ax2.set_xticks([0, 16, 32, 48, 64, 80, 96],['0','4','8','12','16','20','24'])
+    ax2.set_ylabel(r'$\phi^{\mathrm{cut}}_{t}$')
+    ax2.text(0.5, -0.28, '(b)', transform=ax2.transAxes, fontsize=12)
+    ax2.legend()
+    ax3 = plt.subplot(3, 1, 3)
+    ax3.plot(phi_load_lb, color='#2ca02c', linestyle='--', marker='v', markerfacecolor='none', markeredgecolor='#2ca02c', zorder=1, label=r'$\phi_{t}^{\mathrm{load,lb}}$')
+    ax3.plot(phi_load_ub, color='#1f77b4', linestyle='-.', marker='^', markerfacecolor='none', markeredgecolor='#1f77b4', zorder=1, label=r'$\phi_{t}^{\mathrm{load,ub}}$')
+    ax3.plot(phi_Mc_df['phi_load'], color='#d62728', linestyle='-', marker='o', markerfacecolor='none', markeredgecolor='#d62728', zorder=2, label=r'$\phi_{t}^{\mathrm{load}}$')
+    ax3 = plt.gca()
+    ax3.minorticks_off()
+    ax3.grid(True, which='major', linestyle='-', color='#7f7f7f', linewidth=0.5, alpha=0.5)
+    ax3.set_xlabel('Time [h]')
+    ax3.set_xticks([0, 16, 32, 48, 64, 80, 96],['0','4','8','12','16','20','24'])
+    ax3.set_ylabel(r'$\phi^{\mathrm{load}}_t$')
+    ax3.text(0.5, -0.28, '(c)', transform=ax3.transAxes, fontsize=12)
+    ax3.legend(loc='upper right')
     plt.tight_layout()
-    # plt.savefig(dirname + day + '_Phi_' + pdfname + '.pdf', dpi=300)
-    plt.savefig(dirname + day + '_Phi_compare.png', dpi=300)
-    # plt.close('all')
+    plt.savefig(dirname + 'svg/' + day + '_Phi_compare_IEEE.svg', format='svg')
+    plt.savefig(dirname + 'png/' + day + '_Phi_compare_IEEE.png', format='png')
+    plt.savefig(dirname + 'pdf/' + day + '_Phi_compare_IEEE.pdf', format='pdf')
+    plt.close()
 
-    PV_worst_bigM = pd.read_csv('/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/result/worst_case_bM.csv', header=0)  # Assuming header is in the first row
+    worst_bigM = pd.read_csv('/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/result/worst_case_bM.csv', header=0)  # Assuming header is in the first row
 
-    plt.figure(figsize=(16,9))
-    plt.plot()
-    plt.plot(PV_worst_case, linewidth=3, marker='v', markersize=8, label='McCormick')
-    plt.plot(PV_worst_bigM['PV_worst'], linewidth=3, marker='^', markersize=8, label='big-M')
-    plt.xlabel('Time (h)', fontsize=FONTSIZE)
-    plt.ylabel('Power (kW)', fontsize=FONTSIZE)
-    plt.xticks([0, 16, 32, 48, 64, 80, 96],['0','4','8','12','16','20','24'], fontsize=FONTSIZE)
-    plt.yticks(fontsize=FONTSIZE)
-    plt.legend(fontsize=FONTSIZE, loc='upper left', frameon=True, fancybox=False, edgecolor='black', framealpha=0.8)
-    # plt.tight_layout()
-    # plt.savefig(dirname + day + '_PV_worst_compare_' + pdfname + '.pdf')
-    plt.savefig(dirname + day + '_PV_worst_compare.png', dpi=300)
-    # plt.close('all')
-
-    plt.figure(figsize=(16,9))
-    plt.plot()
-    plt.plot(load_worst_case, linewidth=3, marker='v', markersize=8, label='McCormick')
-    plt.plot(PV_worst_bigM['load_worst'], linewidth=3, marker='^', markersize=8, label='big-M')
-    plt.xlabel('Time (h)', fontsize=FONTSIZE)
-    plt.ylabel('Power (kW)', fontsize=FONTSIZE)
-    plt.xticks([0, 16, 32, 48, 64, 80, 96],['0','4','8','12','16','20','24'], fontsize=FONTSIZE)
-    plt.yticks(fontsize=FONTSIZE)
-    plt.legend(fontsize=FONTSIZE, loc='upper left', frameon=True, fancybox=False, edgecolor='black', framealpha=0.8)
-    # plt.tight_layout()
-    # plt.savefig(dirname + day + '_Load_worst_compare_' + pdfname + '.pdf')
-    plt.savefig(dirname + day + '_Load_worst_compare.png', dpi=300)
-    # plt.close('all')
+    plt.figure()
+    ax1 = plt.subplot(2, 1, 1)
+    ax1.plot(PV_worst_case, color='#1f77b4', linestyle='--', marker='o', markerfacecolor='none', markeredgecolor='#1f77b4', zorder=2, label='Porposed method')
+    ax1.plot(worst_bigM['PV_worst'], color='#d62728', linestyle='-', marker='x', zorder=1, label='Conventional method')
+    ax1 = plt.gca()
+    ax1.minorticks_off()
+    ax1.grid(True, which='major', linestyle='-', color='#7f7f7f', linewidth=0.5, alpha=0.5)
+    ax1.set_xlabel('Time [h]')
+    ax1.set_xticks([0, 16, 32, 48, 64, 80, 96],['0','4','8','12','16','20','24'])
+    ax1.legend(loc='upper right')
+    ax1.set_ylabel('Power [kW]')
+    ax1.text(0.5, -0.32, '(a)', transform=ax1.transAxes, fontsize=12)
+    ax2 = plt.subplot(2, 1, 2)
+    ax2.plot(load_worst_case, color='#2ca02c', linestyle='--', marker='o', markerfacecolor='none', markeredgecolor='#2ca02c', zorder=2, label='Proposed method')
+    ax2.plot(worst_bigM['load_worst'], color='#9467bd', linestyle='-', marker='x', zorder=1, label='Conventional method')
+    ax2 = plt.gca()
+    ax2.minorticks_off()
+    ax2.grid(True, which='major', linestyle='-', color='#7f7f7f', linewidth=0.5, alpha=0.5)
+    ax2.legend(loc='upper right')
+    ax2.set_xlabel('Time [h]')
+    ax2.set_xticks([0, 16, 32, 48, 64, 80, 96],['0','4','8','12','16','20','24'])
+    ax2.set_ylabel('Power [kW]')
+    ax2.set_ylim(top=450)
+    ax2.text(0.5, -0.32, '(b)', transform=ax2.transAxes, fontsize=12)
+    plt.tight_layout()
+    plt.savefig(dirname + 'svg/' + day + '_Method_compare_IEEE.svg', format='svg')
+    plt.savefig(dirname + 'png/' + day + '_Method_compare_IEEE.png', format='png')
+    plt.savefig(dirname + 'pdf/' + day + '_Method_compare_IEEE.pdf', format='pdf')
+    plt.close()
 
     data = np.column_stack((np.array(PV_worst_case), np.array(load_worst_case).flatten()))
-    np.savetxt('/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/result/worst_case_Mc.csv', data, delimiter=',', header='PV_worst, load_worst', comments='', fmt='%.18f')
+    np.savetxt('/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/result/worst_case_Mc.csv', data, delimiter=',', header='PV_worst, load_worst', comments='', fmt='%.18f')
 
     data = {"Variable": [], "Value": []}
 
@@ -733,4 +918,14 @@ if __name__ == "__main__":
         data["Value"].append(v.x)
 
     df = pd.DataFrame(data)
-    df.to_excel('/Users/Andrew/OneDrive/Programming/Python/Optimization/Robust generation dispatch/result/Mc_phi_all_Mc.xlsx', index=False)
+    df.to_excel('/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/result/Mc_phi_all_Mc.xlsx', index=False)
+
+    print('cost fuel:', sum(final_x_cost_fuel) + sum(final_y_cost_fuel))
+    print('cost res:', sum(final_x_cost_res))
+    print('cost ESS:', sum(final_x_cost_ESS) + sum(final_y_cost_ESS))
+    print('x cost cut:', sum(final_x_cost_cut))
+    print('cost real:', sum(final_y_cost_fuel) + sum(final_y_cost_ESS) + sum(final_y_cost_cut) + sum(final_y_cost_add))
+    print('y cut:', sum(final_y_cut))
+    print('y cost cut:', sum(final_y_cost_cut))
+    print('y add:', sum(final_y_add))
+    print('y cost add:', sum(final_y_cost_add))        
