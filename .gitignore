@@ -22,6 +22,7 @@ venv/
 *.pkl
 *.pickle
 **/export_*/
+RGD_Mc/runtime/
 results/tmp/
 result/tmp/
 tmp/

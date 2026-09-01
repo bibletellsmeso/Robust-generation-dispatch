@@ -11,6 +11,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
+import scienceplots
 
 from CCG_MP import CCG_MP
 from CCG_SP_Mc import CCG_SP
@@ -20,6 +21,7 @@ from Data_read import *
 from root_project import ROOT_DIR
 from Params import PARAMETERS
 from utils import *
+from paths import RESULT_DIR, RUNTIME_DIR
 
 def ccg_algo(dir:str, tol:float, power:np.array, reserve_pos:np.array, reserve_neg:np.array, charge:np.array, discharge:np.array, SOC:np.array, curtailment:np.array,
              GAMMA:int, PI:int, solver_param:dict, day:str, log:bool=False, printconsole:bool=False):
@@ -316,13 +318,13 @@ if __name__ == "__main__":
     print(os.getcwd())
 
     # Create folder
-    dirname = '/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/RGD_Mc/export_CCG/'
+    dirname = RUNTIME_DIR / 'export_CCG'
     if PV_Sandia:
-        dirname += 'PV_Sandia/'
+        dirname = dirname / 'PV_Sandia'
         pdfname = str(PV_Sandia) + '_' + str(GAMMA) + '_' + str(PI)
 
-    if not os.path.isdir(dirname):
-        os.makedirs(dirname)
+    dirname.mkdir(parents=True, exist_ok=True)
+    dirname = str(dirname) + os.sep
 
     print('-----------------------------------------------------------------------------------------------------------')
     if PV_Sandia:
@@ -337,12 +339,13 @@ if __name__ == "__main__":
     load_pos = data.load_pos # (kw) The maximal deviation between the min and forecast load uncertainty set bounds
     load_neg = data.load_neg # (kW) The maximal deviation between the max and forecast load uncertainty set bounds
 
-    M_PV_best = [x for x in read_file(dir='/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/result/', name=day+'_bM_phi_PV_best')]
-    M_PV_worst = [x for x in read_file(dir='/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/result/', name=day+'_bM_phi_PV_worst')]
-    M_cut_best = [x for x in read_file(dir='/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/result/', name=day+'_bM_phi_cut_best')]
-    M_cut_worst = [x for x in read_file(dir='/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/result/', name=day+'_bM_phi_cut_worst')]
-    M_load_best = [x for x in read_file(dir='/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/result/', name=day+'_bM_phi_load_best')]
-    M_load_worst = [x for x in read_file(dir='/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/result/', name=day+'_bM_phi_load_worst')]
+    result_dir = str(RESULT_DIR) + os.sep
+    M_PV_best = [x for x in read_file(dir=result_dir, name=day+'_bM_phi_PV_best')]
+    M_PV_worst = [x for x in read_file(dir=result_dir, name=day+'_bM_phi_PV_worst')]
+    M_cut_best = [x for x in read_file(dir=result_dir, name=day+'_bM_phi_cut_best')]
+    M_cut_worst = [x for x in read_file(dir=result_dir, name=day+'_bM_phi_cut_worst')]
+    M_load_best = [x for x in read_file(dir=result_dir, name=day+'_bM_phi_load_best')]
+    M_load_worst = [x for x in read_file(dir=result_dir, name=day+'_bM_phi_load_worst')]
 
     nb_periods = PV_pos.shape[0]
 
@@ -417,7 +420,7 @@ if __name__ == "__main__":
 
     phi_PV = [SP_dual_sol['phi_PV'][i] for i in range(nb_periods)]
     phi_data = np.column_stack((np.array(SP_dual_sol['phi_PV']), np.array(SP_dual_sol['phi_cut']), np.array(SP_dual_sol['phi_load']).flatten()))
-    np.savetxt('/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/result/Mc_phi_worst.csv', phi_data, delimiter=',', header='phi_PV,phi_cut,phi_load', comments='', fmt='%.18f')
+    np.savetxt(RESULT_DIR / 'Mc_phi_worst.csv', phi_data, delimiter=',', header='phi_PV,phi_cut,phi_load', comments='', fmt='%.18f')
 
     # ------------------------------------------------------------------------------------------------------------------
     # Second-stage variables comparison:
@@ -928,4 +931,4 @@ if __name__ == "__main__":
     print('y cut:', sum(final_y_cut))
     print('y cost cut:', sum(final_y_cost_cut))
     print('y add:', sum(final_y_add))
-    print('y cost add:', sum(final_y_cost_add))        
+    print('y cost add:', sum(final_y_cost_add))

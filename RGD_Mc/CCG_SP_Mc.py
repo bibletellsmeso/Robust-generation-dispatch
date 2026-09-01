@@ -12,6 +12,7 @@ from SP_primal_LP import *
 from Params import PARAMETERS
 from root_project import ROOT_DIR
 from Data_read import *
+from paths import RUNTIME_DIR
 
 class CCG_SP():
     """
@@ -365,18 +366,26 @@ class CCG_SP():
 
         self.model.optimize()
 
-        if self.model.status == 2 or self.model.status == 9:
-            pass
-        else:
-            self.model.computeIIS()
-            self.model.write("infeasible_model.ilp")
-            print('WARNING planner MP status %s -> problem not solved, cannot retrieve solution')
-
-        if self.model.status == gp.GRB.Status.UNBOUNDED:
-            self.model.computeIIS()
-            self.model.write("unbounded_model_ilp")
-
         self.time_solving_model = time.time() - t_solve
+
+        if self.model.status == gp.GRB.Status.INF_OR_UNBD:
+            self.model.setParam('DualReductions', 0)
+            self.model.reset()
+            self.model.optimize()
+
+        if self.model.SolCount:
+            return
+
+        RUNTIME_DIR.mkdir(parents=True, exist_ok=True)
+        diagnostic_path = None
+        if self.model.status == gp.GRB.Status.INFEASIBLE:
+            diagnostic_path = RUNTIME_DIR / 'sp_dual_infeasible.ilp'
+            self.model.computeIIS()
+            self.model.write(str(diagnostic_path))
+        raise RuntimeError(
+            f'SP dual did not produce a feasible solution (Gurobi status {self.model.status}). '
+            f'Diagnostic output: {diagnostic_path if diagnostic_path else "not applicable"}'
+        )
 
     def store_solution(self):
 
@@ -384,7 +393,7 @@ class CCG_SP():
 
         solution = dict()
         solution['status'] = m.status
-        solution['obj'] = m.objVal
+        solution['obj'] = m.ObjVal
 
         # 0 dimensional variables
         for var in ['phi_ini', 'phi_end']:
