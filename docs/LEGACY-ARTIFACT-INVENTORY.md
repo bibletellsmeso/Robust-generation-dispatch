@@ -19,9 +19,15 @@ The counts above were recorded on 2026-09-01. The repository `.gitignore` preven
 - Multiple CCG scripts read prior `.pickle` state or write solver diagnostics into historical `export_*` paths.
 - Several scripts still contain machine-specific paths, so blindly relocating files would make the public snapshot less runnable, not more reproducible.
 
+## Runtime smoke-test result
+
+On 2026-09-01, a local Python environment installed the declared dependencies, `SciencePlots`, and a working Gurobi academic license. A minimal Gurobi optimization solved successfully. The main `RGD_Mc/CCG_algo.py` entry point then stopped before optimization because `RGD_Mc/PV_model.py` requests a legacy absolute weather-data path that does not exist on a fresh clone. This confirms that path normalization—not solver availability—is the first repair required for an end-to-end run.
+
+`SciencePlots` is listed in `requirements.txt` because the CCG and plotting scripts explicitly select the `science` Matplotlib style.
+
 ## Safe removal plan
 
-1. Replace machine-specific paths with repository-relative configuration.
+1. Replace the 169 machine-specific path references with repository-relative configuration, beginning with the main `RGD_Mc` variant.
 2. Make each variant regenerate any required statistics and runtime state.
 3. Run a small licensed-Gurobi validation for the chosen canonical variant.
 4. Retain only documented figures and tables in a clear final-results location.
