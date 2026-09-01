@@ -52,7 +52,7 @@ Before a full run, confirm that the input data referenced by the selected varian
 
 ## Data and results
 
-Input files are retained in `data/`. Their origins, permissions, and transformation status must be recorded before redistribution or major restructuring. Existing solver models, caches, pickles, and repeated plots are historical experiment artefacts. New disposable output is excluded by `.gitignore`; selected reproducible figures and tables should eventually be curated into a documented `results/final/` location.
+Input files are retained in `data/`. Their origins, permissions, and transformation status must be recorded before redistribution or major restructuring. Existing solver models, caches, pickles, and repeated plots are historical experiment artefacts. New disposable output is excluded by `.gitignore`; selected reproducible figures and tables should eventually be curated into a documented `results/final/` location. See the [legacy artifact inventory](docs/LEGACY-ARTIFACT-INVENTORY.md) before removing or relocating retained files.
 
 ## Reproducibility and citation
 
@@ -60,4 +60,4 @@ Please open an issue before relying on this code for a new study. The project do
 
 ## Cleanup policy
 
-See [the project structure note](docs/PROJECT_STRUCTURE.md) and the account-wide [public repository standard](https://github.com/bibletellsmeso/research-hub/blob/work/public-repository-standards/docs/PUBLIC-REPOSITORY-STANDARD.md). No historical files are deleted or renamed by this documentation-only change.
+See [the project structure note](docs/PROJECT_STRUCTURE.md) and the account-wide [public repository standard](https://github.com/bibletellsmeso/research-hub/blob/main/docs/PUBLIC-REPOSITORY-STANDARD.md). No historical files are deleted or renamed by this documentation-only change.
