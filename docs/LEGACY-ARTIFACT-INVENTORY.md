@@ -25,6 +25,8 @@ On 2026-09-01, a local Python environment installed the declared dependencies, `
 
 `SciencePlots` is listed in `requirements.txt` because the CCG and plotting scripts explicitly select the `science` Matplotlib style.
 
+After the primary `RGD_Mc` data and output paths were normalized, the entry point reached its first CCG dual solve. The shipped 2025-01-15 configuration was diagnosed as infeasible (Gurobi status 3). Its IIS diagnostic is written to ignored `RGD_Mc/runtime/`; no generated diagnostic is committed. The next step is to validate the model assumptions and scenario bounds before treating this variant as a reproducible baseline.
+
 ## Safe removal plan
 
 1. Replace the 169 machine-specific path references with repository-relative configuration, beginning with the main `RGD_Mc` variant.

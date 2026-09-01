@@ -50,6 +50,10 @@ For the quadratic-programming variant, use `RGD_Mc_QP\CCG_algo_QP.py`. The Big-M
 
 Before a full run, confirm that the input data referenced by the selected variant is available and that the chosen Gurobi license is active. A reproducible minimal example will be added after the current variants and parameters are validated.
 
+### Current RGD_Mc run status
+
+The `RGD_Mc` entry point now uses repository-relative paths for its primary inputs and runtime output. It reaches the first CCG dual solve on a fresh clone with the documented dependencies and a Gurobi license. The currently committed 2025-01-15 configuration then reports an infeasible dual subproblem; this is a model/scenario validation question, not a missing-path or missing-package error. The generated diagnostic stays under ignored `RGD_Mc/runtime/`.
+
 ## Data and results
 
 Input files are retained in `data/`. Their origins, permissions, and transformation status must be recorded before redistribution or major restructuring. Existing solver models, caches, pickles, and repeated plots are historical experiment artefacts. New disposable output is excluded by `.gitignore`; selected reproducible figures and tables should eventually be curated into a documented `results/final/` location. See the [legacy artifact inventory](docs/LEGACY-ARTIFACT-INVENTORY.md) before removing or relocating retained files.

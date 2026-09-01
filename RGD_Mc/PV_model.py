@@ -7,6 +7,7 @@ import math
 import matplotlib.pyplot as plt
 from datetime import datetime
 import sys
+from paths import DATA_DIR
 
 np.set_printoptions(precision=6, suppress=True)
 
@@ -25,8 +26,8 @@ r2d = 180 / math.pi
 class Photovoltaic:
     def __init__(self):
         self.Sim_time = 96 # 15min
-        self.Weather_Forecast = np.genfromtxt('/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/data/20250115_Hawaii_weather.csv', delimiter=',', skip_header=1, dtype=np.float32)
-        self.real_PV = np.loadtxt("/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/data/PV_for_scheduling.txt")
+        self.Weather_Forecast = np.genfromtxt(DATA_DIR / '20250115_Hawaii_weather.csv', delimiter=',', skip_header=1, dtype=np.float32)
+        self.real_PV = np.loadtxt(DATA_DIR / 'PV_for_scheduling.txt')
         self.GHI = self.Weather_Forecast[:,2]
         self.Tem = self.Weather_Forecast[:,3]
         self.WS = self.Weather_Forecast[:,4]

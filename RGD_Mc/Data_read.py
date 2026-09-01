@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 import random
 from PV_model import PV_forecast
-import matplotlib.pyplot as plt
+from paths import DATA_DIR, MODULE_DIR
 np.set_printoptions(precision=6, suppress=True)
 
 # os.listdir: 전체 파일목록 가져오기, endswith(): 특정 확장자 파일인지 확인
@@ -24,10 +24,10 @@ class data_read:
 		self.N_PWL = 10
 		self.RTE = 0.93
 
-		self.kpx_PV_data = pd.read_csv('/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/data/KPX_PV.csv', sep=',', names=['Source', 'Location', 'Date', 'Hour', 'Power'], dtype={'Date': str, 'Hour': str, 'Power': str}, encoding='CP949')[1:] # dtype = DataFrame
+		self.kpx_PV_data = pd.read_csv(DATA_DIR / 'KPX_PV.csv', sep=',', names=['Source', 'Location', 'Date', 'Hour', 'Power'], dtype={'Date': str, 'Hour': str, 'Power': str}, encoding='CP949')[1:] # dtype = DataFrame
 		self.kpx_PV_data = pd.DataFrame(self.kpx_PV_data, columns=['Hour', 'Power']).to_numpy(dtype=np.float32)
 
-		self.kpx_load = pd.read_csv('/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/data/KPX_Load.csv', sep=',', names=['Date', 'Load_1', 'Load_2', 'Load_3', 'Load_4', 'Load_5', 'Load_6', 'Load_7', 'Load_8', 'Load_9', 'Load_10', 'Load_11',
+		self.kpx_load = pd.read_csv(DATA_DIR / 'KPX_Load.csv', sep=',', names=['Date', 'Load_1', 'Load_2', 'Load_3', 'Load_4', 'Load_5', 'Load_6', 'Load_7', 'Load_8', 'Load_9', 'Load_10', 'Load_11',
 							      'Load_12', 'Load_13', 'Load_14', 'Load_15', 'Load_16', 'Load_17', 'Load_18', 'Load_19', 'Load_20', 'Load_21', 'Load_22', 'Load_23', 'Load_0'], encoding='CP949')[1:]
 		self.kpx_load = self.kpx_load.drop(['Date'], axis=1).to_numpy(dtype=np.float32) / 1000
 
@@ -47,14 +47,14 @@ class data_read:
 		# self.PV_pred = np.array(pd.read_csv('/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/data/PV_for_scheduling.txt', names=['PV']), dtype=np.float32)[:,0]
 		self.PV_pred[self.PV_pred < 0] = 0
 
-		self.load_pred = np.array(pd.read_csv('/Users/Andrew/OneDrive/Second brain/Programming/Python/Optimization/Robust generation dispatch/data/Load_for_scheduling.txt', names=['Load']), dtype=np.float32)[:,0]
+		self.load_pred = np.array(pd.read_csv(DATA_DIR / 'Load_for_scheduling.txt', names=['Load']), dtype=np.float32)[:,0]
 		self.load_pred = self.load_pred
 
 		# self.PV_pos = self.PV_pred * 1.96 * np.sqrt(np.repeat(self.PV_var, repeats=4, axis=0))/np.sqrt(1)
 		# self.PV_neg = self.PV_pred * 1.96 * np.sqrt(np.repeat(self.PV_var, repeats=4, axis=0))/np.sqrt(1)
 
-		self.loaded_pv_stats = pd.read_pickle("pv_stats_local.pkl")
-		self.loaded_ramping_stats = pd.read_pickle("ramping_stats_local.pkl")
+		self.loaded_pv_stats = pd.read_pickle(MODULE_DIR / 'pv_stats_local.pkl')
+		self.loaded_ramping_stats = pd.read_pickle(MODULE_DIR / 'ramping_stats_local.pkl')
 		self.PV_median = np.array(self.loaded_pv_stats["median"])
 		self.PV_median[self.PV_median == 0] = 1E-6
 
@@ -100,34 +100,4 @@ class data_read:
 		for i in range(1, 96):
 			self.a[i] = self.PV_pred[i] + self.PV_ramp_neg[i-1]
 			self.b[i] = self.PV_pred[i] + self.PV_ramp_pos[i-1]
-		print(self.a)
-		print(self.b)
-		plt.figure()
-		plt.plot(self.PV_pred, marker='D', zorder=3, label='forecast')
-		plt.plot(self.PV_pred + self.PV_pos, zorder=1, marker='x', label='95 quantile')
-		plt.plot(self.PV_pred - self.PV_neg, zorder=1, marker='o', label='-95 quantile')
-		plt.plot(self.a, zorder=4, marker='v', label='ramp down limit')
-		plt.plot(self.b, zorder=4, marker='^', label='ramp up limit')
-		# plt.fill_between(range(len(self.PV_pred)), self.PV_pred - PV_neg, self.PV_pred + PV_pos, color='#1f77b4', alpha=0.1)
-		plt.xlabel('Time [h]')
-		plt.ylabel('Power [kW]')
-		ax = plt.gca()
-		ax.minorticks_off()
-		ax.grid(True, which='major', linestyle='-', color='#7f7f7f', linewidth=0.5, alpha=0.5)
-		plt.legend()
-		plt.tight_layout()
-		plt.show()
-		for i in range(96):
-			print(f"i = {i} | {self.PV_pred[i] - self.PV_neg[i]:.3f} ≤ {self.a[i]:.3f} ≤ {self.PV_pred[i]:.3f} ≤ {self.b[i]:.3f} ≤ {self.PV_pred[i] + self.PV_pos[i]:.3f}")
-		print(f"PV_ramp_pos[71] = {self.PV_ramp_pos[71]}")
-		print(f"PV_ramp_pos[72] = {self.PV_ramp_pos[72]}")
-		print(f"PV_ramp_pos[73] = {self.PV_ramp_pos[73]}")
-		print(f"PV_ramp_neg[71] = {self.PV_ramp_neg[71]}")
-		print(f"PV_ramp_neg[72] = {self.PV_ramp_neg[72]}")
-		print(f"PV_ramp_neg[73] = {self.PV_ramp_neg[73]}")
-		print(f"PV_pred[71] = {self.PV_pred[71]}")
-		print(f"PV_pred[72] = {self.PV_pred[72]}")
-		print(f"PV_pred[73] = {self.PV_pred[73]}")
-
-
 data = data_read()
